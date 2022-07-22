@@ -61,47 +61,65 @@ const inputProject = {
       ui: {
         form: {
           checkbox: {
-            'component.js': '',
-            'template.js': '',
+            'component.js':
+              "export { default } from 'addon-javascript/components/ui/form/checkbox/component';\n",
+            'template.js':
+              "export { default } from 'addon-javascript/components/ui/form/checkbox/template';\n",
           },
 
           field: {
-            'styles.js': '',
-            'template.js': '',
+            'styles.js':
+              "export { default } from 'addon-javascript/components/ui/form/field/styles';\n",
+            'template.js':
+              "export { default } from 'addon-javascript/components/ui/form/field/template';\n",
           },
 
           information: {
-            'styles.js': '',
-            'template.js': '',
+            'styles.js':
+              "export { default } from 'addon-javascript/components/ui/form/information/styles';\n",
+            'template.js':
+              "export { default } from 'addon-javascript/components/ui/form/information/template';\n",
           },
 
           input: {
-            'component.js': '',
-            'template.js': '',
+            'component.js':
+              "export { default } from 'addon-javascript/components/ui/form/input/component';\n",
+            'template.js':
+              "export { default } from 'addon-javascript/components/ui/form/input/template';\n",
           },
 
           number: {
-            'component.js': '',
-            'template.js': '',
+            'component.js':
+              "export { default } from 'addon-javascript/components/ui/form/number/component';\n",
+            'template.js':
+              "export { default } from 'addon-javascript/components/ui/form/number/template';\n",
           },
 
           select: {
-            'component.js': '',
-            'template.js': '',
+            'component.js':
+              "export { default } from 'addon-javascript/components/ui/form/select/component';\n",
+            'template.js':
+              "export { default } from 'addon-javascript/components/ui/form/select/template';\n",
           },
 
           textarea: {
-            'component.js': '',
-            'template.js': '',
+            'component.js':
+              "export { default } from 'addon-javascript/components/ui/form/textarea/component';\n",
+            'template.js':
+              "export { default } from 'addon-javascript/components/ui/form/textarea/template';\n",
           },
 
-          'component.js': '',
-          'styles.js': '',
-          'template.js': '',
+          'component.js':
+            "export { default } from 'addon-javascript/components/ui/form/component';\n",
+          'styles.js':
+            "export { default } from 'addon-javascript/components/ui/form/styles';\n",
+          'template.js':
+            "export { default } from 'addon-javascript/components/ui/form/template';\n",
         },
 
         page: {
-          'template.js': '',
+          'template.js':
+            "export { default } from 'addon-javascript/components/ui/page/template';\n",
         },
       },
     },
@@ -198,17 +216,26 @@ const outputProject = {
     components: {
       ui: {
         form: {
-          'checkbox.js': '',
-          'field.js': '',
-          'information.js': '',
-          'input.js': '',
-          'number.js': '',
-          'select.js': '',
-          'textarea.js': '',
+          'checkbox.js':
+            "export { default } from 'addon-javascript/components/ui/form/checkbox';\n",
+          'field.js':
+            "export { default } from 'addon-javascript/components/ui/form/field';\n",
+          'information.js':
+            "export { default } from 'addon-javascript/components/ui/form/information';\n",
+          'input.js':
+            "export { default } from 'addon-javascript/components/ui/form/input';\n",
+          'number.js':
+            "export { default } from 'addon-javascript/components/ui/form/number';\n",
+          'select.js':
+            "export { default } from 'addon-javascript/components/ui/form/select';\n",
+          'textarea.js':
+            "export { default } from 'addon-javascript/components/ui/form/textarea';\n",
         },
 
-        'form.js': '',
-        'page.js': '',
+        'form.js':
+          "export { default } from 'addon-javascript/components/ui/form';\n",
+        'page.js':
+          "export { default } from 'addon-javascript/components/ui/page';\n",
       },
     },
   },
