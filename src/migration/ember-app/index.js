@@ -1,11 +1,29 @@
+import { moveFiles } from '../../utils/move-files.js';
+import { migrationStrategyForAppFolder } from './app/index.js';
+import { migrationStrategyForTestsFolder } from './tests/index.js';
+
 export function migrateEmberApp(options) {
-  const { testRun } = options;
+  const { projectRoot, testRun } = options;
+
+  const migrationStrategyApp = migrationStrategyForAppFolder(projectRoot);
+  const migrationStrategyTests = migrationStrategyForTestsFolder(projectRoot);
 
   if (testRun) {
-    console.log('App - test run');
+    console.log({
+      migrationStrategyApp,
+      migrationStrategyTests,
+    });
 
     return;
   }
 
-  console.log('App - move files');
+  moveFiles({
+    migrationStrategy: migrationStrategyApp,
+    projectRoot,
+  });
+
+  moveFiles({
+    migrationStrategy: migrationStrategyTests,
+    projectRoot,
+  });
 }

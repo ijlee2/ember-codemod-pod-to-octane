@@ -3,7 +3,7 @@ import {
   inputProject,
   outputProject,
 } from '../../../fixtures/app-javascript.js';
-import { assert, loadFixture, test } from '../../../test-helpers.js';
+import { assertFixture, loadFixture, test } from '../../../test-helpers.js';
 
 const projectRoot = 'tmp/app-javascript';
 
@@ -15,6 +15,13 @@ test('migration | ember-app | index > JavaScript', function () {
     testRun: false,
   });
 
-  // TODO: Remove the tautology
-  assert.deepStrictEqual(outputProject, outputProject);
+  assertFixture(projectRoot, outputProject);
+
+  // Check idempotence
+  migrateEmberApp({
+    projectRoot,
+    testRun: false,
+  });
+
+  assertFixture(projectRoot, outputProject);
 });
