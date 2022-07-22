@@ -1,11 +1,29 @@
+import { moveFiles } from '../../utils/move-files.js';
+import { migrationStrategyForAddonFolder } from './addon/index.js';
+import { migrationStrategyForTestsFolder } from './tests/index.js';
+
 export function migrateEmberEngine(options) {
-  const { testRun } = options;
+  const { projectRoot, testRun } = options;
+
+  const migrationStrategyAddon = migrationStrategyForAddonFolder(projectRoot);
+  const migrationStrategyTests = migrationStrategyForTestsFolder(projectRoot);
 
   if (testRun) {
-    console.log('Engine - test run');
+    console.log({
+      migrationStrategyAddon,
+      migrationStrategyTests,
+    });
 
     return;
   }
 
-  console.log('Engine - move files');
+  moveFiles({
+    migrationStrategy: migrationStrategyAddon,
+    projectRoot,
+  });
+
+  moveFiles({
+    migrationStrategy: migrationStrategyTests,
+    projectRoot,
+  });
 }
