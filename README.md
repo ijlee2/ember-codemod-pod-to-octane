@@ -14,7 +14,7 @@ cd <your/project/path>
 npx ember-codemod-pod-to-octane <arguments>
 ```
 
-Step 2. Remove `podModulePrefix` from `app/app.js` and `usePods` from `.ember-cli`.
+Step 2. Remove `podModulePrefix` from `config/environment.js` and `usePods` from `.ember-cli`.
 
 Step 3. Update relative paths in `import` statements.
 
