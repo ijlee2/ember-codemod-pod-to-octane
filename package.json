@@ -1,0 +1,62 @@
+{
+  "name": "ember-codemod-pod-to-octane",
+  "version": "0.0.0",
+  "description": "Codemod to un-pod Ember apps, addons, and engines",
+  "keywords": [
+    "ember-codemod",
+    "ember-octane",
+    "emberjs"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ijlee2/ember-codemod-pods-to-octane.git"
+  },
+  "license": "MIT",
+  "author": "Isaac J. Lee",
+  "main": "src/index.js",
+  "type": "module",
+  "bin": "./bin/ember-codemod-pod-to-octane.js",
+  "files": [
+    "bin/",
+    "src/"
+  ],
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "changelog": "lerna-changelog",
+    "lint": "eslint . --cache --ext=.cjs,.js",
+    "lint:fix": "eslint . --fix",
+    "start": "node ./src/index.js",
+    "test": "node ./node_modules/@sondr3/minitest/bin/mt.mjs tests --quiet"
+  },
+  "changelog": {
+    "labels": {
+      "breaking": "Breaking Change",
+      "bug": "Bug Fix",
+      "enhance: code": "Enhancement",
+      "enhance: dependency": "Internal",
+      "enhance: documentation": "Documentation",
+      "user feedback": "User Feedback"
+    }
+  },
+  "dependencies": {
+    "@babel/core": "^7.18.9",
+    "@babel/eslint-parser": "^7.18.9",
+    "glob": "^8.0.3",
+    "yargs": "^17.5.1"
+  },
+  "devDependencies": {
+    "@sondr3/minitest": "^0.1.1",
+    "eslint": "^8.20.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-simple-import-sort": "^7.0.0",
+    "fixturify": "^2.1.1",
+    "lerna-changelog": "^2.2.0",
+    "prettier": "^2.7.1"
+  },
+  "engines": {
+    "node": ">= 16"
+  }
+}
