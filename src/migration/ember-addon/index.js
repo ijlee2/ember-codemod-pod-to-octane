@@ -1,3 +1,4 @@
+import { updatePaths } from '../../utils/ember-addon/app/components.js';
 import { moveFiles } from '../../utils/move-files.js';
 import { migrationStrategyForAddonFolder } from './addon/index.js';
 import { migrationStrategyForAppFolder } from './app/index.js';
@@ -32,6 +33,11 @@ export function migrateEmberAddon(options) {
 
   moveFiles({
     migrationStrategy: migrationStrategyTests,
+    projectRoot,
+  });
+
+  updatePaths({
+    migrationStrategy: migrationStrategyApp,
     projectRoot,
   });
 }
