@@ -3,7 +3,7 @@ import {
   inputProject,
   outputProject,
 } from '../../../fixtures/addon-typescript.js';
-import { assert, loadFixture, test } from '../../../test-helpers.js';
+import { assertFixture, loadFixture, test } from '../../../test-helpers.js';
 
 const projectRoot = 'tmp/addon-typescript';
 
@@ -15,6 +15,13 @@ test('migration | ember-addon | index > TypeScript', function () {
     testRun: false,
   });
 
-  // TODO: Remove the tautology
-  assert.deepStrictEqual(outputProject, outputProject);
+  assertFixture(projectRoot, outputProject);
+
+  // Check idempotence
+  migrateEmberAddon({
+    projectRoot,
+    testRun: false,
+  });
+
+  assertFixture(projectRoot, outputProject);
 });
