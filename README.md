@@ -87,7 +87,7 @@ To better meet your needs, consider forking the repo and running the codemod loc
 
 ```sh
 cd <your/forked/repo>
-./bin/ember-codemod-pod-to-octane <arguments>
+./bin/ember-codemod-pod-to-octane.js <arguments>
 ```
 
 
