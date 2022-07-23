@@ -8,6 +8,7 @@ import { migrationStrategyForRouteRoutes } from './route-routes.js';
 import { migrationStrategyForRouteSerializers } from './route-serializers.js';
 import { migrationStrategyForRouteStylesheets } from './route-stylesheets.js';
 import { migrationStrategyForRouteTemplates } from './route-templates.js';
+import { migrationStrategyForServices } from './services.js';
 
 export function migrationStrategyForAppFolder(projectRoot) {
   return new Map([
@@ -21,5 +22,6 @@ export function migrationStrategyForAppFolder(projectRoot) {
     ...migrationStrategyForRouteSerializers(projectRoot),
     ...migrationStrategyForRouteStylesheets(projectRoot),
     ...migrationStrategyForRouteTemplates(projectRoot),
+    ...migrationStrategyForServices(projectRoot),
   ]);
 }
