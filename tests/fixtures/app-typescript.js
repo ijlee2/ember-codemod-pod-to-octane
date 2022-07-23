@@ -92,6 +92,14 @@ const inputProject = {
       },
     },
 
+    config: {
+      'service.ts': '',
+    },
+
+    experiments: {
+      'service.ts': '',
+    },
+
     form: {
       'controller.ts': '',
       'route.ts': '',
@@ -207,6 +215,14 @@ const inputProject = {
         products: {
           'controller-test.ts': '',
         },
+      },
+
+      config: {
+        'service-test.ts': '',
+      },
+
+      experiments: {
+        'service-test.ts': '',
       },
 
       form: {
@@ -351,6 +367,11 @@ const outputProject = {
       'application.ts': '',
     },
 
+    services: {
+      'config.ts': '',
+      'experiments.ts': '',
+    },
+
     styles: {
       products: {
         'product.css': '',
@@ -421,6 +442,11 @@ const outputProject = {
         'index-test.ts': '',
         'product-details-test.ts': '',
         'products-test.ts': '',
+      },
+
+      services: {
+        'config-test.ts': '',
+        'experiments-test.ts': '',
       },
     },
   },
