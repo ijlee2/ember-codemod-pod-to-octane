@@ -28,7 +28,7 @@
     "lint": "eslint . --cache --ext=.cjs,.js",
     "lint:fix": "eslint . --fix",
     "start": "node ./src/index.js",
-    "test": "node ./node_modules/@sondr3/minitest/bin/mt.mjs tests --quiet"
+    "test": "mt tests --quiet"
   },
   "changelog": {
     "labels": {
