@@ -49,7 +49,7 @@ const inputProject = {
         },
 
         page: {
-          'styles.css': '',
+          'styles.scss': '',
           'template.hbs': '',
         },
       },
@@ -206,8 +206,8 @@ const outputProject = {
         'form.hbs': '',
         'form.js': '',
 
-        'page.css': '',
         'page.hbs': '',
+        'page.scss': '',
       },
     },
   },

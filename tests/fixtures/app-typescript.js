@@ -24,7 +24,7 @@ const inputProject = {
 
         details: {
           'component.ts': '',
-          'styles.css': '',
+          'styles.scss': '',
           'template.hbs': '',
         },
 
@@ -86,7 +86,7 @@ const inputProject = {
 
         page: {
           'component.d.ts': '',
-          'styles.css': '',
+          'styles.scss': '',
           'template.hbs': '',
         },
       },
@@ -126,13 +126,13 @@ const inputProject = {
     products: {
       product: {
         'route.ts': '',
-        'styles.css': '',
+        'styles.scss': '',
         'template.hbs': '',
       },
 
       'controller.ts': '',
       'route.ts': '',
-      'styles.css': '',
+      'styles.scss': '',
       'template.hbs': '',
     },
 
@@ -292,8 +292,8 @@ const outputProject = {
         'card.d.ts': '',
         'card.hbs': '',
 
-        'details.css': '',
         'details.hbs': '',
+        'details.scss': '',
         'details.ts': '',
 
         'image.css': '',
@@ -336,9 +336,9 @@ const outputProject = {
         'form.hbs': '',
         'form.ts': '',
 
-        'page.css': '',
         'page.d.ts': '',
         'page.hbs': '',
+        'page.scss': '',
       },
     },
 
@@ -374,7 +374,7 @@ const outputProject = {
 
     styles: {
       products: {
-        'product.css': '',
+        'product.scss': '',
       },
 
       'app.css': '',
@@ -382,7 +382,7 @@ const outputProject = {
       'form.css': '',
       'index.css': '',
       'product-details.css': '',
-      'products.css': '',
+      'products.scss': '',
     },
 
     templates: {

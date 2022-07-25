@@ -22,7 +22,7 @@ const inputProject = {
 
         details: {
           'component.js': '',
-          'styles.css': '',
+          'styles.scss': '',
           'template.hbs': '',
         },
 
@@ -81,7 +81,7 @@ const inputProject = {
         },
 
         page: {
-          'styles.css': '',
+          'styles.scss': '',
           'template.hbs': '',
         },
       },
@@ -121,13 +121,13 @@ const inputProject = {
     products: {
       product: {
         'route.js': '',
-        'styles.css': '',
+        'styles.scss': '',
         'template.hbs': '',
       },
 
       'controller.js': '',
       'route.js': '',
-      'styles.css': '',
+      'styles.scss': '',
       'template.hbs': '',
     },
 
@@ -285,9 +285,9 @@ const outputProject = {
         'card.css': '',
         'card.hbs': '',
 
-        'details.css': '',
         'details.hbs': '',
         'details.js': '',
+        'details.scss': '',
 
         'image.css': '',
         'image.hbs': '',
@@ -327,8 +327,8 @@ const outputProject = {
         'form.hbs': '',
         'form.js': '',
 
-        'page.css': '',
         'page.hbs': '',
+        'page.scss': '',
       },
     },
 
@@ -364,7 +364,7 @@ const outputProject = {
 
     styles: {
       products: {
-        'product.css': '',
+        'product.scss': '',
       },
 
       'app.css': '',
@@ -372,7 +372,7 @@ const outputProject = {
       'form.css': '',
       'index.css': '',
       'product-details.css': '',
-      'products.css': '',
+      'products.scss': '',
     },
 
     templates: {
