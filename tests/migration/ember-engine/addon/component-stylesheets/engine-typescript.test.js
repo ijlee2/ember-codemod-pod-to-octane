@@ -15,8 +15,8 @@ test('migration | ember-engine | addon | component-stylesheets > TypeScript', fu
         'addon/components/product/card.css',
       ],
       [
-        'addon/components/product/details/styles.css',
-        'addon/components/product/details.css',
+        'addon/components/product/details/styles.scss',
+        'addon/components/product/details.scss',
       ],
       [
         'addon/components/product/image/styles.css',

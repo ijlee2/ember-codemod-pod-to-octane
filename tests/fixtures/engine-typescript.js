@@ -10,7 +10,7 @@ const inputProject = {
 
         details: {
           'component.ts': '',
-          'styles.css': '',
+          'styles.scss': '',
           'template.hbs': '',
         },
 
@@ -31,13 +31,13 @@ const inputProject = {
     products: {
       product: {
         'route.ts': '',
-        'styles.css': '',
+        'styles.scss': '',
         'template.hbs': '',
       },
 
       'controller.ts': '',
       'route.ts': '',
-      'styles.css': '',
+      'styles.scss': '',
       'template.hbs': '',
     },
   },
@@ -106,8 +106,8 @@ const outputProject = {
         'card.d.ts': '',
         'card.hbs': '',
 
-        'details.css': '',
         'details.hbs': '',
+        'details.scss': '',
         'details.ts': '',
 
         'image.css': '',
@@ -131,11 +131,11 @@ const outputProject = {
 
     styles: {
       products: {
-        'product.css': '',
+        'product.scss': '',
       },
 
       'product-details.css': '',
-      'products.css': '',
+      'products.scss': '',
     },
 
     templates: {

@@ -12,7 +12,7 @@ test('migration | ember-app | app | route-stylesheets > TypeScript', function ()
     ['app/form/styles.css', 'app/styles/form.css'],
     ['app/index/styles.css', 'app/styles/index.css'],
     ['app/product-details/styles.css', 'app/styles/product-details.css'],
-    ['app/products/product/styles.css', 'app/styles/products/product.css'],
-    ['app/products/styles.css', 'app/styles/products.css'],
+    ['app/products/product/styles.scss', 'app/styles/products/product.scss'],
+    ['app/products/styles.scss', 'app/styles/products.scss'],
   ]);
 });
