@@ -2,12 +2,20 @@ import { migrationStrategyForComponentTemplates } from '../../../../../src/migra
 import { inputProject } from '../../../../fixtures/engine-javascript.js';
 import { assert, loadFixture, test } from '../../../../test-helpers.js';
 
-const projectRoot = 'tmp/engine-javascript';
-
 test('migration | ember-engine | addon | component-templates > JavaScript', function () {
-  loadFixture(projectRoot, inputProject);
+  const options = {
+    podPath: '',
+    projectRoot: 'tmp/engine-javascript',
+    testRun: false,
+  };
 
-  assert.deepStrictEqual(migrationStrategyForComponentTemplates(projectRoot), [
+  loadFixture(inputProject, options);
+
+  const migrationStrategy = migrationStrategyForComponentTemplates(
+    options.projectRoot
+  );
+
+  assert.deepStrictEqual(migrationStrategy, [
     [
       'addon/components/product/card/template.hbs',
       'addon/components/product/card.hbs',

@@ -2,12 +2,20 @@ import { migrationStrategyForComponentClasses } from '../../../../../src/migrati
 import { inputProject } from '../../../../fixtures/app-typescript.js';
 import { assert, loadFixture, test } from '../../../../test-helpers.js';
 
-const projectRoot = 'tmp/app-typescript';
-
 test('migration | ember-app | app | component-classes > TypeScript', function () {
-  loadFixture(projectRoot, inputProject);
+  const options = {
+    podPath: '',
+    projectRoot: 'tmp/app-typescript',
+    testRun: false,
+  };
 
-  assert.deepStrictEqual(migrationStrategyForComponentClasses(projectRoot), [
+  loadFixture(inputProject, options);
+
+  const migrationStrategy = migrationStrategyForComponentClasses(
+    options.projectRoot
+  );
+
+  assert.deepStrictEqual(migrationStrategy, [
     [
       'app/components/navigation-menu/component.d.ts',
       'app/components/navigation-menu.d.ts',

@@ -2,23 +2,30 @@ import { updatePaths } from '../../../../src/utils/ember-addon/app/components.js
 import { moveFiles } from '../../../../src/utils/move-files.js';
 import { assertFixture, loadFixture, test } from '../../../test-helpers.js';
 
-const projectRoot = 'tmp/addon-javascript';
-
 test('utils | ember-addon | app | components', function () {
-  loadFixture(projectRoot, {
-    app: {
-      components: {
-        ui: {
-          form: {
-            checkbox: {
-              'component.js':
-                "export { default } from 'addon-javascript/components/ui/form/checkbox/component';\n",
+  const options = {
+    podPath: '',
+    projectRoot: 'tmp/addon-javascript',
+    testRun: false,
+  };
+
+  loadFixture(
+    {
+      app: {
+        components: {
+          ui: {
+            form: {
+              checkbox: {
+                'component.js':
+                  "export { default } from 'addon-javascript/components/ui/form/checkbox/component';\n",
+              },
             },
           },
         },
       },
     },
-  });
+    options
+  );
 
   const migrationStrategy = new Map([
     [
@@ -29,24 +36,27 @@ test('utils | ember-addon | app | components', function () {
 
   moveFiles({
     migrationStrategy,
-    projectRoot,
+    projectRoot: options.projectRoot,
   });
 
   updatePaths({
     migrationStrategy,
-    projectRoot,
+    projectRoot: options.projectRoot,
   });
 
-  assertFixture(projectRoot, {
-    app: {
-      components: {
-        ui: {
-          form: {
-            'checkbox.js':
-              "export { default } from 'addon-javascript/components/ui/form/checkbox';\n",
+  assertFixture(
+    {
+      app: {
+        components: {
+          ui: {
+            form: {
+              'checkbox.js':
+                "export { default } from 'addon-javascript/components/ui/form/checkbox';\n",
+            },
           },
         },
       },
     },
-  });
+    options
+  );
 });

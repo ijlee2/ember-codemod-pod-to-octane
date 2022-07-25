@@ -2,12 +2,20 @@ import { migrationStrategyForRouteModels } from '../../../../../src/migration/em
 import { inputProject } from '../../../../fixtures/app-typescript.js';
 import { assert, loadFixture, test } from '../../../../test-helpers.js';
 
-const projectRoot = 'tmp/app-typescript';
-
 test('migration | ember-app | app | route-models > TypeScript', function () {
-  loadFixture(projectRoot, inputProject);
+  const options = {
+    podPath: '',
+    projectRoot: 'tmp/app-typescript',
+    testRun: false,
+  };
 
-  assert.deepStrictEqual(migrationStrategyForRouteModels(projectRoot), [
+  loadFixture(inputProject, options);
+
+  const migrationStrategy = migrationStrategyForRouteModels(
+    options.projectRoot
+  );
+
+  assert.deepStrictEqual(migrationStrategy, [
     ['app/product/model.ts', 'app/models/product.ts'],
   ]);
 });

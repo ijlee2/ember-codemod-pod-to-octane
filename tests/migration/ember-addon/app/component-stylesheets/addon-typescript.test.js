@@ -2,23 +2,28 @@ import { migrationStrategyForComponentStylesheets } from '../../../../../src/mig
 import { inputProject } from '../../../../fixtures/addon-typescript.js';
 import { assert, loadFixture, test } from '../../../../test-helpers.js';
 
-const projectRoot = 'tmp/addon-typescript';
-
 test('migration | ember-addon | app | component-stylesheets > TypeScript', function () {
-  loadFixture(projectRoot, inputProject);
+  const options = {
+    podPath: '',
+    projectRoot: 'tmp/addon-typescript',
+    testRun: false,
+  };
 
-  assert.deepStrictEqual(
-    migrationStrategyForComponentStylesheets(projectRoot),
-    [
-      [
-        'app/components/ui/form/field/styles.js',
-        'app/components/ui/form/field.js',
-      ],
-      [
-        'app/components/ui/form/information/styles.js',
-        'app/components/ui/form/information.js',
-      ],
-      ['app/components/ui/form/styles.js', 'app/components/ui/form.js'],
-    ]
+  loadFixture(inputProject, options);
+
+  const migrationStrategy = migrationStrategyForComponentStylesheets(
+    options.projectRoot
   );
+
+  assert.deepStrictEqual(migrationStrategy, [
+    [
+      'app/components/ui/form/field/styles.js',
+      'app/components/ui/form/field.js',
+    ],
+    [
+      'app/components/ui/form/information/styles.js',
+      'app/components/ui/form/information.js',
+    ],
+    ['app/components/ui/form/styles.js', 'app/components/ui/form.js'],
+  ]);
 });

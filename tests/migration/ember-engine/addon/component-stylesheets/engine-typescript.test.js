@@ -2,26 +2,31 @@ import { migrationStrategyForComponentStylesheets } from '../../../../../src/mig
 import { inputProject } from '../../../../fixtures/engine-typescript.js';
 import { assert, loadFixture, test } from '../../../../test-helpers.js';
 
-const projectRoot = 'tmp/engine-typescript';
-
 test('migration | ember-engine | addon | component-stylesheets > TypeScript', function () {
-  loadFixture(projectRoot, inputProject);
+  const options = {
+    podPath: '',
+    projectRoot: 'tmp/engine-typescript',
+    testRun: false,
+  };
 
-  assert.deepStrictEqual(
-    migrationStrategyForComponentStylesheets(projectRoot),
-    [
-      [
-        'addon/components/product/card/styles.css',
-        'addon/components/product/card.css',
-      ],
-      [
-        'addon/components/product/details/styles.scss',
-        'addon/components/product/details.scss',
-      ],
-      [
-        'addon/components/product/image/styles.css',
-        'addon/components/product/image.css',
-      ],
-    ]
+  loadFixture(inputProject, options);
+
+  const migrationStrategy = migrationStrategyForComponentStylesheets(
+    options.projectRoot
   );
+
+  assert.deepStrictEqual(migrationStrategy, [
+    [
+      'addon/components/product/card/styles.css',
+      'addon/components/product/card.css',
+    ],
+    [
+      'addon/components/product/details/styles.scss',
+      'addon/components/product/details.scss',
+    ],
+    [
+      'addon/components/product/image/styles.css',
+      'addon/components/product/image.css',
+    ],
+  ]);
 });

@@ -2,12 +2,20 @@ import { migrationStrategyForRouteControllers } from '../../../../../src/migrati
 import { inputProject } from '../../../../fixtures/engine-javascript.js';
 import { assert, loadFixture, test } from '../../../../test-helpers.js';
 
-const projectRoot = 'tmp/engine-javascript';
-
 test('migration | ember-engine | tests | route-controllers > JavaScript', function () {
-  loadFixture(projectRoot, inputProject);
+  const options = {
+    podPath: '',
+    projectRoot: 'tmp/engine-javascript',
+    testRun: false,
+  };
 
-  assert.deepStrictEqual(migrationStrategyForRouteControllers(projectRoot), [
+  loadFixture(inputProject, options);
+
+  const migrationStrategy = migrationStrategyForRouteControllers(
+    options.projectRoot
+  );
+
+  assert.deepStrictEqual(migrationStrategy, [
     [
       'tests/unit/products/controller-test.js',
       'tests/unit/controllers/products-test.js',

@@ -2,12 +2,18 @@ import { migrationStrategyForComponents } from '../../../../../src/migration/emb
 import { inputProject } from '../../../../fixtures/addon-javascript.js';
 import { assert, loadFixture, test } from '../../../../test-helpers.js';
 
-const projectRoot = 'tmp/addon-javascript';
-
 test('migration | ember-addon | tests | components > JavaScript', function () {
-  loadFixture(projectRoot, inputProject);
+  const options = {
+    podPath: '',
+    projectRoot: 'tmp/addon-javascript',
+    testRun: false,
+  };
 
-  assert.deepStrictEqual(migrationStrategyForComponents(projectRoot), [
+  loadFixture(inputProject, options);
+
+  const migrationStrategy = migrationStrategyForComponents(options.projectRoot);
+
+  assert.deepStrictEqual(migrationStrategy, [
     [
       'tests/integration/components/ui/form/checkbox/component-test.js',
       'tests/integration/components/ui/form/checkbox-test.js',

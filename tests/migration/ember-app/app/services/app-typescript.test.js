@@ -2,12 +2,18 @@ import { migrationStrategyForServices } from '../../../../../src/migration/ember
 import { inputProject } from '../../../../fixtures/app-typescript.js';
 import { assert, loadFixture, test } from '../../../../test-helpers.js';
 
-const projectRoot = 'tmp/app-typescript';
-
 test('migration | ember-app | app | services > TypeScript', function () {
-  loadFixture(projectRoot, inputProject);
+  const options = {
+    podPath: '',
+    projectRoot: 'tmp/app-typescript',
+    testRun: false,
+  };
 
-  assert.deepStrictEqual(migrationStrategyForServices(projectRoot), [
+  loadFixture(inputProject, options);
+
+  const migrationStrategy = migrationStrategyForServices(options.projectRoot);
+
+  assert.deepStrictEqual(migrationStrategy, [
     ['app/config/service.ts', 'app/services/config.ts'],
     ['app/experiments/service.ts', 'app/services/experiments.ts'],
   ]);

@@ -1,22 +1,29 @@
 import { moveFiles } from '../../src/utils/move-files.js';
 import { assertFixture, loadFixture, test } from '../test-helpers.js';
 
-const projectRoot = 'tmp/addon-javascript';
-
 test('utils | move-files', function () {
-  loadFixture(projectRoot, {
-    addon: {
-      components: {
-        ui: {
-          form: {
-            checkbox: {
-              'component.js': '',
+  const options = {
+    podPath: '',
+    projectRoot: 'tmp/addon-javascript',
+    testRun: false,
+  };
+
+  loadFixture(
+    {
+      addon: {
+        components: {
+          ui: {
+            form: {
+              checkbox: {
+                'component.js': '',
+              },
             },
           },
         },
       },
     },
-  });
+    options
+  );
 
   const migrationStrategy = new Map([
     [
@@ -27,18 +34,21 @@ test('utils | move-files', function () {
 
   moveFiles({
     migrationStrategy,
-    projectRoot,
+    projectRoot: options.projectRoot,
   });
 
-  assertFixture(projectRoot, {
-    addon: {
-      components: {
-        ui: {
-          form: {
-            'checkbox.js': '',
+  assertFixture(
+    {
+      addon: {
+        components: {
+          ui: {
+            form: {
+              'checkbox.js': '',
+            },
           },
         },
       },
     },
-  });
+    options
+  );
 });

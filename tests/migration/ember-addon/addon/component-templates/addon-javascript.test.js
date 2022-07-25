@@ -2,12 +2,20 @@ import { migrationStrategyForComponentTemplates } from '../../../../../src/migra
 import { inputProject } from '../../../../fixtures/addon-javascript.js';
 import { assert, loadFixture, test } from '../../../../test-helpers.js';
 
-const projectRoot = 'tmp/addon-javascript';
-
 test('migration | ember-addon | addon | component-templates > JavaScript', function () {
-  loadFixture(projectRoot, inputProject);
+  const options = {
+    podPath: '',
+    projectRoot: 'tmp/addon-javascript',
+    testRun: false,
+  };
 
-  assert.deepStrictEqual(migrationStrategyForComponentTemplates(projectRoot), [
+  loadFixture(inputProject, options);
+
+  const migrationStrategy = migrationStrategyForComponentTemplates(
+    options.projectRoot
+  );
+
+  assert.deepStrictEqual(migrationStrategy, [
     [
       'addon/components/ui/form/checkbox/template.hbs',
       'addon/components/ui/form/checkbox.hbs',
