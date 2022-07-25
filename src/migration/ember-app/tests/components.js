@@ -1,12 +1,19 @@
 import glob from 'glob';
+import { join } from 'node:path';
 
 import { mapPaths } from '../../../utils/map-paths.js';
 
 export function migrationStrategyForComponents(options) {
-  const { projectRoot } = options;
+  const { podPath, projectRoot } = options;
 
   const oldPaths = glob.sync(
-    'tests/integration/components/**/component-test.{js,ts}',
+    join(
+      'tests/integration',
+      podPath,
+      'components',
+      '**',
+      'component-test.{js,ts}'
+    ),
     {
       cwd: projectRoot,
     }
@@ -16,7 +23,7 @@ export function migrationStrategyForComponents(options) {
     if (oldPath.endsWith('.ts')) {
       return mapPaths(oldPath, {
         find: {
-          directory: 'tests/integration/components',
+          directory: join('tests/integration', podPath, 'components'),
           file: 'component-test.ts',
         },
         replace(key) {
@@ -27,7 +34,7 @@ export function migrationStrategyForComponents(options) {
 
     return mapPaths(oldPath, {
       find: {
-        directory: 'tests/integration/components',
+        directory: join('tests/integration', podPath, 'components'),
         file: 'component-test.js',
       },
       replace(key) {

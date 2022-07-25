@@ -1,18 +1,22 @@
 import glob from 'glob';
+import { join } from 'node:path';
 
 import { mapPaths } from '../../../utils/map-paths.js';
 
 export function migrationStrategyForComponentTemplates(options) {
-  const { projectRoot } = options;
+  const { podPath, projectRoot } = options;
 
-  const oldPaths = glob.sync('app/components/**/template.hbs', {
-    cwd: projectRoot,
-  });
+  const oldPaths = glob.sync(
+    join('app', podPath, 'components', '**', 'template.hbs'),
+    {
+      cwd: projectRoot,
+    }
+  );
 
   return oldPaths.map((oldPath) => {
     return mapPaths(oldPath, {
       find: {
-        directory: 'app/components',
+        directory: join('app', podPath, 'components'),
         file: 'template.hbs',
       },
       replace(key) {
