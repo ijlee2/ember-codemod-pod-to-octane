@@ -11,6 +11,11 @@ process.title = 'ember-codemod-pod-to-octane';
 
 // Set codemod options
 const { argv } = yargs(hideBin(process.argv))
+  .option('pod-path', {
+    default: '',
+    describe: 'Namespace used for the pod layout',
+    type: 'string',
+  })
   .option('root', {
     describe: 'Location of your Ember project',
     type: 'string',
@@ -28,6 +33,7 @@ const { argv } = yargs(hideBin(process.argv))
   });
 
 const options = {
+  podPath: argv['pod-path'],
   projectRoot: argv['root'] ?? process.cwd(),
   projectType: argv['type'],
   testRun: argv['test'],
