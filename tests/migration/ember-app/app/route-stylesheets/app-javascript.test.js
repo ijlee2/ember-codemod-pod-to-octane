@@ -11,9 +11,7 @@ test('migration | ember-app | app | route-stylesheets > JavaScript', function ()
 
   loadFixture(inputProject, options);
 
-  const migrationStrategy = migrationStrategyForRouteStylesheets(
-    options.projectRoot
-  );
+  const migrationStrategy = migrationStrategyForRouteStylesheets(options);
 
   assert.deepStrictEqual(migrationStrategy, [
     ['app/application/styles.css', 'app/styles/application.css'],

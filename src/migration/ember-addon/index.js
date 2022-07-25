@@ -5,13 +5,11 @@ import { migrationStrategyForAppFolder } from './app/index.js';
 import { migrationStrategyForTestsFolder } from './tests/index.js';
 
 export function migrateEmberAddon(options) {
-  const { projectRoot, testRun } = options;
+  const migrationStrategyAddon = migrationStrategyForAddonFolder(options);
+  const migrationStrategyApp = migrationStrategyForAppFolder(options);
+  const migrationStrategyTests = migrationStrategyForTestsFolder(options);
 
-  const migrationStrategyAddon = migrationStrategyForAddonFolder(projectRoot);
-  const migrationStrategyApp = migrationStrategyForAppFolder(projectRoot);
-  const migrationStrategyTests = migrationStrategyForTestsFolder(projectRoot);
-
-  if (testRun) {
+  if (options.testRun) {
     console.log({
       migrationStrategyAddon,
       migrationStrategyApp,
@@ -21,23 +19,9 @@ export function migrateEmberAddon(options) {
     return;
   }
 
-  moveFiles({
-    migrationStrategy: migrationStrategyAddon,
-    projectRoot,
-  });
+  moveFiles(migrationStrategyAddon, options);
+  moveFiles(migrationStrategyApp, options);
+  moveFiles(migrationStrategyTests, options);
 
-  moveFiles({
-    migrationStrategy: migrationStrategyApp,
-    projectRoot,
-  });
-
-  moveFiles({
-    migrationStrategy: migrationStrategyTests,
-    projectRoot,
-  });
-
-  updatePaths({
-    migrationStrategy: migrationStrategyApp,
-    projectRoot,
-  });
+  updatePaths(migrationStrategyApp, options);
 }

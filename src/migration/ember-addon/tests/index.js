@@ -1,5 +1,5 @@
 import { migrationStrategyForComponents } from './components.js';
 
-export function migrationStrategyForTestsFolder(projectRoot) {
-  return new Map([...migrationStrategyForComponents(projectRoot)]);
+export function migrationStrategyForTestsFolder(options) {
+  return new Map([...migrationStrategyForComponents(options)]);
 }

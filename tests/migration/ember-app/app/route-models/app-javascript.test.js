@@ -11,9 +11,7 @@ test('migration | ember-app | app | route-models > JavaScript', function () {
 
   loadFixture(inputProject, options);
 
-  const migrationStrategy = migrationStrategyForRouteModels(
-    options.projectRoot
-  );
+  const migrationStrategy = migrationStrategyForRouteModels(options);
 
   assert.deepStrictEqual(migrationStrategy, [
     ['app/product/model.js', 'app/models/product.js'],

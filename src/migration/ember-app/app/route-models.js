@@ -2,7 +2,9 @@ import glob from 'glob';
 
 import { mapPaths } from '../../../utils/map-paths.js';
 
-export function migrationStrategyForRouteModels(projectRoot) {
+export function migrationStrategyForRouteModels(options) {
+  const { projectRoot } = options;
+
   const oldPaths = glob.sync('app/**/model.{js,ts}', {
     cwd: projectRoot,
   });

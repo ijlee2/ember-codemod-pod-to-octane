@@ -2,7 +2,9 @@ import glob from 'glob';
 
 import { mapPaths } from '../../../utils/map-paths.js';
 
-export function migrationStrategyForRouteControllers(projectRoot) {
+export function migrationStrategyForRouteControllers(options) {
+  const { projectRoot } = options;
+
   const oldPaths = glob.sync('addon/**/controller.{js,ts}', {
     cwd: projectRoot,
   });

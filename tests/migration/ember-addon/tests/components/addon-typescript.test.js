@@ -11,7 +11,7 @@ test('migration | ember-addon | tests | components > TypeScript', function () {
 
   loadFixture(inputProject, options);
 
-  const migrationStrategy = migrationStrategyForComponents(options.projectRoot);
+  const migrationStrategy = migrationStrategyForComponents(options);
 
   assert.deepStrictEqual(migrationStrategy, [
     [

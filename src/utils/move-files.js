@@ -7,7 +7,9 @@ import {
 } from 'node:fs';
 import { dirname, join } from 'node:path';
 
-export function moveFiles({ migrationStrategy, projectRoot }) {
+export function moveFiles(migrationStrategy, options) {
+  const { projectRoot } = options;
+
   migrationStrategy.forEach((newPath, oldPath) => {
     const oldAbsolutePath = join(projectRoot, oldPath);
     const oldDirectory = dirname(oldAbsolutePath);

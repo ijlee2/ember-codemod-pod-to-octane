@@ -32,10 +32,7 @@ test('utils | move-files', function () {
     ],
   ]);
 
-  moveFiles({
-    migrationStrategy,
-    projectRoot: options.projectRoot,
-  });
+  moveFiles(migrationStrategy, options);
 
   assertFixture(
     {

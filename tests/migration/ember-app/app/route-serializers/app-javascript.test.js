@@ -11,9 +11,7 @@ test('migration | ember-app | app | route-serializers > JavaScript', function ()
 
   loadFixture(inputProject, options);
 
-  const migrationStrategy = migrationStrategyForRouteSerializers(
-    options.projectRoot
-  );
+  const migrationStrategy = migrationStrategyForRouteSerializers(options);
 
   assert.deepStrictEqual(migrationStrategy, [
     ['app/application/serializer.js', 'app/serializers/application.js'],

@@ -10,18 +10,18 @@ import { migrationStrategyForRouteStylesheets } from './route-stylesheets.js';
 import { migrationStrategyForRouteTemplates } from './route-templates.js';
 import { migrationStrategyForServices } from './services.js';
 
-export function migrationStrategyForAppFolder(projectRoot) {
+export function migrationStrategyForAppFolder(options) {
   return new Map([
-    ...migrationStrategyForComponentClasses(projectRoot),
-    ...migrationStrategyForComponentStylesheets(projectRoot),
-    ...migrationStrategyForComponentTemplates(projectRoot),
-    ...migrationStrategyForRouteAdapters(projectRoot),
-    ...migrationStrategyForRouteControllers(projectRoot),
-    ...migrationStrategyForRouteModels(projectRoot),
-    ...migrationStrategyForRouteRoutes(projectRoot),
-    ...migrationStrategyForRouteSerializers(projectRoot),
-    ...migrationStrategyForRouteStylesheets(projectRoot),
-    ...migrationStrategyForRouteTemplates(projectRoot),
-    ...migrationStrategyForServices(projectRoot),
+    ...migrationStrategyForComponentClasses(options),
+    ...migrationStrategyForComponentStylesheets(options),
+    ...migrationStrategyForComponentTemplates(options),
+    ...migrationStrategyForRouteAdapters(options),
+    ...migrationStrategyForRouteControllers(options),
+    ...migrationStrategyForRouteModels(options),
+    ...migrationStrategyForRouteRoutes(options),
+    ...migrationStrategyForRouteSerializers(options),
+    ...migrationStrategyForRouteStylesheets(options),
+    ...migrationStrategyForRouteTemplates(options),
+    ...migrationStrategyForServices(options),
   ]);
 }

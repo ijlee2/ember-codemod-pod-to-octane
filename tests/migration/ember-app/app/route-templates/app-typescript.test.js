@@ -11,9 +11,7 @@ test('migration | ember-app | app | route-templates > TypeScript', function () {
 
   loadFixture(inputProject, options);
 
-  const migrationStrategy = migrationStrategyForRouteTemplates(
-    options.projectRoot
-  );
+  const migrationStrategy = migrationStrategyForRouteTemplates(options);
 
   assert.deepStrictEqual(migrationStrategy, [
     ['app/application/template.hbs', 'app/templates/application.hbs'],

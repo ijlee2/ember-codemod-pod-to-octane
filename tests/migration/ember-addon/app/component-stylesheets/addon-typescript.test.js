@@ -11,9 +11,7 @@ test('migration | ember-addon | app | component-stylesheets > TypeScript', funct
 
   loadFixture(inputProject, options);
 
-  const migrationStrategy = migrationStrategyForComponentStylesheets(
-    options.projectRoot
-  );
+  const migrationStrategy = migrationStrategyForComponentStylesheets(options);
 
   assert.deepStrictEqual(migrationStrategy, [
     [

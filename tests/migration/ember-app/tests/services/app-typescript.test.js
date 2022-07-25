@@ -11,7 +11,7 @@ test('migration | ember-app | tests | services > TypeScript', function () {
 
   loadFixture(inputProject, options);
 
-  const migrationStrategy = migrationStrategyForServices(options.projectRoot);
+  const migrationStrategy = migrationStrategyForServices(options);
 
   assert.deepStrictEqual(migrationStrategy, [
     ['tests/unit/config/service-test.ts', 'tests/unit/services/config-test.ts'],

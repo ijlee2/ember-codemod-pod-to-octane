@@ -11,9 +11,7 @@ test('migration | ember-engine | tests | route-routes > TypeScript', function ()
 
   loadFixture(inputProject, options);
 
-  const migrationStrategy = migrationStrategyForRouteRoutes(
-    options.projectRoot
-  );
+  const migrationStrategy = migrationStrategyForRouteRoutes(options);
 
   assert.deepStrictEqual(migrationStrategy, [
     [

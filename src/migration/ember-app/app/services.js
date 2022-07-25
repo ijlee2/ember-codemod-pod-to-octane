@@ -2,7 +2,9 @@ import glob from 'glob';
 
 import { mapPaths } from '../../../utils/map-paths.js';
 
-export function migrationStrategyForServices(projectRoot) {
+export function migrationStrategyForServices(options) {
+  const { projectRoot } = options;
+
   const oldPaths = glob.sync('app/**/service.{js,ts}', {
     cwd: projectRoot,
   });

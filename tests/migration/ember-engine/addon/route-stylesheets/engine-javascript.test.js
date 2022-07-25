@@ -11,9 +11,7 @@ test('migration | ember-engine | addon | route-stylesheets > JavaScript', functi
 
   loadFixture(inputProject, options);
 
-  const migrationStrategy = migrationStrategyForRouteStylesheets(
-    options.projectRoot
-  );
+  const migrationStrategy = migrationStrategyForRouteStylesheets(options);
 
   assert.deepStrictEqual(migrationStrategy, [
     ['addon/product-details/styles.css', 'addon/styles/product-details.css'],

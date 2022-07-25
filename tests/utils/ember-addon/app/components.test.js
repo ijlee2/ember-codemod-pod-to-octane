@@ -34,15 +34,9 @@ test('utils | ember-addon | app | components', function () {
     ],
   ]);
 
-  moveFiles({
-    migrationStrategy,
-    projectRoot: options.projectRoot,
-  });
+  moveFiles(migrationStrategy, options);
 
-  updatePaths({
-    migrationStrategy,
-    projectRoot: options.projectRoot,
-  });
+  updatePaths(migrationStrategy, options);
 
   assertFixture(
     {

@@ -11,9 +11,7 @@ test('migration | ember-engine | addon | route-templates > TypeScript', function
 
   loadFixture(inputProject, options);
 
-  const migrationStrategy = migrationStrategyForRouteTemplates(
-    options.projectRoot
-  );
+  const migrationStrategy = migrationStrategyForRouteTemplates(options);
 
   assert.deepStrictEqual(migrationStrategy, [
     [

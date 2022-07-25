@@ -11,9 +11,7 @@ test('migration | ember-app | app | route-controllers > JavaScript', function ()
 
   loadFixture(inputProject, options);
 
-  const migrationStrategy = migrationStrategyForRouteControllers(
-    options.projectRoot
-  );
+  const migrationStrategy = migrationStrategyForRouteControllers(options);
 
   assert.deepStrictEqual(migrationStrategy, [
     ['app/form/controller.js', 'app/controllers/form.js'],

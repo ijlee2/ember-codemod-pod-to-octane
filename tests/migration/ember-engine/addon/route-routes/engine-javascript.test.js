@@ -11,9 +11,7 @@ test('migration | ember-engine | addon | route-routes > JavaScript', function ()
 
   loadFixture(inputProject, options);
 
-  const migrationStrategy = migrationStrategyForRouteRoutes(
-    options.projectRoot
-  );
+  const migrationStrategy = migrationStrategyForRouteRoutes(options);
 
   assert.deepStrictEqual(migrationStrategy, [
     ['addon/product-details/route.js', 'addon/routes/product-details.js'],

@@ -2,7 +2,9 @@ import glob from 'glob';
 
 import { mapPaths } from '../../../utils/map-paths.js';
 
-export function migrationStrategyForRouteStylesheets(projectRoot) {
+export function migrationStrategyForRouteStylesheets(options) {
+  const { projectRoot } = options;
+
   const oldPaths = glob.sync('addon/!(components)/**/styles.{css,scss}', {
     cwd: projectRoot,
   });

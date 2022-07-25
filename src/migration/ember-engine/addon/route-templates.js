@@ -2,7 +2,9 @@ import glob from 'glob';
 
 import { mapPaths } from '../../../utils/map-paths.js';
 
-export function migrationStrategyForRouteTemplates(projectRoot) {
+export function migrationStrategyForRouteTemplates(options) {
+  const { projectRoot } = options;
+
   const oldPaths = glob.sync('addon/!(components)/**/template.hbs', {
     cwd: projectRoot,
   });

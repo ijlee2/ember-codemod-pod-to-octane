@@ -3,12 +3,10 @@ import { migrationStrategyForAppFolder } from './app/index.js';
 import { migrationStrategyForTestsFolder } from './tests/index.js';
 
 export function migrateEmberApp(options) {
-  const { projectRoot, testRun } = options;
+  const migrationStrategyApp = migrationStrategyForAppFolder(options);
+  const migrationStrategyTests = migrationStrategyForTestsFolder(options);
 
-  const migrationStrategyApp = migrationStrategyForAppFolder(projectRoot);
-  const migrationStrategyTests = migrationStrategyForTestsFolder(projectRoot);
-
-  if (testRun) {
+  if (options.testRun) {
     console.log({
       migrationStrategyApp,
       migrationStrategyTests,
@@ -17,13 +15,6 @@ export function migrateEmberApp(options) {
     return;
   }
 
-  moveFiles({
-    migrationStrategy: migrationStrategyApp,
-    projectRoot,
-  });
-
-  moveFiles({
-    migrationStrategy: migrationStrategyTests,
-    projectRoot,
-  });
+  moveFiles(migrationStrategyApp, options);
+  moveFiles(migrationStrategyTests, options);
 }

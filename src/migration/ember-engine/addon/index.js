@@ -6,14 +6,14 @@ import { migrationStrategyForRouteRoutes } from './route-routes.js';
 import { migrationStrategyForRouteStylesheets } from './route-stylesheets.js';
 import { migrationStrategyForRouteTemplates } from './route-templates.js';
 
-export function migrationStrategyForAddonFolder(projectRoot) {
+export function migrationStrategyForAddonFolder(options) {
   return new Map([
-    ...migrationStrategyForComponentClasses(projectRoot),
-    ...migrationStrategyForComponentStylesheets(projectRoot),
-    ...migrationStrategyForComponentTemplates(projectRoot),
-    ...migrationStrategyForRouteControllers(projectRoot),
-    ...migrationStrategyForRouteRoutes(projectRoot),
-    ...migrationStrategyForRouteStylesheets(projectRoot),
-    ...migrationStrategyForRouteTemplates(projectRoot),
+    ...migrationStrategyForComponentClasses(options),
+    ...migrationStrategyForComponentStylesheets(options),
+    ...migrationStrategyForComponentTemplates(options),
+    ...migrationStrategyForRouteControllers(options),
+    ...migrationStrategyForRouteRoutes(options),
+    ...migrationStrategyForRouteStylesheets(options),
+    ...migrationStrategyForRouteTemplates(options),
   ]);
 }

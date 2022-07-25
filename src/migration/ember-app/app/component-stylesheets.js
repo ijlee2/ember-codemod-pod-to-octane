@@ -2,7 +2,9 @@ import glob from 'glob';
 
 import { mapPaths } from '../../../utils/map-paths.js';
 
-export function migrationStrategyForComponentStylesheets(projectRoot) {
+export function migrationStrategyForComponentStylesheets(options) {
+  const { projectRoot } = options;
+
   const oldPaths = glob.sync('app/components/**/styles.{css,scss}', {
     cwd: projectRoot,
   });

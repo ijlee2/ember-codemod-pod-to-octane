@@ -2,7 +2,9 @@ import glob from 'glob';
 
 import { mapPaths } from '../../../utils/map-paths.js';
 
-export function migrationStrategyForRouteSerializers(projectRoot) {
+export function migrationStrategyForRouteSerializers(options) {
+  const { projectRoot } = options;
+
   const oldPaths = glob.sync('app/**/serializer.{js,ts}', {
     cwd: projectRoot,
   });

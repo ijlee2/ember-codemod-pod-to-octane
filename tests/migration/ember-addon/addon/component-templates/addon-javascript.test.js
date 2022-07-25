@@ -11,9 +11,7 @@ test('migration | ember-addon | addon | component-templates > JavaScript', funct
 
   loadFixture(inputProject, options);
 
-  const migrationStrategy = migrationStrategyForComponentTemplates(
-    options.projectRoot
-  );
+  const migrationStrategy = migrationStrategyForComponentTemplates(options);
 
   assert.deepStrictEqual(migrationStrategy, [
     [
