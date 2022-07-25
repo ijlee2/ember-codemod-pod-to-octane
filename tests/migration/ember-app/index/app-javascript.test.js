@@ -5,23 +5,21 @@ import {
 } from '../../../fixtures/app-javascript.js';
 import { assertFixture, loadFixture, test } from '../../../test-helpers.js';
 
-const projectRoot = 'tmp/app-javascript';
-
 test('migration | ember-app | index > JavaScript', function () {
-  loadFixture(projectRoot, inputProject);
-
-  migrateEmberApp({
-    projectRoot,
+  const options = {
+    podPath: '',
+    projectRoot: 'tmp/app-javascript',
     testRun: false,
-  });
+  };
 
-  assertFixture(projectRoot, outputProject);
+  loadFixture(inputProject, options);
+
+  migrateEmberApp(options);
+
+  assertFixture(outputProject, options);
 
   // Check idempotence
-  migrateEmberApp({
-    projectRoot,
-    testRun: false,
-  });
+  migrateEmberApp(options);
 
-  assertFixture(projectRoot, outputProject);
+  assertFixture(outputProject, options);
 });

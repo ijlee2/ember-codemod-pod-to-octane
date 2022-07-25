@@ -2,12 +2,18 @@ import { migrationStrategyForComponents } from '../../../../../src/migration/emb
 import { inputProject } from '../../../../fixtures/app-javascript.js';
 import { assert, loadFixture, test } from '../../../../test-helpers.js';
 
-const projectRoot = 'tmp/app-javascript';
-
 test('migration | ember-app | tests | components > JavaScript', function () {
-  loadFixture(projectRoot, inputProject);
+  const options = {
+    podPath: '',
+    projectRoot: 'tmp/app-javascript',
+    testRun: false,
+  };
 
-  assert.deepStrictEqual(migrationStrategyForComponents(projectRoot), [
+  loadFixture(inputProject, options);
+
+  const migrationStrategy = migrationStrategyForComponents(options);
+
+  assert.deepStrictEqual(migrationStrategy, [
     [
       'tests/integration/components/navigation-menu/component-test.js',
       'tests/integration/components/navigation-menu-test.js',

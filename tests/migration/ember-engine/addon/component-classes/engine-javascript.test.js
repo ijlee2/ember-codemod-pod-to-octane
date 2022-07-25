@@ -2,12 +2,18 @@ import { migrationStrategyForComponentClasses } from '../../../../../src/migrati
 import { inputProject } from '../../../../fixtures/engine-javascript.js';
 import { assert, loadFixture, test } from '../../../../test-helpers.js';
 
-const projectRoot = 'tmp/engine-javascript';
-
 test('migration | ember-engine | addon | component-classes > JavaScript', function () {
-  loadFixture(projectRoot, inputProject);
+  const options = {
+    podPath: '',
+    projectRoot: 'tmp/engine-javascript',
+    testRun: false,
+  };
 
-  assert.deepStrictEqual(migrationStrategyForComponentClasses(projectRoot), [
+  loadFixture(inputProject, options);
+
+  const migrationStrategy = migrationStrategyForComponentClasses(options);
+
+  assert.deepStrictEqual(migrationStrategy, [
     [
       'addon/components/product/details/component.js',
       'addon/components/product/details.js',

@@ -3,12 +3,10 @@ import { migrationStrategyForAddonFolder } from './addon/index.js';
 import { migrationStrategyForTestsFolder } from './tests/index.js';
 
 export function migrateEmberEngine(options) {
-  const { projectRoot, testRun } = options;
+  const migrationStrategyAddon = migrationStrategyForAddonFolder(options);
+  const migrationStrategyTests = migrationStrategyForTestsFolder(options);
 
-  const migrationStrategyAddon = migrationStrategyForAddonFolder(projectRoot);
-  const migrationStrategyTests = migrationStrategyForTestsFolder(projectRoot);
-
-  if (testRun) {
+  if (options.testRun) {
     console.log({
       migrationStrategyAddon,
       migrationStrategyTests,
@@ -17,13 +15,6 @@ export function migrateEmberEngine(options) {
     return;
   }
 
-  moveFiles({
-    migrationStrategy: migrationStrategyAddon,
-    projectRoot,
-  });
-
-  moveFiles({
-    migrationStrategy: migrationStrategyTests,
-    projectRoot,
-  });
+  moveFiles(migrationStrategyAddon, options);
+  moveFiles(migrationStrategyTests, options);
 }

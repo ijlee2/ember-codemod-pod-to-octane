@@ -2,12 +2,18 @@ import { migrationStrategyForRouteStylesheets } from '../../../../../src/migrati
 import { inputProject } from '../../../../fixtures/engine-typescript.js';
 import { assert, loadFixture, test } from '../../../../test-helpers.js';
 
-const projectRoot = 'tmp/engine-typescript';
-
 test('migration | ember-engine | addon | route-stylesheets > TypeScript', function () {
-  loadFixture(projectRoot, inputProject);
+  const options = {
+    podPath: '',
+    projectRoot: 'tmp/engine-typescript',
+    testRun: false,
+  };
 
-  assert.deepStrictEqual(migrationStrategyForRouteStylesheets(projectRoot), [
+  loadFixture(inputProject, options);
+
+  const migrationStrategy = migrationStrategyForRouteStylesheets(options);
+
+  assert.deepStrictEqual(migrationStrategy, [
     ['addon/product-details/styles.css', 'addon/styles/product-details.css'],
     [
       'addon/products/product/styles.scss',

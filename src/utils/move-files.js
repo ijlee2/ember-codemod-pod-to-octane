@@ -7,10 +7,28 @@ import {
 } from 'node:fs';
 import { dirname, join } from 'node:path';
 
-export function moveFiles({ migrationStrategy, projectRoot }) {
+function removeDirectoryIfEmpty({ oldPath, projectRoot }) {
+  const directories = dirname(oldPath).split('/');
+  const depth = directories.length;
+
+  for (let i = 0; i < depth; i++) {
+    const directory = join(projectRoot, ...directories);
+    const numFilesLeft = readdirSync(directory).length;
+
+    if (numFilesLeft > 0) {
+      continue;
+    }
+
+    rmSync(directory, { recursive: true });
+    directories.pop();
+  }
+}
+
+export function moveFiles(migrationStrategy, options) {
+  const { projectRoot } = options;
+
   migrationStrategy.forEach((newPath, oldPath) => {
     const oldAbsolutePath = join(projectRoot, oldPath);
-    const oldDirectory = dirname(oldAbsolutePath);
 
     const newAbsolutePath = join(projectRoot, newPath);
     const newDirectory = dirname(newAbsolutePath);
@@ -21,12 +39,6 @@ export function moveFiles({ migrationStrategy, projectRoot }) {
     }
 
     renameSync(oldAbsolutePath, newAbsolutePath);
-
-    // Clean up directory
-    const numFilesLeft = readdirSync(oldDirectory).length;
-
-    if (numFilesLeft === 0) {
-      rmSync(oldDirectory, { recursive: true });
-    }
+    removeDirectoryIfEmpty({ oldPath, projectRoot });
   });
 }

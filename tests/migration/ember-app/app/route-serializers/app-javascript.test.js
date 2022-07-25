@@ -2,12 +2,18 @@ import { migrationStrategyForRouteSerializers } from '../../../../../src/migrati
 import { inputProject } from '../../../../fixtures/app-javascript.js';
 import { assert, loadFixture, test } from '../../../../test-helpers.js';
 
-const projectRoot = 'tmp/app-javascript';
-
 test('migration | ember-app | app | route-serializers > JavaScript', function () {
-  loadFixture(projectRoot, inputProject);
+  const options = {
+    podPath: '',
+    projectRoot: 'tmp/app-javascript',
+    testRun: false,
+  };
 
-  assert.deepStrictEqual(migrationStrategyForRouteSerializers(projectRoot), [
+  loadFixture(inputProject, options);
+
+  const migrationStrategy = migrationStrategyForRouteSerializers(options);
+
+  assert.deepStrictEqual(migrationStrategy, [
     ['app/application/serializer.js', 'app/serializers/application.js'],
   ]);
 });

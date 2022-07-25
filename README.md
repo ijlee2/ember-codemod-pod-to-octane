@@ -54,6 +54,19 @@ npx ember-codemod-pod-to-octane --root=<your/project/path>
 </details>
 
 
+<details>
+<summary>Optional: Specify the pod path</summary>
+
+Pass `--pod-path` if `podModulePrefix` is set in `config/environment.js` and has a different value than `modulePrefix`. "Subtract" `modulePrefix` from `podModulePrefix` to get the pod path.
+
+```sh
+# If modulePrefix is 'my-app' and podModulePrefix is 'my-app/pods'
+npx ember-codemod-pod-to-octane --pod-path=pods
+```
+
+</details>
+
+
 ### Limitations
 
 The codemod is designed to cover typical uses of an Ember app, addon, and engine. It is not designed to cover one-off cases.

@@ -1,13 +1,22 @@
 import glob from 'glob';
+import { join } from 'node:path';
 
 import { mapPaths } from '../../../utils/map-paths.js';
 
-export function migrationStrategyForRouteControllers(projectRoot) {
+export function migrationStrategyForRouteControllers(options) {
+  const { podPath, projectRoot } = options;
+
   /*
     Case 1: Didn't pass the --pod flag, but configured { usePods: true } in .ember-cli
   */
   const oldPaths1 = glob.sync(
-    'tests/unit/!(controllers)/**/controller-test.{js,ts}',
+    join(
+      'tests/unit',
+      podPath,
+      '!(controllers)',
+      '**',
+      'controller-test.{js,ts}'
+    ),
     {
       cwd: projectRoot,
     }
@@ -17,7 +26,7 @@ export function migrationStrategyForRouteControllers(projectRoot) {
     if (oldPath.endsWith('.ts')) {
       return mapPaths(oldPath, {
         find: {
-          directory: 'tests/unit',
+          directory: join('tests/unit', podPath),
           file: 'controller-test.ts',
         },
         replace(key) {
@@ -28,7 +37,7 @@ export function migrationStrategyForRouteControllers(projectRoot) {
 
     return mapPaths(oldPath, {
       find: {
-        directory: 'tests/unit',
+        directory: join('tests/unit', podPath),
         file: 'controller-test.js',
       },
       replace(key) {
@@ -41,7 +50,7 @@ export function migrationStrategyForRouteControllers(projectRoot) {
     Case 2: Passed the --pod flag to Ember CLI
   */
   const oldPaths2 = glob.sync(
-    'tests/unit/controllers/**/controller-test.{js,ts}',
+    join('tests/unit', podPath, 'controllers/**/controller-test.{js,ts}'),
     {
       cwd: projectRoot,
     }
@@ -51,7 +60,7 @@ export function migrationStrategyForRouteControllers(projectRoot) {
     if (oldPath.endsWith('.ts')) {
       return mapPaths(oldPath, {
         find: {
-          directory: 'tests/unit/controllers',
+          directory: join('tests/unit', podPath, 'controllers'),
           file: 'controller-test.ts',
         },
         replace(key) {
@@ -62,7 +71,7 @@ export function migrationStrategyForRouteControllers(projectRoot) {
 
     return mapPaths(oldPath, {
       find: {
-        directory: 'tests/unit/controllers',
+        directory: join('tests/unit', podPath, 'controllers'),
         file: 'controller-test.js',
       },
       replace(key) {

@@ -1,9 +1,12 @@
 import glob from 'glob';
+import { join } from 'node:path';
 
 import { mapPaths } from '../../../utils/map-paths.js';
 
-export function migrationStrategyForServices(projectRoot) {
-  const oldPaths = glob.sync('app/**/service.{js,ts}', {
+export function migrationStrategyForServices(options) {
+  const { podPath, projectRoot } = options;
+
+  const oldPaths = glob.sync(join('app', podPath, '**', 'service.{js,ts}'), {
     cwd: projectRoot,
   });
 
@@ -11,7 +14,7 @@ export function migrationStrategyForServices(projectRoot) {
     if (oldPath.endsWith('.ts')) {
       return mapPaths(oldPath, {
         find: {
-          directory: 'app',
+          directory: join('app', podPath),
           file: 'service.ts',
         },
         replace(key) {
@@ -22,7 +25,7 @@ export function migrationStrategyForServices(projectRoot) {
 
     return mapPaths(oldPath, {
       find: {
-        directory: 'app',
+        directory: join('app', podPath),
         file: 'service.js',
       },
       replace(key) {

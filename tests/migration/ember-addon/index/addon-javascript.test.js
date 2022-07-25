@@ -5,23 +5,21 @@ import {
 } from '../../../fixtures/addon-javascript.js';
 import { assertFixture, loadFixture, test } from '../../../test-helpers.js';
 
-const projectRoot = 'tmp/addon-javascript';
-
 test('migration | ember-addon | index > JavaScript', function () {
-  loadFixture(projectRoot, inputProject);
-
-  migrateEmberAddon({
-    projectRoot,
+  const options = {
+    podPath: '',
+    projectRoot: 'tmp/addon-javascript',
     testRun: false,
-  });
+  };
 
-  assertFixture(projectRoot, outputProject);
+  loadFixture(inputProject, options);
+
+  migrateEmberAddon(options);
+
+  assertFixture(outputProject, options);
 
   // Check idempotence
-  migrateEmberAddon({
-    projectRoot,
-    testRun: false,
-  });
+  migrateEmberAddon(options);
 
-  assertFixture(projectRoot, outputProject);
+  assertFixture(outputProject, options);
 });

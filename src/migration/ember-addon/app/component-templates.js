@@ -2,7 +2,9 @@ import glob from 'glob';
 
 import { mapPaths } from '../../../utils/map-paths.js';
 
-export function migrationStrategyForComponentTemplates(projectRoot) {
+export function migrationStrategyForComponentTemplates(options) {
+  const { projectRoot } = options;
+
   const oldPaths = glob.sync('app/components/**/template.js', {
     cwd: projectRoot,
   });

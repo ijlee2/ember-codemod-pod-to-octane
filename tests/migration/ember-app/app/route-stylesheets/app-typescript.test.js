@@ -2,12 +2,18 @@ import { migrationStrategyForRouteStylesheets } from '../../../../../src/migrati
 import { inputProject } from '../../../../fixtures/app-typescript.js';
 import { assert, loadFixture, test } from '../../../../test-helpers.js';
 
-const projectRoot = 'tmp/app-typescript';
-
 test('migration | ember-app | app | route-stylesheets > TypeScript', function () {
-  loadFixture(projectRoot, inputProject);
+  const options = {
+    podPath: '',
+    projectRoot: 'tmp/app-typescript',
+    testRun: false,
+  };
 
-  assert.deepStrictEqual(migrationStrategyForRouteStylesheets(projectRoot), [
+  loadFixture(inputProject, options);
+
+  const migrationStrategy = migrationStrategyForRouteStylesheets(options);
+
+  assert.deepStrictEqual(migrationStrategy, [
     ['app/application/styles.css', 'app/styles/application.css'],
     ['app/form/styles.css', 'app/styles/form.css'],
     ['app/index/styles.css', 'app/styles/index.css'],

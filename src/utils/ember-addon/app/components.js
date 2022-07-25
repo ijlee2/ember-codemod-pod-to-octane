@@ -1,7 +1,9 @@
 import { readFileSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
 
-export function updatePaths({ migrationStrategy, projectRoot }) {
+export function updatePaths(migrationStrategy, options) {
+  const { projectRoot } = options;
+
   migrationStrategy.forEach((newPath, oldPath) => {
     // Read file
     const newAbsolutePath = join(projectRoot, newPath);

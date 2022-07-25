@@ -1,20 +1,26 @@
 import glob from 'glob';
+import { join } from 'node:path';
 
 import { mapPaths } from '../../../utils/map-paths.js';
 
-export function migrationStrategyForRouteRoutes(projectRoot) {
+export function migrationStrategyForRouteRoutes(options) {
+  const { podPath, projectRoot } = options;
+
   /*
     Case 1: Didn't pass the --pod flag, but configured { usePods: true } in .ember-cli
   */
-  const oldPaths1 = glob.sync('tests/unit/!(routes)/**/route-test.{js,ts}', {
-    cwd: projectRoot,
-  });
+  const oldPaths1 = glob.sync(
+    join('tests/unit', podPath, '!(routes)', '**', 'route-test.{js,ts}'),
+    {
+      cwd: projectRoot,
+    }
+  );
 
   const newPaths1 = oldPaths1.map((oldPath) => {
     if (oldPath.endsWith('.ts')) {
       return mapPaths(oldPath, {
         find: {
-          directory: 'tests/unit',
+          directory: join('tests/unit', podPath),
           file: 'route-test.ts',
         },
         replace(key) {
@@ -25,7 +31,7 @@ export function migrationStrategyForRouteRoutes(projectRoot) {
 
     return mapPaths(oldPath, {
       find: {
-        directory: 'tests/unit',
+        directory: join('tests/unit', podPath),
         file: 'route-test.js',
       },
       replace(key) {
@@ -37,15 +43,18 @@ export function migrationStrategyForRouteRoutes(projectRoot) {
   /*
     Case 2: Passed the --pod flag to Ember CLI
   */
-  const oldPaths2 = glob.sync('tests/unit/routes/**/route-test.{js,ts}', {
-    cwd: projectRoot,
-  });
+  const oldPaths2 = glob.sync(
+    join('tests/unit', podPath, 'routes/**/route-test.{js,ts}'),
+    {
+      cwd: projectRoot,
+    }
+  );
 
   const newPaths2 = oldPaths2.map((oldPath) => {
     if (oldPath.endsWith('.ts')) {
       return mapPaths(oldPath, {
         find: {
-          directory: 'tests/unit/routes',
+          directory: join('tests/unit', podPath, 'routes'),
           file: 'route-test.ts',
         },
         replace(key) {
@@ -56,7 +65,7 @@ export function migrationStrategyForRouteRoutes(projectRoot) {
 
     return mapPaths(oldPath, {
       find: {
-        directory: 'tests/unit/routes',
+        directory: join('tests/unit', podPath, 'routes'),
         file: 'route-test.js',
       },
       replace(key) {

@@ -2,12 +2,18 @@ import { migrationStrategyForComponentTemplates } from '../../../../../src/migra
 import { inputProject } from '../../../../fixtures/addon-typescript.js';
 import { assert, loadFixture, test } from '../../../../test-helpers.js';
 
-const projectRoot = 'tmp/addon-typescript';
-
 test('migration | ember-addon | app | component-templates > TypeScript', function () {
-  loadFixture(projectRoot, inputProject);
+  const options = {
+    podPath: '',
+    projectRoot: 'tmp/addon-typescript',
+    testRun: false,
+  };
 
-  assert.deepStrictEqual(migrationStrategyForComponentTemplates(projectRoot), [
+  loadFixture(inputProject, options);
+
+  const migrationStrategy = migrationStrategyForComponentTemplates(options);
+
+  assert.deepStrictEqual(migrationStrategy, [
     [
       'app/components/ui/form/checkbox/template.js',
       'app/components/ui/form/checkbox.js',

@@ -3,11 +3,11 @@ import { migrationStrategyForRouteControllers } from './route-controllers.js';
 import { migrationStrategyForRouteRoutes } from './route-routes.js';
 import { migrationStrategyForServices } from './services.js';
 
-export function migrationStrategyForTestsFolder(projectRoot) {
+export function migrationStrategyForTestsFolder(options) {
   return new Map([
-    ...migrationStrategyForComponents(projectRoot),
-    ...migrationStrategyForRouteControllers(projectRoot),
-    ...migrationStrategyForRouteRoutes(projectRoot),
-    ...migrationStrategyForServices(projectRoot),
+    ...migrationStrategyForComponents(options),
+    ...migrationStrategyForRouteControllers(options),
+    ...migrationStrategyForRouteRoutes(options),
+    ...migrationStrategyForServices(options),
   ]);
 }

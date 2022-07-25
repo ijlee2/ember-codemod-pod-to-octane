@@ -2,12 +2,18 @@ import { migrationStrategyForRouteControllers } from '../../../../../src/migrati
 import { inputProject } from '../../../../fixtures/engine-typescript.js';
 import { assert, loadFixture, test } from '../../../../test-helpers.js';
 
-const projectRoot = 'tmp/engine-typescript';
-
 test('migration | ember-engine | addon | route-controllers > TypeScript', function () {
-  loadFixture(projectRoot, inputProject);
+  const options = {
+    podPath: '',
+    projectRoot: 'tmp/engine-typescript',
+    testRun: false,
+  };
 
-  assert.deepStrictEqual(migrationStrategyForRouteControllers(projectRoot), [
+  loadFixture(inputProject, options);
+
+  const migrationStrategy = migrationStrategyForRouteControllers(options);
+
+  assert.deepStrictEqual(migrationStrategy, [
     ['addon/products/controller.ts', 'addon/controllers/products.ts'],
   ]);
 });

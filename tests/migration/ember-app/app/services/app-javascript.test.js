@@ -2,12 +2,18 @@ import { migrationStrategyForServices } from '../../../../../src/migration/ember
 import { inputProject } from '../../../../fixtures/app-javascript.js';
 import { assert, loadFixture, test } from '../../../../test-helpers.js';
 
-const projectRoot = 'tmp/app-javascript';
-
 test('migration | ember-app | app | services > JavaScript', function () {
-  loadFixture(projectRoot, inputProject);
+  const options = {
+    podPath: '',
+    projectRoot: 'tmp/app-javascript',
+    testRun: false,
+  };
 
-  assert.deepStrictEqual(migrationStrategyForServices(projectRoot), [
+  loadFixture(inputProject, options);
+
+  const migrationStrategy = migrationStrategyForServices(options);
+
+  assert.deepStrictEqual(migrationStrategy, [
     ['app/config/service.js', 'app/services/config.js'],
     ['app/experiments/service.js', 'app/services/experiments.js'],
   ]);

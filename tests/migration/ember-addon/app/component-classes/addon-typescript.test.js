@@ -2,12 +2,18 @@ import { migrationStrategyForComponentClasses } from '../../../../../src/migrati
 import { inputProject } from '../../../../fixtures/addon-typescript.js';
 import { assert, loadFixture, test } from '../../../../test-helpers.js';
 
-const projectRoot = 'tmp/addon-typescript';
-
 test('migration | ember-addon | app | component-classes > TypeScript', function () {
-  loadFixture(projectRoot, inputProject);
+  const options = {
+    podPath: '',
+    projectRoot: 'tmp/addon-typescript',
+    testRun: false,
+  };
 
-  assert.deepStrictEqual(migrationStrategyForComponentClasses(projectRoot), [
+  loadFixture(inputProject, options);
+
+  const migrationStrategy = migrationStrategyForComponentClasses(options);
+
+  assert.deepStrictEqual(migrationStrategy, [
     [
       'app/components/ui/form/checkbox/component.js',
       'app/components/ui/form/checkbox.js',

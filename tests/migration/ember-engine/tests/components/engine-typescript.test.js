@@ -2,12 +2,18 @@ import { migrationStrategyForComponents } from '../../../../../src/migration/emb
 import { inputProject } from '../../../../fixtures/engine-typescript.js';
 import { assert, loadFixture, test } from '../../../../test-helpers.js';
 
-const projectRoot = 'tmp/engine-typescript';
-
 test('migration | ember-engine | tests | components > TypeScript', function () {
-  loadFixture(projectRoot, inputProject);
+  const options = {
+    podPath: '',
+    projectRoot: 'tmp/engine-typescript',
+    testRun: false,
+  };
 
-  assert.deepStrictEqual(migrationStrategyForComponents(projectRoot), [
+  loadFixture(inputProject, options);
+
+  const migrationStrategy = migrationStrategyForComponents(options);
+
+  assert.deepStrictEqual(migrationStrategy, [
     [
       'tests/integration/components/product/card/component-test.ts',
       'tests/integration/components/product/card-test.ts',

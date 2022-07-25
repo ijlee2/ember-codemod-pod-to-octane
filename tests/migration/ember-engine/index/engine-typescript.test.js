@@ -5,23 +5,21 @@ import {
 } from '../../../fixtures/engine-typescript.js';
 import { assertFixture, loadFixture, test } from '../../../test-helpers.js';
 
-const projectRoot = 'tmp/engine-typescript';
-
 test('migration | ember-engine | index > TypeScript', function () {
-  loadFixture(projectRoot, inputProject);
-
-  migrateEmberEngine({
-    projectRoot,
+  const options = {
+    podPath: '',
+    projectRoot: 'tmp/engine-typescript',
     testRun: false,
-  });
+  };
 
-  assertFixture(projectRoot, outputProject);
+  loadFixture(inputProject, options);
+
+  migrateEmberEngine(options);
+
+  assertFixture(outputProject, options);
 
   // Check idempotence
-  migrateEmberEngine({
-    projectRoot,
-    testRun: false,
-  });
+  migrateEmberEngine(options);
 
-  assertFixture(projectRoot, outputProject);
+  assertFixture(outputProject, options);
 });

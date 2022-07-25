@@ -1,9 +1,12 @@
 import glob from 'glob';
+import { join } from 'node:path';
 
 import { mapPaths } from '../../../utils/map-paths.js';
 
-export function migrationStrategyForRouteSerializers(projectRoot) {
-  const oldPaths = glob.sync('app/**/serializer.{js,ts}', {
+export function migrationStrategyForRouteSerializers(options) {
+  const { podPath, projectRoot } = options;
+
+  const oldPaths = glob.sync(join('app', podPath, '**', 'serializer.{js,ts}'), {
     cwd: projectRoot,
   });
 
@@ -11,7 +14,7 @@ export function migrationStrategyForRouteSerializers(projectRoot) {
     if (oldPath.endsWith('.ts')) {
       return mapPaths(oldPath, {
         find: {
-          directory: 'app',
+          directory: join('app', podPath),
           file: 'serializer.ts',
         },
         replace(key) {
@@ -22,7 +25,7 @@ export function migrationStrategyForRouteSerializers(projectRoot) {
 
     return mapPaths(oldPath, {
       find: {
-        directory: 'app',
+        directory: join('app', podPath),
         file: 'serializer.js',
       },
       replace(key) {
