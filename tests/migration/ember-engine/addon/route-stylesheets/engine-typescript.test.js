@@ -9,7 +9,10 @@ test('migration | ember-engine | addon | route-stylesheets > TypeScript', functi
 
   assert.deepStrictEqual(migrationStrategyForRouteStylesheets(projectRoot), [
     ['addon/product-details/styles.css', 'addon/styles/product-details.css'],
-    ['addon/products/product/styles.css', 'addon/styles/products/product.css'],
-    ['addon/products/styles.css', 'addon/styles/products.css'],
+    [
+      'addon/products/product/styles.scss',
+      'addon/styles/products/product.scss',
+    ],
+    ['addon/products/styles.scss', 'addon/styles/products.scss'],
   ]);
 });

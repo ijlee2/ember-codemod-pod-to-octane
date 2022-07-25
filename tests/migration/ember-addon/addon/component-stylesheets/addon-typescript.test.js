@@ -39,7 +39,7 @@ test('migration | ember-addon | addon | component-stylesheets > TypeScript', fun
         'addon/components/ui/form/textarea/styles.css',
         'addon/components/ui/form/textarea.css',
       ],
-      ['addon/components/ui/page/styles.css', 'addon/components/ui/page.css'],
+      ['addon/components/ui/page/styles.scss', 'addon/components/ui/page.scss'],
     ]
   );
 });
