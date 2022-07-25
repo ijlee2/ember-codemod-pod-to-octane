@@ -9,23 +9,35 @@ test('utils | ember-addon | app | components', function () {
     testRun: false,
   };
 
-  loadFixture(
-    {
-      app: {
-        components: {
-          ui: {
-            form: {
-              checkbox: {
-                'component.js':
-                  "export { default } from 'addon-javascript/components/ui/form/checkbox/component';\n",
-              },
+  const inputProject = {
+    app: {
+      components: {
+        ui: {
+          form: {
+            checkbox: {
+              'component.js':
+                "export { default } from 'addon-javascript/components/ui/form/checkbox/component';\n",
             },
           },
         },
       },
     },
-    options
-  );
+  };
+
+  const outputProject = {
+    app: {
+      components: {
+        ui: {
+          form: {
+            'checkbox.js':
+              "export { default } from 'addon-javascript/components/ui/form/checkbox';\n",
+          },
+        },
+      },
+    },
+  };
+
+  loadFixture(inputProject, options);
 
   const migrationStrategy = new Map([
     [
@@ -38,19 +50,5 @@ test('utils | ember-addon | app | components', function () {
 
   updatePaths(migrationStrategy, options);
 
-  assertFixture(
-    {
-      app: {
-        components: {
-          ui: {
-            form: {
-              'checkbox.js':
-                "export { default } from 'addon-javascript/components/ui/form/checkbox';\n",
-            },
-          },
-        },
-      },
-    },
-    options
-  );
+  assertFixture(outputProject, options);
 });

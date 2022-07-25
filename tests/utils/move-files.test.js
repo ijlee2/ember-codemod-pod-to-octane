@@ -8,22 +8,33 @@ test('utils | move-files', function () {
     testRun: false,
   };
 
-  loadFixture(
-    {
-      addon: {
-        components: {
-          ui: {
-            form: {
-              checkbox: {
-                'component.js': '',
-              },
+  const inputProject = {
+    addon: {
+      components: {
+        ui: {
+          form: {
+            checkbox: {
+              'component.js': '',
             },
           },
         },
       },
     },
-    options
-  );
+  };
+
+  const outputProject = {
+    addon: {
+      components: {
+        ui: {
+          form: {
+            'checkbox.js': '',
+          },
+        },
+      },
+    },
+  };
+
+  loadFixture(inputProject, options);
 
   const migrationStrategy = new Map([
     [
@@ -34,18 +45,5 @@ test('utils | move-files', function () {
 
   moveFiles(migrationStrategy, options);
 
-  assertFixture(
-    {
-      addon: {
-        components: {
-          ui: {
-            form: {
-              'checkbox.js': '',
-            },
-          },
-        },
-      },
-    },
-    options
-  );
+  assertFixture(outputProject, options);
 });
