@@ -1,6 +1,6 @@
 {
   "name": "ember-codemod-pod-to-octane",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "Codemod to un-pod Ember apps, addons, and engines",
   "keywords": [
     "ember-codemod",
