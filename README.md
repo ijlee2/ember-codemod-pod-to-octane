@@ -16,7 +16,7 @@ npx ember-codemod-pod-to-octane <arguments>
 
 Step 2. Remove `podModulePrefix` from `config/environment.js` and `usePods` from `.ember-cli`.
 
-Step 3. Update relative paths in `import` statements.
+Step 3. Update references to the moved files (e.g. `import` statement, `composes` property from `ember-css-modules`).
 
 
 ### Arguments
@@ -45,10 +45,17 @@ npx ember-codemod-pod-to-octane --test
 <details>
 <summary>Optional: Specify the project root</summary>
 
-Pass `--root` to run the codemod against (1) a project somewhere else or (2) multiple projects (assuming you have an automation script).
+Pass `--root` to run the codemod against a project somewhere else.
 
 ```sh
 npx ember-codemod-pod-to-octane --root=<your/project/path>
+```
+
+Note, you can use `--root` to un-pod the demo app of an Ember addon.
+
+```sh
+# If the current directory is the addon root
+npx ember-codemod-pod-to-octane --root=tests/dummy/app --type=app
 ```
 
 </details>
@@ -57,7 +64,7 @@ npx ember-codemod-pod-to-octane --root=<your/project/path>
 <details>
 <summary>Optional: Specify the pod path</summary>
 
-Pass `--pod-path` if `podModulePrefix` is set in `config/environment.js` and has a different value than `modulePrefix`. "Subtract" `modulePrefix` from `podModulePrefix` to get the pod path.
+Pass `--pod-path` if `podModulePrefix` has been set in `config/environment.js`. "Subtract" `modulePrefix` from `podModulePrefix` to get the pod path.
 
 ```sh
 # If modulePrefix is 'my-app' and podModulePrefix is 'my-app/pods'
