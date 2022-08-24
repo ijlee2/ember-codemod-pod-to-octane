@@ -41,14 +41,14 @@
     }
   },
   "dependencies": {
-    "@babel/core": "^7.18.9",
+    "@babel/core": "^7.18.13",
     "@babel/eslint-parser": "^7.18.9",
     "glob": "^8.0.3",
     "yargs": "^17.5.1"
   },
   "devDependencies": {
     "@sondr3/minitest": "^0.1.1",
-    "eslint": "^8.20.0",
+    "eslint": "^8.22.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-simple-import-sort": "^7.0.0",
