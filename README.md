@@ -16,7 +16,7 @@ npx ember-codemod-pod-to-octane <arguments>
 
 Step 2. Remove `podModulePrefix` from `config/environment.js` and `usePods` from `.ember-cli`.
 
-Step 3. Update references to the moved files (e.g. `import` statement, `composes` property from `ember-css-modules`).
+Step 3. Update references originating from, as well as pointing to, the moved files. These can include `import` statement, `composes` property from `ember-css-modules`, etc.
 
 
 ### Arguments
@@ -55,7 +55,7 @@ Note, you can use `--root` to un-pod the demo app of an Ember addon.
 
 ```sh
 # If the current directory is the addon root
-npx ember-codemod-pod-to-octane --root=tests/dummy/app --type=app
+npx ember-codemod-pod-to-octane --type=app --root=tests/dummy
 ```
 
 </details>
