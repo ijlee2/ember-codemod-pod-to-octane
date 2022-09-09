@@ -1,7 +1,8 @@
-import { test } from '@sondr3/minitest';
-import fixturify from 'fixturify';
 import { strict as assert } from 'node:assert';
 import { existsSync, rmSync } from 'node:fs';
+
+import { test } from '@sondr3/minitest';
+import fixturify from 'fixturify';
 
 export function assertFixture(outputProject, options) {
   const { projectRoot } = options;
