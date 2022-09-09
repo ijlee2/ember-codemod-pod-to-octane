@@ -1,3 +1,12 @@
+## 0.3.2 (2022-09-09)
+
+### Internal
+* [#9](https://github.com/ijlee2/ember-codemod-pod-to-octane/pull/9) Updated @babel/core to v7.19.0 ([@ijlee2](https://github.com/ijlee2))
+
+### Committers: 1
+- Isaac Lee ([@ijlee2](https://github.com/ijlee2))
+
+
 ## 0.3.1 (2022-08-24)
 
 ### Internal
