@@ -41,7 +41,7 @@
     }
   },
   "dependencies": {
-    "@babel/core": "^7.18.13",
+    "@babel/core": "^7.19.0",
     "@babel/eslint-parser": "^7.18.9",
     "glob": "^8.0.3",
     "yargs": "^17.5.1"
