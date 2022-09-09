@@ -1,5 +1,6 @@
-import glob from 'glob';
 import { join } from 'node:path';
+
+import glob from 'glob';
 
 import { mapPaths } from '../../../utils/map-paths.js';
 
