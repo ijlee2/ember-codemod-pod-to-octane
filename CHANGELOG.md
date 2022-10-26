@@ -1,3 +1,15 @@
+## 1.0.0 (2022-10-26)
+
+### Internal
+* [#10](https://github.com/ijlee2/ember-codemod-pod-to-octane/pull/10) Updated @babel/core to v7.19.6 ([@ijlee2](https://github.com/ijlee2))
+
+### Documentation
+* [#11](https://github.com/ijlee2/ember-codemod-pod-to-octane/pull/11) Explained how to go from a pod to nested layout ([@ijlee2](https://github.com/ijlee2))
+
+### Committers: 1
+- Isaac Lee ([@ijlee2](https://github.com/ijlee2))
+
+
 ## 0.3.2 (2022-09-09)
 
 ### Internal
