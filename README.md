@@ -7,7 +7,7 @@ _Codemod to un-pod Ember apps, addons, and engines_
 
 ## Usage
 
-Step 1. Quickly return to [default Octane](https://cli.emberjs.com/release/advanced-use/project-layouts/#classiclayout).
+Step 1. Quickly return to [default Octane](https://cli.emberjs.com/release/advanced-use/project-layouts/#classiclayout).<sup>1</sup>
 
 ```sh
 cd <your/project/path>
@@ -17,6 +17,8 @@ npx ember-codemod-pod-to-octane <arguments>
 Step 2. Remove `podModulePrefix` from `config/environment.js` and `usePods` from `.ember-cli`.
 
 Step 3. Update references originating from, as well as pointing to, the moved files. These can include `import` statement, `composes` property from `ember-css-modules`, etc.
+
+<sup>1. By default, Octane assumes the **flat component structure**. So does this codemod to help different Ember projects converge to one layout. If you want the **nested component structure** (also supported by Octane), you can run [`ember-flat-to-nested`](https://github.com/bertdeblock/ember-flat-to-nested) afterwards.</sup>
 
 
 ### Arguments
