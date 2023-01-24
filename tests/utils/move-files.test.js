@@ -1,13 +1,8 @@
 import { moveFiles } from '../../src/utils/move-files.js';
+import { options } from '../helpers/shared-test-setups/ember-addon/javascript.js';
 import { assertFixture, loadFixture, test } from '../helpers/testing.js';
 
 test('utils | move-files', function () {
-  const options = {
-    podPath: '',
-    projectRoot: 'tmp/addon-javascript',
-    testRun: false,
-  };
-
   const inputProject = {
     addon: {
       components: {
