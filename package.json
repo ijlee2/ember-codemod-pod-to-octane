@@ -41,20 +41,20 @@
     }
   },
   "dependencies": {
-    "@babel/core": "^7.19.6",
+    "@babel/core": "^7.20.12",
     "@babel/eslint-parser": "^7.19.1",
-    "glob": "^8.0.3",
-    "yargs": "^17.6.0"
+    "glob": "^8.1.0",
+    "yargs": "^17.6.2"
   },
   "devDependencies": {
     "@sondr3/minitest": "^0.1.1",
-    "eslint": "^8.26.0",
-    "eslint-config-prettier": "^8.5.0",
+    "eslint": "^8.32.0",
+    "eslint-config-prettier": "^8.6.0",
     "eslint-plugin-prettier": "^4.2.1",
-    "eslint-plugin-simple-import-sort": "^8.0.0",
-    "fixturify": "^2.1.1",
+    "eslint-plugin-simple-import-sort": "^9.0.0",
+    "fixturify": "^3.0.0",
     "lerna-changelog": "^2.2.0",
-    "prettier": "^2.7.1"
+    "prettier": "^2.8.3"
   },
   "engines": {
     "node": ">= 16"
