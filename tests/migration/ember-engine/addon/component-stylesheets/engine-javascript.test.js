@@ -1,14 +1,9 @@
 import { migrationStrategyForComponentStylesheets } from '../../../../../src/migration/ember-engine/addon/component-stylesheets.js';
 import { inputProject } from '../../../../fixtures/engine-javascript.js';
+import { options } from '../../../../helpers/shared-test-setups/ember-engine/javascript.js';
 import { assert, loadFixture, test } from '../../../../helpers/testing.js';
 
 test('migration | ember-engine | addon | component-stylesheets > JavaScript', function () {
-  const options = {
-    podPath: '',
-    projectRoot: 'tmp/engine-javascript',
-    testRun: false,
-  };
-
   loadFixture(inputProject, options);
 
   const migrationStrategy = migrationStrategyForComponentStylesheets(options);

@@ -3,15 +3,10 @@ import {
   inputProject,
   outputProject,
 } from '../../../fixtures/engine-javascript.js';
+import { options } from '../../../helpers/shared-test-setups/ember-engine/javascript.js';
 import { assertFixture, loadFixture, test } from '../../../helpers/testing.js';
 
 test('migration | ember-engine | index > JavaScript', function () {
-  const options = {
-    podPath: '',
-    projectRoot: 'tmp/engine-javascript',
-    testRun: false,
-  };
-
   loadFixture(inputProject, options);
 
   migrateEmberEngine(options);
