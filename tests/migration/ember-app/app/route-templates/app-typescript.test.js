@@ -1,14 +1,9 @@
 import { migrationStrategyForRouteTemplates } from '../../../../../src/migration/ember-app/app/route-templates.js';
 import { inputProject } from '../../../../fixtures/app-typescript.js';
+import { options } from '../../../../helpers/shared-test-setups/ember-app/typescript.js';
 import { assert, loadFixture, test } from '../../../../helpers/testing.js';
 
 test('migration | ember-app | app | route-templates > TypeScript', function () {
-  const options = {
-    podPath: '',
-    projectRoot: 'tmp/app-typescript',
-    testRun: false,
-  };
-
   loadFixture(inputProject, options);
 
   const migrationStrategy = migrationStrategyForRouteTemplates(options);

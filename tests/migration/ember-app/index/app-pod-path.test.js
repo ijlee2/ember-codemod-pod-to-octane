@@ -1,14 +1,9 @@
 import { migrateEmberApp } from '../../../../src/migration/ember-app/index.js';
 import { inputProject, outputProject } from '../../../fixtures/app-pod-path.js';
+import { options } from '../../../helpers/shared-test-setups/ember-app/pod-path.js';
 import { assertFixture, loadFixture, test } from '../../../helpers/testing.js';
 
 test('migration | ember-app | index > podPath', function () {
-  const options = {
-    podPath: 'pods',
-    projectRoot: 'tmp/app-pod-path',
-    testRun: false,
-  };
-
   loadFixture(inputProject, options);
 
   migrateEmberApp(options);
