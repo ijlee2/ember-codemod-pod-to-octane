@@ -1,5 +1,5 @@
 import { migrationStrategyForRouteStylesheets } from '../../../../../src/migration/ember-engine/addon/route-stylesheets.js';
-import { inputProject } from '../../../../fixtures/engine-typescript.js';
+import { inputProject } from '../../../../fixtures/ember-engine/typescript/index.js';
 import { options } from '../../../../helpers/shared-test-setups/ember-engine/typescript.js';
 import { assert, loadFixture, test } from '../../../../helpers/testing.js';
 
