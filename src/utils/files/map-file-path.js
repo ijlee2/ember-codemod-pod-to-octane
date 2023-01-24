@@ -1,8 +1,10 @@
-export function mapPaths(oldPath, { find, replace }) {
+export function mapFilePath(oldPath, { find, replace }) {
   const { directory, file } = find;
 
   if (!oldPath.endsWith(file)) {
-    return;
+    throw new RangeError(
+      `ERROR: The provided path \`${oldPath}\` does not end with \`${file}\`.\n`
+    );
   }
 
   const key = oldPath

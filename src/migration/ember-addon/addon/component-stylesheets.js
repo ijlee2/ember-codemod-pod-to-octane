@@ -1,6 +1,6 @@
 import glob from 'glob';
 
-import { mapPaths } from '../../../utils/map-paths.js';
+import { mapFilePath } from '../../../utils/files.js';
 
 export function migrationStrategyForComponentStylesheets(options) {
   const { projectRoot } = options;
@@ -11,7 +11,7 @@ export function migrationStrategyForComponentStylesheets(options) {
 
   return oldPaths.map((oldPath) => {
     if (oldPath.endsWith('.scss')) {
-      return mapPaths(oldPath, {
+      return mapFilePath(oldPath, {
         find: {
           directory: 'addon/components',
           file: 'styles.scss',
@@ -22,7 +22,7 @@ export function migrationStrategyForComponentStylesheets(options) {
       });
     }
 
-    return mapPaths(oldPath, {
+    return mapFilePath(oldPath, {
       find: {
         directory: 'addon/components',
         file: 'styles.css',

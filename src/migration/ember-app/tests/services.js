@@ -2,7 +2,7 @@ import { join } from 'node:path';
 
 import glob from 'glob';
 
-import { mapPaths } from '../../../utils/map-paths.js';
+import { mapFilePath } from '../../../utils/files.js';
 
 export function migrationStrategyForServices(options) {
   const { podPath, projectRoot } = options;
@@ -16,7 +16,7 @@ export function migrationStrategyForServices(options) {
 
   return oldPaths.map((oldPath) => {
     if (oldPath.endsWith('.ts')) {
-      return mapPaths(oldPath, {
+      return mapFilePath(oldPath, {
         find: {
           directory: join('tests/unit', podPath),
           file: 'service-test.ts',
@@ -27,7 +27,7 @@ export function migrationStrategyForServices(options) {
       });
     }
 
-    return mapPaths(oldPath, {
+    return mapFilePath(oldPath, {
       find: {
         directory: join('tests/unit', podPath),
         file: 'service-test.js',

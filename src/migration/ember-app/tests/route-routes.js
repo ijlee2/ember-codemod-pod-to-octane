@@ -2,7 +2,7 @@ import { join } from 'node:path';
 
 import glob from 'glob';
 
-import { mapPaths } from '../../../utils/map-paths.js';
+import { mapFilePath } from '../../../utils/files.js';
 
 export function migrationStrategyForRouteRoutes(options) {
   const { podPath, projectRoot } = options;
@@ -19,7 +19,7 @@ export function migrationStrategyForRouteRoutes(options) {
 
   const newPaths1 = oldPaths1.map((oldPath) => {
     if (oldPath.endsWith('.ts')) {
-      return mapPaths(oldPath, {
+      return mapFilePath(oldPath, {
         find: {
           directory: join('tests/unit', podPath),
           file: 'route-test.ts',
@@ -30,7 +30,7 @@ export function migrationStrategyForRouteRoutes(options) {
       });
     }
 
-    return mapPaths(oldPath, {
+    return mapFilePath(oldPath, {
       find: {
         directory: join('tests/unit', podPath),
         file: 'route-test.js',
@@ -53,7 +53,7 @@ export function migrationStrategyForRouteRoutes(options) {
 
   const newPaths2 = oldPaths2.map((oldPath) => {
     if (oldPath.endsWith('.ts')) {
-      return mapPaths(oldPath, {
+      return mapFilePath(oldPath, {
         find: {
           directory: join('tests/unit', podPath, 'routes'),
           file: 'route-test.ts',
@@ -64,7 +64,7 @@ export function migrationStrategyForRouteRoutes(options) {
       });
     }
 
-    return mapPaths(oldPath, {
+    return mapFilePath(oldPath, {
       find: {
         directory: join('tests/unit', podPath, 'routes'),
         file: 'route-test.js',

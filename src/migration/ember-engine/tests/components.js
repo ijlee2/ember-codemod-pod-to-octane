@@ -1,6 +1,6 @@
 import glob from 'glob';
 
-import { mapPaths } from '../../../utils/map-paths.js';
+import { mapFilePath } from '../../../utils/files.js';
 
 export function migrationStrategyForComponents(options) {
   const { projectRoot } = options;
@@ -14,7 +14,7 @@ export function migrationStrategyForComponents(options) {
 
   return oldPaths.map((oldPath) => {
     if (oldPath.endsWith('.ts')) {
-      return mapPaths(oldPath, {
+      return mapFilePath(oldPath, {
         find: {
           directory: 'tests/integration/components',
           file: 'component-test.ts',
@@ -25,7 +25,7 @@ export function migrationStrategyForComponents(options) {
       });
     }
 
-    return mapPaths(oldPath, {
+    return mapFilePath(oldPath, {
       find: {
         directory: 'tests/integration/components',
         file: 'component-test.js',

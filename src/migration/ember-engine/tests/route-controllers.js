@@ -1,6 +1,6 @@
 import glob from 'glob';
 
-import { mapPaths } from '../../../utils/map-paths.js';
+import { mapFilePath } from '../../../utils/files.js';
 
 export function migrationStrategyForRouteControllers(options) {
   const { projectRoot } = options;
@@ -17,7 +17,7 @@ export function migrationStrategyForRouteControllers(options) {
 
   const newPaths1 = oldPaths1.map((oldPath) => {
     if (oldPath.endsWith('.ts')) {
-      return mapPaths(oldPath, {
+      return mapFilePath(oldPath, {
         find: {
           directory: 'tests/unit',
           file: 'controller-test.ts',
@@ -28,7 +28,7 @@ export function migrationStrategyForRouteControllers(options) {
       });
     }
 
-    return mapPaths(oldPath, {
+    return mapFilePath(oldPath, {
       find: {
         directory: 'tests/unit',
         file: 'controller-test.js',
@@ -51,7 +51,7 @@ export function migrationStrategyForRouteControllers(options) {
 
   const newPaths2 = oldPaths2.map((oldPath) => {
     if (oldPath.endsWith('.ts')) {
-      return mapPaths(oldPath, {
+      return mapFilePath(oldPath, {
         find: {
           directory: 'tests/unit/controllers',
           file: 'controller-test.ts',
@@ -62,7 +62,7 @@ export function migrationStrategyForRouteControllers(options) {
       });
     }
 
-    return mapPaths(oldPath, {
+    return mapFilePath(oldPath, {
       find: {
         directory: 'tests/unit/controllers',
         file: 'controller-test.js',

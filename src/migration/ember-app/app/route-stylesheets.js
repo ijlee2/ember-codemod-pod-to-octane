@@ -2,7 +2,7 @@ import { join } from 'node:path';
 
 import glob from 'glob';
 
-import { mapPaths } from '../../../utils/map-paths.js';
+import { mapFilePath } from '../../../utils/files.js';
 
 export function migrationStrategyForRouteStylesheets(options) {
   const { podPath, projectRoot } = options;
@@ -16,7 +16,7 @@ export function migrationStrategyForRouteStylesheets(options) {
 
   return oldPaths.map((oldPath) => {
     if (oldPath.endsWith('.scss')) {
-      return mapPaths(oldPath, {
+      return mapFilePath(oldPath, {
         find: {
           directory: join('app', podPath),
           file: 'styles.scss',
@@ -27,7 +27,7 @@ export function migrationStrategyForRouteStylesheets(options) {
       });
     }
 
-    return mapPaths(oldPath, {
+    return mapFilePath(oldPath, {
       find: {
         directory: join('app', podPath),
         file: 'styles.css',
