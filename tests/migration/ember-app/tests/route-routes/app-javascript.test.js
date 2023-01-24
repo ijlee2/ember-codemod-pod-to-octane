@@ -3,7 +3,7 @@ import { inputProject } from '../../../../fixtures/app-javascript.js';
 import { options } from '../../../../helpers/shared-test-setups/ember-app/javascript.js';
 import { assert, loadFixture, test } from '../../../../helpers/testing.js';
 
-test('migration | ember-app | tests | route-routes > JavaScript', function () {
+test('migration | ember-app | tests | route-routes > javascript', function () {
   loadFixture(inputProject, options);
 
   const migrationStrategy = migrationStrategyForRouteRoutes(options);

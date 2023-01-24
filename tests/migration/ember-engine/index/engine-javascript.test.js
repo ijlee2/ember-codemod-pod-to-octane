@@ -6,7 +6,7 @@ import {
 import { options } from '../../../helpers/shared-test-setups/ember-engine/javascript.js';
 import { assertFixture, loadFixture, test } from '../../../helpers/testing.js';
 
-test('migration | ember-engine | index > JavaScript', function () {
+test('migration | ember-engine | index > javascript', function () {
   loadFixture(inputProject, options);
 
   migrateEmberEngine(options);

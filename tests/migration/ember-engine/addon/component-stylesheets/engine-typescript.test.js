@@ -3,7 +3,7 @@ import { inputProject } from '../../../../fixtures/engine-typescript.js';
 import { options } from '../../../../helpers/shared-test-setups/ember-engine/typescript.js';
 import { assert, loadFixture, test } from '../../../../helpers/testing.js';
 
-test('migration | ember-engine | addon | component-stylesheets > TypeScript', function () {
+test('migration | ember-engine | addon | component-stylesheets > typescript', function () {
   loadFixture(inputProject, options);
 
   const migrationStrategy = migrationStrategyForComponentStylesheets(options);

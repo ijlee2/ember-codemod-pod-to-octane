@@ -3,7 +3,7 @@ import { inputProject } from '../../../../fixtures/addon-javascript.js';
 import { options } from '../../../../helpers/shared-test-setups/ember-addon/javascript.js';
 import { assert, loadFixture, test } from '../../../../helpers/testing.js';
 
-test('migration | ember-addon | app | component-stylesheets > JavaScript', function () {
+test('migration | ember-addon | app | component-stylesheets > javascript', function () {
   loadFixture(inputProject, options);
 
   const migrationStrategy = migrationStrategyForComponentStylesheets(options);
