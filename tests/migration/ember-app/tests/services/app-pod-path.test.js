@@ -1,14 +1,9 @@
 import { migrationStrategyForServices } from '../../../../../src/migration/ember-app/tests/services.js';
 import { inputProject } from '../../../../fixtures/app-pod-path.js';
-import { assert, loadFixture, test } from '../../../../test-helpers.js';
+import { options } from '../../../../helpers/shared-test-setups/ember-app/pod-path.js';
+import { assert, loadFixture, test } from '../../../../helpers/testing.js';
 
-test('migration | ember-app | tests | services > podPath', function () {
-  const options = {
-    podPath: 'pods',
-    projectRoot: 'tmp/app-pod-path',
-    testRun: false,
-  };
-
+test('migration | ember-app | tests | services > pod path', function () {
   loadFixture(inputProject, options);
 
   const migrationStrategy = migrationStrategyForServices(options);

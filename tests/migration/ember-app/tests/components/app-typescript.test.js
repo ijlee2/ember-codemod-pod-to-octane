@@ -1,14 +1,9 @@
 import { migrationStrategyForComponents } from '../../../../../src/migration/ember-app/tests/components.js';
 import { inputProject } from '../../../../fixtures/app-typescript.js';
-import { assert, loadFixture, test } from '../../../../test-helpers.js';
+import { options } from '../../../../helpers/shared-test-setups/ember-app/typescript.js';
+import { assert, loadFixture, test } from '../../../../helpers/testing.js';
 
-test('migration | ember-app | tests | components > TypeScript', function () {
-  const options = {
-    podPath: '',
-    projectRoot: 'tmp/app-typescript',
-    testRun: false,
-  };
-
+test('migration | ember-app | tests | components > typescript', function () {
   loadFixture(inputProject, options);
 
   const migrationStrategy = migrationStrategyForComponents(options);

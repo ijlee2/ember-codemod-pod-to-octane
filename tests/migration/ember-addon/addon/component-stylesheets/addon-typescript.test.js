@@ -1,14 +1,9 @@
 import { migrationStrategyForComponentStylesheets } from '../../../../../src/migration/ember-addon/addon/component-stylesheets.js';
 import { inputProject } from '../../../../fixtures/addon-typescript.js';
-import { assert, loadFixture, test } from '../../../../test-helpers.js';
+import { options } from '../../../../helpers/shared-test-setups/ember-addon/typescript.js';
+import { assert, loadFixture, test } from '../../../../helpers/testing.js';
 
-test('migration | ember-addon | addon | component-stylesheets > TypeScript', function () {
-  const options = {
-    podPath: '',
-    projectRoot: 'tmp/addon-typescript',
-    testRun: false,
-  };
-
+test('migration | ember-addon | addon | component-stylesheets > typescript', function () {
   loadFixture(inputProject, options);
 
   const migrationStrategy = migrationStrategyForComponentStylesheets(options);

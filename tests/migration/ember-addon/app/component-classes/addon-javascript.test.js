@@ -1,14 +1,9 @@
 import { migrationStrategyForComponentClasses } from '../../../../../src/migration/ember-addon/app/component-classes.js';
 import { inputProject } from '../../../../fixtures/addon-javascript.js';
-import { assert, loadFixture, test } from '../../../../test-helpers.js';
+import { options } from '../../../../helpers/shared-test-setups/ember-addon/javascript.js';
+import { assert, loadFixture, test } from '../../../../helpers/testing.js';
 
-test('migration | ember-addon | app | component-classes > JavaScript', function () {
-  const options = {
-    podPath: '',
-    projectRoot: 'tmp/addon-javascript',
-    testRun: false,
-  };
-
+test('migration | ember-addon | app | component-classes > javascript', function () {
   loadFixture(inputProject, options);
 
   const migrationStrategy = migrationStrategyForComponentClasses(options);

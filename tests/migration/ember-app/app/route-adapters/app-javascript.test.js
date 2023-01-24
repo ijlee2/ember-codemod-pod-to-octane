@@ -1,14 +1,9 @@
 import { migrationStrategyForRouteAdapters } from '../../../../../src/migration/ember-app/app/route-adapters.js';
 import { inputProject } from '../../../../fixtures/app-javascript.js';
-import { assert, loadFixture, test } from '../../../../test-helpers.js';
+import { options } from '../../../../helpers/shared-test-setups/ember-app/javascript.js';
+import { assert, loadFixture, test } from '../../../../helpers/testing.js';
 
-test('migration | ember-app | app | route-adapters > JavaScript', function () {
-  const options = {
-    podPath: '',
-    projectRoot: 'tmp/app-javascript',
-    testRun: false,
-  };
-
+test('migration | ember-app | app | route-adapters > javascript', function () {
   loadFixture(inputProject, options);
 
   const migrationStrategy = migrationStrategyForRouteAdapters(options);

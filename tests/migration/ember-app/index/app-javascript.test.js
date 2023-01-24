@@ -3,15 +3,10 @@ import {
   inputProject,
   outputProject,
 } from '../../../fixtures/app-javascript.js';
-import { assertFixture, loadFixture, test } from '../../../test-helpers.js';
+import { options } from '../../../helpers/shared-test-setups/ember-app/javascript.js';
+import { assertFixture, loadFixture, test } from '../../../helpers/testing.js';
 
-test('migration | ember-app | index > JavaScript', function () {
-  const options = {
-    podPath: '',
-    projectRoot: 'tmp/app-javascript',
-    testRun: false,
-  };
-
+test('migration | ember-app | index > javascript', function () {
   loadFixture(inputProject, options);
 
   migrateEmberApp(options);

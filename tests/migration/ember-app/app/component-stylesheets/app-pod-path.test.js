@@ -1,14 +1,9 @@
 import { migrationStrategyForComponentStylesheets } from '../../../../../src/migration/ember-app/app/component-stylesheets.js';
 import { inputProject } from '../../../../fixtures/app-pod-path.js';
-import { assert, loadFixture, test } from '../../../../test-helpers.js';
+import { options } from '../../../../helpers/shared-test-setups/ember-app/pod-path.js';
+import { assert, loadFixture, test } from '../../../../helpers/testing.js';
 
-test('migration | ember-app | app | component-stylesheets > podPath', function () {
-  const options = {
-    podPath: 'pods',
-    projectRoot: 'tmp/app-pod-path',
-    testRun: false,
-  };
-
+test('migration | ember-app | app | component-stylesheets > pod path', function () {
   loadFixture(inputProject, options);
 
   const migrationStrategy = migrationStrategyForComponentStylesheets(options);

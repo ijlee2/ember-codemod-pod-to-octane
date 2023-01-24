@@ -1,14 +1,9 @@
 import { migrationStrategyForRouteStylesheets } from '../../../../../src/migration/ember-engine/addon/route-stylesheets.js';
 import { inputProject } from '../../../../fixtures/engine-typescript.js';
-import { assert, loadFixture, test } from '../../../../test-helpers.js';
+import { options } from '../../../../helpers/shared-test-setups/ember-engine/typescript.js';
+import { assert, loadFixture, test } from '../../../../helpers/testing.js';
 
-test('migration | ember-engine | addon | route-stylesheets > TypeScript', function () {
-  const options = {
-    podPath: '',
-    projectRoot: 'tmp/engine-typescript',
-    testRun: false,
-  };
-
+test('migration | ember-engine | addon | route-stylesheets > typescript', function () {
   loadFixture(inputProject, options);
 
   const migrationStrategy = migrationStrategyForRouteStylesheets(options);

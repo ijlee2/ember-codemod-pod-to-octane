@@ -1,5 +1,5 @@
 import { mapPaths } from '../../src/utils/map-paths.js';
-import { assert, test } from '../test-helpers.js';
+import { assert, test } from '../helpers/testing.js';
 
 test('utils | map-paths', function () {
   const mapping = (oldPath) => {

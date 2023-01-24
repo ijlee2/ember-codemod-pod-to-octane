@@ -1,14 +1,9 @@
 import { migrationStrategyForComponents } from '../../../../../src/migration/ember-addon/tests/components.js';
 import { inputProject } from '../../../../fixtures/addon-javascript.js';
-import { assert, loadFixture, test } from '../../../../test-helpers.js';
+import { options } from '../../../../helpers/shared-test-setups/ember-addon/javascript.js';
+import { assert, loadFixture, test } from '../../../../helpers/testing.js';
 
-test('migration | ember-addon | tests | components > JavaScript', function () {
-  const options = {
-    podPath: '',
-    projectRoot: 'tmp/addon-javascript',
-    testRun: false,
-  };
-
+test('migration | ember-addon | tests | components > javascript', function () {
   loadFixture(inputProject, options);
 
   const migrationStrategy = migrationStrategyForComponents(options);
