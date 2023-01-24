@@ -1,5 +1,8 @@
 import { migrateEmberApp } from '../../../../src/migration/ember-app/index.js';
-import { inputProject, outputProject } from '../../../fixtures/app-pod-path.js';
+import {
+  inputProject,
+  outputProject,
+} from '../../../fixtures/ember-app/pod-path/index.js';
 import { options } from '../../../helpers/shared-test-setups/ember-app/pod-path.js';
 import { assertFixture, loadFixture, test } from '../../../helpers/testing.js';
 

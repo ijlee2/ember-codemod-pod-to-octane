@@ -1,5 +1,5 @@
 import { migrationStrategyForServices } from '../../../../../src/migration/ember-app/tests/services.js';
-import { inputProject } from '../../../../fixtures/app-pod-path.js';
+import { inputProject } from '../../../../fixtures/ember-app/pod-path/index.js';
 import { options } from '../../../../helpers/shared-test-setups/ember-app/pod-path.js';
 import { assert, loadFixture, test } from '../../../../helpers/testing.js';
 
