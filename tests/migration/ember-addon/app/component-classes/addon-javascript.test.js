@@ -1,5 +1,5 @@
 import { migrationStrategyForComponentClasses } from '../../../../../src/migration/ember-addon/app/component-classes.js';
-import { inputProject } from '../../../../fixtures/addon-javascript.js';
+import { inputProject } from '../../../../fixtures/ember-addon/javascript/index.js';
 import { options } from '../../../../helpers/shared-test-setups/ember-addon/javascript.js';
 import { assert, loadFixture, test } from '../../../../helpers/testing.js';
 

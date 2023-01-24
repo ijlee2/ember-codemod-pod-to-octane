@@ -8,4 +8,5 @@
 !.*
 .*/
 .eslintcache
+/tests/fixtures/
 /tmp/

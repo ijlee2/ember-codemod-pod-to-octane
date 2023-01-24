@@ -1,5 +1,5 @@
 import { migrationStrategyForComponentTemplates } from '../../../../../src/migration/ember-addon/app/component-templates.js';
-import { inputProject } from '../../../../fixtures/addon-typescript.js';
+import { inputProject } from '../../../../fixtures/ember-addon/typescript/index.js';
 import { options } from '../../../../helpers/shared-test-setups/ember-addon/typescript.js';
 import { assert, loadFixture, test } from '../../../../helpers/testing.js';
 
