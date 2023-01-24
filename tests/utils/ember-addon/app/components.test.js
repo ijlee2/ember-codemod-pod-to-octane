@@ -1,5 +1,5 @@
 import { updatePaths } from '../../../../src/utils/ember-addon/app/components.js';
-import { moveFiles } from '../../../../src/utils/move-files.js';
+import { moveFiles } from '../../../../src/utils/files.js';
 import { options } from '../../../helpers/shared-test-setups/ember-addon/javascript.js';
 import { assertFixture, loadFixture, test } from '../../../helpers/testing.js';
 

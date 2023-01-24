@@ -2,7 +2,7 @@ import { join } from 'node:path';
 
 import glob from 'glob';
 
-import { mapPaths } from '../../../utils/map-paths.js';
+import { mapFilePath } from '../../../utils/files.js';
 
 export function migrationStrategyForRouteModels(options) {
   const { podPath, projectRoot } = options;
@@ -13,7 +13,7 @@ export function migrationStrategyForRouteModels(options) {
 
   return oldPaths.map((oldPath) => {
     if (oldPath.endsWith('.ts')) {
-      return mapPaths(oldPath, {
+      return mapFilePath(oldPath, {
         find: {
           directory: join('app', podPath),
           file: 'model.ts',
@@ -24,7 +24,7 @@ export function migrationStrategyForRouteModels(options) {
       });
     }
 
-    return mapPaths(oldPath, {
+    return mapFilePath(oldPath, {
       find: {
         directory: join('app', podPath),
         file: 'model.js',

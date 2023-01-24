@@ -1,6 +1,6 @@
 import glob from 'glob';
 
-import { mapPaths } from '../../../utils/map-paths.js';
+import { mapFilePath } from '../../../utils/files.js';
 
 export function migrationStrategyForRouteControllers(options) {
   const { projectRoot } = options;
@@ -11,7 +11,7 @@ export function migrationStrategyForRouteControllers(options) {
 
   return oldPaths.map((oldPath) => {
     if (oldPath.endsWith('.ts')) {
-      return mapPaths(oldPath, {
+      return mapFilePath(oldPath, {
         find: {
           directory: 'addon',
           file: 'controller.ts',
@@ -22,7 +22,7 @@ export function migrationStrategyForRouteControllers(options) {
       });
     }
 
-    return mapPaths(oldPath, {
+    return mapFilePath(oldPath, {
       find: {
         directory: 'addon',
         file: 'controller.js',

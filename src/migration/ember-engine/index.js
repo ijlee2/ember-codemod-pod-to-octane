@@ -1,4 +1,4 @@
-import { moveFiles } from '../../utils/move-files.js';
+import { moveFiles } from '../../utils/files.js';
 import { migrationStrategyForAddonFolder } from './addon/index.js';
 import { migrationStrategyForTestsFolder } from './tests/index.js';
 

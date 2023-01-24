@@ -1,6 +1,6 @@
 import glob from 'glob';
 
-import { mapPaths } from '../../../utils/map-paths.js';
+import { mapFilePath } from '../../../utils/files.js';
 
 export function migrationStrategyForRouteTemplates(options) {
   const { projectRoot } = options;
@@ -10,7 +10,7 @@ export function migrationStrategyForRouteTemplates(options) {
   });
 
   return oldPaths.map((oldPath) => {
-    return mapPaths(oldPath, {
+    return mapFilePath(oldPath, {
       find: {
         directory: 'addon',
         file: 'template.hbs',
