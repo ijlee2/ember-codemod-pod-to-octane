@@ -1,5 +1,5 @@
 import { migrationStrategyForRouteControllers } from '../../../../../src/migration/ember-app/app/route-controllers.js';
-import { inputProject } from '../../../../fixtures/app-javascript.js';
+import { inputProject } from '../../../../fixtures/ember-app/javascript/index.js';
 import { options } from '../../../../helpers/shared-test-setups/ember-app/javascript.js';
 import { assert, loadFixture, test } from '../../../../helpers/testing.js';
 
