@@ -2,7 +2,7 @@ import { migrateEmberEngine } from '../../../../src/migration/ember-engine/index
 import {
   inputProject,
   outputProject,
-} from '../../../fixtures/engine-javascript.js';
+} from '../../../fixtures/ember-engine/javascript/index.js';
 import { options } from '../../../helpers/shared-test-setups/ember-engine/javascript.js';
 import { assertFixture, loadFixture, test } from '../../../helpers/testing.js';
 
