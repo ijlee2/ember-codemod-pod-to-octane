@@ -1,6 +1,6 @@
 import { migrationStrategyForRouteRoutes } from '../../../../../src/migration/ember-app/tests/route-routes.js';
 import { inputProject } from '../../../../fixtures/app-javascript.js';
-import { assert, loadFixture, test } from '../../../../test-helpers.js';
+import { assert, loadFixture, test } from '../../../../helpers/testing.js';
 
 test('migration | ember-app | tests | route-routes > JavaScript', function () {
   const options = {

@@ -1,5 +1,5 @@
 import { moveFiles } from '../../src/utils/move-files.js';
-import { assertFixture, loadFixture, test } from '../test-helpers.js';
+import { assertFixture, loadFixture, test } from '../helpers/testing.js';
 
 test('utils | move-files', function () {
   const options = {

@@ -1,6 +1,6 @@
 import { migrationStrategyForComponentStylesheets } from '../../../../../src/migration/ember-app/app/component-stylesheets.js';
 import { inputProject } from '../../../../fixtures/app-typescript.js';
-import { assert, loadFixture, test } from '../../../../test-helpers.js';
+import { assert, loadFixture, test } from '../../../../helpers/testing.js';
 
 test('migration | ember-app | app | component-stylesheets > TypeScript', function () {
   const options = {

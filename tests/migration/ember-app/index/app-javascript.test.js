@@ -3,7 +3,7 @@ import {
   inputProject,
   outputProject,
 } from '../../../fixtures/app-javascript.js';
-import { assertFixture, loadFixture, test } from '../../../test-helpers.js';
+import { assertFixture, loadFixture, test } from '../../../helpers/testing.js';
 
 test('migration | ember-app | index > JavaScript', function () {
   const options = {

@@ -1,6 +1,6 @@
 import { migrationStrategyForRouteRoutes } from '../../../../../src/migration/ember-engine/addon/route-routes.js';
 import { inputProject } from '../../../../fixtures/engine-typescript.js';
-import { assert, loadFixture, test } from '../../../../test-helpers.js';
+import { assert, loadFixture, test } from '../../../../helpers/testing.js';
 
 test('migration | ember-engine | addon | route-routes > TypeScript', function () {
   const options = {

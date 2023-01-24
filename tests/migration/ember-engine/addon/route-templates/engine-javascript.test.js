@@ -1,6 +1,6 @@
 import { migrationStrategyForRouteTemplates } from '../../../../../src/migration/ember-engine/addon/route-templates.js';
 import { inputProject } from '../../../../fixtures/engine-javascript.js';
-import { assert, loadFixture, test } from '../../../../test-helpers.js';
+import { assert, loadFixture, test } from '../../../../helpers/testing.js';
 
 test('migration | ember-engine | addon | route-templates > JavaScript', function () {
   const options = {

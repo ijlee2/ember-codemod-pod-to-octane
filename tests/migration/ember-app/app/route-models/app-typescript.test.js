@@ -1,6 +1,6 @@
 import { migrationStrategyForRouteModels } from '../../../../../src/migration/ember-app/app/route-models.js';
 import { inputProject } from '../../../../fixtures/app-typescript.js';
-import { assert, loadFixture, test } from '../../../../test-helpers.js';
+import { assert, loadFixture, test } from '../../../../helpers/testing.js';
 
 test('migration | ember-app | app | route-models > TypeScript', function () {
   const options = {

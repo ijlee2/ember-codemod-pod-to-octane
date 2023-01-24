@@ -1,6 +1,6 @@
 import { migrationStrategyForRouteControllers } from '../../../../../src/migration/ember-app/app/route-controllers.js';
 import { inputProject } from '../../../../fixtures/app-javascript.js';
-import { assert, loadFixture, test } from '../../../../test-helpers.js';
+import { assert, loadFixture, test } from '../../../../helpers/testing.js';
 
 test('migration | ember-app | app | route-controllers > JavaScript', function () {
   const options = {

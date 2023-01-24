@@ -1,6 +1,6 @@
 import { migrationStrategyForRouteStylesheets } from '../../../../../src/migration/ember-app/app/route-stylesheets.js';
 import { inputProject } from '../../../../fixtures/app-typescript.js';
-import { assert, loadFixture, test } from '../../../../test-helpers.js';
+import { assert, loadFixture, test } from '../../../../helpers/testing.js';
 
 test('migration | ember-app | app | route-stylesheets > TypeScript', function () {
   const options = {

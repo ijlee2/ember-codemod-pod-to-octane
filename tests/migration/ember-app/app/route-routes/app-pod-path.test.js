@@ -1,6 +1,6 @@
 import { migrationStrategyForRouteRoutes } from '../../../../../src/migration/ember-app/app/route-routes.js';
 import { inputProject } from '../../../../fixtures/app-pod-path.js';
-import { assert, loadFixture, test } from '../../../../test-helpers.js';
+import { assert, loadFixture, test } from '../../../../helpers/testing.js';
 
 test('migration | ember-app | app | route-routes > podPath', function () {
   const options = {

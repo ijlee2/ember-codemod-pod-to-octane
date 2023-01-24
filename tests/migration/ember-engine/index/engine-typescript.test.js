@@ -3,7 +3,7 @@ import {
   inputProject,
   outputProject,
 } from '../../../fixtures/engine-typescript.js';
-import { assertFixture, loadFixture, test } from '../../../test-helpers.js';
+import { assertFixture, loadFixture, test } from '../../../helpers/testing.js';
 
 test('migration | ember-engine | index > TypeScript', function () {
   const options = {

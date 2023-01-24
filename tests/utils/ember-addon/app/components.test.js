@@ -1,6 +1,6 @@
 import { updatePaths } from '../../../../src/utils/ember-addon/app/components.js';
 import { moveFiles } from '../../../../src/utils/move-files.js';
-import { assertFixture, loadFixture, test } from '../../../test-helpers.js';
+import { assertFixture, loadFixture, test } from '../../../helpers/testing.js';
 
 test('utils | ember-addon | app | components', function () {
   const options = {

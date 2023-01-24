@@ -1,6 +1,6 @@
 import { migrationStrategyForComponentStylesheets } from '../../../../../src/migration/ember-addon/addon/component-stylesheets.js';
 import { inputProject } from '../../../../fixtures/addon-javascript.js';
-import { assert, loadFixture, test } from '../../../../test-helpers.js';
+import { assert, loadFixture, test } from '../../../../helpers/testing.js';
 
 test('migration | ember-addon | addon | component-stylesheets > JavaScript', function () {
   const options = {

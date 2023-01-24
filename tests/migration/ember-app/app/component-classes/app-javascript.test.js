@@ -1,6 +1,6 @@
 import { migrationStrategyForComponentClasses } from '../../../../../src/migration/ember-app/app/component-classes.js';
 import { inputProject } from '../../../../fixtures/app-javascript.js';
-import { assert, loadFixture, test } from '../../../../test-helpers.js';
+import { assert, loadFixture, test } from '../../../../helpers/testing.js';
 
 test('migration | ember-app | app | component-classes > JavaScript', function () {
   const options = {

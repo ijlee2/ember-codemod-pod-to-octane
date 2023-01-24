@@ -1,6 +1,6 @@
 import { migrationStrategyForComponents } from '../../../../../src/migration/ember-addon/tests/components.js';
 import { inputProject } from '../../../../fixtures/addon-javascript.js';
-import { assert, loadFixture, test } from '../../../../test-helpers.js';
+import { assert, loadFixture, test } from '../../../../helpers/testing.js';
 
 test('migration | ember-addon | tests | components > JavaScript', function () {
   const options = {

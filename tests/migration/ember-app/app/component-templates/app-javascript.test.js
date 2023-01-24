@@ -1,6 +1,6 @@
 import { migrationStrategyForComponentTemplates } from '../../../../../src/migration/ember-app/app/component-templates.js';
 import { inputProject } from '../../../../fixtures/app-javascript.js';
-import { assert, loadFixture, test } from '../../../../test-helpers.js';
+import { assert, loadFixture, test } from '../../../../helpers/testing.js';
 
 test('migration | ember-app | app | component-templates > JavaScript', function () {
   const options = {

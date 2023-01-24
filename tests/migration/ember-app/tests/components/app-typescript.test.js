@@ -1,6 +1,6 @@
 import { migrationStrategyForComponents } from '../../../../../src/migration/ember-app/tests/components.js';
 import { inputProject } from '../../../../fixtures/app-typescript.js';
-import { assert, loadFixture, test } from '../../../../test-helpers.js';
+import { assert, loadFixture, test } from '../../../../helpers/testing.js';
 
 test('migration | ember-app | tests | components > TypeScript', function () {
   const options = {
