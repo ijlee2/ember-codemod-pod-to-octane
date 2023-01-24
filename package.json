@@ -26,7 +26,7 @@
   "scripts": {
     "changelog": "lerna-changelog",
     "lint": "eslint . --cache --ext=.cjs,.js",
-    "lint:fix": "eslint . --fix",
+    "lint:fix": "eslint . --ext=.cjs,.js --fix",
     "start": "node ./src/index.js",
     "test": "mt tests --quiet"
   },
