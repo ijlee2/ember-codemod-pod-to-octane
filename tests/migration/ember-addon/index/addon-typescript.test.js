@@ -3,15 +3,10 @@ import {
   inputProject,
   outputProject,
 } from '../../../fixtures/addon-typescript.js';
+import { options } from '../../../helpers/shared-test-setups/ember-addon/typescript.js';
 import { assertFixture, loadFixture, test } from '../../../helpers/testing.js';
 
 test('migration | ember-addon | index > TypeScript', function () {
-  const options = {
-    podPath: '',
-    projectRoot: 'tmp/addon-typescript',
-    testRun: false,
-  };
-
   loadFixture(inputProject, options);
 
   migrateEmberAddon(options);

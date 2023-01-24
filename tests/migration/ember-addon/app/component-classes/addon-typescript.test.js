@@ -1,14 +1,9 @@
 import { migrationStrategyForComponentClasses } from '../../../../../src/migration/ember-addon/app/component-classes.js';
 import { inputProject } from '../../../../fixtures/addon-typescript.js';
+import { options } from '../../../../helpers/shared-test-setups/ember-addon/typescript.js';
 import { assert, loadFixture, test } from '../../../../helpers/testing.js';
 
 test('migration | ember-addon | app | component-classes > TypeScript', function () {
-  const options = {
-    podPath: '',
-    projectRoot: 'tmp/addon-typescript',
-    testRun: false,
-  };
-
   loadFixture(inputProject, options);
 
   const migrationStrategy = migrationStrategyForComponentClasses(options);
