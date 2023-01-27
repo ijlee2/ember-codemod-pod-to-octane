@@ -1,6 +1,6 @@
 const options = {
   podPath: '',
-  projectRoot: 'tmp/addon-typescript',
+  projectRoot: 'tmp/ember-addon/typescript',
   projectType: 'addon',
   testRun: false,
 };
