@@ -1,6 +1,6 @@
 const options = {
   podPath: '',
-  projectRoot: 'tmp/engine-typescript',
+  projectRoot: 'tmp/ember-engine/typescript',
   projectType: 'engine',
   testRun: false,
 };

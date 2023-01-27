@@ -1,6 +1,6 @@
 const options = {
   podPath: 'pods',
-  projectRoot: 'tmp/app-pod-path',
+  projectRoot: 'tmp/ember-app/pod-path',
   projectType: 'app',
   testRun: false,
 };
