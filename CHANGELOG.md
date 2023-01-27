@@ -1,3 +1,18 @@
+## 1.0.1 (2023-01-27)
+
+### Internal
+* [#12](https://github.com/ijlee2/ember-codemod-pod-to-octane/pull/12) Updated dependencies to the latest version ([@ijlee2](https://github.com/ijlee2))
+
+### Documentation
+* [#16](https://github.com/ijlee2/ember-codemod-pod-to-octane/pull/16) Created test fixtures dedicated to sass ([@ijlee2](https://github.com/ijlee2))
+* [#15](https://github.com/ijlee2/ember-codemod-pod-to-octane/pull/15) Reorganized utilities related to handling files ([@ijlee2](https://github.com/ijlee2))
+* [#14](https://github.com/ijlee2/ember-codemod-pod-to-octane/pull/14) Adopted the test fixture method from ember-codemod-v1-to-v2 ([@ijlee2](https://github.com/ijlee2))
+* [#13](https://github.com/ijlee2/ember-codemod-pod-to-octane/pull/13) Created shared test setups. Reorganized helpers for test fixtures. ([@ijlee2](https://github.com/ijlee2))
+
+### Committers: 1
+- Isaac Lee ([@ijlee2](https://github.com/ijlee2))
+
+
 ## 1.0.0 (2022-10-26)
 
 ### Internal
