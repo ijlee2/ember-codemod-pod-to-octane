@@ -18,8 +18,8 @@ test('migration | ember-app | app | component-stylesheets > pod path', function 
       'app/components/product/card.css',
     ],
     [
-      'app/pods/components/product/details/styles.scss',
-      'app/components/product/details.scss',
+      'app/pods/components/product/details/styles.css',
+      'app/components/product/details.css',
     ],
     [
       'app/pods/components/product/image/styles.css',
@@ -54,6 +54,6 @@ test('migration | ember-app | app | component-stylesheets > pod path', function 
       'app/pods/components/ui/form/textarea/styles.css',
       'app/components/ui/form/textarea.css',
     ],
-    ['app/pods/components/ui/page/styles.scss', 'app/components/ui/page.scss'],
+    ['app/pods/components/ui/page/styles.css', 'app/components/ui/page.css'],
   ]);
 });
