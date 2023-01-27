@@ -10,10 +10,7 @@ test('migration | ember-engine | addon | route-stylesheets > javascript', functi
 
   assert.deepStrictEqual(migrationStrategy, [
     ['addon/product-details/styles.css', 'addon/styles/product-details.css'],
-    [
-      'addon/products/product/styles.scss',
-      'addon/styles/products/product.scss',
-    ],
-    ['addon/products/styles.scss', 'addon/styles/products.scss'],
+    ['addon/products/product/styles.css', 'addon/styles/products/product.css'],
+    ['addon/products/styles.css', 'addon/styles/products.css'],
   ]);
 });
