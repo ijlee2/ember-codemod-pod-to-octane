@@ -1,6 +1,6 @@
 import { moveFiles } from '../../utils/files.js';
 import { migrationStrategyForAddonFolder } from './addon/index.js';
-import { createOptions } from './steps/index.js';
+import { createOptions, useRelativePaths } from './steps/index.js';
 import { migrationStrategyForTestsFolder } from './tests/index.js';
 
 export function migrateEmberEngine(codemodOptions) {
@@ -20,4 +20,6 @@ export function migrateEmberEngine(codemodOptions) {
 
   moveFiles(migrationStrategyAddon, options);
   moveFiles(migrationStrategyTests, options);
+
+  useRelativePaths(options);
 }
