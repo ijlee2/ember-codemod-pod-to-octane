@@ -1,8 +1,16 @@
-const options = {
+const codemodOptions = {
   podPath: '',
   projectRoot: 'tmp/ember-app/typescript',
   projectType: 'app',
   testRun: false,
 };
 
-export { options };
+const options = {
+  podPath: '',
+  projectName: '@ijlee2/ember-workshop-app',
+  projectRoot: 'tmp/ember-app/typescript',
+  projectType: 'app',
+  testRun: false,
+};
+
+export { codemodOptions, options };

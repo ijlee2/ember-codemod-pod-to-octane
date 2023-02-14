@@ -4,25 +4,25 @@ import {
   migrateEmberEngine,
 } from './migration/index.js';
 
-export function runCodemod(options) {
-  switch (options.projectType) {
+export function runCodemod(codemodOptions) {
+  switch (codemodOptions.projectType) {
     case 'addon': {
-      migrateEmberAddon(options);
+      migrateEmberAddon(codemodOptions);
       break;
     }
 
     case 'app': {
-      migrateEmberApp(options);
+      migrateEmberApp(codemodOptions);
       break;
     }
 
     case 'engine': {
-      migrateEmberEngine(options);
+      migrateEmberEngine(codemodOptions);
       break;
     }
 
     default: {
-      console.error(`Unknown project type: ${options.projectType}`);
+      console.error(`Unknown project type: ${codemodOptions.projectType}`);
     }
   }
 }

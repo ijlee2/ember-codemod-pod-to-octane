@@ -1,10 +1,13 @@
 import { migrationStrategyForComponentStylesheets } from '../../../../../src/migration/ember-addon/addon/component-stylesheets.js';
 import { inputProject } from '../../../../fixtures/ember-addon/typescript/index.js';
-import { options } from '../../../../helpers/shared-test-setups/ember-addon/typescript.js';
+import {
+  codemodOptions,
+  options,
+} from '../../../../helpers/shared-test-setups/ember-addon/typescript.js';
 import { assert, loadFixture, test } from '../../../../helpers/testing.js';
 
 test('migration | ember-addon | addon | component-stylesheets > typescript', function () {
-  loadFixture(inputProject, options);
+  loadFixture(inputProject, codemodOptions);
 
   const migrationStrategy = migrationStrategyForComponentStylesheets(options);
 
