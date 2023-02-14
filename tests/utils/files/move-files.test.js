@@ -1,5 +1,8 @@
 import { moveFiles } from '../../../src/utils/files.js';
-import { options } from '../../helpers/shared-test-setups/ember-addon/typescript.js';
+import {
+  codemodOptions,
+  options,
+} from '../../helpers/shared-test-setups/ember-addon/typescript.js';
 import { assertFixture, loadFixture, test } from '../../helpers/testing.js';
 
 test('utils | files | move-files', function () {
@@ -35,7 +38,7 @@ test('utils | files | move-files', function () {
     },
   };
 
-  loadFixture(inputProject, options);
+  loadFixture(inputProject, codemodOptions);
 
   const migrationStrategy = new Map([
     [
@@ -50,5 +53,5 @@ test('utils | files | move-files', function () {
 
   moveFiles(migrationStrategy, options);
 
-  assertFixture(outputProject, options);
+  assertFixture(outputProject, codemodOptions);
 });

@@ -1,5 +1,8 @@
 import { removeDirectoryIfEmpty } from '../../../src/utils/files.js';
-import { options } from '../../helpers/shared-test-setups/ember-addon/typescript.js';
+import {
+  codemodOptions,
+  options,
+} from '../../helpers/shared-test-setups/ember-addon/typescript.js';
 import { assertFixture, loadFixture, test } from '../../helpers/testing.js';
 
 test('utils | files | remove-directory-if-empty > parent directories are empty', function () {
@@ -17,14 +20,14 @@ test('utils | files | remove-directory-if-empty > parent directories are empty',
 
   const outputProject = {};
 
-  loadFixture(inputProject, options);
+  loadFixture(inputProject, codemodOptions);
 
   removeDirectoryIfEmpty({
     oldPath: 'addon/components/ui/form/checkbox/component.ts',
     projectRoot: options.projectRoot,
   });
 
-  assertFixture(outputProject, options);
+  assertFixture(outputProject, codemodOptions);
 });
 
 test('utils | files | remove-directory-if-empty > a parent directory is not empty', function () {
@@ -56,12 +59,12 @@ test('utils | files | remove-directory-if-empty > a parent directory is not empt
     },
   };
 
-  loadFixture(inputProject, options);
+  loadFixture(inputProject, codemodOptions);
 
   removeDirectoryIfEmpty({
     oldPath: 'addon/components/ui/form/checkbox/component.ts',
     projectRoot: options.projectRoot,
   });
 
-  assertFixture(outputProject, options);
+  assertFixture(outputProject, codemodOptions);
 });

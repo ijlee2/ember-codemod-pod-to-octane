@@ -1,6 +1,9 @@
 import { updatePaths } from '../../../../src/utils/ember-addon/app/components.js';
 import { moveFiles } from '../../../../src/utils/files.js';
-import { options } from '../../../helpers/shared-test-setups/ember-addon/javascript.js';
+import {
+  codemodOptions,
+  options,
+} from '../../../helpers/shared-test-setups/ember-addon/javascript.js';
 import { assertFixture, loadFixture, test } from '../../../helpers/testing.js';
 
 test('utils | ember-addon | app | components', function () {
@@ -32,7 +35,7 @@ test('utils | ember-addon | app | components', function () {
     },
   };
 
-  loadFixture(inputProject, options);
+  loadFixture(inputProject, codemodOptions);
 
   const migrationStrategy = new Map([
     [
@@ -45,5 +48,5 @@ test('utils | ember-addon | app | components', function () {
 
   updatePaths(migrationStrategy, options);
 
-  assertFixture(outputProject, options);
+  assertFixture(outputProject, codemodOptions);
 });

@@ -3,18 +3,18 @@ import {
   inputProject,
   outputProject,
 } from '../../../fixtures/ember-engine/javascript/index.js';
-import { options } from '../../../helpers/shared-test-setups/ember-engine/javascript.js';
+import { codemodOptions } from '../../../helpers/shared-test-setups/ember-engine/javascript.js';
 import { assertFixture, loadFixture, test } from '../../../helpers/testing.js';
 
 test('migration | ember-engine | index > javascript', function () {
-  loadFixture(inputProject, options);
+  loadFixture(inputProject, codemodOptions);
 
-  migrateEmberEngine(options);
+  migrateEmberEngine(codemodOptions);
 
-  assertFixture(outputProject, options);
+  assertFixture(outputProject, codemodOptions);
 
   // Check idempotence
-  migrateEmberEngine(options);
+  migrateEmberEngine(codemodOptions);
 
-  assertFixture(outputProject, options);
+  assertFixture(outputProject, codemodOptions);
 });
