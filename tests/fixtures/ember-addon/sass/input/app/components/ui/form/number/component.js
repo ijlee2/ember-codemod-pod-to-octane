@@ -1,1 +1,1 @@
-export { default } from 'addon-javascript/components/ui/form/number/component';
+export { default } from '@ijlee2/ember-workshop-addon/components/ui/form/number/component';

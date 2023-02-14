@@ -1,1 +1,1 @@
-export { default } from 'addon-typescript/components/ui/form/component';
+export { default } from '@ijlee2/ember-workshop-addon/components/ui/form/component';
