@@ -1,5 +1,5 @@
 .input {
-  composes: input from "@ijlee2/ember-workshop-addon/components/ui/form/input";
+  composes: input from "./input";
 }
 
 .input.is-disabled {

@@ -1,6 +1,6 @@
 import Controller from '@ember/controller';
 import { service } from '@ember/service';
-import { generateBody } from '@ijlee2/ember-workshop-app/utils/fetch';
+import { generateBody } from '../utils/fetch';
 import { dropTask } from 'ember-concurrency';
 import fetch from 'fetch';
 

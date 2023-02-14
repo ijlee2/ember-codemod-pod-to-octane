@@ -1,7 +1,7 @@
 import { assert } from '@ember/debug';
 import { action, get } from '@ember/object';
 import Component from '@glimmer/component';
-import { generateErrorMessage } from '@ijlee2/ember-workshop-app/utils/components/form';
+import { generateErrorMessage } from '../../../utils/components/form';
 
 export default class UiFormInputComponent extends Component {
   get errorMessage() {
