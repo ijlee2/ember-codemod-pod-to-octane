@@ -3,18 +3,18 @@ import {
   inputProject,
   outputProject,
 } from '../../../fixtures/ember-app/typescript/index.js';
-import { options } from '../../../helpers/shared-test-setups/ember-app/typescript.js';
+import { codemodOptions } from '../../../helpers/shared-test-setups/ember-app/typescript.js';
 import { assertFixture, loadFixture, test } from '../../../helpers/testing.js';
 
 test('migration | ember-app | index > typescript', function () {
-  loadFixture(inputProject, options);
+  loadFixture(inputProject, codemodOptions);
 
-  migrateEmberApp(options);
+  migrateEmberApp(codemodOptions);
 
-  assertFixture(outputProject, options);
+  assertFixture(outputProject, codemodOptions);
 
   // Check idempotence
-  migrateEmberApp(options);
+  migrateEmberApp(codemodOptions);
 
-  assertFixture(outputProject, options);
+  assertFixture(outputProject, codemodOptions);
 });

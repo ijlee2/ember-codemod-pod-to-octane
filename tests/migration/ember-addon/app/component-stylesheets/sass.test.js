@@ -1,10 +1,13 @@
 import { migrationStrategyForComponentStylesheets } from '../../../../../src/migration/ember-addon/app/component-stylesheets.js';
 import { inputProject } from '../../../../fixtures/ember-addon/sass/index.js';
-import { options } from '../../../../helpers/shared-test-setups/ember-addon/sass.js';
+import {
+  codemodOptions,
+  options,
+} from '../../../../helpers/shared-test-setups/ember-addon/sass.js';
 import { assert, loadFixture, test } from '../../../../helpers/testing.js';
 
 test('migration | ember-addon | app | component-stylesheets > sass', function () {
-  loadFixture(inputProject, options);
+  loadFixture(inputProject, codemodOptions);
 
   const migrationStrategy = migrationStrategyForComponentStylesheets(options);
 

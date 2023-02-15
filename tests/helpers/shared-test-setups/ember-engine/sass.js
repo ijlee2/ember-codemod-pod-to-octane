@@ -1,8 +1,16 @@
-const options = {
+const codemodOptions = {
   podPath: '',
   projectRoot: 'tmp/ember-engine/sass',
   projectType: 'engine',
   testRun: false,
 };
 
-export { options };
+const options = {
+  podPath: '',
+  projectName: '@ijlee2/ember-workshop-engine',
+  projectRoot: 'tmp/ember-engine/sass',
+  projectType: 'engine',
+  testRun: false,
+};
+
+export { codemodOptions, options };

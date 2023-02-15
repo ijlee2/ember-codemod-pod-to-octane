@@ -1,10 +1,13 @@
 import { migrationStrategyForRouteModels } from '../../../../../src/migration/ember-app/app/route-models.js';
 import { inputProject } from '../../../../fixtures/ember-app/pod-path/index.js';
-import { options } from '../../../../helpers/shared-test-setups/ember-app/pod-path.js';
+import {
+  codemodOptions,
+  options,
+} from '../../../../helpers/shared-test-setups/ember-app/pod-path.js';
 import { assert, loadFixture, test } from '../../../../helpers/testing.js';
 
 test('migration | ember-app | app | route-models > pod path', function () {
-  loadFixture(inputProject, options);
+  loadFixture(inputProject, codemodOptions);
 
   const migrationStrategy = migrationStrategyForRouteModels(options);
 

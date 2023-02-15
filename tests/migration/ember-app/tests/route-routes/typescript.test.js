@@ -1,10 +1,13 @@
 import { migrationStrategyForRouteRoutes } from '../../../../../src/migration/ember-app/tests/route-routes.js';
 import { inputProject } from '../../../../fixtures/ember-app/typescript/index.js';
-import { options } from '../../../../helpers/shared-test-setups/ember-app/typescript.js';
+import {
+  codemodOptions,
+  options,
+} from '../../../../helpers/shared-test-setups/ember-app/typescript.js';
 import { assert, loadFixture, test } from '../../../../helpers/testing.js';
 
 test('migration | ember-app | tests | route-routes > typescript', function () {
-  loadFixture(inputProject, options);
+  loadFixture(inputProject, codemodOptions);
 
   const migrationStrategy = migrationStrategyForRouteRoutes(options);
 

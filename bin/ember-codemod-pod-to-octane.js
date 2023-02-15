@@ -32,11 +32,11 @@ const { argv } = yargs(hideBin(process.argv))
     type: 'string',
   });
 
-const options = {
+const codemodOptions = {
   podPath: argv['pod-path'],
   projectRoot: argv['root'] ?? process.cwd(),
   projectType: argv['type'],
   testRun: argv['test'],
 };
 
-runCodemod(options);
+runCodemod(codemodOptions);

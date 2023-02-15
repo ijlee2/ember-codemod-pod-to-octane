@@ -1,10 +1,13 @@
 import { migrationStrategyForComponentClasses } from '../../../../../src/migration/ember-addon/app/component-classes.js';
 import { inputProject } from '../../../../fixtures/ember-addon/typescript/index.js';
-import { options } from '../../../../helpers/shared-test-setups/ember-addon/typescript.js';
+import {
+  codemodOptions,
+  options,
+} from '../../../../helpers/shared-test-setups/ember-addon/typescript.js';
 import { assert, loadFixture, test } from '../../../../helpers/testing.js';
 
 test('migration | ember-addon | app | component-classes > typescript', function () {
-  loadFixture(inputProject, options);
+  loadFixture(inputProject, codemodOptions);
 
   const migrationStrategy = migrationStrategyForComponentClasses(options);
 
