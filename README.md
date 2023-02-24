@@ -47,7 +47,7 @@ npx ember-codemod-pod-to-octane --test
 <details>
 <summary>Optional: Specify the project root</summary>
 
-Pass `--root` to run the codemod against a project somewhere else.
+Pass `--root` to run the codemod on a project somewhere else (i.e. not in the current directory).
 
 ```sh
 npx ember-codemod-pod-to-octane --root=<your/project/path>
@@ -105,11 +105,11 @@ The codemod assumes that an engine is used to define routes and route-specific c
 </details>
 
 
-To better meet your needs, consider forking the repo and running the codemod locally.
+To better meet your needs, consider cloning the repo and running the codemod locally.
 
 ```sh
-cd <your/forked/repo>
-./bin/ember-codemod-pod-to-octane.js <arguments>
+cd <your/cloned/repo>
+./bin/ember-codemod-pod-to-octane.js --root=<your/project/path>
 ```
 
 
