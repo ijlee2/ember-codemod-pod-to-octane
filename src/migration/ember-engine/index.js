@@ -14,11 +14,13 @@ export function migrateEmberEngine(codemodOptions) {
   const migrationStrategyAddon = migrationStrategyForAddonFolder(options);
   const migrationStrategyTests = migrationStrategyForTestsFolder(options);
 
+  const migrationStrategy = new Map([
+    ...migrationStrategyAddon,
+    ...migrationStrategyTests,
+  ]);
+
   if (options.testRun) {
-    console.log({
-      migrationStrategyAddon,
-      migrationStrategyTests,
-    });
+    console.log(migrationStrategy);
 
     return;
   }
@@ -31,6 +33,6 @@ export function migrateEmberEngine(codemodOptions) {
   moveFiles(migrationStrategyTests, options);
 
   // Update import paths
-  updateAbsolutePaths(options);
+  updateAbsolutePaths(migrationStrategy, options);
   useRelativePaths(options);
 }
