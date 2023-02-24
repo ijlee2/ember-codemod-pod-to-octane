@@ -25,26 +25,28 @@
   ],
   "scripts": {
     "changelog": "lerna-changelog",
-    "lint": "eslint . --cache --ext=.cjs,.js",
-    "lint:fix": "eslint . --ext=.cjs,.js --fix",
+    "lint": "eslint . --cache",
+    "lint:fix": "eslint . --fix",
     "start": "node ./src/index.js",
     "test": "mt tests --quiet"
   },
   "dependencies": {
-    "@babel/core": "^7.20.12",
+    "@babel/core": "^7.21.0",
     "@babel/eslint-parser": "^7.19.1",
     "glob": "^8.1.0",
-    "yargs": "^17.6.2"
+    "yargs": "^17.7.1"
   },
   "devDependencies": {
     "@sondr3/minitest": "^0.1.1",
-    "eslint": "^8.32.0",
+    "eslint": "^8.34.0",
     "eslint-config-prettier": "^8.6.0",
+    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-n": "^15.6.1",
     "eslint-plugin-prettier": "^4.2.1",
-    "eslint-plugin-simple-import-sort": "^9.0.0",
+    "eslint-plugin-simple-import-sort": "^10.0.0",
     "fixturify": "^3.0.0",
     "lerna-changelog": "^2.2.0",
-    "prettier": "^2.8.3"
+    "prettier": "^2.8.4"
   },
   "engines": {
     "node": ">= 16"
