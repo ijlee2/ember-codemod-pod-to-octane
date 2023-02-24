@@ -1,3 +1,19 @@
+## 1.1.0 (2023-02-24)
+
+### Enhancement
+* [#20](https://github.com/ijlee2/ember-codemod-pod-to-octane/pull/20) Updated paths after migration (ember-engine) ([@ijlee2](https://github.com/ijlee2))
+
+### Internal
+* [#21](https://github.com/ijlee2/ember-codemod-pod-to-octane/pull/21) Updated dependencies to the latest version. Installed eslint-plugin-n and eslint-plugin-import. ([@ijlee2](https://github.com/ijlee2))
+
+### Documentation
+* [#19](https://github.com/ijlee2/ember-codemod-pod-to-octane/pull/19) Separated two types of options ([@ijlee2](https://github.com/ijlee2))
+* [#17](https://github.com/ijlee2/ember-codemod-pod-to-octane/pull/17) Updated test fixtures ([@ijlee2](https://github.com/ijlee2))
+
+### Committers: 1
+- Isaac Lee ([@ijlee2](https://github.com/ijlee2))
+
+
 ## 1.0.1 (2023-01-27)
 
 ### Internal
