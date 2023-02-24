@@ -1,4 +1,4 @@
-import { updatePaths } from '../../../../src/utils/ember-addon/app/components.js';
+import { updatePathsInAppFolder } from '../../../../src/utils/ember-addon/app/components.js';
 import { moveFiles } from '../../../../src/utils/files.js';
 import {
   codemodOptions,
@@ -46,7 +46,7 @@ test('utils | ember-addon | app | components', function () {
 
   moveFiles(migrationStrategy, options);
 
-  updatePaths(migrationStrategy, options);
+  updatePathsInAppFolder(migrationStrategy, options);
 
   assertFixture(outputProject, codemodOptions);
 });
