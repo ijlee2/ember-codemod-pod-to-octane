@@ -1,6 +1,11 @@
 import { moveFiles } from '../../utils/files.js';
 import { migrationStrategyForAddonFolder } from './addon/index.js';
-import { createOptions } from './steps/index.js';
+import {
+  createOptions,
+  updateAbsolutePaths,
+  useAbsolutePaths,
+  useRelativePaths,
+} from './steps/index.js';
 import { migrationStrategyForTestsFolder } from './tests/index.js';
 
 export function migrateEmberEngine(codemodOptions) {
@@ -18,6 +23,14 @@ export function migrateEmberEngine(codemodOptions) {
     return;
   }
 
+  // Prepare for migration
+  useAbsolutePaths(options);
+
+  // Preserve code
   moveFiles(migrationStrategyAddon, options);
   moveFiles(migrationStrategyTests, options);
+
+  // Update import paths
+  updateAbsolutePaths(options);
+  useRelativePaths(options);
 }
