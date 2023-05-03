@@ -1,13 +1,11 @@
 import { join } from 'node:path';
 
-import glob from 'glob';
-
-import { mapFilePath } from '../../../utils/files.js';
+import { findFiles, mapFilePath } from '../../../utils/files.js';
 
 export function migrationStrategyForServices(options) {
   const { podPath, projectRoot } = options;
 
-  const oldPaths = glob.sync(
+  const oldPaths = findFiles(
     join('tests/unit', podPath, '!(services)', '**', 'service-test.{js,ts}'),
     {
       cwd: projectRoot,

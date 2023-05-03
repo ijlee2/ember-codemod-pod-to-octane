@@ -1,11 +1,9 @@
-import glob from 'glob';
-
-import { mapFilePath } from '../../../utils/files.js';
+import { findFiles, mapFilePath } from '../../../utils/files.js';
 
 export function migrationStrategyForComponentClasses(options) {
   const { projectRoot } = options;
 
-  const oldPaths = glob.sync('addon/components/**/component.{d.ts,js,ts}', {
+  const oldPaths = findFiles('addon/components/**/component.{d.ts,js,ts}', {
     cwd: projectRoot,
   });
 

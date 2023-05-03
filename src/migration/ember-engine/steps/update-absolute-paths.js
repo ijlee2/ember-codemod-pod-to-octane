@@ -1,7 +1,7 @@
 import { readFileSync, writeFileSync } from 'node:fs';
 import { join, parse } from 'node:path';
 
-import glob from 'glob';
+import { findFiles } from '../../../utils/files.js';
 
 function removeFileExtension(path) {
   const { dir, name } = parse(path);
@@ -73,10 +73,8 @@ function updatePaths(mapping, options) {
 
   // File extensions had been specified, partly to encode assumptions
   // about Ember, and partly to avoid corrupting non-text files
-  const filePaths = glob.sync('{addon,tests}/**/*.{d.ts,js,ts}', {
+  const filePaths = findFiles('{addon,tests}/**/*.{d.ts,js,ts}', {
     cwd: projectRoot,
-    dot: true,
-    nodir: true,
   });
 
   filePaths.forEach((filePath) => {

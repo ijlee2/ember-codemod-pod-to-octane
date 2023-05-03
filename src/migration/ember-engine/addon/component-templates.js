@@ -1,11 +1,9 @@
-import glob from 'glob';
-
-import { mapFilePath } from '../../../utils/files.js';
+import { findFiles, mapFilePath } from '../../../utils/files.js';
 
 export function migrationStrategyForComponentTemplates(options) {
   const { projectRoot } = options;
 
-  const oldPaths = glob.sync('addon/components/**/template.hbs', {
+  const oldPaths = findFiles('addon/components/**/template.hbs', {
     cwd: projectRoot,
   });
 

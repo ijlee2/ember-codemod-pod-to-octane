@@ -1,13 +1,11 @@
 import { join } from 'node:path';
 
-import glob from 'glob';
-
-import { mapFilePath } from '../../../utils/files.js';
+import { findFiles, mapFilePath } from '../../../utils/files.js';
 
 export function migrationStrategyForComponentStylesheets(options) {
   const { podPath, projectRoot } = options;
 
-  const oldPaths = glob.sync(
+  const oldPaths = findFiles(
     join('app', podPath, 'components', '**', 'styles.{css,scss}'),
     {
       cwd: projectRoot,

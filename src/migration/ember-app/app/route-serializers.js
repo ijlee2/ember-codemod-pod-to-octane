@@ -1,13 +1,11 @@
 import { join } from 'node:path';
 
-import glob from 'glob';
-
-import { mapFilePath } from '../../../utils/files.js';
+import { findFiles, mapFilePath } from '../../../utils/files.js';
 
 export function migrationStrategyForRouteSerializers(options) {
   const { podPath, projectRoot } = options;
 
-  const oldPaths = glob.sync(join('app', podPath, '**', 'serializer.{js,ts}'), {
+  const oldPaths = findFiles(join('app', podPath, '**', 'serializer.{js,ts}'), {
     cwd: projectRoot,
   });
 

@@ -1,13 +1,11 @@
 import { join } from 'node:path';
 
-import glob from 'glob';
-
-import { mapFilePath } from '../../../utils/files.js';
+import { findFiles, mapFilePath } from '../../../utils/files.js';
 
 export function migrationStrategyForRouteControllers(options) {
   const { podPath, projectRoot } = options;
 
-  const oldPaths = glob.sync(join('app', podPath, '**', 'controller.{js,ts}'), {
+  const oldPaths = findFiles(join('app', podPath, '**', 'controller.{js,ts}'), {
     cwd: projectRoot,
   });
 

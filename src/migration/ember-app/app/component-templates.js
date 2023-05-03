@@ -1,13 +1,11 @@
 import { join } from 'node:path';
 
-import glob from 'glob';
-
-import { mapFilePath } from '../../../utils/files.js';
+import { findFiles, mapFilePath } from '../../../utils/files.js';
 
 export function migrationStrategyForComponentTemplates(options) {
   const { podPath, projectRoot } = options;
 
-  const oldPaths = glob.sync(
+  const oldPaths = findFiles(
     join('app', podPath, 'components', '**', 'template.hbs'),
     {
       cwd: projectRoot,

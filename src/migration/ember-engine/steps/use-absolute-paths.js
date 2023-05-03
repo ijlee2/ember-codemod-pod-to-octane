@@ -1,7 +1,7 @@
 import { readFileSync, writeFileSync } from 'node:fs';
 import { dirname, join, relative, resolve } from 'node:path';
 
-import glob from 'glob';
+import { findFiles } from '../../../utils/files.js';
 
 function removeRelativePaths(oldFile, { filePath, projectName, projectRoot }) {
   const regex = new RegExp(`(?:'|")(.{1,2}/(.*))(?:'|")`, 'g');
@@ -35,10 +35,8 @@ function updatePaths(options) {
 
   // File extensions had been specified, partly to encode assumptions
   // about Ember, and partly to avoid corrupting non-text files
-  const filePaths = glob.sync('{addon,tests}/**/*.{d.ts,js,ts}', {
+  const filePaths = findFiles('{addon,tests}/**/*.{d.ts,js,ts}', {
     cwd: projectRoot,
-    dot: true,
-    nodir: true,
   });
 
   filePaths.forEach((filePath) => {
