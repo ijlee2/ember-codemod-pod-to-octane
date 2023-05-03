@@ -31,7 +31,7 @@
     "test": "mt tests --quiet"
   },
   "dependencies": {
-    "glob": "^9.3.3",
+    "glob": "^10.2.2",
     "yargs": "^17.7.2"
   },
   "devDependencies": {
