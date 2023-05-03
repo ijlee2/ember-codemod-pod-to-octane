@@ -1,4 +1,4 @@
-import glob from 'glob';
+import { globSync } from 'glob';
 
 export function findFiles(pattern, { cwd, ignoreList = [] }) {
   if (!pattern) {
@@ -9,7 +9,7 @@ export function findFiles(pattern, { cwd, ignoreList = [] }) {
     throw new RangeError('ERROR: The current working directory is unknown.\n');
   }
 
-  const filePaths = glob.sync(pattern, {
+  const filePaths = globSync(pattern, {
     cwd,
     dot: true,
     ignore: ignoreList,
