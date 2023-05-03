@@ -9,7 +9,7 @@ export function migrationStrategyForServices(options) {
     join('tests/unit', podPath, '!(services)', '**', 'service-test.{js,ts}'),
     {
       cwd: projectRoot,
-    }
+    },
   );
 
   return oldPaths.map((oldPath) => {

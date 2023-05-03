@@ -7,7 +7,7 @@ function analyzePackageJson(codemodOptions) {
   try {
     const packageJsonFile = readFileSync(
       join(projectRoot, 'package.json'),
-      'utf8'
+      'utf8',
     );
 
     const { name } = JSON.parse(packageJsonFile);
@@ -28,7 +28,7 @@ function analyzePackageJson(codemodOptions) {
     return name;
   } catch (e) {
     throw new SyntaxError(
-      `ERROR: package.json is missing or is not valid. (${e.message})\n`
+      `ERROR: package.json is missing or is not valid. (${e.message})\n`,
     );
   }
 }

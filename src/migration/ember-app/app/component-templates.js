@@ -9,7 +9,7 @@ export function migrationStrategyForComponentTemplates(options) {
     join('app', podPath, 'components', '**', 'template.hbs'),
     {
       cwd: projectRoot,
-    }
+    },
   );
 
   return oldPaths.map((oldPath) => {

@@ -10,7 +10,7 @@ export function migrationStrategyForRouteControllers(options) {
     'tests/unit/!(controllers)/**/controller-test.{js,ts}',
     {
       cwd: projectRoot,
-    }
+    },
   );
 
   const newPaths1 = oldPaths1.map((oldPath) => {
@@ -44,7 +44,7 @@ export function migrationStrategyForRouteControllers(options) {
     'tests/unit/controllers/**/controller-test.{js,ts}',
     {
       cwd: projectRoot,
-    }
+    },
   );
 
   const newPaths2 = oldPaths2.map((oldPath) => {

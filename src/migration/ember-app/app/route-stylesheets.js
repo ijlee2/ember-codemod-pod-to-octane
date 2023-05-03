@@ -9,7 +9,7 @@ export function migrationStrategyForRouteStylesheets(options) {
     join('app', podPath, '!(components)', '**', 'styles.{css,scss}'),
     {
       cwd: projectRoot,
-    }
+    },
   );
 
   return oldPaths.map((oldPath) => {

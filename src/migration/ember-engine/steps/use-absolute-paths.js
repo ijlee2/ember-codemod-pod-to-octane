@@ -15,7 +15,7 @@ function removeRelativePaths(oldFile, { filePath, projectName, projectRoot }) {
 
     let newPath = relative(
       projectRoot,
-      resolve(projectRoot, dirname(filePath), oldPath)
+      resolve(projectRoot, dirname(filePath), oldPath),
     );
 
     if (newPath.startsWith('addon')) {

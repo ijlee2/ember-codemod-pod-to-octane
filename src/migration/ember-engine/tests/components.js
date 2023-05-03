@@ -7,7 +7,7 @@ export function migrationStrategyForComponents(options) {
     'tests/integration/components/**/component-test.{js,ts}',
     {
       cwd: projectRoot,
-    }
+    },
   );
 
   return oldPaths.map((oldPath) => {

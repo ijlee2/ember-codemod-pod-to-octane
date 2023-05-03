@@ -9,7 +9,7 @@ export function migrationStrategyForComponentClasses(options) {
     join('app', podPath, 'components', '**', 'component.{d.ts,js,ts}'),
     {
       cwd: projectRoot,
-    }
+    },
   );
 
   return oldPaths.map((oldPath) => {
