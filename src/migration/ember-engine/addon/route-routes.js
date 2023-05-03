@@ -1,11 +1,9 @@
-import glob from 'glob';
-
-import { mapFilePath } from '../../../utils/files.js';
+import { findFiles, mapFilePath } from '../../../utils/files.js';
 
 export function migrationStrategyForRouteRoutes(options) {
   const { projectRoot } = options;
 
-  const oldPaths = glob.sync('addon/**/route.{js,ts}', {
+  const oldPaths = findFiles('addon/**/route.{js,ts}', {
     cwd: projectRoot,
   });
 

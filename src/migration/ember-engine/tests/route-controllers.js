@@ -1,6 +1,4 @@
-import glob from 'glob';
-
-import { mapFilePath } from '../../../utils/files.js';
+import { findFiles, mapFilePath } from '../../../utils/files.js';
 
 export function migrationStrategyForRouteControllers(options) {
   const { projectRoot } = options;
@@ -8,7 +6,7 @@ export function migrationStrategyForRouteControllers(options) {
   /*
     Case 1: Didn't pass the --pod flag, but configured { usePods: true } in .ember-cli
   */
-  const oldPaths1 = glob.sync(
+  const oldPaths1 = findFiles(
     'tests/unit/!(controllers)/**/controller-test.{js,ts}',
     {
       cwd: projectRoot,
@@ -42,7 +40,7 @@ export function migrationStrategyForRouteControllers(options) {
   /*
     Case 2: Passed the --pod flag to Ember CLI
   */
-  const oldPaths2 = glob.sync(
+  const oldPaths2 = findFiles(
     'tests/unit/controllers/**/controller-test.{js,ts}',
     {
       cwd: projectRoot,
