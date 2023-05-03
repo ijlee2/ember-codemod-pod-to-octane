@@ -12,7 +12,7 @@ export function migrationStrategyForRouteRoutes(options) {
     join('tests/unit', podPath, '!(routes)', '**', 'route-test.{js,ts}'),
     {
       cwd: projectRoot,
-    }
+    },
   );
 
   const newPaths1 = oldPaths1.map((oldPath) => {
@@ -46,7 +46,7 @@ export function migrationStrategyForRouteRoutes(options) {
     join('tests/unit', podPath, 'routes/**/route-test.{js,ts}'),
     {
       cwd: projectRoot,
-    }
+    },
   );
 
   const newPaths2 = oldPaths2.map((oldPath) => {

@@ -21,11 +21,11 @@ test('utils | files | map-file-path', function () {
     (error) => {
       assert.strictEqual(
         error.message,
-        'ERROR: The provided path `addon/components/ui/form/checkbox/component.d.ts` does not end with `component.ts`.\n'
+        'ERROR: The provided path `addon/components/ui/form/checkbox/component.d.ts` does not end with `component.ts`.\n',
       );
 
       return true;
-    }
+    },
   );
 
   assert.throws(
@@ -35,11 +35,11 @@ test('utils | files | map-file-path', function () {
     (error) => {
       assert.strictEqual(
         error.message,
-        'ERROR: The provided path `addon/components/ui/form/checkbox/component.js` does not end with `component.ts`.\n'
+        'ERROR: The provided path `addon/components/ui/form/checkbox/component.js` does not end with `component.ts`.\n',
       );
 
       return true;
-    }
+    },
   );
 
   assert.deepStrictEqual(
@@ -47,6 +47,6 @@ test('utils | files | map-file-path', function () {
     [
       'addon/components/ui/form/checkbox/component.ts',
       'addon/components/ui/form/checkbox.ts',
-    ]
+    ],
   );
 });

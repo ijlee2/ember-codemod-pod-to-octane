@@ -1,5 +1,6 @@
 # compiled output
 /dist/
+/tmp/
 
 # dependencies
 /node_modules/
@@ -7,6 +8,4 @@
 # misc
 !.*
 .*/
-.eslintcache
 /tests/fixtures/
-/tmp/

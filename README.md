@@ -5,6 +5,12 @@
 _Codemod to un-pod Ember apps, addons, and engines_
 
 
+## Features
+
+- Preserves your code whenever possible
+- Supports [`ember-css-modules`](https://github.com/salsify/ember-css-modules)
+
+
 ## Usage
 
 Step 1. Quickly return to [default Octane](https://cli.emberjs.com/release/advanced-use/project-layouts/#classiclayout).<sup>1</sup>
@@ -35,7 +41,7 @@ npx ember-codemod-pod-to-octane --type=engine
 <details>
 <summary>Optional: Do a test run</summary>
 
-Pass `--test` to preview how the codemod will move files around.
+Pass `--test` to preview how the codemod will move files.
 
 ```sh
 npx ember-codemod-pod-to-octane --test
@@ -116,12 +122,13 @@ cd <your/cloned/repo>
 ## Compatibility
 
 * Node.js v16 or above
-* [`ember-css-modules`](https://github.com/salsify/ember-css-modules)
 
 
 ## Contributing
 
-To provide feedback, you can reach out to me on [Discord](https://discord.gg/emberjs) at `ijlee2`. Please star this project so that I can gauge its importance to you and the Ember community. ⭐
+See the [Contributing](CONTRIBUTING.md) guide for details.
+
+If you have an open-sourced app or addon that I can use as a reference, reach out to me on [Discord](https://discord.gg/emberjs) at `ijlee2`. Please star this project so that I can gauge its importance to you and the Ember community. ⭐
 
 
 ## Credits

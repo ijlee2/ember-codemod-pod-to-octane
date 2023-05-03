@@ -14,11 +14,11 @@ export function migrationStrategyForRouteControllers(options) {
       podPath,
       '!(controllers)',
       '**',
-      'controller-test.{js,ts}'
+      'controller-test.{js,ts}',
     ),
     {
       cwd: projectRoot,
-    }
+    },
   );
 
   const newPaths1 = oldPaths1.map((oldPath) => {
@@ -52,7 +52,7 @@ export function migrationStrategyForRouteControllers(options) {
     join('tests/unit', podPath, 'controllers/**/controller-test.{js,ts}'),
     {
       cwd: projectRoot,
-    }
+    },
   );
 
   const newPaths2 = oldPaths2.map((oldPath) => {

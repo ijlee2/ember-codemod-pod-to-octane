@@ -16,7 +16,7 @@ function createMapping(migrationStrategy) {
       const after = removeFileExtension(newPath);
 
       return [before, after];
-    })
+    }),
   );
 }
 

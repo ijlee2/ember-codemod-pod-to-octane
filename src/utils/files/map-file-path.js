@@ -3,7 +3,7 @@ export function mapFilePath(oldPath, { find, replace }) {
 
   if (!oldPath.endsWith(file)) {
     throw new RangeError(
-      `ERROR: The provided path \`${oldPath}\` does not end with \`${file}\`.\n`
+      `ERROR: The provided path \`${oldPath}\` does not end with \`${file}\`.\n`,
     );
   }
 

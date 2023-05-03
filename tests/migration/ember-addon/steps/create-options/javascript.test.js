@@ -13,7 +13,7 @@ test('migration | ember-addon | steps | create-options > javascript', function (
         version: '0.0.0',
       },
       null,
-      2
+      2,
     ),
   };
 

@@ -11,11 +11,11 @@ export function migrationStrategyForComponents(options) {
       podPath,
       'components',
       '**',
-      'component-test.{js,ts}'
+      'component-test.{js,ts}',
     ),
     {
       cwd: projectRoot,
-    }
+    },
   );
 
   return oldPaths.map((oldPath) => {

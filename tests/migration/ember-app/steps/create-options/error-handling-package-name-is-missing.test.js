@@ -16,10 +16,10 @@ test('migration | ember-app | steps | create-options > error handling (package n
     (error) => {
       assert.strictEqual(
         error.message,
-        'ERROR: package.json is missing or is not valid. (Package name is missing.)\n'
+        'ERROR: package.json is missing or is not valid. (Package name is missing.)\n',
       );
 
       return true;
-    }
+    },
   );
 });

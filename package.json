@@ -3,6 +3,7 @@
   "version": "1.1.0",
   "description": "Codemod to un-pod Ember apps, addons, and engines",
   "keywords": [
+    "codemod",
     "ember-codemod",
     "ember-octane",
     "emberjs"
@@ -27,26 +28,25 @@
     "changelog": "lerna-changelog",
     "lint": "eslint . --cache",
     "lint:fix": "eslint . --fix",
-    "start": "node ./src/index.js",
     "test": "mt tests --quiet"
   },
   "dependencies": {
-    "@babel/core": "^7.21.0",
-    "@babel/eslint-parser": "^7.19.1",
-    "glob": "^8.1.0",
-    "yargs": "^17.7.1"
+    "glob": "~10.1.0",
+    "yargs": "^17.7.2"
   },
   "devDependencies": {
+    "@babel/core": "^7.21.8",
+    "@babel/eslint-parser": "^7.21.8",
     "@sondr3/minitest": "^0.1.1",
-    "eslint": "^8.34.0",
-    "eslint-config-prettier": "^8.6.0",
+    "eslint": "^8.39.0",
+    "eslint-config-prettier": "^8.8.0",
     "eslint-plugin-import": "^2.27.5",
-    "eslint-plugin-n": "^15.6.1",
+    "eslint-plugin-n": "^15.7.0",
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-simple-import-sort": "^10.0.0",
     "fixturify": "^3.0.0",
     "lerna-changelog": "^2.2.0",
-    "prettier": "^2.8.4"
+    "prettier": "^2.8.8"
   },
   "engines": {
     "node": ">= 16"

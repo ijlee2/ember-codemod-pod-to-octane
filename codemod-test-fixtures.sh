@@ -4,7 +4,7 @@
 #
 #  A. Purpose
 #
-#    Fix all test fixtures after updating the source code of ember-codemod-pod-to-octane. 
+#    Fix all test fixtures after updating the source code of ember-codemod-pod-to-octane.
 #
 #  B. Usage
 #

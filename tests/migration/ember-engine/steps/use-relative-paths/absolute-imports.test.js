@@ -12,11 +12,11 @@ import {
 
 test('migration | ember-engine | steps | use-relative-paths > absolute-imports', function () {
   const inputProject = convertFixtureToJson(
-    'ember-engine/steps/use-relative-paths/absolute-imports/input'
+    'ember-engine/steps/use-relative-paths/absolute-imports/input',
   );
 
   const outputProject = convertFixtureToJson(
-    'ember-engine/steps/use-relative-paths/absolute-imports/output'
+    'ember-engine/steps/use-relative-paths/absolute-imports/output',
   );
 
   loadFixture(inputProject, codemodOptions);
