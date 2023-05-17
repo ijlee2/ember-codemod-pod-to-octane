@@ -1,6 +1,8 @@
 import { join } from 'node:path';
 
-import { findFiles, mapFilePath } from '../../../utils/files.js';
+import { findFiles } from '@codemod-utils/files';
+
+import { mapFilePath } from '../../../utils/files.js';
 
 export function migrationStrategyForComponentTemplates(options) {
   const { podPath, projectRoot } = options;

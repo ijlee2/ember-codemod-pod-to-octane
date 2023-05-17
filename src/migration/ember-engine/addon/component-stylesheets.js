@@ -1,4 +1,6 @@
-import { findFiles, mapFilePath } from '../../../utils/files.js';
+import { findFiles } from '@codemod-utils/files';
+
+import { mapFilePath } from '../../../utils/files.js';
 
 export function migrationStrategyForComponentStylesheets(options) {
   const { projectRoot } = options;

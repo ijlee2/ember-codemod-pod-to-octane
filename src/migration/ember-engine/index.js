@@ -1,4 +1,5 @@
-import { moveFiles } from '../../utils/files.js';
+import { moveFiles } from '@codemod-utils/files';
+
 import { migrationStrategyForAddonFolder } from './addon/index.js';
 import {
   createOptions,

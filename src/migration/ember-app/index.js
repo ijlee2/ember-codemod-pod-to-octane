@@ -1,4 +1,5 @@
-import { moveFiles } from '../../utils/files.js';
+import { moveFiles } from '@codemod-utils/files';
+
 import { migrationStrategyForAppFolder } from './app/index.js';
 import { createOptions } from './steps/index.js';
 import { migrationStrategyForTestsFolder } from './tests/index.js';

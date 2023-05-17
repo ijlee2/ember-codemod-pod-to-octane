@@ -1,5 +1,6 @@
+import { moveFiles } from '@codemod-utils/files';
+
 import { updatePathsInAppFolder } from '../../../../src/utils/ember-addon/app/components.js';
-import { moveFiles } from '../../../../src/utils/files.js';
 import {
   codemodOptions,
   options,

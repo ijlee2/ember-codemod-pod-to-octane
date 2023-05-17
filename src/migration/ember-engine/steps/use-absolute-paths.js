@@ -1,7 +1,7 @@
 import { readFileSync, writeFileSync } from 'node:fs';
 import { dirname, join, relative, resolve } from 'node:path';
 
-import { findFiles } from '../../../utils/files.js';
+import { findFiles } from '@codemod-utils/files';
 
 function removeRelativePaths(oldFile, { filePath, projectName, projectRoot }) {
   const regex = new RegExp(`(?:'|")(.{1,2}/(.*))(?:'|")`, 'g');
