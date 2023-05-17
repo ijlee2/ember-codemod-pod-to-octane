@@ -1,5 +1,9 @@
 # compiled output
 /dist/
+/tmp/
+
+# dependencies
+/node_modules/
 
 # misc
 /.DS_Store
@@ -10,13 +14,10 @@
 /.git/
 /.github/
 /.gitignore
+/.pnpm-debug.log
 /.prettierignore
 /.prettierrc.cjs
 /codemod-test-fixture.sh
 /codemod-test-fixtures.sh
 /CONTRIBUTING.md
 /tests/
-/tmp/
-/yarn-error.log
-/yarn.lock
-.gitkeep
