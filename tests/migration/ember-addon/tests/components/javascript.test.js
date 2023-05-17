@@ -1,10 +1,11 @@
+import { assert, loadFixture, test } from '@codemod-utils/tests';
+
 import { migrationStrategyForComponents } from '../../../../../src/migration/ember-addon/tests/components.js';
 import { inputProject } from '../../../../fixtures/ember-addon/javascript/index.js';
 import {
   codemodOptions,
   options,
 } from '../../../../helpers/shared-test-setups/ember-addon/javascript.js';
-import { assert, loadFixture, test } from '../../../../helpers/testing.js';
 
 test('migration | ember-addon | tests | components > javascript', function () {
   loadFixture(inputProject, codemodOptions);

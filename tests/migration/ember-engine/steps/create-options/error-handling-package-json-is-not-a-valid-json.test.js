@@ -1,6 +1,7 @@
+import { assert, loadFixture, test } from '@codemod-utils/tests';
+
 import { createOptions } from '../../../../../src/migration/ember-engine/steps/index.js';
 import { codemodOptions } from '../../../../helpers/shared-test-setups/ember-engine/javascript.js';
-import { assert, loadFixture, test } from '../../../../helpers/testing.js';
 
 test('migration | ember-engine | steps | create-options > error handling (package.json is not a valid JSON)', function () {
   const inputProject = {

@@ -1,11 +1,11 @@
 import { moveFiles } from '@codemod-utils/files';
+import { assertFixture, loadFixture, test } from '@codemod-utils/tests';
 
 import { updatePathsInAppFolder } from '../../../../src/utils/ember-addon/app/components.js';
 import {
   codemodOptions,
   options,
 } from '../../../helpers/shared-test-setups/ember-addon/javascript.js';
-import { assertFixture, loadFixture, test } from '../../../helpers/testing.js';
 
 test('utils | ember-addon | app | components', function () {
   const inputProject = {

@@ -1,14 +1,15 @@
-import { updateAbsolutePaths } from '../../../../../src/migration/ember-engine/steps/index.js';
-import {
-  codemodOptions,
-  options,
-} from '../../../../helpers/shared-test-setups/ember-engine/relative-imports.js';
 import {
   assertFixture,
   convertFixtureToJson,
   loadFixture,
   test,
-} from '../../../../helpers/testing.js';
+} from '@codemod-utils/tests';
+
+import { updateAbsolutePaths } from '../../../../../src/migration/ember-engine/steps/index.js';
+import {
+  codemodOptions,
+  options,
+} from '../../../../helpers/shared-test-setups/ember-engine/relative-imports.js';
 
 test('migration | ember-engine | steps | update-absolute-paths > relative-imports', function () {
   const inputProject = convertFixtureToJson(
