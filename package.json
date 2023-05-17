@@ -31,17 +31,17 @@
     "test": "mt tests --quiet"
   },
   "dependencies": {
-    "glob": "~10.1.0",
+    "glob": "^10.2.4",
     "yargs": "^17.7.2"
   },
   "devDependencies": {
     "@babel/core": "^7.21.8",
     "@babel/eslint-parser": "^7.21.8",
     "@sondr3/minitest": "^0.1.1",
-    "eslint": "^8.39.0",
+    "eslint": "^8.40.0",
     "eslint-config-prettier": "^8.8.0",
     "eslint-plugin-import": "^2.27.5",
-    "eslint-plugin-n": "^15.7.0",
+    "eslint-plugin-n": "^16.0.0",
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-simple-import-sort": "^10.0.0",
     "fixturify": "^3.0.0",
