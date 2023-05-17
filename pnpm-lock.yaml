@@ -4,9 +4,6 @@ dependencies:
   '@codemod-utils/files':
     specifier: ^0.1.0
     version: 0.1.0
-  glob:
-    specifier: ^10.2.4
-    version: 10.2.4
   yargs:
     specifier: ^17.7.2
     version: 17.7.2
@@ -42,9 +39,6 @@ devDependencies:
   eslint-plugin-simple-import-sort:
     specifier: ^10.0.0
     version: 10.0.0(eslint@8.40.0)
-  fixturify:
-    specifier: ^3.0.0
-    version: 3.0.0
   lerna-changelog:
     specifier: ^2.2.0
     version: 2.2.0
