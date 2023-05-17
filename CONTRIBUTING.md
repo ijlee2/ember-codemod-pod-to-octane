@@ -124,7 +124,7 @@ Here are some suggestions to help you start:
 1. Help me maintain the project! I have limited time and there is much that I don't know.
 
     - Cut releases
-    - Research new ways to implement v2 addons
+    - Research how pods have been used in apps, addons, and engines
     - Respond to issues
     - Review pull requests
 

@@ -1,3 +1,15 @@
+## 1.1.2 (2023-05-17)
+
+### Enhancement
+* [#25](https://github.com/ijlee2/ember-codemod-pod-to-octane/pull/25) Refactored utilities ([@ijlee2](https://github.com/ijlee2))
+
+### Internal
+* [#24](https://github.com/ijlee2/ember-codemod-pod-to-octane/pull/24) Migrated to pnpm ([@ijlee2](https://github.com/ijlee2))
+
+### Committers: 1
+- Isaac Lee ([@ijlee2](https://github.com/ijlee2))
+
+
 ## 1.1.1 (2023-05-03)
 
 ### Enhancement
