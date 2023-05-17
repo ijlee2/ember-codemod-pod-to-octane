@@ -1,7 +1,7 @@
 import { readFileSync, writeFileSync } from 'node:fs';
 import { join, parse } from 'node:path';
 
-import { findFiles } from '../../../utils/files.js';
+import { findFiles } from '@codemod-utils/files';
 
 function removeFileExtension(path) {
   const { dir, name } = parse(path);

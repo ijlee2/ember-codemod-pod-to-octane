@@ -1,7 +1,7 @@
 import { readFileSync, writeFileSync } from 'node:fs';
 import { dirname, join, relative } from 'node:path';
 
-import { findFiles } from '../../../utils/files.js';
+import { findFiles } from '@codemod-utils/files';
 
 function normalizeRelativePath(relativePath) {
   if (relativePath.startsWith('..')) {

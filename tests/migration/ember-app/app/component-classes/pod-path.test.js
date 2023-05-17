@@ -1,10 +1,11 @@
+import { assert, loadFixture, test } from '@codemod-utils/tests';
+
 import { migrationStrategyForComponentClasses } from '../../../../../src/migration/ember-app/app/component-classes.js';
 import { inputProject } from '../../../../fixtures/ember-app/pod-path/index.js';
 import {
   codemodOptions,
   options,
 } from '../../../../helpers/shared-test-setups/ember-app/pod-path.js';
-import { assert, loadFixture, test } from '../../../../helpers/testing.js';
 
 test('migration | ember-app | app | component-classes > pod path', function () {
   loadFixture(inputProject, codemodOptions);

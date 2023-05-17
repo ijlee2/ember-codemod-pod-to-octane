@@ -1,10 +1,11 @@
+import { assert, loadFixture, test } from '@codemod-utils/tests';
+
 import { migrationStrategyForRouteTemplates } from '../../../../../src/migration/ember-engine/addon/route-templates.js';
 import { inputProject } from '../../../../fixtures/ember-engine/javascript/index.js';
 import {
   codemodOptions,
   options,
 } from '../../../../helpers/shared-test-setups/ember-engine/javascript.js';
-import { assert, loadFixture, test } from '../../../../helpers/testing.js';
 
 test('migration | ember-engine | addon | route-templates > javascript', function () {
   loadFixture(inputProject, codemodOptions);

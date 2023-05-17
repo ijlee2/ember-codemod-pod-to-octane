@@ -1,10 +1,11 @@
+import { assert, loadFixture, test } from '@codemod-utils/tests';
+
 import { migrationStrategyForRouteStylesheets } from '../../../../../src/migration/ember-app/app/route-stylesheets.js';
 import { inputProject } from '../../../../fixtures/ember-app/sass/index.js';
 import {
   codemodOptions,
   options,
 } from '../../../../helpers/shared-test-setups/ember-app/sass.js';
-import { assert, loadFixture, test } from '../../../../helpers/testing.js';
 
 test('migration | ember-app | app | route-stylesheets > sass', function () {
   loadFixture(inputProject, codemodOptions);

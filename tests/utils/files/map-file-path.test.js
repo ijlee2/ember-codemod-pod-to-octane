@@ -1,5 +1,6 @@
+import { assert, test } from '@codemod-utils/tests';
+
 import { mapFilePath } from '../../../src/utils/files.js';
-import { assert, test } from '../../helpers/testing.js';
 
 test('utils | files | map-file-path', function () {
   const mapping = (oldPath) => {

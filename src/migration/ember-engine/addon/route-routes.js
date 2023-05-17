@@ -1,4 +1,6 @@
-import { findFiles, mapFilePath } from '../../../utils/files.js';
+import { findFiles } from '@codemod-utils/files';
+
+import { mapFilePath } from '../../../utils/files.js';
 
 export function migrationStrategyForRouteRoutes(options) {
   const { projectRoot } = options;

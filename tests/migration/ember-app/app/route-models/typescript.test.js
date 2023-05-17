@@ -1,10 +1,11 @@
+import { assert, loadFixture, test } from '@codemod-utils/tests';
+
 import { migrationStrategyForRouteModels } from '../../../../../src/migration/ember-app/app/route-models.js';
 import { inputProject } from '../../../../fixtures/ember-app/typescript/index.js';
 import {
   codemodOptions,
   options,
 } from '../../../../helpers/shared-test-setups/ember-app/typescript.js';
-import { assert, loadFixture, test } from '../../../../helpers/testing.js';
 
 test('migration | ember-app | app | route-models > typescript', function () {
   loadFixture(inputProject, codemodOptions);
