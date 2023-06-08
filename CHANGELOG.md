@@ -1,3 +1,12 @@
+## 1.1.3 (2023-06-08)
+
+### Enhancement
+* [#26](https://github.com/ijlee2/ember-codemod-pod-to-octane/pull/26) Simplify file mapping ([@ijlee2](https://github.com/ijlee2))
+
+### Committers: 1
+- Isaac Lee ([@ijlee2](https://github.com/ijlee2))
+
+
 ## 1.1.2 (2023-05-17)
 
 ### Enhancement
