@@ -1,8 +1,6 @@
 import { join } from 'node:path';
 
-import { findFiles } from '@codemod-utils/files';
-
-import { mapFilePath } from '../../../utils/files.js';
+import { findFiles, renameFile } from '@codemod-utils/files';
 
 export function migrationStrategyForRouteRoutes(options) {
   const { podPath, projectRoot } = options;
@@ -18,27 +16,17 @@ export function migrationStrategyForRouteRoutes(options) {
   );
 
   const newPaths1 = oldPaths1.map((oldPath) => {
-    if (oldPath.endsWith('.ts')) {
-      return mapFilePath(oldPath, {
-        find: {
-          directory: join('tests/unit', podPath),
-          file: 'route-test.ts',
-        },
-        replace(key) {
-          return `tests/unit/routes/${key}-test.ts`;
-        },
-      });
-    }
-
-    return mapFilePath(oldPath, {
+    const newPath = renameFile(oldPath, {
       find: {
         directory: join('tests/unit', podPath),
-        file: 'route-test.js',
+        file: 'route-test',
       },
-      replace(key) {
-        return `tests/unit/routes/${key}-test.js`;
+      replace: (key) => {
+        return `tests/unit/routes/${key}-test`;
       },
     });
+
+    return [oldPath, newPath];
   });
 
   /*
@@ -52,27 +40,17 @@ export function migrationStrategyForRouteRoutes(options) {
   );
 
   const newPaths2 = oldPaths2.map((oldPath) => {
-    if (oldPath.endsWith('.ts')) {
-      return mapFilePath(oldPath, {
-        find: {
-          directory: join('tests/unit', podPath, 'routes'),
-          file: 'route-test.ts',
-        },
-        replace(key) {
-          return `tests/unit/routes/${key}-test.ts`;
-        },
-      });
-    }
-
-    return mapFilePath(oldPath, {
+    const newPath = renameFile(oldPath, {
       find: {
         directory: join('tests/unit', podPath, 'routes'),
-        file: 'route-test.js',
+        file: 'route-test',
       },
-      replace(key) {
-        return `tests/unit/routes/${key}-test.js`;
+      replace: (key) => {
+        return `tests/unit/routes/${key}-test`;
       },
     });
+
+    return [oldPath, newPath];
   });
 
   return [...newPaths1, ...newPaths2];

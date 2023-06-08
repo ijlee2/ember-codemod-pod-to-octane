@@ -1,8 +1,6 @@
 import { join } from 'node:path';
 
-import { findFiles } from '@codemod-utils/files';
-
-import { mapFilePath } from '../../../utils/files.js';
+import { findFiles, renameFile } from '@codemod-utils/files';
 
 export function migrationStrategyForServices(options) {
   const { podPath, projectRoot } = options;
@@ -15,26 +13,16 @@ export function migrationStrategyForServices(options) {
   );
 
   return oldPaths.map((oldPath) => {
-    if (oldPath.endsWith('.ts')) {
-      return mapFilePath(oldPath, {
-        find: {
-          directory: join('tests/unit', podPath),
-          file: 'service-test.ts',
-        },
-        replace(key) {
-          return `tests/unit/services/${key}-test.ts`;
-        },
-      });
-    }
-
-    return mapFilePath(oldPath, {
+    const newPath = renameFile(oldPath, {
       find: {
         directory: join('tests/unit', podPath),
-        file: 'service-test.js',
+        file: 'service-test',
       },
-      replace(key) {
-        return `tests/unit/services/${key}-test.js`;
+      replace: (key) => {
+        return `tests/unit/services/${key}-test`;
       },
     });
+
+    return [oldPath, newPath];
   });
 }

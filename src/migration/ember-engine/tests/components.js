@@ -1,6 +1,4 @@
-import { findFiles } from '@codemod-utils/files';
-
-import { mapFilePath } from '../../../utils/files.js';
+import { findFiles, renameFile } from '@codemod-utils/files';
 
 export function migrationStrategyForComponents(options) {
   const { projectRoot } = options;
@@ -13,26 +11,16 @@ export function migrationStrategyForComponents(options) {
   );
 
   return oldPaths.map((oldPath) => {
-    if (oldPath.endsWith('.ts')) {
-      return mapFilePath(oldPath, {
-        find: {
-          directory: 'tests/integration/components',
-          file: 'component-test.ts',
-        },
-        replace(key) {
-          return `tests/integration/components/${key}-test.ts`;
-        },
-      });
-    }
-
-    return mapFilePath(oldPath, {
+    const newPath = renameFile(oldPath, {
       find: {
         directory: 'tests/integration/components',
-        file: 'component-test.js',
+        file: 'component-test',
       },
-      replace(key) {
-        return `tests/integration/components/${key}-test.js`;
+      replace: (key) => {
+        return `tests/integration/components/${key}-test`;
       },
     });
+
+    return [oldPath, newPath];
   });
 }

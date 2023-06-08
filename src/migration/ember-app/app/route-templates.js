@@ -1,8 +1,6 @@
 import { join } from 'node:path';
 
-import { findFiles } from '@codemod-utils/files';
-
-import { mapFilePath } from '../../../utils/files.js';
+import { findFiles, renameFile } from '@codemod-utils/files';
 
 export function migrationStrategyForRouteTemplates(options) {
   const { podPath, projectRoot } = options;
@@ -15,14 +13,16 @@ export function migrationStrategyForRouteTemplates(options) {
   );
 
   return oldPaths.map((oldPath) => {
-    return mapFilePath(oldPath, {
+    const newPath = renameFile(oldPath, {
       find: {
         directory: join('app', podPath),
-        file: 'template.hbs',
+        file: 'template',
       },
-      replace(key) {
-        return `app/templates/${key}.hbs`;
+      replace: (key) => {
+        return `app/templates/${key}`;
       },
     });
+
+    return [oldPath, newPath];
   });
 }

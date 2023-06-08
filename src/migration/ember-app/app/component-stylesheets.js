@@ -1,8 +1,6 @@
 import { join } from 'node:path';
 
-import { findFiles } from '@codemod-utils/files';
-
-import { mapFilePath } from '../../../utils/files.js';
+import { findFiles, renameFile } from '@codemod-utils/files';
 
 export function migrationStrategyForComponentStylesheets(options) {
   const { podPath, projectRoot } = options;
@@ -15,26 +13,16 @@ export function migrationStrategyForComponentStylesheets(options) {
   );
 
   return oldPaths.map((oldPath) => {
-    if (oldPath.endsWith('.scss')) {
-      return mapFilePath(oldPath, {
-        find: {
-          directory: join('app', podPath, 'components'),
-          file: 'styles.scss',
-        },
-        replace(key) {
-          return `app/components/${key}.scss`;
-        },
-      });
-    }
-
-    return mapFilePath(oldPath, {
+    const newPath = renameFile(oldPath, {
       find: {
         directory: join('app', podPath, 'components'),
-        file: 'styles.css',
+        file: 'styles',
       },
-      replace(key) {
-        return `app/components/${key}.css`;
+      replace: (key) => {
+        return `app/components/${key}`;
       },
     });
+
+    return [oldPath, newPath];
   });
 }

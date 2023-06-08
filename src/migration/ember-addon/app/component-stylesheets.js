@@ -1,6 +1,4 @@
-import { findFiles } from '@codemod-utils/files';
-
-import { mapFilePath } from '../../../utils/files.js';
+import { findFiles, renameFile } from '@codemod-utils/files';
 
 export function migrationStrategyForComponentStylesheets(options) {
   const { projectRoot } = options;
@@ -10,14 +8,16 @@ export function migrationStrategyForComponentStylesheets(options) {
   });
 
   return oldPaths.map((oldPath) => {
-    return mapFilePath(oldPath, {
+    const newPath = renameFile(oldPath, {
       find: {
         directory: 'app/components',
-        file: 'styles.js',
+        file: 'styles',
       },
-      replace(key) {
-        return `app/components/${key}.js`;
+      replace: (key) => {
+        return `app/components/${key}`;
       },
     });
+
+    return [oldPath, newPath];
   });
 }

@@ -1,6 +1,4 @@
-import { findFiles } from '@codemod-utils/files';
-
-import { mapFilePath } from '../../../utils/files.js';
+import { findFiles, renameFile } from '@codemod-utils/files';
 
 export function migrationStrategyForComponentTemplates(options) {
   const { projectRoot } = options;
@@ -10,14 +8,16 @@ export function migrationStrategyForComponentTemplates(options) {
   });
 
   return oldPaths.map((oldPath) => {
-    return mapFilePath(oldPath, {
+    const newPath = renameFile(oldPath, {
       find: {
         directory: 'addon/components',
-        file: 'template.hbs',
+        file: 'template',
       },
-      replace(key) {
-        return `addon/components/${key}.hbs`;
+      replace: (key) => {
+        return `addon/components/${key}`;
       },
     });
+
+    return [oldPath, newPath];
   });
 }
