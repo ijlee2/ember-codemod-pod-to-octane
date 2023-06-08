@@ -1,6 +1,4 @@
-import { findFiles } from '@codemod-utils/files';
-
-import { mapFilePath } from '../../../utils/files.js';
+import { findFiles, renameFile } from '../../../utils/files.js';
 
 export function migrationStrategyForRouteRoutes(options) {
   const { projectRoot } = options;
@@ -10,26 +8,16 @@ export function migrationStrategyForRouteRoutes(options) {
   });
 
   return oldPaths.map((oldPath) => {
-    if (oldPath.endsWith('.ts')) {
-      return mapFilePath(oldPath, {
-        find: {
-          directory: 'addon',
-          file: 'route.ts',
-        },
-        replace(key) {
-          return `addon/routes/${key}.ts`;
-        },
-      });
-    }
-
-    return mapFilePath(oldPath, {
+    const newPath = renameFile(oldPath, {
       find: {
         directory: 'addon',
-        file: 'route.js',
+        file: 'route',
       },
-      replace(key) {
-        return `addon/routes/${key}.js`;
+      replace: (key) => {
+        return `addon/routes/${key}`;
       },
     });
+
+    return [oldPath, newPath];
   });
 }

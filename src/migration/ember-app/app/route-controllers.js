@@ -1,8 +1,6 @@
 import { join } from 'node:path';
 
-import { findFiles } from '@codemod-utils/files';
-
-import { mapFilePath } from '../../../utils/files.js';
+import { findFiles, renameFile } from '../../../utils/files.js';
 
 export function migrationStrategyForRouteControllers(options) {
   const { podPath, projectRoot } = options;
@@ -12,26 +10,16 @@ export function migrationStrategyForRouteControllers(options) {
   });
 
   return oldPaths.map((oldPath) => {
-    if (oldPath.endsWith('.ts')) {
-      return mapFilePath(oldPath, {
-        find: {
-          directory: join('app', podPath),
-          file: 'controller.ts',
-        },
-        replace(key) {
-          return `app/controllers/${key}.ts`;
-        },
-      });
-    }
-
-    return mapFilePath(oldPath, {
+    const newPath = renameFile(oldPath, {
       find: {
         directory: join('app', podPath),
-        file: 'controller.js',
+        file: 'controller',
       },
-      replace(key) {
-        return `app/controllers/${key}.js`;
+      replace: (key) => {
+        return `app/controllers/${key}`;
       },
     });
+
+    return [oldPath, newPath];
   });
 }

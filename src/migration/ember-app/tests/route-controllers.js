@@ -1,8 +1,6 @@
 import { join } from 'node:path';
 
-import { findFiles } from '@codemod-utils/files';
-
-import { mapFilePath } from '../../../utils/files.js';
+import { findFiles, renameFile } from '../../../utils/files.js';
 
 export function migrationStrategyForRouteControllers(options) {
   const { podPath, projectRoot } = options;
@@ -24,27 +22,17 @@ export function migrationStrategyForRouteControllers(options) {
   );
 
   const newPaths1 = oldPaths1.map((oldPath) => {
-    if (oldPath.endsWith('.ts')) {
-      return mapFilePath(oldPath, {
-        find: {
-          directory: join('tests/unit', podPath),
-          file: 'controller-test.ts',
-        },
-        replace(key) {
-          return `tests/unit/controllers/${key}-test.ts`;
-        },
-      });
-    }
-
-    return mapFilePath(oldPath, {
+    const newPath = renameFile(oldPath, {
       find: {
         directory: join('tests/unit', podPath),
-        file: 'controller-test.js',
+        file: 'controller-test',
       },
-      replace(key) {
-        return `tests/unit/controllers/${key}-test.js`;
+      replace: (key) => {
+        return `tests/unit/controllers/${key}-test`;
       },
     });
+
+    return [oldPath, newPath];
   });
 
   /*
@@ -58,27 +46,17 @@ export function migrationStrategyForRouteControllers(options) {
   );
 
   const newPaths2 = oldPaths2.map((oldPath) => {
-    if (oldPath.endsWith('.ts')) {
-      return mapFilePath(oldPath, {
-        find: {
-          directory: join('tests/unit', podPath, 'controllers'),
-          file: 'controller-test.ts',
-        },
-        replace(key) {
-          return `tests/unit/controllers/${key}-test.ts`;
-        },
-      });
-    }
-
-    return mapFilePath(oldPath, {
+    const newPath = renameFile(oldPath, {
       find: {
         directory: join('tests/unit', podPath, 'controllers'),
-        file: 'controller-test.js',
+        file: 'controller-test',
       },
-      replace(key) {
-        return `tests/unit/controllers/${key}-test.js`;
+      replace: (key) => {
+        return `tests/unit/controllers/${key}-test`;
       },
     });
+
+    return [oldPath, newPath];
   });
 
   return [...newPaths1, ...newPaths2];

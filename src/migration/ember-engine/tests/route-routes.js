@@ -1,6 +1,4 @@
-import { findFiles } from '@codemod-utils/files';
-
-import { mapFilePath } from '../../../utils/files.js';
+import { findFiles, renameFile } from '../../../utils/files.js';
 
 export function migrationStrategyForRouteRoutes(options) {
   const { projectRoot } = options;
@@ -13,27 +11,17 @@ export function migrationStrategyForRouteRoutes(options) {
   });
 
   const newPaths1 = oldPaths1.map((oldPath) => {
-    if (oldPath.endsWith('.ts')) {
-      return mapFilePath(oldPath, {
-        find: {
-          directory: 'tests/unit',
-          file: 'route-test.ts',
-        },
-        replace(key) {
-          return `tests/unit/routes/${key}-test.ts`;
-        },
-      });
-    }
-
-    return mapFilePath(oldPath, {
+    const newPath = renameFile(oldPath, {
       find: {
         directory: 'tests/unit',
-        file: 'route-test.js',
+        file: 'route-test',
       },
-      replace(key) {
-        return `tests/unit/routes/${key}-test.js`;
+      replace: (key) => {
+        return `tests/unit/routes/${key}-test`;
       },
     });
+
+    return [oldPath, newPath];
   });
 
   /*
@@ -44,27 +32,17 @@ export function migrationStrategyForRouteRoutes(options) {
   });
 
   const newPaths2 = oldPaths2.map((oldPath) => {
-    if (oldPath.endsWith('.ts')) {
-      return mapFilePath(oldPath, {
-        find: {
-          directory: 'tests/unit/routes',
-          file: 'route-test.ts',
-        },
-        replace(key) {
-          return `tests/unit/routes/${key}-test.ts`;
-        },
-      });
-    }
-
-    return mapFilePath(oldPath, {
+    const newPath = renameFile(oldPath, {
       find: {
         directory: 'tests/unit/routes',
-        file: 'route-test.js',
+        file: 'route-test',
       },
-      replace(key) {
-        return `tests/unit/routes/${key}-test.js`;
+      replace: (key) => {
+        return `tests/unit/routes/${key}-test`;
       },
     });
+
+    return [oldPath, newPath];
   });
 
   return [...newPaths1, ...newPaths2];

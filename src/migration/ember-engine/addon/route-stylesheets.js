@@ -1,6 +1,4 @@
-import { findFiles } from '@codemod-utils/files';
-
-import { mapFilePath } from '../../../utils/files.js';
+import { findFiles, renameFile } from '../../../utils/files.js';
 
 export function migrationStrategyForRouteStylesheets(options) {
   const { projectRoot } = options;
@@ -10,26 +8,16 @@ export function migrationStrategyForRouteStylesheets(options) {
   });
 
   return oldPaths.map((oldPath) => {
-    if (oldPath.endsWith('.scss')) {
-      return mapFilePath(oldPath, {
-        find: {
-          directory: 'addon',
-          file: 'styles.scss',
-        },
-        replace(key) {
-          return `addon/styles/${key}.scss`;
-        },
-      });
-    }
-
-    return mapFilePath(oldPath, {
+    const newPath = renameFile(oldPath, {
       find: {
         directory: 'addon',
-        file: 'styles.css',
+        file: 'styles',
       },
-      replace(key) {
-        return `addon/styles/${key}.css`;
+      replace: (key) => {
+        return `addon/styles/${key}`;
       },
     });
+
+    return [oldPath, newPath];
   });
 }
