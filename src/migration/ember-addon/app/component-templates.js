@@ -1,4 +1,4 @@
-import { findFiles, renameFile } from '../../../utils/files.js';
+import { findFiles, renameFile } from '@codemod-utils/files';
 
 export function migrationStrategyForComponentTemplates(options) {
   const { projectRoot } = options;

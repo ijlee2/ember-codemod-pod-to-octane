@@ -1,6 +1,6 @@
 import { join } from 'node:path';
 
-import { findFiles, renameFile } from '../../../utils/files.js';
+import { findFiles, renameFile } from '@codemod-utils/files';
 
 export function migrationStrategyForRouteRoutes(options) {
   const { podPath, projectRoot } = options;

@@ -1,4 +1,4 @@
-import { findFiles, renameFile } from '../../../utils/files.js';
+import { findFiles, renameFile } from '@codemod-utils/files';
 
 export function migrationStrategyForRouteStylesheets(options) {
   const { projectRoot } = options;
