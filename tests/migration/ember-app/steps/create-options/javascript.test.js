@@ -20,5 +20,5 @@ test('migration | ember-app | steps | create-options > javascript', function () 
 
   loadFixture(inputProject, codemodOptions);
 
-  assert.deepEqual(createOptions(codemodOptions), options);
+  assert.deepStrictEqual(createOptions(codemodOptions), options);
 });
