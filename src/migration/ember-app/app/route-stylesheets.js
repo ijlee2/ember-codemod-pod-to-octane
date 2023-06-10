@@ -5,15 +5,15 @@ import { findFiles, renamePathByFile } from '@codemod-utils/files';
 export function migrationStrategyForRouteStylesheets(options) {
   const { podPath, projectRoot } = options;
 
-  const oldPaths = findFiles(
+  const filePaths = findFiles(
     join('app', podPath, '!(components)', '**', 'styles.{css,scss}'),
     {
       projectRoot,
     },
   );
 
-  return oldPaths.map((oldPath) => {
-    const newPath = renamePathByFile(oldPath, {
+  return filePaths.map((oldFilePath) => {
+    const newFilePath = renamePathByFile(oldFilePath, {
       find: {
         directory: join('app', podPath),
         file: 'styles',
@@ -23,6 +23,6 @@ export function migrationStrategyForRouteStylesheets(options) {
       },
     });
 
-    return [oldPath, newPath];
+    return [oldFilePath, newFilePath];
   });
 }

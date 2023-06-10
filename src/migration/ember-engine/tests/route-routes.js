@@ -6,12 +6,12 @@ export function migrationStrategyForRouteRoutes(options) {
   /*
     Case 1: Didn't pass the --pod flag, but configured { usePods: true } in .ember-cli
   */
-  const oldPaths1 = findFiles('tests/unit/!(routes)/**/route-test.{js,ts}', {
+  const filePaths1 = findFiles('tests/unit/!(routes)/**/route-test.{js,ts}', {
     projectRoot,
   });
 
-  const newPaths1 = oldPaths1.map((oldPath) => {
-    const newPath = renamePathByFile(oldPath, {
+  const filePathMap1 = filePaths1.map((oldFilePath) => {
+    const newFilePath = renamePathByFile(oldFilePath, {
       find: {
         directory: 'tests/unit',
         file: 'route-test',
@@ -21,18 +21,18 @@ export function migrationStrategyForRouteRoutes(options) {
       },
     });
 
-    return [oldPath, newPath];
+    return [oldFilePath, newFilePath];
   });
 
   /*
     Case 2: Passed the --pod flag to Ember CLI
   */
-  const oldPaths2 = findFiles('tests/unit/routes/**/route-test.{js,ts}', {
+  const filePaths2 = findFiles('tests/unit/routes/**/route-test.{js,ts}', {
     projectRoot,
   });
 
-  const newPaths2 = oldPaths2.map((oldPath) => {
-    const newPath = renamePathByFile(oldPath, {
+  const filePathMap2 = filePaths2.map((oldFilePath) => {
+    const newFilePath = renamePathByFile(oldFilePath, {
       find: {
         directory: 'tests/unit/routes',
         file: 'route-test',
@@ -42,8 +42,8 @@ export function migrationStrategyForRouteRoutes(options) {
       },
     });
 
-    return [oldPath, newPath];
+    return [oldFilePath, newFilePath];
   });
 
-  return [...newPaths1, ...newPaths2];
+  return [...filePathMap1, ...filePathMap2];
 }

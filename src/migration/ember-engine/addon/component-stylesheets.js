@@ -3,12 +3,12 @@ import { findFiles, renamePathByFile } from '@codemod-utils/files';
 export function migrationStrategyForComponentStylesheets(options) {
   const { projectRoot } = options;
 
-  const oldPaths = findFiles('addon/components/**/styles.{css,scss}', {
+  const filePaths = findFiles('addon/components/**/styles.{css,scss}', {
     projectRoot,
   });
 
-  return oldPaths.map((oldPath) => {
-    const newPath = renamePathByFile(oldPath, {
+  return filePaths.map((oldFilePath) => {
+    const newFilePath = renamePathByFile(oldFilePath, {
       find: {
         directory: 'addon/components',
         file: 'styles',
@@ -18,6 +18,6 @@ export function migrationStrategyForComponentStylesheets(options) {
       },
     });
 
-    return [oldPath, newPath];
+    return [oldFilePath, newFilePath];
   });
 }

@@ -5,12 +5,15 @@ import { findFiles, renamePathByFile } from '@codemod-utils/files';
 export function migrationStrategyForRouteControllers(options) {
   const { podPath, projectRoot } = options;
 
-  const oldPaths = findFiles(join('app', podPath, '**', 'controller.{js,ts}'), {
-    projectRoot,
-  });
+  const filePaths = findFiles(
+    join('app', podPath, '**', 'controller.{js,ts}'),
+    {
+      projectRoot,
+    },
+  );
 
-  return oldPaths.map((oldPath) => {
-    const newPath = renamePathByFile(oldPath, {
+  return filePaths.map((oldFilePath) => {
+    const newFilePath = renamePathByFile(oldFilePath, {
       find: {
         directory: join('app', podPath),
         file: 'controller',
@@ -20,6 +23,6 @@ export function migrationStrategyForRouteControllers(options) {
       },
     });
 
-    return [oldPath, newPath];
+    return [oldFilePath, newFilePath];
   });
 }

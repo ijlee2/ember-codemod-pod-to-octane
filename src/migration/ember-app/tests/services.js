@@ -5,15 +5,15 @@ import { findFiles, renamePathByFile } from '@codemod-utils/files';
 export function migrationStrategyForServices(options) {
   const { podPath, projectRoot } = options;
 
-  const oldPaths = findFiles(
+  const filePaths = findFiles(
     join('tests/unit', podPath, '!(services)', '**', 'service-test.{js,ts}'),
     {
       projectRoot,
     },
   );
 
-  return oldPaths.map((oldPath) => {
-    const newPath = renamePathByFile(oldPath, {
+  return filePaths.map((oldFilePath) => {
+    const newFilePath = renamePathByFile(oldFilePath, {
       find: {
         directory: join('tests/unit', podPath),
         file: 'service-test',
@@ -23,6 +23,6 @@ export function migrationStrategyForServices(options) {
       },
     });
 
-    return [oldPath, newPath];
+    return [oldFilePath, newFilePath];
   });
 }

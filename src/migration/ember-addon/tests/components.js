@@ -3,15 +3,15 @@ import { findFiles, renamePathByFile } from '@codemod-utils/files';
 export function migrationStrategyForComponents(options) {
   const { projectRoot } = options;
 
-  const oldPaths = findFiles(
+  const filePaths = findFiles(
     'tests/integration/components/**/component-test.{js,ts}',
     {
       projectRoot,
     },
   );
 
-  return oldPaths.map((oldPath) => {
-    const newPath = renamePathByFile(oldPath, {
+  return filePaths.map((oldFilePath) => {
+    const newFilePath = renamePathByFile(oldFilePath, {
       find: {
         directory: 'tests/integration/components',
         file: 'component-test',
@@ -21,6 +21,6 @@ export function migrationStrategyForComponents(options) {
       },
     });
 
-    return [oldPath, newPath];
+    return [oldFilePath, newFilePath];
   });
 }

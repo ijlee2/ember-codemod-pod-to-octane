@@ -3,12 +3,12 @@ import { findFiles, renamePathByFile } from '@codemod-utils/files';
 export function migrationStrategyForComponentClasses(options) {
   const { projectRoot } = options;
 
-  const oldPaths = findFiles('app/components/**/component.js', {
+  const filePaths = findFiles('app/components/**/component.js', {
     projectRoot,
   });
 
-  return oldPaths.map((oldPath) => {
-    const newPath = renamePathByFile(oldPath, {
+  return filePaths.map((oldFilePath) => {
+    const newFilePath = renamePathByFile(oldFilePath, {
       find: {
         directory: 'app/components',
         file: 'component',
@@ -18,6 +18,6 @@ export function migrationStrategyForComponentClasses(options) {
       },
     });
 
-    return [oldPath, newPath];
+    return [oldFilePath, newFilePath];
   });
 }

@@ -5,15 +5,15 @@ import { findFiles, renamePathByFile } from '@codemod-utils/files';
 export function migrationStrategyForComponentClasses(options) {
   const { podPath, projectRoot } = options;
 
-  const oldPaths = findFiles(
+  const filePaths = findFiles(
     join('app', podPath, 'components', '**', 'component.{d.ts,js,ts}'),
     {
       projectRoot,
     },
   );
 
-  return oldPaths.map((oldPath) => {
-    const newPath = renamePathByFile(oldPath, {
+  return filePaths.map((oldFilePath) => {
+    const newFilePath = renamePathByFile(oldFilePath, {
       find: {
         directory: join('app', podPath, 'components'),
         file: 'component',
@@ -23,6 +23,6 @@ export function migrationStrategyForComponentClasses(options) {
       },
     });
 
-    return [oldPath, newPath];
+    return [oldFilePath, newFilePath];
   });
 }

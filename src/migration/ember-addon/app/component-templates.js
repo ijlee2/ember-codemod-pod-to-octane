@@ -3,12 +3,12 @@ import { findFiles, renamePathByFile } from '@codemod-utils/files';
 export function migrationStrategyForComponentTemplates(options) {
   const { projectRoot } = options;
 
-  const oldPaths = findFiles('app/components/**/template.js', {
+  const filePaths = findFiles('app/components/**/template.js', {
     projectRoot,
   });
 
-  return oldPaths.map((oldPath) => {
-    const newPath = renamePathByFile(oldPath, {
+  return filePaths.map((oldFilePath) => {
+    const newFilePath = renamePathByFile(oldFilePath, {
       find: {
         directory: 'app/components',
         file: 'template',
@@ -18,6 +18,6 @@ export function migrationStrategyForComponentTemplates(options) {
       },
     });
 
-    return [oldPath, newPath];
+    return [oldFilePath, newFilePath];
   });
 }

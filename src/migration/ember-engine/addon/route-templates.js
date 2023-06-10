@@ -3,12 +3,12 @@ import { findFiles, renamePathByFile } from '@codemod-utils/files';
 export function migrationStrategyForRouteTemplates(options) {
   const { projectRoot } = options;
 
-  const oldPaths = findFiles('addon/!(components)/**/template.hbs', {
+  const filePaths = findFiles('addon/!(components)/**/template.hbs', {
     projectRoot,
   });
 
-  return oldPaths.map((oldPath) => {
-    const newPath = renamePathByFile(oldPath, {
+  return filePaths.map((oldFilePath) => {
+    const newFilePath = renamePathByFile(oldFilePath, {
       find: {
         directory: 'addon',
         file: 'template',
@@ -18,6 +18,6 @@ export function migrationStrategyForRouteTemplates(options) {
       },
     });
 
-    return [oldPath, newPath];
+    return [oldFilePath, newFilePath];
   });
 }
