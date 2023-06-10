@@ -1,3 +1,12 @@
+## 1.1.5 (2023-06-10)
+
+### Internal
+* [#29](https://github.com/ijlee2/ember-codemod-pod-to-octane/pull/29) Separated validation concerns ([@ijlee2](https://github.com/ijlee2))
+
+### Committers: 1
+- Isaac Lee ([@ijlee2](https://github.com/ijlee2))
+
+
 ## 1.1.4 (2023-06-10)
 
 ### Enhancement
