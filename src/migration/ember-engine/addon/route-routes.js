@@ -1,14 +1,14 @@
-import { findFiles, renameFile } from '@codemod-utils/files';
+import { findFiles, renamePathByFile } from '@codemod-utils/files';
 
 export function migrationStrategyForRouteRoutes(options) {
   const { projectRoot } = options;
 
-  const oldPaths = findFiles('addon/**/route.{js,ts}', {
-    cwd: projectRoot,
+  const filePaths = findFiles('addon/**/route.{js,ts}', {
+    projectRoot,
   });
 
-  return oldPaths.map((oldPath) => {
-    const newPath = renameFile(oldPath, {
+  return filePaths.map((oldFilePath) => {
+    const newFilePath = renamePathByFile(oldFilePath, {
       find: {
         directory: 'addon',
         file: 'route',
@@ -18,6 +18,6 @@ export function migrationStrategyForRouteRoutes(options) {
       },
     });
 
-    return [oldPath, newPath];
+    return [oldFilePath, newFilePath];
   });
 }

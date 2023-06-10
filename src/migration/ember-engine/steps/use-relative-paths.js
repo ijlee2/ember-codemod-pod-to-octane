@@ -39,7 +39,7 @@ function useRelativePathInAddonFolder(options) {
   // File extensions had been specified, partly to encode assumptions
   // about Ember, and partly to avoid corrupting non-text files
   const filePaths = findFiles('addon/**/*.{d.ts,js,ts}', {
-    cwd: projectRoot,
+    projectRoot,
   });
 
   filePaths.forEach((filePath) => {
@@ -62,7 +62,7 @@ function useRelativePathInTestsFolder(options) {
   // File extensions had been specified, partly to encode assumptions
   // about Ember, and partly to avoid corrupting non-text files
   const filePaths = findFiles('tests/**/*.{d.ts,js,ts}', {
-    cwd: projectRoot,
+    projectRoot,
     ignoreList: ['tests/dummy/**/*'],
   });
 
@@ -86,7 +86,7 @@ function useRelativePathInTestsDummyFolder(options) {
   // File extensions had been specified, partly to encode assumptions
   // about Ember, and partly to avoid corrupting non-text files
   const filePaths = findFiles('tests/dummy/**/*.{d.ts,js,ts}', {
-    cwd: projectRoot,
+    projectRoot,
   });
 
   filePaths.forEach((filePath) => {

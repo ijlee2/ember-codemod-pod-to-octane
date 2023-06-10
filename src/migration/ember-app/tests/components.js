@@ -1,11 +1,11 @@
 import { join } from 'node:path';
 
-import { findFiles, renameFile } from '@codemod-utils/files';
+import { findFiles, renamePathByFile } from '@codemod-utils/files';
 
 export function migrationStrategyForComponents(options) {
   const { podPath, projectRoot } = options;
 
-  const oldPaths = findFiles(
+  const filePaths = findFiles(
     join(
       'tests/integration',
       podPath,
@@ -14,12 +14,12 @@ export function migrationStrategyForComponents(options) {
       'component-test.{js,ts}',
     ),
     {
-      cwd: projectRoot,
+      projectRoot,
     },
   );
 
-  return oldPaths.map((oldPath) => {
-    const newPath = renameFile(oldPath, {
+  return filePaths.map((oldFilePath) => {
+    const newFilePath = renamePathByFile(oldFilePath, {
       find: {
         directory: join('tests/integration', podPath, 'components'),
         file: 'component-test',
@@ -29,6 +29,6 @@ export function migrationStrategyForComponents(options) {
       },
     });
 
-    return [oldPath, newPath];
+    return [oldFilePath, newFilePath];
   });
 }

@@ -1,14 +1,14 @@
-import { findFiles, renameFile } from '@codemod-utils/files';
+import { findFiles, renamePathByFile } from '@codemod-utils/files';
 
 export function migrationStrategyForComponentStylesheets(options) {
   const { projectRoot } = options;
 
-  const oldPaths = findFiles('app/components/**/styles.js', {
-    cwd: projectRoot,
+  const filePaths = findFiles('app/components/**/styles.js', {
+    projectRoot,
   });
 
-  return oldPaths.map((oldPath) => {
-    const newPath = renameFile(oldPath, {
+  return filePaths.map((oldFilePath) => {
+    const newFilePath = renamePathByFile(oldFilePath, {
       find: {
         directory: 'app/components',
         file: 'styles',
@@ -18,6 +18,6 @@ export function migrationStrategyForComponentStylesheets(options) {
       },
     });
 
-    return [oldPath, newPath];
+    return [oldFilePath, newFilePath];
   });
 }

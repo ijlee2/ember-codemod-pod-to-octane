@@ -1,19 +1,19 @@
 import { join } from 'node:path';
 
-import { findFiles, renameFile } from '@codemod-utils/files';
+import { findFiles, renamePathByFile } from '@codemod-utils/files';
 
 export function migrationStrategyForComponentTemplates(options) {
   const { podPath, projectRoot } = options;
 
-  const oldPaths = findFiles(
+  const filePaths = findFiles(
     join('app', podPath, 'components', '**', 'template.hbs'),
     {
-      cwd: projectRoot,
+      projectRoot,
     },
   );
 
-  return oldPaths.map((oldPath) => {
-    const newPath = renameFile(oldPath, {
+  return filePaths.map((oldFilePath) => {
+    const newFilePath = renamePathByFile(oldFilePath, {
       find: {
         directory: join('app', podPath, 'components'),
         file: 'template',
@@ -23,6 +23,6 @@ export function migrationStrategyForComponentTemplates(options) {
       },
     });
 
-    return [oldPath, newPath];
+    return [oldFilePath, newFilePath];
   });
 }

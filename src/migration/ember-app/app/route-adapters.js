@@ -1,16 +1,16 @@
 import { join } from 'node:path';
 
-import { findFiles, renameFile } from '@codemod-utils/files';
+import { findFiles, renamePathByFile } from '@codemod-utils/files';
 
 export function migrationStrategyForRouteAdapters(options) {
   const { podPath, projectRoot } = options;
 
-  const oldPaths = findFiles(join('app', podPath, '**', 'adapter.{js,ts}'), {
-    cwd: projectRoot,
+  const filePaths = findFiles(join('app', podPath, '**', 'adapter.{js,ts}'), {
+    projectRoot,
   });
 
-  return oldPaths.map((oldPath) => {
-    const newPath = renameFile(oldPath, {
+  return filePaths.map((oldFilePath) => {
+    const newFilePath = renamePathByFile(oldFilePath, {
       find: {
         directory: join('app', podPath),
         file: 'adapter',
@@ -20,6 +20,6 @@ export function migrationStrategyForRouteAdapters(options) {
       },
     });
 
-    return [oldPath, newPath];
+    return [oldFilePath, newFilePath];
   });
 }
