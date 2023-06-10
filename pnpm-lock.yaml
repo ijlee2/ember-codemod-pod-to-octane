@@ -4,6 +4,9 @@ dependencies:
   '@codemod-utils/files':
     specifier: ^0.3.1
     version: 0.3.1
+  '@codemod-utils/json':
+    specifier: ^0.1.2
+    version: 0.1.2
   yargs:
     specifier: ^17.7.2
     version: 17.7.2
@@ -270,6 +273,11 @@ packages:
     engines: {node: 16.* || >= 18}
     dependencies:
       glob: 10.2.7
+    dev: false
+
+  /@codemod-utils/json@0.1.2:
+    resolution: {integrity: sha512-G05WyxlngqbrQK+quudBjJbHK/a2omNzqL7/oNrkc09IascvVM27Fb6GcNrOTIPU2atvP+zi9jDmZlIWiarHcA==}
+    engines: {node: 16.* || >= 18}
     dev: false
 
   /@codemod-utils/tests@0.1.2(@sondr3/minitest@0.1.1):
