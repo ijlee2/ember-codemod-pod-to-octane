@@ -1,3 +1,16 @@
+## 1.1.4 (2023-06-10)
+
+### Enhancement
+* [#28](https://github.com/ijlee2/ember-codemod-pod-to-octane/pull/28) Updated dependencies ([@ijlee2](https://github.com/ijlee2))
+* [#27](https://github.com/ijlee2/ember-codemod-pod-to-octane/pull/27) Replace assert.deepEqual with assert.deepStrictEqual ([@ijlee2](https://github.com/ijlee2))
+
+### Internal
+* [#28](https://github.com/ijlee2/ember-codemod-pod-to-octane/pull/28) Updated dependencies ([@ijlee2](https://github.com/ijlee2))
+
+### Committers: 1
+- Isaac Lee ([@ijlee2](https://github.com/ijlee2))
+
+
 ## 1.1.3 (2023-06-08)
 
 ### Enhancement
