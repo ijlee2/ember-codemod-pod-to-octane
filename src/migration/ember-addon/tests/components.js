@@ -1,4 +1,4 @@
-import { findFiles, renameFile } from '@codemod-utils/files';
+import { findFiles, renamePathByFile } from '@codemod-utils/files';
 
 export function migrationStrategyForComponents(options) {
   const { projectRoot } = options;
@@ -11,7 +11,7 @@ export function migrationStrategyForComponents(options) {
   );
 
   return oldPaths.map((oldPath) => {
-    const newPath = renameFile(oldPath, {
+    const newPath = renamePathByFile(oldPath, {
       find: {
         directory: 'tests/integration/components',
         file: 'component-test',

@@ -1,6 +1,6 @@
 import { join } from 'node:path';
 
-import { findFiles, renameFile } from '@codemod-utils/files';
+import { findFiles, renamePathByFile } from '@codemod-utils/files';
 
 export function migrationStrategyForRouteModels(options) {
   const { podPath, projectRoot } = options;
@@ -10,7 +10,7 @@ export function migrationStrategyForRouteModels(options) {
   });
 
   return oldPaths.map((oldPath) => {
-    const newPath = renameFile(oldPath, {
+    const newPath = renamePathByFile(oldPath, {
       find: {
         directory: join('app', podPath),
         file: 'model',

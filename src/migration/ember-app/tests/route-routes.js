@@ -1,6 +1,6 @@
 import { join } from 'node:path';
 
-import { findFiles, renameFile } from '@codemod-utils/files';
+import { findFiles, renamePathByFile } from '@codemod-utils/files';
 
 export function migrationStrategyForRouteRoutes(options) {
   const { podPath, projectRoot } = options;
@@ -16,7 +16,7 @@ export function migrationStrategyForRouteRoutes(options) {
   );
 
   const newPaths1 = oldPaths1.map((oldPath) => {
-    const newPath = renameFile(oldPath, {
+    const newPath = renamePathByFile(oldPath, {
       find: {
         directory: join('tests/unit', podPath),
         file: 'route-test',
@@ -40,7 +40,7 @@ export function migrationStrategyForRouteRoutes(options) {
   );
 
   const newPaths2 = oldPaths2.map((oldPath) => {
-    const newPath = renameFile(oldPath, {
+    const newPath = renamePathByFile(oldPath, {
       find: {
         directory: join('tests/unit', podPath, 'routes'),
         file: 'route-test',

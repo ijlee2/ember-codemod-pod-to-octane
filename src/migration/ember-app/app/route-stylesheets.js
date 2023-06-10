@@ -1,6 +1,6 @@
 import { join } from 'node:path';
 
-import { findFiles, renameFile } from '@codemod-utils/files';
+import { findFiles, renamePathByFile } from '@codemod-utils/files';
 
 export function migrationStrategyForRouteStylesheets(options) {
   const { podPath, projectRoot } = options;
@@ -13,7 +13,7 @@ export function migrationStrategyForRouteStylesheets(options) {
   );
 
   return oldPaths.map((oldPath) => {
-    const newPath = renameFile(oldPath, {
+    const newPath = renamePathByFile(oldPath, {
       find: {
         directory: join('app', podPath),
         file: 'styles',

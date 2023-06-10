@@ -1,4 +1,4 @@
-import { findFiles, renameFile } from '@codemod-utils/files';
+import { findFiles, renamePathByFile } from '@codemod-utils/files';
 
 export function migrationStrategyForComponentTemplates(options) {
   const { projectRoot } = options;
@@ -8,7 +8,7 @@ export function migrationStrategyForComponentTemplates(options) {
   });
 
   return oldPaths.map((oldPath) => {
-    const newPath = renameFile(oldPath, {
+    const newPath = renamePathByFile(oldPath, {
       find: {
         directory: 'addon/components',
         file: 'template',
