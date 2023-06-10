@@ -1,11 +1,19 @@
-import { readPackageJson } from '@codemod-utils/json';
+import { readPackageJson, validatePackageJson } from '@codemod-utils/json';
+
+function analyzePackageJson(codemodOptions) {
+  const packageJson = readPackageJson(codemodOptions);
+
+  validatePackageJson(packageJson);
+
+  return packageJson.name;
+}
 
 export function createOptions(codemodOptions) {
-  const { name } = readPackageJson(codemodOptions);
+  const projectName = analyzePackageJson(codemodOptions);
 
   return {
     podPath: codemodOptions.podPath,
-    projectName: name,
+    projectName,
     projectRoot: codemodOptions.projectRoot,
     projectType: codemodOptions.projectType,
     testRun: codemodOptions.testRun,
