@@ -35,8 +35,8 @@
     "yargs": "^17.7.2"
   },
   "devDependencies": {
-    "@babel/core": "^7.22.1",
-    "@babel/eslint-parser": "^7.21.8",
+    "@babel/core": "^7.22.5",
+    "@babel/eslint-parser": "^7.22.5",
     "@codemod-utils/tests": "^0.1.1",
     "@sondr3/minitest": "^0.1.1",
     "eslint": "^8.42.0",
