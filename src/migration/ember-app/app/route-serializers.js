@@ -6,7 +6,7 @@ export function migrationStrategyForRouteSerializers(options) {
   const { podPath, projectRoot } = options;
 
   const oldPaths = findFiles(join('app', podPath, '**', 'serializer.{js,ts}'), {
-    cwd: projectRoot,
+    projectRoot,
   });
 
   return oldPaths.map((oldPath) => {

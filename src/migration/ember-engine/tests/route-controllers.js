@@ -9,7 +9,7 @@ export function migrationStrategyForRouteControllers(options) {
   const oldPaths1 = findFiles(
     'tests/unit/!(controllers)/**/controller-test.{js,ts}',
     {
-      cwd: projectRoot,
+      projectRoot,
     },
   );
 
@@ -33,7 +33,7 @@ export function migrationStrategyForRouteControllers(options) {
   const oldPaths2 = findFiles(
     'tests/unit/controllers/**/controller-test.{js,ts}',
     {
-      cwd: projectRoot,
+      projectRoot,
     },
   );
 

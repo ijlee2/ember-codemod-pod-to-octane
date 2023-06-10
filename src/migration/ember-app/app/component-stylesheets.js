@@ -8,7 +8,7 @@ export function migrationStrategyForComponentStylesheets(options) {
   const oldPaths = findFiles(
     join('app', podPath, 'components', '**', 'styles.{css,scss}'),
     {
-      cwd: projectRoot,
+      projectRoot,
     },
   );
 

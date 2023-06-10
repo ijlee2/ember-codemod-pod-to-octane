@@ -6,7 +6,7 @@ export function migrationStrategyForServices(options) {
   const { podPath, projectRoot } = options;
 
   const oldPaths = findFiles(join('app', podPath, '**', 'service.{js,ts}'), {
-    cwd: projectRoot,
+    projectRoot,
   });
 
   return oldPaths.map((oldPath) => {

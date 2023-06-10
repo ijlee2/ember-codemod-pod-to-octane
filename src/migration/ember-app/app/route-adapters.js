@@ -6,7 +6,7 @@ export function migrationStrategyForRouteAdapters(options) {
   const { podPath, projectRoot } = options;
 
   const oldPaths = findFiles(join('app', podPath, '**', 'adapter.{js,ts}'), {
-    cwd: projectRoot,
+    projectRoot,
   });
 
   return oldPaths.map((oldPath) => {

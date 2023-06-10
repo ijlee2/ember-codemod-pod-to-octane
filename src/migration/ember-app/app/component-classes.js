@@ -8,7 +8,7 @@ export function migrationStrategyForComponentClasses(options) {
   const oldPaths = findFiles(
     join('app', podPath, 'components', '**', 'component.{d.ts,js,ts}'),
     {
-      cwd: projectRoot,
+      projectRoot,
     },
   );
 

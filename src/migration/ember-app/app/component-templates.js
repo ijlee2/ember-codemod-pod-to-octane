@@ -8,7 +8,7 @@ export function migrationStrategyForComponentTemplates(options) {
   const oldPaths = findFiles(
     join('app', podPath, 'components', '**', 'template.hbs'),
     {
-      cwd: projectRoot,
+      projectRoot,
     },
   );
 

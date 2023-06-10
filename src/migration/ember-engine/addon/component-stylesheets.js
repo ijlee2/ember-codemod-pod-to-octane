@@ -4,7 +4,7 @@ export function migrationStrategyForComponentStylesheets(options) {
   const { projectRoot } = options;
 
   const oldPaths = findFiles('addon/components/**/styles.{css,scss}', {
-    cwd: projectRoot,
+    projectRoot,
   });
 
   return oldPaths.map((oldPath) => {

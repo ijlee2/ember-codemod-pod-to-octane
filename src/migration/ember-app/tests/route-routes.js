@@ -11,7 +11,7 @@ export function migrationStrategyForRouteRoutes(options) {
   const oldPaths1 = findFiles(
     join('tests/unit', podPath, '!(routes)', '**', 'route-test.{js,ts}'),
     {
-      cwd: projectRoot,
+      projectRoot,
     },
   );
 
@@ -35,7 +35,7 @@ export function migrationStrategyForRouteRoutes(options) {
   const oldPaths2 = findFiles(
     join('tests/unit', podPath, 'routes/**/route-test.{js,ts}'),
     {
-      cwd: projectRoot,
+      projectRoot,
     },
   );
 

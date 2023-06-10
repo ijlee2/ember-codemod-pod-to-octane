@@ -74,7 +74,7 @@ function updatePaths(mapping, options) {
   // File extensions had been specified, partly to encode assumptions
   // about Ember, and partly to avoid corrupting non-text files
   const filePaths = findFiles('{addon,tests}/**/*.{d.ts,js,ts}', {
-    cwd: projectRoot,
+    projectRoot,
   });
 
   filePaths.forEach((filePath) => {

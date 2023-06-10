@@ -6,7 +6,7 @@ export function migrationStrategyForComponents(options) {
   const oldPaths = findFiles(
     'tests/integration/components/**/component-test.{js,ts}',
     {
-      cwd: projectRoot,
+      projectRoot,
     },
   );
 

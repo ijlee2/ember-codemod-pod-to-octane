@@ -4,7 +4,7 @@ export function migrationStrategyForComponentClasses(options) {
   const { projectRoot } = options;
 
   const oldPaths = findFiles('app/components/**/component.js', {
-    cwd: projectRoot,
+    projectRoot,
   });
 
   return oldPaths.map((oldPath) => {

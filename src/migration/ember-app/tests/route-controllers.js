@@ -17,7 +17,7 @@ export function migrationStrategyForRouteControllers(options) {
       'controller-test.{js,ts}',
     ),
     {
-      cwd: projectRoot,
+      projectRoot,
     },
   );
 
@@ -41,7 +41,7 @@ export function migrationStrategyForRouteControllers(options) {
   const oldPaths2 = findFiles(
     join('tests/unit', podPath, 'controllers/**/controller-test.{js,ts}'),
     {
-      cwd: projectRoot,
+      projectRoot,
     },
   );
 

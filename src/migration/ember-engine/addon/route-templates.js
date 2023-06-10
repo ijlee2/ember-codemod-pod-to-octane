@@ -4,7 +4,7 @@ export function migrationStrategyForRouteTemplates(options) {
   const { projectRoot } = options;
 
   const oldPaths = findFiles('addon/!(components)/**/template.hbs', {
-    cwd: projectRoot,
+    projectRoot,
   });
 
   return oldPaths.map((oldPath) => {

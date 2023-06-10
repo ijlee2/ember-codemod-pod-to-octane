@@ -14,7 +14,7 @@ export function migrationStrategyForComponents(options) {
       'component-test.{js,ts}',
     ),
     {
-      cwd: projectRoot,
+      projectRoot,
     },
   );
 

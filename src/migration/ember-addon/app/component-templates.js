@@ -4,7 +4,7 @@ export function migrationStrategyForComponentTemplates(options) {
   const { projectRoot } = options;
 
   const oldPaths = findFiles('app/components/**/template.js', {
-    cwd: projectRoot,
+    projectRoot,
   });
 
   return oldPaths.map((oldPath) => {

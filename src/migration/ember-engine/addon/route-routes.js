@@ -4,7 +4,7 @@ export function migrationStrategyForRouteRoutes(options) {
   const { projectRoot } = options;
 
   const oldPaths = findFiles('addon/**/route.{js,ts}', {
-    cwd: projectRoot,
+    projectRoot,
   });
 
   return oldPaths.map((oldPath) => {
