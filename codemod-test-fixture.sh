@@ -50,7 +50,7 @@ fi
 rm -r "tests/fixtures/$FIXTURE/output"
 cp -r "tests/fixtures/$FIXTURE/input" "tests/fixtures/$FIXTURE/output"
 
-./bin/ember-codemod-pod-to-octane.js \
+./dist/bin/ember-codemod-pod-to-octane.js \
   --pod-path=$POD_PATH \
   --root="tests/fixtures/$FIXTURE/output" \
   --test=false \
