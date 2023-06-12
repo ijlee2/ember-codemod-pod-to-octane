@@ -43,7 +43,7 @@
     "test": "tsc --build && mt dist-for-testing --quiet"
   },
   "dependencies": {
-    "@codemod-utils/files": "^0.4.0",
+    "@codemod-utils/files": "^0.4.1",
     "@codemod-utils/json": "^0.3.0",
     "yargs": "^17.7.2"
   },

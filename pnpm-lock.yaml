@@ -5,8 +5,8 @@ overrides:
 
 dependencies:
   '@codemod-utils/files':
-    specifier: ^0.4.0
-    version: 0.4.0
+    specifier: ^0.4.1
+    version: 0.4.1
   '@codemod-utils/json':
     specifier: ^0.3.0
     version: 0.3.0
@@ -311,8 +311,8 @@ packages:
       to-fast-properties: 2.0.0
     dev: true
 
-  /@codemod-utils/files@0.4.0:
-    resolution: {integrity: sha512-chGn+42QqzMP+OrH5fS9SdzUXOPCJhRUkzVd9rzcCCDjhqqK44YvqfhZxE+sAO173BrbmXqjLYqDRdWBUviKGA==}
+  /@codemod-utils/files@0.4.1:
+    resolution: {integrity: sha512-uMfkkerctw9VfoRxh/LBsbeKiFYJ/eg4xsSocfgqNfuOnPkAQybcdzx9G8QWzMMLSV4GqCQ7yTLfmiOrTwS6kQ==}
     engines: {node: 16.* || >= 18}
     dependencies:
       glob: 10.2.7
