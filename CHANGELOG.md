@@ -1,3 +1,12 @@
+## 1.2.5 (2023-06-12)
+
+### Internal
+* [#38](https://github.com/ijlee2/ember-codemod-pod-to-octane/pull/38) Updated project setup to match that of ember-codemod-v1-to-v2 ([@ijlee2](https://github.com/ijlee2))
+
+### Committers: 1
+- Isaac Lee ([@ijlee2](https://github.com/ijlee2))
+
+
 ## 1.2.4
 
 ### Bug Fix
