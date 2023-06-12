@@ -1,7 +1,4 @@
-import type {
-  CodemodOptions,
-  OptionsWithProjectName,
-} from '../../../../src/types/index.js';
+import type { CodemodOptions, Options } from '../../../../src/types/index.js';
 
 const codemodOptions: CodemodOptions = {
   podPath: '',
@@ -10,9 +7,8 @@ const codemodOptions: CodemodOptions = {
   testRun: false,
 };
 
-const options: OptionsWithProjectName = {
+const options: Options = {
   podPath: '',
-  projectName: '@ijlee2/ember-workshop-engine',
   projectRoot: 'tmp/ember-engine/sass',
   projectType: 'engine',
   testRun: false,
