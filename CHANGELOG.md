@@ -1,3 +1,10 @@
+## 1.2.4
+
+### Bug Fix
+
+* Published the wrong dist in 1.2.3
+
+
 ## 1.2.3 (2023-06-12)
 
 ### Bug Fix
