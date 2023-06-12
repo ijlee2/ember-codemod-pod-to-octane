@@ -9,7 +9,6 @@ const codemodOptions: CodemodOptions = {
 
 const options: Options = {
   podPath: 'pods',
-  projectName: '@ijlee2/ember-workshop-app',
   projectRoot: 'tmp/ember-app/pod-path',
   projectType: 'app',
   testRun: false,

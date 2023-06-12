@@ -1,12 +1,9 @@
 import { findFiles, renamePathByFile } from '@codemod-utils/files';
 
-import type {
-  FilePathMapEntries,
-  OptionsWithProjectName,
-} from '../../../types/index.js';
+import type { FilePathMapEntries, Options } from '../../../types/index.js';
 
 export function migrationStrategyForComponents(
-  options: OptionsWithProjectName,
+  options: Options,
 ): FilePathMapEntries {
   const { projectRoot } = options;
 

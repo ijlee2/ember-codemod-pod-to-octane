@@ -1,7 +1,4 @@
-import type {
-  CodemodOptions,
-  OptionsWithProjectName,
-} from '../../../../src/types/index.js';
+import type { CodemodOptions, Options } from '../../../../src/types/index.js';
 
 const codemodOptions: CodemodOptions = {
   podPath: '',
@@ -10,9 +7,8 @@ const codemodOptions: CodemodOptions = {
   testRun: false,
 };
 
-const options: OptionsWithProjectName = {
+const options: Options = {
   podPath: '',
-  projectName: '@namespace/package-name',
   projectRoot: 'tmp/ember-engine/absolute-imports',
   projectType: 'engine',
   testRun: false,
