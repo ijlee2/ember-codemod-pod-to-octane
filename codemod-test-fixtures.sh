@@ -12,6 +12,9 @@
 #
 #---------
 
+# Compile TypeScript
+pnpm build
+
 ./codemod-test-fixture.sh -t "addon" ember-addon/javascript
 ./codemod-test-fixture.sh -t "addon" ember-addon/sass
 ./codemod-test-fixture.sh -t "addon" ember-addon/typescript

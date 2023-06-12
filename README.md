@@ -115,10 +115,13 @@ To better meet your needs, consider cloning the repo and running the codemod loc
 
 ```sh
 cd <your/cloned/repo>
-npx ts-node ./bin/ember-codemod-pod-to-octane.js --root=<your/project/path>
-```
 
-⚠️ At the moment, it is not possible to run the codemod locally, because `ts-node@10.9.1` doesn't support `typescript@v5` correctly. You can track the progress in [#32](https://github.com/ijlee2/ember-codemod-pod-to-octane/issues/32).
+# Compile TypeScript
+pnpm build
+
+# Run codemod
+./dist/bin/ember-codemod-pod-to-octane.js --root=<your/project/path>
+```
 
 
 ## Compatibility
