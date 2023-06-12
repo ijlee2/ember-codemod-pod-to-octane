@@ -15,12 +15,9 @@ devDependencies:
   '@babel/core':
     specifier: ^7.22.5
     version: 7.22.5
-  '@babel/eslint-parser':
-    specifier: ^7.22.5
-    version: 7.22.5(@babel/core@7.22.5)(eslint@8.42.0)
   '@codemod-utils/tests':
-    specifier: ^0.2.1
-    version: 0.2.1(@sondr3/minitest@0.1.1)
+    specifier: ^0.2.2
+    version: 0.2.2(@sondr3/minitest@0.1.1)
   '@sondr3/minitest':
     specifier: ^0.1.1
     version: 0.1.1
@@ -125,20 +122,6 @@ packages:
       semver: 6.3.0
     transitivePeerDependencies:
       - supports-color
-    dev: true
-
-  /@babel/eslint-parser@7.22.5(@babel/core@7.22.5)(eslint@8.42.0):
-    resolution: {integrity: sha512-C69RWYNYtrgIRE5CmTd77ZiLDXqgBipahJc/jHP3sLcAGj6AJzxNIuKNpVnICqbyK7X3pFUfEvL++rvtbQpZkQ==}
-    engines: {node: ^10.13.0 || ^12.13.0 || >=14.0.0}
-    peerDependencies:
-      '@babel/core': '>=7.11.0'
-      eslint: ^7.5.0 || ^8.0.0
-    dependencies:
-      '@babel/core': 7.22.5
-      '@nicolo-ribaudo/eslint-scope-5-internals': 5.1.1-v1
-      eslint: 8.42.0
-      eslint-visitor-keys: 2.1.0
-      semver: 6.3.0
     dev: true
 
   /@babel/generator@7.22.5:
@@ -315,8 +298,8 @@ packages:
       glob: 10.2.7
     dev: false
 
-  /@codemod-utils/tests@0.2.1(@sondr3/minitest@0.1.1):
-    resolution: {integrity: sha512-nW5RrzkWTipx6H+q3P1NOSm919jP8vyIvoONzFAifdapwdKIuphmUKEVDFmRz6ztrlRH/vUYGK1P8OOA47/Saw==}
+  /@codemod-utils/tests@0.2.2(@sondr3/minitest@0.1.1):
+    resolution: {integrity: sha512-a6j3RPqyVsNdgHNgcHDkVbjlXFIc58Cie3o3gobtJPeOONVkBfK4XLDpqJ2jJBQOg8paTmyrfdz/1JCoV891xQ==}
     engines: {node: 16.* || >= 18}
     peerDependencies:
       '@sondr3/minitest': ^0.1.1
@@ -430,12 +413,6 @@ packages:
     dependencies:
       '@jridgewell/resolve-uri': 3.1.0
       '@jridgewell/sourcemap-codec': 1.4.14
-    dev: true
-
-  /@nicolo-ribaudo/eslint-scope-5-internals@5.1.1-v1:
-    resolution: {integrity: sha512-54/JRvkLIzzDWshCWfuhadfrfZVPiElY8Fcgmg1HroEly/EDSszzhBAsarCux+D/kOslTRquNzuyGSmUSTTHGg==}
-    dependencies:
-      eslint-scope: 5.1.1
     dev: true
 
   /@nodelib/fs.scandir@2.1.5:
@@ -1445,11 +1422,6 @@ packages:
     dependencies:
       esrecurse: 4.3.0
       estraverse: 5.3.0
-    dev: true
-
-  /eslint-visitor-keys@2.1.0:
-    resolution: {integrity: sha512-0rSmRBzXgDzIsD6mGdJgevzgezI534Cer5L/vyMX0kHzT/jiB43jRhd9YUlMGYLQy2zprNmoT8qasCGtY+QaKw==}
-    engines: {node: '>=10'}
     dev: true
 
   /eslint-visitor-keys@3.4.1:

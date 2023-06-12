@@ -21,6 +21,7 @@
     "test": "tests"
   },
   "files": [
+    "blueprints",
     "dist"
   ],
   "scripts": {
@@ -40,8 +41,7 @@
   },
   "devDependencies": {
     "@babel/core": "^7.22.5",
-    "@babel/eslint-parser": "^7.22.5",
-    "@codemod-utils/tests": "^0.2.1",
+    "@codemod-utils/tests": "^0.2.2",
     "@sondr3/minitest": "^0.1.1",
     "@tsconfig/esm": "^1.0.3",
     "@tsconfig/node16": "^1.0.4",
