@@ -1,6 +1,10 @@
 import { findFiles, renamePathByFile } from '@codemod-utils/files';
 
-export function migrationStrategyForComponentStylesheets(options) {
+import type { FilePathMapEntries, Options } from '../../../types/index.js';
+
+export function migrationStrategyForComponentStylesheets(
+  options: Options,
+): FilePathMapEntries {
   const { projectRoot } = options;
 
   const filePaths = findFiles('addon/components/**/styles.{css,scss}', {
@@ -13,7 +17,7 @@ export function migrationStrategyForComponentStylesheets(options) {
         directory: 'addon/components',
         file: 'styles',
       },
-      replace: (key) => {
+      replace: (key: string) => {
         return `addon/components/${key}`;
       },
     });

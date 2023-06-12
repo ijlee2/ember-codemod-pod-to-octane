@@ -2,7 +2,11 @@ import { join } from 'node:path';
 
 import { findFiles, renamePathByFile } from '@codemod-utils/files';
 
-export function migrationStrategyForRouteStylesheets(options) {
+import type { FilePathMapEntries, Options } from '../../../types/index.js';
+
+export function migrationStrategyForRouteStylesheets(
+  options: Options,
+): FilePathMapEntries {
   const { podPath, projectRoot } = options;
 
   const filePaths = findFiles(
@@ -18,7 +22,7 @@ export function migrationStrategyForRouteStylesheets(options) {
         directory: join('app', podPath),
         file: 'styles',
       },
-      replace: (key) => {
+      replace: (key: string) => {
         return `app/styles/${key}`;
       },
     });

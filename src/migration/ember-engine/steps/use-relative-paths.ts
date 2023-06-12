@@ -3,7 +3,9 @@ import { dirname, join, relative } from 'node:path';
 
 import { findFiles } from '@codemod-utils/files';
 
-function normalizeRelativePath(relativePath) {
+import type { OptionsWithProjectName } from '../../../types/index.js';
+
+function normalizeRelativePath(relativePath: string): string {
   if (relativePath.startsWith('..')) {
     return relativePath;
   }
@@ -11,15 +13,23 @@ function normalizeRelativePath(relativePath) {
   return `./${relativePath}`;
 }
 
-function updateFile(oldFile, { filePath, projectName, projectRoot }) {
+function updateFile(
+  oldFile: string,
+  {
+    filePath,
+    projectName,
+    projectRoot,
+  }: { filePath: string; projectName: string; projectRoot: string },
+) {
   const regex = new RegExp(`(?:'|")(${projectName}/(.*/)*(.*))(?:'|")`, 'g');
   const matchResults = [...oldFile.matchAll(regex)];
 
   let newFile = oldFile;
 
   matchResults.forEach((matchResult) => {
-    // eslint-disable-next-line no-unused-vars
-    const [_, oldPath, remainingDirectories, fileName] = matchResult;
+    const oldPath = matchResult[1]!;
+    const remainingDirectories = matchResult[2]!;
+    const fileName = matchResult[3]!;
 
     const from = dirname(filePath);
     const to = join(projectRoot, remainingDirectories);
@@ -33,7 +43,7 @@ function updateFile(oldFile, { filePath, projectName, projectRoot }) {
   return newFile;
 }
 
-function useRelativePathInAddonFolder(options) {
+function useRelativePathInAddonFolder(options: OptionsWithProjectName): void {
   const { projectName, projectRoot } = options;
 
   // File extensions had been specified, partly to encode assumptions
@@ -56,7 +66,7 @@ function useRelativePathInAddonFolder(options) {
   });
 }
 
-function useRelativePathInTestsFolder(options) {
+function useRelativePathInTestsFolder(options: OptionsWithProjectName): void {
   const { projectRoot } = options;
 
   // File extensions had been specified, partly to encode assumptions
@@ -80,7 +90,9 @@ function useRelativePathInTestsFolder(options) {
   });
 }
 
-function useRelativePathInTestsDummyFolder(options) {
+function useRelativePathInTestsDummyFolder(
+  options: OptionsWithProjectName,
+): void {
   const { projectRoot } = options;
 
   // File extensions had been specified, partly to encode assumptions
@@ -103,7 +115,7 @@ function useRelativePathInTestsDummyFolder(options) {
   });
 }
 
-export function useRelativePaths(options) {
+export function useRelativePaths(options: OptionsWithProjectName): void {
   useRelativePathInAddonFolder(options);
   useRelativePathInTestsFolder(options);
   useRelativePathInTestsDummyFolder(options);

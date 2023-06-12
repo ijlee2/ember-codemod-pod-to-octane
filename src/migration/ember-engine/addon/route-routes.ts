@@ -1,6 +1,13 @@
 import { findFiles, renamePathByFile } from '@codemod-utils/files';
 
-export function migrationStrategyForRouteRoutes(options) {
+import type {
+  FilePathMapEntries,
+  OptionsWithProjectName,
+} from '../../../types/index.js';
+
+export function migrationStrategyForRouteRoutes(
+  options: OptionsWithProjectName,
+): FilePathMapEntries {
   const { projectRoot } = options;
 
   const filePaths = findFiles('addon/**/route.{js,ts}', {
@@ -13,7 +20,7 @@ export function migrationStrategyForRouteRoutes(options) {
         directory: 'addon',
         file: 'route',
       },
-      replace: (key) => {
+      replace: (key: string) => {
         return `addon/routes/${key}`;
       },
     });

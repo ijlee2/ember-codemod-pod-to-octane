@@ -1,12 +1,16 @@
 import { readPackageJson } from '@codemod-utils/json';
 
-function analyzePackageJson(codemodOptions) {
+import type { CodemodOptions, Options } from '../../../types/index.js';
+
+function analyzePackageJson(
+  codemodOptions: CodemodOptions,
+): string | undefined {
   const packageJson = readPackageJson(codemodOptions);
 
   return packageJson.name;
 }
 
-export function createOptions(codemodOptions) {
+export function createOptions(codemodOptions: CodemodOptions): Options {
   const projectName = analyzePackageJson(codemodOptions);
 
   return {

@@ -1,6 +1,10 @@
 import { findFiles, renamePathByFile } from '@codemod-utils/files';
 
-export function migrationStrategyForComponentClasses(options) {
+import type { FilePathMapEntries, Options } from '../../../types/index.js';
+
+export function migrationStrategyForComponentClasses(
+  options: Options,
+): FilePathMapEntries {
   const { projectRoot } = options;
 
   const filePaths = findFiles('addon/components/**/component.{d.ts,js,ts}', {
@@ -13,7 +17,7 @@ export function migrationStrategyForComponentClasses(options) {
         directory: 'addon/components',
         file: 'component',
       },
-      replace: (key) => {
+      replace: (key: string) => {
         return `addon/components/${key}`;
       },
     });

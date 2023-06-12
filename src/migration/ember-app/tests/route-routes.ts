@@ -2,7 +2,11 @@ import { join } from 'node:path';
 
 import { findFiles, renamePathByFile } from '@codemod-utils/files';
 
-export function migrationStrategyForRouteRoutes(options) {
+import type { FilePathMapEntries, Options } from '../../../types/index.js';
+
+export function migrationStrategyForRouteRoutes(
+  options: Options,
+): FilePathMapEntries {
   const { podPath, projectRoot } = options;
 
   /*
@@ -21,7 +25,7 @@ export function migrationStrategyForRouteRoutes(options) {
         directory: join('tests/unit', podPath),
         file: 'route-test',
       },
-      replace: (key) => {
+      replace: (key: string) => {
         return `tests/unit/routes/${key}-test`;
       },
     });
@@ -45,7 +49,7 @@ export function migrationStrategyForRouteRoutes(options) {
         directory: join('tests/unit', podPath, 'routes'),
         file: 'route-test',
       },
-      replace: (key) => {
+      replace: (key: string) => {
         return `tests/unit/routes/${key}-test`;
       },
     });
@@ -53,5 +57,5 @@ export function migrationStrategyForRouteRoutes(options) {
     return [oldFilePath, newFilePath];
   });
 
-  return [...filePathMap1, ...filePathMap2];
+  return [...filePathMap1, ...filePathMap2] as FilePathMapEntries;
 }

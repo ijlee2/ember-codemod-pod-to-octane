@@ -1,7 +1,12 @@
 import { readFileSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
 
-export function updatePathsInAppFolder(migrationStrategy, options) {
+import type { FilePathMap, Options } from '../../../types/index.js';
+
+export function updatePathsInAppFolder(
+  migrationStrategy: FilePathMap,
+  options: Options,
+): void {
   const { projectRoot } = options;
 
   migrationStrategy.forEach((newFilePath, oldFilePath) => {

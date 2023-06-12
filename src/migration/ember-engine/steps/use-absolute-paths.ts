@@ -3,15 +3,23 @@ import { dirname, join, relative, resolve } from 'node:path';
 
 import { findFiles } from '@codemod-utils/files';
 
-function removeRelativePaths(oldFile, { filePath, projectName, projectRoot }) {
+import type { OptionsWithProjectName } from '../../../types/index.js';
+
+function removeRelativePaths(
+  oldFile: string,
+  {
+    filePath,
+    projectName,
+    projectRoot,
+  }: { filePath: string; projectName: string; projectRoot: string },
+) {
   const regex = new RegExp(`(?:'|")(.{1,2}/(.*))(?:'|")`, 'g');
   const matchResults = [...oldFile.matchAll(regex)];
 
   let newFile = oldFile;
 
   matchResults.forEach((matchResult) => {
-    // eslint-disable-next-line no-unused-vars
-    const [_, oldPath, remainingPath] = matchResult;
+    const oldPath = matchResult[1]!;
 
     let newPath = relative(
       projectRoot,
@@ -30,7 +38,7 @@ function removeRelativePaths(oldFile, { filePath, projectName, projectRoot }) {
   return newFile;
 }
 
-function updatePaths(options) {
+function updatePaths(options: OptionsWithProjectName): void {
   const { projectName, projectRoot } = options;
 
   // File extensions had been specified, partly to encode assumptions
@@ -53,6 +61,6 @@ function updatePaths(options) {
   });
 }
 
-export function useAbsolutePaths(options) {
+export function useAbsolutePaths(options: OptionsWithProjectName): void {
   updatePaths(options);
 }

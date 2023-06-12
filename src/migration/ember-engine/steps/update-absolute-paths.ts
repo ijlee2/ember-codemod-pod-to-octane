@@ -3,13 +3,18 @@ import { join, parse } from 'node:path';
 
 import { findFiles } from '@codemod-utils/files';
 
-function removeFileExtension(path) {
+import type {
+  FilePathMap,
+  OptionsWithProjectName,
+} from '../../../types/index.js';
+
+function removeFileExtension(path: string): string {
   const { dir, name } = parse(path);
 
   return `${dir}/${name}`;
 }
 
-function createMapping(migrationStrategy) {
+function createMapping(migrationStrategy: FilePathMap): FilePathMap {
   return new Map(
     [...migrationStrategy].map(([oldPath, newPath]) => {
       const before = removeFileExtension(oldPath);
@@ -20,22 +25,26 @@ function createMapping(migrationStrategy) {
   );
 }
 
-function updatePathsToAddonFiles(oldFile, { mapping, projectName }) {
+function updatePathsToAddonFiles(
+  oldFile: string,
+  { mapping, projectName }: { mapping: FilePathMap; projectName: string },
+) {
   const regex = new RegExp(`(?:'|")(${projectName}/(.*))(?:'|")`, 'g');
   const matchResults = [...oldFile.matchAll(regex)];
 
   let newFile = oldFile;
 
   matchResults.forEach((matchResult) => {
-    // eslint-disable-next-line no-unused-vars
-    const [_, oldPath, remainingPath] = matchResult;
+    const oldPath = matchResult[1]!;
+    const remainingPath = matchResult[2]!;
+
     const before = join('addon', remainingPath);
 
     if (!mapping.has(before)) {
       return;
     }
 
-    const after = mapping.get(before).replace(new RegExp('^addon/'), '');
+    const after = mapping.get(before)!.replace(new RegExp('^addon/'), '');
     const newPath = join(projectName, after);
 
     newFile = newFile.replace(oldPath, newPath);
@@ -44,22 +53,26 @@ function updatePathsToAddonFiles(oldFile, { mapping, projectName }) {
   return newFile;
 }
 
-function updatePathsToTestFiles(oldFile, { mapping, projectName }) {
+function updatePathsToTestFiles(
+  oldFile: string,
+  { mapping, projectName }: { mapping: FilePathMap; projectName: string },
+) {
   const regex = new RegExp(`(?:'|")(${projectName}/(.*))(?:'|")`, 'g');
   const matchResults = [...oldFile.matchAll(regex)];
 
   let newFile = oldFile;
 
   matchResults.forEach((matchResult) => {
-    // eslint-disable-next-line no-unused-vars
-    const [_, oldPath, remainingPath] = matchResult;
+    const oldPath = matchResult[1]!;
+    const remainingPath = matchResult[2]!;
+
     const before = remainingPath;
 
     if (!mapping.has(before)) {
       return;
     }
 
-    const after = mapping.get(before);
+    const after = mapping.get(before)!;
     const newPath = join(projectName, after);
 
     newFile = newFile.replace(oldPath, newPath);
@@ -68,7 +81,10 @@ function updatePathsToTestFiles(oldFile, { mapping, projectName }) {
   return newFile;
 }
 
-function updatePaths(mapping, options) {
+function updatePaths(
+  mapping: FilePathMap,
+  options: OptionsWithProjectName,
+): void {
   const { projectName, projectRoot } = options;
 
   // File extensions had been specified, partly to encode assumptions
@@ -95,7 +111,10 @@ function updatePaths(mapping, options) {
   });
 }
 
-export function updateAbsolutePaths(migrationStrategy, options) {
+export function updateAbsolutePaths(
+  migrationStrategy: FilePathMap,
+  options: OptionsWithProjectName,
+): void {
   const mapping = createMapping(migrationStrategy);
 
   updatePaths(mapping, options);

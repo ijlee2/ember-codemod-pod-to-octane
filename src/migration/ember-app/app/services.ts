@@ -2,7 +2,11 @@ import { join } from 'node:path';
 
 import { findFiles, renamePathByFile } from '@codemod-utils/files';
 
-export function migrationStrategyForServices(options) {
+import type { FilePathMapEntries, Options } from '../../../types/index.js';
+
+export function migrationStrategyForServices(
+  options: Options,
+): FilePathMapEntries {
   const { podPath, projectRoot } = options;
 
   const filePaths = findFiles(join('app', podPath, '**', 'service.{js,ts}'), {
@@ -15,7 +19,7 @@ export function migrationStrategyForServices(options) {
         directory: join('app', podPath),
         file: 'service',
       },
-      replace: (key) => {
+      replace: (key: string) => {
         return `app/services/${key}`;
       },
     });

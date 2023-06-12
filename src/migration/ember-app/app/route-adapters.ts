@@ -2,7 +2,11 @@ import { join } from 'node:path';
 
 import { findFiles, renamePathByFile } from '@codemod-utils/files';
 
-export function migrationStrategyForRouteAdapters(options) {
+import type { FilePathMapEntries, Options } from '../../../types/index.js';
+
+export function migrationStrategyForRouteAdapters(
+  options: Options,
+): FilePathMapEntries {
   const { podPath, projectRoot } = options;
 
   const filePaths = findFiles(join('app', podPath, '**', 'adapter.{js,ts}'), {
@@ -15,7 +19,7 @@ export function migrationStrategyForRouteAdapters(options) {
         directory: join('app', podPath),
         file: 'adapter',
       },
-      replace: (key) => {
+      replace: (key: string) => {
         return `app/adapters/${key}`;
       },
     });

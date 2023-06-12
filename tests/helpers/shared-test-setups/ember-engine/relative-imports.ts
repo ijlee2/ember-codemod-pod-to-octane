@@ -1,11 +1,16 @@
-const codemodOptions = {
+import type {
+  CodemodOptions,
+  OptionsWithProjectName,
+} from '../../../../src/types/index.js';
+
+const codemodOptions: CodemodOptions = {
   podPath: '',
   projectRoot: 'tmp/ember-engine/relative-imports',
   projectType: 'engine',
   testRun: false,
 };
 
-const options = {
+const options: OptionsWithProjectName = {
   podPath: '',
   projectName: '@namespace/package-name',
   projectRoot: 'tmp/ember-engine/relative-imports',

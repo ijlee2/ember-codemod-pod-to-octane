@@ -1,16 +1,16 @@
-#!/usr/bin/env node
 'use strict';
 
 import yargs from 'yargs';
 import { hideBin } from 'yargs/helpers';
 
 import { runCodemod } from '../src/index.js';
+import type { CodemodOptions } from '../src/types/index.js';
 
 // Provide a title to the process in `ps`
 process.title = 'ember-codemod-pod-to-octane';
 
 // Set codemod options
-const { argv } = yargs(hideBin(process.argv))
+const argv = yargs(hideBin(process.argv))
   .option('pod-path', {
     default: '',
     describe: 'Namespace used for the pod layout',
@@ -26,13 +26,14 @@ const { argv } = yargs(hideBin(process.argv))
     type: 'boolean',
   })
   .option('type', {
-    choices: ['addon', 'app', 'engine'],
+    choices: ['addon', 'app', 'engine'] as const,
     demandOption: true,
     describe: 'Type of your Ember project',
     type: 'string',
-  });
+  })
+  .parseSync();
 
-const codemodOptions = {
+const codemodOptions: CodemodOptions = {
   podPath: argv['pod-path'],
   projectRoot: argv['root'] ?? process.cwd(),
   projectType: argv['type'],

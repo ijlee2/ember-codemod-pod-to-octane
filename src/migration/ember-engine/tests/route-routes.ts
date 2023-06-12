@@ -1,6 +1,13 @@
 import { findFiles, renamePathByFile } from '@codemod-utils/files';
 
-export function migrationStrategyForRouteRoutes(options) {
+import type {
+  FilePathMapEntries,
+  OptionsWithProjectName,
+} from '../../../types/index.js';
+
+export function migrationStrategyForRouteRoutes(
+  options: OptionsWithProjectName,
+): FilePathMapEntries {
   const { projectRoot } = options;
 
   /*
@@ -16,7 +23,7 @@ export function migrationStrategyForRouteRoutes(options) {
         directory: 'tests/unit',
         file: 'route-test',
       },
-      replace: (key) => {
+      replace: (key: string) => {
         return `tests/unit/routes/${key}-test`;
       },
     });
@@ -37,7 +44,7 @@ export function migrationStrategyForRouteRoutes(options) {
         directory: 'tests/unit/routes',
         file: 'route-test',
       },
-      replace: (key) => {
+      replace: (key: string) => {
         return `tests/unit/routes/${key}-test`;
       },
     });
@@ -45,5 +52,5 @@ export function migrationStrategyForRouteRoutes(options) {
     return [oldFilePath, newFilePath];
   });
 
-  return [...filePathMap1, ...filePathMap2];
+  return [...filePathMap1, ...filePathMap2] as FilePathMapEntries;
 }

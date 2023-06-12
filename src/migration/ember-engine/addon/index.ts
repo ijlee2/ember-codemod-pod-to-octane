@@ -1,3 +1,7 @@
+import type {
+  FilePathMap,
+  OptionsWithProjectName,
+} from '../../../types/index.js';
 import { migrationStrategyForComponentClasses } from './component-classes.js';
 import { migrationStrategyForComponentStylesheets } from './component-stylesheets.js';
 import { migrationStrategyForComponentTemplates } from './component-templates.js';
@@ -6,7 +10,9 @@ import { migrationStrategyForRouteRoutes } from './route-routes.js';
 import { migrationStrategyForRouteStylesheets } from './route-stylesheets.js';
 import { migrationStrategyForRouteTemplates } from './route-templates.js';
 
-export function migrationStrategyForAddonFolder(options) {
+export function migrationStrategyForAddonFolder(
+  options: OptionsWithProjectName,
+): FilePathMap {
   return new Map([
     ...migrationStrategyForComponentClasses(options),
     ...migrationStrategyForComponentStylesheets(options),

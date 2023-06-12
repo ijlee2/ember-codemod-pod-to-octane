@@ -2,7 +2,11 @@ import { join } from 'node:path';
 
 import { findFiles, renamePathByFile } from '@codemod-utils/files';
 
-export function migrationStrategyForRouteSerializers(options) {
+import type { FilePathMapEntries, Options } from '../../../types/index.js';
+
+export function migrationStrategyForRouteSerializers(
+  options: Options,
+): FilePathMapEntries {
   const { podPath, projectRoot } = options;
 
   const filePaths = findFiles(
@@ -18,7 +22,7 @@ export function migrationStrategyForRouteSerializers(options) {
         directory: join('app', podPath),
         file: 'serializer',
       },
-      replace: (key) => {
+      replace: (key: string) => {
         return `app/serializers/${key}`;
       },
     });

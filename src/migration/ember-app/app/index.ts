@@ -1,3 +1,4 @@
+import type { FilePathMap, Options } from '../../../types/index.js';
 import { migrationStrategyForComponentClasses } from './component-classes.js';
 import { migrationStrategyForComponentStylesheets } from './component-stylesheets.js';
 import { migrationStrategyForComponentTemplates } from './component-templates.js';
@@ -10,7 +11,7 @@ import { migrationStrategyForRouteStylesheets } from './route-stylesheets.js';
 import { migrationStrategyForRouteTemplates } from './route-templates.js';
 import { migrationStrategyForServices } from './services.js';
 
-export function migrationStrategyForAppFolder(options) {
+export function migrationStrategyForAppFolder(options: Options): FilePathMap {
   return new Map([
     ...migrationStrategyForComponentClasses(options),
     ...migrationStrategyForComponentStylesheets(options),
