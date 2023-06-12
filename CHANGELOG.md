@@ -1,3 +1,15 @@
+## 1.2.0 (2023-06-12)
+
+### Enhancement
+* [#31](https://github.com/ijlee2/ember-codemod-pod-to-octane/pull/31) Introduce TypeScript ([@ijlee2](https://github.com/ijlee2))
+
+### Internal
+* [#30](https://github.com/ijlee2/ember-codemod-pod-to-octane/pull/30) Updated @codemod-utils packages ([@ijlee2](https://github.com/ijlee2))
+
+### Committers: 1
+- Isaac Lee ([@ijlee2](https://github.com/ijlee2))
+
+
 ## 1.1.5 (2023-06-10)
 
 ### Internal
