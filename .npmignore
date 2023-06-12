@@ -1,4 +1,5 @@
 # compiled output
+/dist-for-testing/
 /tmp/
 
 # dependencies

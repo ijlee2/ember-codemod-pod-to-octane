@@ -1,3 +1,12 @@
+## 1.2.2-alpha.1 (2023-06-12)
+
+### Bug Fix
+* [#34](https://github.com/ijlee2/ember-codemod-pod-to-octane/pull/34) Patch #33 ([@ijlee2](https://github.com/ijlee2))
+
+### Committers: 1
+- Isaac Lee ([@ijlee2](https://github.com/ijlee2))
+
+
 ## 1.2.1 (2023-06-12)
 
 ### Bug Fix
