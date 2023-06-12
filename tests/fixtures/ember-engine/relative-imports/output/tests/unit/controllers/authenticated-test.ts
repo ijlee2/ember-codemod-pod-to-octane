@@ -1,1 +1,1 @@
-import type AuthenticatedController from '@namespace/package-name/controllers/authenticated';
+import type AuthenticatedController from '@namespace/package-name/authenticated/controller';

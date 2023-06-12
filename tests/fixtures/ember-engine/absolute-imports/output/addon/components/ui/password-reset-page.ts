@@ -1,7 +1,7 @@
 import { inject as service } from '@ember/service';
 import Component from '@glimmer/component';
-import type { PasswordResetFormModel } from './password-reset-form';
-import type FormService from '../../services/form';
+import type { PasswordResetFormModel } from '@namespace/package-name/components/ui/password-reset-form/component';
+import type FormService from '@namespace/package-name/services/form';
 
 export default class UiPasswordResetPageComponent extends Component {
   @service declare form: FormService;
