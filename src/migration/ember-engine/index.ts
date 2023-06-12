@@ -2,12 +2,7 @@ import { moveFiles } from '@codemod-utils/files';
 
 import type { CodemodOptions } from '../../types/index.js';
 import { migrationStrategyForAddonFolder } from './addon/index.js';
-import {
-  createOptions,
-  updateAbsolutePaths,
-  useAbsolutePaths,
-  useRelativePaths,
-} from './steps/index.js';
+import { createOptions } from './steps/index.js';
 import { migrationStrategyForTestsFolder } from './tests/index.js';
 
 export function migrateEmberEngine(codemodOptions: CodemodOptions): void {
@@ -27,14 +22,7 @@ export function migrateEmberEngine(codemodOptions: CodemodOptions): void {
     return;
   }
 
-  // Prepare for migration
-  useAbsolutePaths(options);
-
   // Preserve code
   moveFiles(migrationStrategyAddon, options);
   moveFiles(migrationStrategyTests, options);
-
-  // Update import paths
-  updateAbsolutePaths(migrationStrategy, options);
-  useRelativePaths(options);
 }
