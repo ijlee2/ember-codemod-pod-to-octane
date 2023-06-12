@@ -5,7 +5,7 @@
     "@tsconfig/esm/tsconfig"
   ],
   "compilerOptions": {
-    "declaration": true,
+    "declaration": false,
     "moduleResolution": "NodeNext",
     "outDir": "dist-for-testing"
   },
