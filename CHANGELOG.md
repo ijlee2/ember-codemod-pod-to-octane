@@ -1,3 +1,13 @@
+## 1.2.3 (2023-06-12)
+
+### Bug Fix
+* [#37](https://github.com/ijlee2/ember-codemod-pod-to-octane/pull/37) Reverted updating paths (engine) ([@ijlee2](https://github.com/ijlee2))
+* [#36](https://github.com/ijlee2/ember-codemod-pod-to-octane/pull/36) Allowed running the codemod locally ([@ijlee2](https://github.com/ijlee2))
+
+### Committers: 1
+- Isaac Lee ([@ijlee2](https://github.com/ijlee2))
+
+
 ## 1.2.2 (2023-06-12)
 
 ### Bug Fix
