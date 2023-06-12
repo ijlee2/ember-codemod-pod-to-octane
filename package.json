@@ -15,16 +15,8 @@
   "license": "MIT",
   "author": "Isaac J. Lee",
   "type": "module",
-  "main": "dist/src/index.js",
-  "types": "dist/src/index.d.ts",
-  "typesVersions": {
-    "*": {
-      "*": [
-        "dist/*"
-      ]
-    }
-  },
-  "bin": "dist/bin/ember-codemod-pod-to-octane.js",
+  "main": "src/index.js",
+  "bin": "bin/ember-codemod-pod-to-octane.js",
   "directories": {
     "test": "tests"
   },
