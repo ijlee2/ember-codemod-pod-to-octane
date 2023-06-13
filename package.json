@@ -21,11 +21,10 @@
     "test": "tests"
   },
   "files": [
-    "blueprints",
     "dist"
   ],
   "scripts": {
-    "build": "tsc --project tsconfig.build.json && chmod +x dist/bin/ember-codemod-pod-to-octane.js",
+    "build": "./build.sh --production",
     "changelog": "lerna-changelog",
     "lint": "concurrently \"npm:lint:*(!fix)\" --names \"lint:\"",
     "lint:fix": "concurrently \"npm:lint:*:fix\" --names \"fix:\"",
@@ -33,7 +32,7 @@
     "lint:js:fix": "eslint . --fix",
     "lint:types": "tsc --noEmit",
     "prepare": "pnpm build",
-    "test": "tsc --build && mt dist-for-testing --quiet"
+    "test": "./build.sh --test && mt dist-for-testing --quiet"
   },
   "dependencies": {
     "@codemod-utils/files": "^0.4.1",
