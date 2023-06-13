@@ -1,3 +1,12 @@
+## 1.2.6 (2023-06-13)
+
+### Enhancement
+* [#39](https://github.com/ijlee2/ember-codemod-pod-to-octane/pull/39) Simplified project structure ([@ijlee2](https://github.com/ijlee2))
+
+### Committers: 1
+- Isaac Lee ([@ijlee2](https://github.com/ijlee2))
+
+
 ## 1.2.5 (2023-06-12)
 
 ### Internal
