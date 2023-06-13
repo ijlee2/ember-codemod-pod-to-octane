@@ -16,7 +16,7 @@ _Codemod to un-pod Ember apps, addons, and engines_
 Step 1. Quickly return to [default Octane](https://cli.emberjs.com/release/advanced-use/project-layouts/#classiclayout).<sup>1</sup>
 
 ```sh
-cd <your/project/path>
+cd <path/to/your/project>
 npx ember-codemod-pod-to-octane <arguments>
 ```
 
@@ -56,7 +56,7 @@ npx ember-codemod-pod-to-octane --test
 Pass `--root` to run the codemod on a project somewhere else (i.e. not in the current directory).
 
 ```sh
-npx ember-codemod-pod-to-octane --root=<your/project/path>
+npx ember-codemod-pod-to-octane --root=<path/to/your/project>
 ```
 
 Note, you can use `--root` to un-pod the demo app of an Ember addon.
@@ -114,13 +114,13 @@ The codemod assumes that an engine is used to define routes and route-specific c
 To better meet your needs, consider cloning the repo and running the codemod locally.
 
 ```sh
-cd <your/cloned/repo>
+cd <path/to/cloned/repo>
 
 # Compile TypeScript
 pnpm build
 
 # Run codemod
-./dist/bin/ember-codemod-pod-to-octane.js --root=<your/project/path>
+./dist/bin/ember-codemod-pod-to-octane.js --root=<path/to/your/project>
 ```
 
 
