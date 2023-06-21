@@ -1,3 +1,5 @@
+# Changelog
+
 ## 1.2.6 (2023-06-13)
 
 ### Enhancement

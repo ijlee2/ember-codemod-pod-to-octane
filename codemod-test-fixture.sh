@@ -4,33 +4,22 @@
 #
 #  A. Purpose
 #
-#    Fix the expected output of a test fixture after updating the source code
-#    of ember-codemod-pod-to-octane. 
+#    Fix the expected output of a test fixture after updating the source code.
 #
 #  B. Usage
 #
+#    For named arguments, do not include `=` between the flag and the value.
+#    Positional arguments are to appear at the end.
+#
 #    ./codemod-test-fixture.sh [OPTIONAL-FLAGS] <FIXTURE-NAME>
-#
-#    Step 1. Run the script to update the files in `tests/fixtures/<FIXTURE-NAME>/output`.
-#
-#      Choice a. Run the codemod without the optional arguments.
-#
-#        ./codemod-test-fixture.sh ember-addon/typescript
-#
-#      Choice b. Run the codemod with the optional arguments. (For named arguments,
-#      do not include `=` between the flag and the value. Positional arguments must
-#      appear at the end.)
-#
-#        ./codemod-test-fixture.sh -t "addon" ember-addon/typescript
 #
 #---------
 
 # Read the named arguments
-while getopts ":p:t:" flag
+while getopts ":a:" flag
 do
   case $flag in
-    p) POD_PATH=$OPTARG;;
-    t) TYPE=$OPTARG;;
+    a) ARGUMENTS=$OPTARG;;
   esac
 done
 
@@ -39,7 +28,7 @@ FIXTURE=${@:$OPTIND:1}
 
 if [ ! $FIXTURE ]
 then
-  echo "ERROR: Please specify the fixture name (e.g. ember-addon/typescript).\n"
+  echo "ERROR: Please specify the fixture name.\n"
   exit 1
 elif [ ! -d "tests/fixtures/$FIXTURE/input" ]
 then
@@ -50,10 +39,6 @@ fi
 rm -r "tests/fixtures/$FIXTURE/output"
 cp -r "tests/fixtures/$FIXTURE/input" "tests/fixtures/$FIXTURE/output"
 
-./dist/bin/ember-codemod-pod-to-octane.js \
-  --pod-path=$POD_PATH \
-  --root="tests/fixtures/$FIXTURE/output" \
-  --test=false \
-  --type=$TYPE
+./dist/bin/ember-codemod-pod-to-octane.js $ARGUMENTS --root="tests/fixtures/$FIXTURE/output"
 
 echo "SUCCESS: Updated the output of $FIXTURE.\n"
