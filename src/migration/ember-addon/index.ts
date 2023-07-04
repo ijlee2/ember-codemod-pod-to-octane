@@ -1,8 +1,11 @@
 import { moveFiles } from '@codemod-utils/files';
 
 import type { CodemodOptions } from '../../types/index.js';
-import { updatePathsInAppFolder } from '../../utils/ember-addon/app/components.js';
-import { createFilePathMaps, createOptions } from './steps/index.js';
+import {
+  createFilePathMaps,
+  createOptions,
+  updatePathsInAppFolder,
+} from './steps/index.js';
 
 export function migrateEmberAddon(codemodOptions: CodemodOptions): void {
   const options = createOptions(codemodOptions);
