@@ -7,9 +7,7 @@ import type {
   Options,
 } from '../../../../../types/index.js';
 
-export function migrationStrategyForServices(
-  options: Options,
-): FilePathMapEntries {
+export function mapServices(options: Options): FilePathMapEntries {
   const { podPath, projectRoot } = options;
 
   const filePaths = findFiles(join('app', podPath, '**', 'service.{js,ts}'), {

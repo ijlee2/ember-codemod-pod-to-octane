@@ -7,9 +7,7 @@ import type {
   Options,
 } from '../../../../../types/index.js';
 
-export function migrationStrategyForComponentClasses(
-  options: Options,
-): FilePathMapEntries {
+export function mapComponentClasses(options: Options): FilePathMapEntries {
   const { podPath, projectRoot } = options;
 
   const filePaths = findFiles(

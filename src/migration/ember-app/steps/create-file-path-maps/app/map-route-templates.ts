@@ -7,23 +7,24 @@ import type {
   Options,
 } from '../../../../../types/index.js';
 
-export function migrationStrategyForRouteModels(
-  options: Options,
-): FilePathMapEntries {
+export function mapRouteTemplates(options: Options): FilePathMapEntries {
   const { podPath, projectRoot } = options;
 
-  const filePaths = findFiles(join('app', podPath, '**', 'model.{js,ts}'), {
-    projectRoot,
-  });
+  const filePaths = findFiles(
+    join('app', podPath, '!(components)', '**', 'template.hbs'),
+    {
+      projectRoot,
+    },
+  );
 
   return filePaths.map((oldFilePath) => {
     const newFilePath = renamePathByFile(oldFilePath, {
       find: {
         directory: join('app', podPath),
-        file: 'model',
+        file: 'template',
       },
       replace: (key: string) => {
-        return `app/models/${key}`;
+        return `app/templates/${key}`;
       },
     });
 

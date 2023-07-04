@@ -7,9 +7,7 @@ import type {
   Options,
 } from '../../../../../types/index.js';
 
-export function migrationStrategyForRouteControllers(
-  options: Options,
-): FilePathMapEntries {
+export function mapRouteControllers(options: Options): FilePathMapEntries {
   const { podPath, projectRoot } = options;
 
   /*

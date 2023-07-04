@@ -7,13 +7,11 @@ import type {
   Options,
 } from '../../../../../types/index.js';
 
-export function migrationStrategyForServices(
-  options: Options,
-): FilePathMapEntries {
+export function mapRouteSerializers(options: Options): FilePathMapEntries {
   const { podPath, projectRoot } = options;
 
   const filePaths = findFiles(
-    join('tests/unit', podPath, '!(services)', '**', 'service-test.{js,ts}'),
+    join('app', podPath, '**', 'serializer.{js,ts}'),
     {
       projectRoot,
     },
@@ -22,11 +20,11 @@ export function migrationStrategyForServices(
   return filePaths.map((oldFilePath) => {
     const newFilePath = renamePathByFile(oldFilePath, {
       find: {
-        directory: join('tests/unit', podPath),
-        file: 'service-test',
+        directory: join('app', podPath),
+        file: 'serializer',
       },
       replace: (key: string) => {
-        return `tests/unit/services/${key}-test`;
+        return `app/serializers/${key}`;
       },
     });
 

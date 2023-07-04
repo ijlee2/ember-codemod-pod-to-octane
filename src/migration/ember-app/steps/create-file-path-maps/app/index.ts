@@ -1,28 +1,28 @@
 import type { FilePathMap, Options } from '../../../../../types/index.js';
-import { migrationStrategyForComponentClasses } from './component-classes.js';
-import { migrationStrategyForComponentStylesheets } from './component-stylesheets.js';
-import { migrationStrategyForComponentTemplates } from './component-templates.js';
-import { migrationStrategyForRouteAdapters } from './route-adapters.js';
-import { migrationStrategyForRouteControllers } from './route-controllers.js';
-import { migrationStrategyForRouteModels } from './route-models.js';
-import { migrationStrategyForRouteRoutes } from './route-routes.js';
-import { migrationStrategyForRouteSerializers } from './route-serializers.js';
-import { migrationStrategyForRouteStylesheets } from './route-stylesheets.js';
-import { migrationStrategyForRouteTemplates } from './route-templates.js';
-import { migrationStrategyForServices } from './services.js';
+import { mapComponentClasses } from './map-component-classes.js';
+import { mapComponentStylesheets } from './map-component-stylesheets.js';
+import { mapComponentTemplates } from './map-component-templates.js';
+import { mapRouteAdapters } from './map-route-adapters.js';
+import { mapRouteControllers } from './map-route-controllers.js';
+import { mapRouteModels } from './map-route-models.js';
+import { mapRouteRoutes } from './map-route-routes.js';
+import { mapRouteSerializers } from './map-route-serializers.js';
+import { mapRouteStylesheets } from './map-route-stylesheets.js';
+import { mapRouteTemplates } from './map-route-templates.js';
+import { mapServices } from './map-services.js';
 
-export function migrationStrategyForAppFolder(options: Options): FilePathMap {
+export function mapAppFolder(options: Options): FilePathMap {
   return new Map([
-    ...migrationStrategyForComponentClasses(options),
-    ...migrationStrategyForComponentStylesheets(options),
-    ...migrationStrategyForComponentTemplates(options),
-    ...migrationStrategyForRouteAdapters(options),
-    ...migrationStrategyForRouteControllers(options),
-    ...migrationStrategyForRouteModels(options),
-    ...migrationStrategyForRouteRoutes(options),
-    ...migrationStrategyForRouteSerializers(options),
-    ...migrationStrategyForRouteStylesheets(options),
-    ...migrationStrategyForRouteTemplates(options),
-    ...migrationStrategyForServices(options),
+    ...mapComponentClasses(options),
+    ...mapComponentStylesheets(options),
+    ...mapComponentTemplates(options),
+    ...mapRouteAdapters(options),
+    ...mapRouteControllers(options),
+    ...mapRouteModels(options),
+    ...mapRouteRoutes(options),
+    ...mapRouteSerializers(options),
+    ...mapRouteStylesheets(options),
+    ...mapRouteTemplates(options),
+    ...mapServices(options),
   ]);
 }

@@ -7,13 +7,11 @@ import type {
   Options,
 } from '../../../../../types/index.js';
 
-export function migrationStrategyForComponentTemplates(
-  options: Options,
-): FilePathMapEntries {
+export function mapServices(options: Options): FilePathMapEntries {
   const { podPath, projectRoot } = options;
 
   const filePaths = findFiles(
-    join('app', podPath, 'components', '**', 'template.hbs'),
+    join('tests/unit', podPath, '!(services)', '**', 'service-test.{js,ts}'),
     {
       projectRoot,
     },
@@ -22,11 +20,11 @@ export function migrationStrategyForComponentTemplates(
   return filePaths.map((oldFilePath) => {
     const newFilePath = renamePathByFile(oldFilePath, {
       find: {
-        directory: join('app', podPath, 'components'),
-        file: 'template',
+        directory: join('tests/unit', podPath),
+        file: 'service-test',
       },
       replace: (key: string) => {
-        return `app/components/${key}`;
+        return `tests/unit/services/${key}-test`;
       },
     });
 

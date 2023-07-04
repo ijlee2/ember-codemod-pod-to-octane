@@ -1,14 +1,14 @@
 import type { FilePathMap, Options } from '../../../../../types/index.js';
-import { migrationStrategyForComponents } from './components.js';
-import { migrationStrategyForRouteControllers } from './route-controllers.js';
-import { migrationStrategyForRouteRoutes } from './route-routes.js';
-import { migrationStrategyForServices } from './services.js';
+import { mapComponents } from './map-components.js';
+import { mapRouteControllers } from './map-route-controllers.js';
+import { mapRouteRoutes } from './map-route-routes.js';
+import { mapServices } from './map-services.js';
 
-export function migrationStrategyForTestsFolder(options: Options): FilePathMap {
+export function mapTestsFolder(options: Options): FilePathMap {
   return new Map([
-    ...migrationStrategyForComponents(options),
-    ...migrationStrategyForRouteControllers(options),
-    ...migrationStrategyForRouteRoutes(options),
-    ...migrationStrategyForServices(options),
+    ...mapComponents(options),
+    ...mapRouteControllers(options),
+    ...mapRouteRoutes(options),
+    ...mapServices(options),
   ]);
 }

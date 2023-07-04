@@ -7,13 +7,11 @@ import type {
   Options,
 } from '../../../../../types/index.js';
 
-export function migrationStrategyForRouteSerializers(
-  options: Options,
-): FilePathMapEntries {
+export function mapComponentTemplates(options: Options): FilePathMapEntries {
   const { podPath, projectRoot } = options;
 
   const filePaths = findFiles(
-    join('app', podPath, '**', 'serializer.{js,ts}'),
+    join('app', podPath, 'components', '**', 'template.hbs'),
     {
       projectRoot,
     },
@@ -22,11 +20,11 @@ export function migrationStrategyForRouteSerializers(
   return filePaths.map((oldFilePath) => {
     const newFilePath = renamePathByFile(oldFilePath, {
       find: {
-        directory: join('app', podPath),
-        file: 'serializer',
+        directory: join('app', podPath, 'components'),
+        file: 'template',
       },
       replace: (key: string) => {
-        return `app/serializers/${key}`;
+        return `app/components/${key}`;
       },
     });
 

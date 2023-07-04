@@ -7,26 +7,21 @@ import type {
   Options,
 } from '../../../../../types/index.js';
 
-export function migrationStrategyForRouteTemplates(
-  options: Options,
-): FilePathMapEntries {
+export function mapRouteAdapters(options: Options): FilePathMapEntries {
   const { podPath, projectRoot } = options;
 
-  const filePaths = findFiles(
-    join('app', podPath, '!(components)', '**', 'template.hbs'),
-    {
-      projectRoot,
-    },
-  );
+  const filePaths = findFiles(join('app', podPath, '**', 'adapter.{js,ts}'), {
+    projectRoot,
+  });
 
   return filePaths.map((oldFilePath) => {
     const newFilePath = renamePathByFile(oldFilePath, {
       find: {
         directory: join('app', podPath),
-        file: 'template',
+        file: 'adapter',
       },
       replace: (key: string) => {
-        return `app/templates/${key}`;
+        return `app/adapters/${key}`;
       },
     });
 

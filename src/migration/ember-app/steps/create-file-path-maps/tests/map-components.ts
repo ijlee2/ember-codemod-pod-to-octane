@@ -7,13 +7,17 @@ import type {
   Options,
 } from '../../../../../types/index.js';
 
-export function migrationStrategyForRouteControllers(
-  options: Options,
-): FilePathMapEntries {
+export function mapComponents(options: Options): FilePathMapEntries {
   const { podPath, projectRoot } = options;
 
   const filePaths = findFiles(
-    join('app', podPath, '**', 'controller.{js,ts}'),
+    join(
+      'tests/integration',
+      podPath,
+      'components',
+      '**',
+      'component-test.{js,ts}',
+    ),
     {
       projectRoot,
     },
@@ -22,11 +26,11 @@ export function migrationStrategyForRouteControllers(
   return filePaths.map((oldFilePath) => {
     const newFilePath = renamePathByFile(oldFilePath, {
       find: {
-        directory: join('app', podPath),
-        file: 'controller',
+        directory: join('tests/integration', podPath, 'components'),
+        file: 'component-test',
       },
       replace: (key: string) => {
-        return `app/controllers/${key}`;
+        return `tests/integration/components/${key}-test`;
       },
     });
 

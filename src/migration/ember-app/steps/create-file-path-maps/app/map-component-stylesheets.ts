@@ -7,23 +7,24 @@ import type {
   Options,
 } from '../../../../../types/index.js';
 
-export function migrationStrategyForRouteRoutes(
-  options: Options,
-): FilePathMapEntries {
+export function mapComponentStylesheets(options: Options): FilePathMapEntries {
   const { podPath, projectRoot } = options;
 
-  const filePaths = findFiles(join('app', podPath, '**', 'route.{js,ts}'), {
-    projectRoot,
-  });
+  const filePaths = findFiles(
+    join('app', podPath, 'components', '**', 'styles.{css,scss}'),
+    {
+      projectRoot,
+    },
+  );
 
   return filePaths.map((oldFilePath) => {
     const newFilePath = renamePathByFile(oldFilePath, {
       find: {
-        directory: join('app', podPath),
-        file: 'route',
+        directory: join('app', podPath, 'components'),
+        file: 'styles',
       },
       replace: (key: string) => {
-        return `app/routes/${key}`;
+        return `app/components/${key}`;
       },
     });
 
