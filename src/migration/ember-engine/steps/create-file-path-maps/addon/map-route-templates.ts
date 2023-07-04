@@ -5,12 +5,10 @@ import type {
   Options,
 } from '../../../../../types/index.js';
 
-export function migrationStrategyForRouteRoutes(
-  options: Options,
-): FilePathMapEntries {
+export function mapRouteTemplates(options: Options): FilePathMapEntries {
   const { projectRoot } = options;
 
-  const filePaths = findFiles('addon/**/route.{js,ts}', {
+  const filePaths = findFiles('addon/!(components)/**/template.hbs', {
     projectRoot,
   });
 
@@ -18,10 +16,10 @@ export function migrationStrategyForRouteRoutes(
     const newFilePath = renamePathByFile(oldFilePath, {
       find: {
         directory: 'addon',
-        file: 'route',
+        file: 'template',
       },
       replace: (key: string) => {
-        return `addon/routes/${key}`;
+        return `addon/templates/${key}`;
       },
     });
 

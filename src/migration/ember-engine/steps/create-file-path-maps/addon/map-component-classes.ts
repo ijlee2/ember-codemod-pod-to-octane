@@ -5,9 +5,7 @@ import type {
   Options,
 } from '../../../../../types/index.js';
 
-export function migrationStrategyForComponentClasses(
-  options: Options,
-): FilePathMapEntries {
+export function mapComponentClasses(options: Options): FilePathMapEntries {
   const { projectRoot } = options;
 
   const filePaths = findFiles('addon/components/**/component.{d.ts,js,ts}', {

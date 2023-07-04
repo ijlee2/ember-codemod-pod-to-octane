@@ -1,20 +1,20 @@
 import type { FilePathMap, Options } from '../../../../../types/index.js';
-import { migrationStrategyForComponentClasses } from './component-classes.js';
-import { migrationStrategyForComponentStylesheets } from './component-stylesheets.js';
-import { migrationStrategyForComponentTemplates } from './component-templates.js';
-import { migrationStrategyForRouteControllers } from './route-controllers.js';
-import { migrationStrategyForRouteRoutes } from './route-routes.js';
-import { migrationStrategyForRouteStylesheets } from './route-stylesheets.js';
-import { migrationStrategyForRouteTemplates } from './route-templates.js';
+import { mapComponentClasses } from './map-component-classes.js';
+import { mapComponentStylesheets } from './map-component-stylesheets.js';
+import { mapComponentTemplates } from './map-component-templates.js';
+import { mapRouteControllers } from './map-route-controllers.js';
+import { mapRouteRoutes } from './map-route-routes.js';
+import { mapRouteStylesheets } from './map-route-stylesheets.js';
+import { mapRouteTemplates } from './map-route-templates.js';
 
-export function migrationStrategyForAddonFolder(options: Options): FilePathMap {
+export function mapAddonFolder(options: Options): FilePathMap {
   return new Map([
-    ...migrationStrategyForComponentClasses(options),
-    ...migrationStrategyForComponentStylesheets(options),
-    ...migrationStrategyForComponentTemplates(options),
-    ...migrationStrategyForRouteControllers(options),
-    ...migrationStrategyForRouteRoutes(options),
-    ...migrationStrategyForRouteStylesheets(options),
-    ...migrationStrategyForRouteTemplates(options),
+    ...mapComponentClasses(options),
+    ...mapComponentStylesheets(options),
+    ...mapComponentTemplates(options),
+    ...mapRouteControllers(options),
+    ...mapRouteRoutes(options),
+    ...mapRouteStylesheets(options),
+    ...mapRouteTemplates(options),
   ]);
 }

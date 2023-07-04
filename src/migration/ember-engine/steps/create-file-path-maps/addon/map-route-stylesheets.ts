@@ -5,9 +5,7 @@ import type {
   Options,
 } from '../../../../../types/index.js';
 
-export function migrationStrategyForRouteStylesheets(
-  options: Options,
-): FilePathMapEntries {
+export function mapRouteStylesheets(options: Options): FilePathMapEntries {
   const { projectRoot } = options;
 
   const filePaths = findFiles('addon/!(components)/**/styles.{css,scss}', {

@@ -5,23 +5,21 @@ import type {
   Options,
 } from '../../../../../types/index.js';
 
-export function migrationStrategyForComponentStylesheets(
-  options: Options,
-): FilePathMapEntries {
+export function mapRouteControllers(options: Options): FilePathMapEntries {
   const { projectRoot } = options;
 
-  const filePaths = findFiles('addon/components/**/styles.{css,scss}', {
+  const filePaths = findFiles('addon/**/controller.{js,ts}', {
     projectRoot,
   });
 
   return filePaths.map((oldFilePath) => {
     const newFilePath = renamePathByFile(oldFilePath, {
       find: {
-        directory: 'addon/components',
-        file: 'styles',
+        directory: 'addon',
+        file: 'controller',
       },
       replace: (key: string) => {
-        return `addon/components/${key}`;
+        return `addon/controllers/${key}`;
       },
     });
 
