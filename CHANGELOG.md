@@ -1,5 +1,21 @@
 # Changelog
 
+## 1.2.8 (2023-07-04)
+
+### Enhancement
+* [#43](https://github.com/ijlee2/ember-codemod-pod-to-octane/pull/43) Refactored code ([@ijlee2](https://github.com/ijlee2))
+
+### Internal
+* [#42](https://github.com/ijlee2/ember-codemod-pod-to-octane/pull/42) Updated dependencies ([@ijlee2](https://github.com/ijlee2))
+* [#41](https://github.com/ijlee2/ember-codemod-pod-to-octane/pull/41) Allowed index.ts in tests/fixtures ([@ijlee2](https://github.com/ijlee2))
+
+### Documentation
+* [#44](https://github.com/ijlee2/ember-codemod-pod-to-octane/pull/44) Removed unused test fixtures ([@ijlee2](https://github.com/ijlee2))
+
+### Committers: 1
+- Isaac Lee ([@ijlee2](https://github.com/ijlee2))
+
+
 ## 1.2.7 (2023-06-21)
 
 ### Internal
