@@ -38,16 +38,16 @@ test('migration | ember-addon | steps | update-paths-in-app-folder > javascript'
 
   loadFixture(inputProject, codemodOptions);
 
-  const migrationStrategy = new Map([
+  const filePathMap = new Map([
     [
       'app/components/ui/form/checkbox/component.js',
       'app/components/ui/form/checkbox.js',
     ],
   ]);
 
-  moveFiles(migrationStrategy, options);
+  moveFiles(filePathMap, options);
 
-  updatePathsInAppFolder(migrationStrategy, options);
+  updatePathsInAppFolder(filePathMap, options);
 
   assertFixture(outputProject, codemodOptions);
 });
