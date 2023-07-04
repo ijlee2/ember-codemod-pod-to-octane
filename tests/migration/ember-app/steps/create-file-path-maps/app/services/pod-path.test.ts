@@ -1,0 +1,19 @@
+import { assert, loadFixture, test } from '@codemod-utils/tests';
+
+import { migrationStrategyForServices } from '../../../../../../../src/migration/ember-app/steps/create-file-path-maps/app/services.js';
+import { inputProject } from '../../../../../..//fixtures/ember-app/pod-path/index.js';
+import {
+  codemodOptions,
+  options,
+} from '../../../../../..//helpers/shared-test-setups/ember-app/pod-path.js';
+
+test('migration | ember-app | app | services > pod path', function () {
+  loadFixture(inputProject, codemodOptions);
+
+  const migrationStrategy = migrationStrategyForServices(options);
+
+  assert.deepStrictEqual(migrationStrategy, [
+    ['app/pods/config/service.js', 'app/services/config.js'],
+    ['app/pods/experiments/service.js', 'app/services/experiments.js'],
+  ]);
+});
