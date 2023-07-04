@@ -1,8 +1,8 @@
 import type { FilePathMap } from '@codemod-utils/files';
 
 import type { Options } from '../../../types/index.js';
-import { migrationStrategyForAddonFolder } from '../addon/index.js';
-import { migrationStrategyForTestsFolder } from '../tests/index.js';
+import { migrationStrategyForAddonFolder } from './create-file-path-maps/addon/index.js';
+import { migrationStrategyForTestsFolder } from './create-file-path-maps/tests/index.js';
 
 type MigrationStrategies = {
   addon: FilePathMap;
