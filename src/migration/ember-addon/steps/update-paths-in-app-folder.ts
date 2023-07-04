@@ -4,26 +4,19 @@ import { join } from 'node:path';
 import type { FilePathMap, Options } from '../../../types/index.js';
 
 export function updatePathsInAppFolder(
-  migrationStrategy: FilePathMap,
+  filePathMap: FilePathMap,
   options: Options,
 ): void {
   const { projectRoot } = options;
 
-  migrationStrategy.forEach((newFilePath, oldFilePath) => {
-    // Read file
+  filePathMap.forEach((newFilePath, oldFilePath) => {
     const newAbsolutePath = join(projectRoot, newFilePath);
     const file = readFileSync(newAbsolutePath, 'utf8');
 
-    // Update file
-    const oldRelativePath = oldFilePath
-      .replace(/^app\//, '')
-      .replace(/\.js$/, '');
+    const text = oldFilePath.replace(/^app\//, '').replace(/\.js$/, '');
+    const newText = newFilePath.replace(/^app\//, '').replace(/\.js$/, '');
+    const newFile = file.replace(new RegExp(text), newText);
 
-    const newRelativePath = newFilePath
-      .replace(/^app\//, '')
-      .replace(/\.js$/, '');
-
-    const newFile = file.replace(new RegExp(oldRelativePath), newRelativePath);
     writeFileSync(newAbsolutePath, newFile, 'utf8');
   });
 }
