@@ -5,23 +5,21 @@ import type {
   Options,
 } from '../../../../../types/index.js';
 
-export function migrationStrategyForComponentStylesheets(
-  options: Options,
-): FilePathMapEntries {
+export function mapComponentTemplates(options: Options): FilePathMapEntries {
   const { projectRoot } = options;
 
-  const filePaths = findFiles('app/components/**/styles.js', {
+  const filePaths = findFiles('addon/components/**/template.hbs', {
     projectRoot,
   });
 
   return filePaths.map((oldFilePath) => {
     const newFilePath = renamePathByFile(oldFilePath, {
       find: {
-        directory: 'app/components',
-        file: 'styles',
+        directory: 'addon/components',
+        file: 'template',
       },
       replace: (key: string) => {
-        return `app/components/${key}`;
+        return `addon/components/${key}`;
       },
     });
 

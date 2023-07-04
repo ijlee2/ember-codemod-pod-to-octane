@@ -5,12 +5,10 @@ import type {
   Options,
 } from '../../../../../types/index.js';
 
-export function migrationStrategyForComponentTemplates(
-  options: Options,
-): FilePathMapEntries {
+export function mapComponentStylesheets(options: Options): FilePathMapEntries {
   const { projectRoot } = options;
 
-  const filePaths = findFiles('app/components/**/template.js', {
+  const filePaths = findFiles('app/components/**/styles.js', {
     projectRoot,
   });
 
@@ -18,7 +16,7 @@ export function migrationStrategyForComponentTemplates(
     const newFilePath = renamePathByFile(oldFilePath, {
       find: {
         directory: 'app/components',
-        file: 'template',
+        file: 'styles',
       },
       replace: (key: string) => {
         return `app/components/${key}`;
