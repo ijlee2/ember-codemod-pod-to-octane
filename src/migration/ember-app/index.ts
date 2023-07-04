@@ -1,25 +1,19 @@
 import { moveFiles } from '@codemod-utils/files';
 
 import type { CodemodOptions } from '../../types/index.js';
-import { migrationStrategyForAppFolder } from './app/index.js';
-import { createOptions } from './steps/index.js';
-import { migrationStrategyForTestsFolder } from './tests/index.js';
+import { createFilePathMaps, createOptions } from './steps/index.js';
 
 export function migrateEmberApp(codemodOptions: CodemodOptions): void {
   const options = createOptions(codemodOptions);
 
-  const migrationStrategyApp = migrationStrategyForAppFolder(options);
-  const migrationStrategyTests = migrationStrategyForTestsFolder(options);
+  const filePathMaps = createFilePathMaps(options);
 
   if (options.testRun) {
-    console.log({
-      migrationStrategyApp,
-      migrationStrategyTests,
-    });
+    console.log(filePathMaps);
 
     return;
   }
 
-  moveFiles(migrationStrategyApp, options);
-  moveFiles(migrationStrategyTests, options);
+  moveFiles(filePathMaps.app, options);
+  moveFiles(filePathMaps.tests, options);
 }
