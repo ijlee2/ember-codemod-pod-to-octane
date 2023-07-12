@@ -21,9 +21,5 @@ export function runCodemod(codemodOptions: CodemodOptions): void {
       migrateEmberEngine(codemodOptions);
       break;
     }
-
-    default: {
-      console.error(`Unknown project type: ${codemodOptions.projectType}`);
-    }
   }
 }
