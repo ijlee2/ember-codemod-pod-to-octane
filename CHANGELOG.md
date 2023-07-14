@@ -1,5 +1,18 @@
 # Changelog
 
+## 1.2.9 (2023-07-14)
+
+### Internal
+* [#47](https://github.com/ijlee2/ember-codemod-pod-to-octane/pull/47) Supported @typescript-eslint@v6 and prettier@v3 ([@ijlee2](https://github.com/ijlee2))
+
+### Documentation
+* [#48](https://github.com/ijlee2/ember-codemod-pod-to-octane/pull/48) Patched #47 ([@ijlee2](https://github.com/ijlee2))
+* [#46](https://github.com/ijlee2/ember-codemod-pod-to-octane/pull/46) Removed references to a migration strategy ([@ijlee2](https://github.com/ijlee2))
+
+### Committers: 1
+- Isaac Lee ([@ijlee2](https://github.com/ijlee2))
+
+
 ## 1.2.8 (2023-07-04)
 
 ### Enhancement
