@@ -32,9 +32,9 @@ Step 3. Update references originating from, as well as pointing to, the moved fi
 You must pass `--type` to indicate what type of project you have.
 
 ```sh
-npx ember-codemod-pod-to-octane --type=app
-npx ember-codemod-pod-to-octane --type=addon
-npx ember-codemod-pod-to-octane --type=engine
+npx ember-codemod-pod-to-octane --type app
+npx ember-codemod-pod-to-octane --type addon
+npx ember-codemod-pod-to-octane --type engine
 ```
 
 
@@ -56,14 +56,14 @@ npx ember-codemod-pod-to-octane --test
 Pass `--root` to run the codemod on a project somewhere else (i.e. not in the current directory).
 
 ```sh
-npx ember-codemod-pod-to-octane --root=<path/to/your/project>
+npx ember-codemod-pod-to-octane --root <path/to/your/project>
 ```
 
 Note, you can use `--root` to un-pod the demo app of an Ember addon.
 
 ```sh
 # If the current directory is the addon root
-npx ember-codemod-pod-to-octane --type=app --root=tests/dummy
+npx ember-codemod-pod-to-octane --type app --root tests/dummy
 ```
 
 </details>
@@ -76,7 +76,7 @@ Pass `--pod-path` if `podModulePrefix` has been set in `config/environment.js`. 
 
 ```sh
 # If modulePrefix is 'my-app' and podModulePrefix is 'my-app/pods'
-npx ember-codemod-pod-to-octane --pod-path=pods
+npx ember-codemod-pod-to-octane --pod-path pods
 ```
 
 </details>
@@ -120,7 +120,7 @@ cd <path/to/cloned/repo>
 pnpm build
 
 # Run codemod
-./dist/bin/ember-codemod-pod-to-octane.js --root=<path/to/your/project>
+./dist/bin/ember-codemod-pod-to-octane.js --root <path/to/your/project>
 ```
 
 
