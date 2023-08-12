@@ -39,6 +39,7 @@ npx ember-codemod-pod-to-octane --type engine
 
 
 <details>
+
 <summary>Optional: Do a test run</summary>
 
 Pass `--test` to preview how the codemod will move files.
@@ -51,6 +52,7 @@ npx ember-codemod-pod-to-octane --test
 
 
 <details>
+
 <summary>Optional: Specify the project root</summary>
 
 Pass `--root` to run the codemod on a project somewhere else (i.e. not in the current directory).
@@ -70,6 +72,7 @@ npx ember-codemod-pod-to-octane --type app --root tests/dummy
 
 
 <details>
+
 <summary>Optional: Specify the pod path</summary>
 
 Pass `--pod-path` if `podModulePrefix` has been set in `config/environment.js`. "Subtract" `modulePrefix` from `podModulePrefix` to get the pod path.
@@ -88,6 +91,7 @@ The codemod is designed to cover typical uses of an Ember app, addon, and engine
 
 
 <details>
+
 <summary>Apps</summary>
 
 To account for a bug (found when Ember CLI is combined with Ember Data), the codemod doesn't consider unit tests for adapters, models, and serializers. You will need to manually move the test files.
@@ -96,6 +100,7 @@ To account for a bug (found when Ember CLI is combined with Ember Data), the cod
 
 
 <details>
+
 <summary>Addons</summary>
 
 The codemod assumes that an addon is used to define components (not models or routes).
@@ -104,6 +109,7 @@ The codemod assumes that an addon is used to define components (not models or ro
 
 
 <details>
+
 <summary>Engines</summary>
 
 The codemod assumes that an engine is used to define routes and route-specific components.
@@ -134,11 +140,6 @@ pnpm build
 See the [Contributing](CONTRIBUTING.md) guide for details.
 
 If you have an open-sourced app or addon that I can use as a reference, reach out to me on [Discord](https://discord.gg/emberjs) at `ijlee2`. Please star this project so that I can gauge its importance to you and the Ember community. ⭐
-
-
-## Credits
-
-Thanks goes to FlashRecruit, Imago, and CLARK, who gave me the necessary Ember experience. Some code is based on [`ember-component-template-colocation-migrator`](https://github.com/ember-codemods/ember-component-template-colocation-migrator).
 
 
 ## License
