@@ -1,5 +1,14 @@
 # Changelog
 
+## 1.2.11 (2023-09-02)
+
+### Internal
+* [#50](https://github.com/ijlee2/ember-codemod-pod-to-octane/pull/50) Updated dependencies ([@ijlee2](https://github.com/ijlee2))
+
+### Committers: 1
+- Isaac Lee ([@ijlee2](https://github.com/ijlee2))
+
+
 ## 1.2.10 (2023-08-12)
 
 ### Internal
