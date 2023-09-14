@@ -1,5 +1,17 @@
 # Changelog
 
+## 2.0.0 (2023-09-14)
+
+### Breaking Change
+* [#51](https://github.com/ijlee2/ember-codemod-pod-to-octane/pull/51) Dropped Node 16 support ([@ijlee2](https://github.com/ijlee2))
+
+### Internal
+* [#51](https://github.com/ijlee2/ember-codemod-pod-to-octane/pull/51) Dropped Node 16 support ([@ijlee2](https://github.com/ijlee2))
+
+### Committers: 1
+- Isaac Lee ([@ijlee2](https://github.com/ijlee2))
+
+
 ## 1.2.11 (2023-09-02)
 
 ### Internal
