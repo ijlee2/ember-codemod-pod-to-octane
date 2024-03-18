@@ -1,9 +1,10 @@
-import { findFiles, renamePathByFile } from '@codemod-utils/files';
+import { findFiles } from '@codemod-utils/files';
 
 import type {
   FilePathMapEntries,
   Options,
 } from '../../../../../types/index.js';
+import { renamePodPath } from '../../../../../utils/files/index.js';
 
 export function mapRouteRoutes(options: Options): FilePathMapEntries {
   const { projectRoot } = options;
@@ -16,11 +17,8 @@ export function mapRouteRoutes(options: Options): FilePathMapEntries {
   });
 
   const filePathMap1 = filePaths1.map((oldFilePath) => {
-    const newFilePath = renamePathByFile(oldFilePath, {
-      find: {
-        directory: 'tests/unit',
-        file: 'route-test',
-      },
+    const newFilePath = renamePodPath(oldFilePath, {
+      entityDir: 'tests/unit',
       replace: (key: string) => {
         return `tests/unit/routes/${key}-test`;
       },
@@ -37,11 +35,8 @@ export function mapRouteRoutes(options: Options): FilePathMapEntries {
   });
 
   const filePathMap2 = filePaths2.map((oldFilePath) => {
-    const newFilePath = renamePathByFile(oldFilePath, {
-      find: {
-        directory: 'tests/unit/routes',
-        file: 'route-test',
-      },
+    const newFilePath = renamePodPath(oldFilePath, {
+      entityDir: 'tests/unit/routes',
       replace: (key: string) => {
         return `tests/unit/routes/${key}-test`;
       },

@@ -1,9 +1,10 @@
-import { findFiles, renamePathByFile } from '@codemod-utils/files';
+import { findFiles } from '@codemod-utils/files';
 
 import type {
   FilePathMapEntries,
   Options,
 } from '../../../../../types/index.js';
+import { renamePodPath } from '../../../../../utils/files/index.js';
 
 export function mapComponents(options: Options): FilePathMapEntries {
   const { projectRoot } = options;
@@ -16,11 +17,8 @@ export function mapComponents(options: Options): FilePathMapEntries {
   );
 
   return filePaths.map((oldFilePath) => {
-    const newFilePath = renamePathByFile(oldFilePath, {
-      find: {
-        directory: 'tests/integration/components',
-        file: 'component-test',
-      },
+    const newFilePath = renamePodPath(oldFilePath, {
+      entityDir: 'tests/integration/components',
       replace: (key: string) => {
         return `tests/integration/components/${key}-test`;
       },
