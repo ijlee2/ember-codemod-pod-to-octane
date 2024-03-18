@@ -1,11 +1,12 @@
 import { join } from 'node:path';
 
-import { findFiles, renamePathByFile } from '@codemod-utils/files';
+import { findFiles } from '@codemod-utils/files';
 
 import type {
   FilePathMapEntries,
   Options,
 } from '../../../../../types/index.js';
+import { renamePodPath } from '../../../../../utils/files/index.js';
 
 export function mapRouteControllers(options: Options): FilePathMapEntries {
   const { podPath, projectRoot } = options;
@@ -27,11 +28,8 @@ export function mapRouteControllers(options: Options): FilePathMapEntries {
   );
 
   const filePathMap1 = filePaths1.map((oldFilePath) => {
-    const newFilePath = renamePathByFile(oldFilePath, {
-      find: {
-        directory: join('tests/unit', podPath),
-        file: 'controller-test',
-      },
+    const newFilePath = renamePodPath(oldFilePath, {
+      entityDir: join('tests/unit', podPath),
       replace: (key: string) => {
         return `tests/unit/controllers/${key}-test`;
       },
@@ -51,11 +49,8 @@ export function mapRouteControllers(options: Options): FilePathMapEntries {
   );
 
   const filePathMap2 = filePaths2.map((oldFilePath) => {
-    const newFilePath = renamePathByFile(oldFilePath, {
-      find: {
-        directory: join('tests/unit', podPath, 'controllers'),
-        file: 'controller-test',
-      },
+    const newFilePath = renamePodPath(oldFilePath, {
+      entityDir: join('tests/unit', podPath, 'controllers'),
       replace: (key: string) => {
         return `tests/unit/controllers/${key}-test`;
       },

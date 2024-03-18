@@ -1,9 +1,10 @@
-import { findFiles, renamePathByFile } from '@codemod-utils/files';
+import { findFiles } from '@codemod-utils/files';
 
 import type {
   FilePathMapEntries,
   Options,
 } from '../../../../../types/index.js';
+import { renamePodPath } from '../../../../../utils/files/index.js';
 
 export function mapRouteTemplates(options: Options): FilePathMapEntries {
   const { projectRoot } = options;
@@ -13,11 +14,8 @@ export function mapRouteTemplates(options: Options): FilePathMapEntries {
   });
 
   return filePaths.map((oldFilePath) => {
-    const newFilePath = renamePathByFile(oldFilePath, {
-      find: {
-        directory: 'addon',
-        file: 'template',
-      },
+    const newFilePath = renamePodPath(oldFilePath, {
+      entityDir: 'addon',
       replace: (key: string) => {
         return `addon/templates/${key}`;
       },
