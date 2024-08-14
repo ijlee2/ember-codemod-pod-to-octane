@@ -1,5 +1,15 @@
 # Changelog
 
+## 2.0.7 (2024-08-14)
+
+### Internal
+* [#59](https://github.com/ijlee2/ember-codemod-pod-to-octane/pull/59) Updated dependencies ([@ijlee2](https://github.com/ijlee2))
+* [#58](https://github.com/ijlee2/ember-codemod-pod-to-octane/pull/58) Used pnpm@9 to manage dependencies ([@ijlee2](https://github.com/ijlee2))
+
+### Committers: 1
+- Isaac Lee ([@ijlee2](https://github.com/ijlee2))
+
+
 ## 2.0.6 (2024-06-07)
 
 ### Internal
