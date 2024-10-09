@@ -12,6 +12,11 @@ process.title = 'ember-codemod-pod-to-octane';
 
 // Set codemod options
 const argv = yargs(hideBin(process.argv))
+  .option('pod', {
+    default: '',
+    describe: 'A specific pod to migrate instead of migrating all pods',
+    type: 'string',
+  })
   .option('pod-path', {
     default: '',
     describe: 'Namespace used for the pod layout',
@@ -35,6 +40,7 @@ const argv = yargs(hideBin(process.argv))
   .parseSync();
 
 const codemodOptions: CodemodOptions = {
+  pod: argv['pod'],
   podPath: argv['pod-path'],
   projectRoot: argv['root'] ?? process.cwd(),
   projectType: argv['type'],
