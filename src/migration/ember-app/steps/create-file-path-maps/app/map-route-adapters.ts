@@ -9,9 +9,9 @@ import type {
 import { renamePodPath } from '../../../../../utils/files/index.js';
 
 export function mapRouteAdapters(options: Options): FilePathMapEntries {
-  const { podPath, projectRoot } = options;
+  const { pod, podPath, projectRoot } = options;
 
-  const filePaths = findFiles(join('app', podPath, '**', 'adapter.{js,ts}'), {
+  const filePaths = findFiles(join('app', podPath, pod, '**', 'adapter.{js,ts}'), {
     projectRoot,
   });
 

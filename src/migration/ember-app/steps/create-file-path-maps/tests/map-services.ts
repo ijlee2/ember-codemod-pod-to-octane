@@ -9,10 +9,10 @@ import type {
 import { renamePodPath } from '../../../../../utils/files/index.js';
 
 export function mapServices(options: Options): FilePathMapEntries {
-  const { podPath, projectRoot } = options;
+  const { pod, podPath, projectRoot } = options;
 
   const filePaths = findFiles(
-    join('tests/unit', podPath, '!(services)', '**', 'service-test.{js,ts}'),
+    join('tests/unit', podPath, pod, '!(services)', '**', 'service-test.{js,ts}'),
     {
       projectRoot,
     },

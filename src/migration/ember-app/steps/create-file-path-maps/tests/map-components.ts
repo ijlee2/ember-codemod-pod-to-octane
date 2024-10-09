@@ -9,12 +9,13 @@ import type {
 import { renamePodPath } from '../../../../../utils/files/index.js';
 
 export function mapComponents(options: Options): FilePathMapEntries {
-  const { podPath, projectRoot } = options;
+  const { pod, podPath, projectRoot } = options;
 
   const filePaths = findFiles(
     join(
       'tests/integration',
       podPath,
+      pod,
       'components',
       '**',
       'component-test.{js,ts}',

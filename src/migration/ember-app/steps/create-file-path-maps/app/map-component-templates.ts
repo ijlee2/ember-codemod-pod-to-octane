@@ -9,10 +9,10 @@ import type {
 import { renamePodPath } from '../../../../../utils/files/index.js';
 
 export function mapComponentTemplates(options: Options): FilePathMapEntries {
-  const { podPath, projectRoot } = options;
+  const { pod, podPath, projectRoot } = options;
 
   const filePaths = findFiles(
-    join('app', podPath, 'components', '**', 'template.hbs'),
+    join('app', podPath, pod, 'components', '**', 'template.hbs'),
     {
       projectRoot,
     },
