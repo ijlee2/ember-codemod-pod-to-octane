@@ -12,7 +12,7 @@ export function mapComponentStylesheets(options: Options): FilePathMapEntries {
   const { pod, podPath, projectRoot } = options;
 
   const filePaths = findFiles(
-    join('app', podPath, pod, 'components', '**', 'styles.{css,scss}'),
+    join('app', podPath, 'components', pod, '**', 'styles.{css,scss}'),
     {
       projectRoot,
     },

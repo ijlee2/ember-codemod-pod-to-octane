@@ -12,7 +12,7 @@ export function mapComponentTemplates(options: Options): FilePathMapEntries {
   const { pod, podPath, projectRoot } = options;
 
   const filePaths = findFiles(
-    join('app', podPath, pod, 'components', '**', 'template.hbs'),
+    join('app', podPath, 'components', pod, '**', 'template.hbs'),
     {
       projectRoot,
     },
