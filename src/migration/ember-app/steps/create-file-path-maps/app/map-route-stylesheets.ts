@@ -12,8 +12,9 @@ export function mapRouteStylesheets(options: Options): FilePathMapEntries {
   const { pod, podPath, projectRoot } = options;
 
   const filePaths = findFiles(
-    join('app', podPath, pod, '!(components)', '**', 'styles.{css,scss}'),
+    join('app', podPath, pod, '**', 'styles.{css,scss}'),
     {
+      ignoreList: [join('app', podPath, pod, 'components', '**')],
       projectRoot,
     },
   );

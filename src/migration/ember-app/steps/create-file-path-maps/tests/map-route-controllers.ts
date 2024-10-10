@@ -15,15 +15,9 @@ export function mapRouteControllers(options: Options): FilePathMapEntries {
     Case 1: Didn't pass the --pod flag, but configured { usePods: true } in .ember-cli
   */
   const filePaths1 = findFiles(
-    join(
-      'tests/unit',
-      podPath,
-      pod,
-      '!(controllers)',
-      '**',
-      'controller-test.{js,ts}',
-    ),
+    join('tests/unit', podPath, pod, '**', 'controller-test.{js,ts}'),
     {
+      ignoreList: [join('tests/unit', podPath, 'controllers', pod, '**')],
       projectRoot,
     },
   );
@@ -43,7 +37,13 @@ export function mapRouteControllers(options: Options): FilePathMapEntries {
     Case 2: Passed the --pod flag to Ember CLI
   */
   const filePaths2 = findFiles(
-    join('tests/unit', podPath, pod, 'controllers/**/controller-test.{js,ts}'),
+    join(
+      'tests/unit',
+      podPath,
+      'controllers',
+      pod,
+      '**/controller-test.{js,ts}',
+    ),
     {
       projectRoot,
     },
