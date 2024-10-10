@@ -9,10 +9,10 @@ import type {
 import { renamePodPath } from '../../../../../utils/files/index.js';
 
 export function mapRouteControllers(options: Options): FilePathMapEntries {
-  const { podPath, projectRoot } = options;
+  const { pod, podPath, projectRoot } = options;
 
   const filePaths = findFiles(
-    join('app', podPath, '**', 'controller.{js,ts}'),
+    join('app', podPath, pod, '**', 'controller.{js,ts}'),
     {
       projectRoot,
     },

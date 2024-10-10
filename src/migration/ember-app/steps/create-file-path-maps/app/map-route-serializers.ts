@@ -9,10 +9,10 @@ import type {
 import { renamePodPath } from '../../../../../utils/files/index.js';
 
 export function mapRouteSerializers(options: Options): FilePathMapEntries {
-  const { podPath, projectRoot } = options;
+  const { pod, podPath, projectRoot } = options;
 
   const filePaths = findFiles(
-    join('app', podPath, '**', 'serializer.{js,ts}'),
+    join('app', podPath, pod, '**', 'serializer.{js,ts}'),
     {
       projectRoot,
     },
