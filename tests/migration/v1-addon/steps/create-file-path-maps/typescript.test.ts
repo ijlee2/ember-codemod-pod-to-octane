@@ -16,98 +16,38 @@ test('migration | v1-addon | steps | create-file-path-maps > typescript', functi
     filePathMaps.addon,
     new Map([
       [
-        'addon/components/ui/form/checkbox/component.ts',
-        'addon/components/ui/form/checkbox.ts',
+        'addon/components/navigation-menu/component.ts',
+        'addon/components/navigation-menu.ts',
       ],
       [
-        'addon/components/ui/form/checkbox/styles.css',
-        'addon/components/ui/form/checkbox.css',
+        'addon/components/navigation-menu/styles.css',
+        'addon/components/navigation-menu.css',
       ],
       [
-        'addon/components/ui/form/checkbox/template.hbs',
-        'addon/components/ui/form/checkbox.hbs',
+        'addon/components/navigation-menu/template.hbs',
+        'addon/components/navigation-menu.hbs',
       ],
-      ['addon/components/ui/form/component.ts', 'addon/components/ui/form.ts'],
-      [
-        'addon/components/ui/form/field/component.d.ts',
-        'addon/components/ui/form/field.d.ts',
-      ],
-      [
-        'addon/components/ui/form/field/styles.css',
-        'addon/components/ui/form/field.css',
-      ],
-      [
-        'addon/components/ui/form/field/template.hbs',
-        'addon/components/ui/form/field.hbs',
-      ],
-      [
-        'addon/components/ui/form/information/component.d.ts',
-        'addon/components/ui/form/information.d.ts',
-      ],
-      [
-        'addon/components/ui/form/information/styles.css',
-        'addon/components/ui/form/information.css',
-      ],
-      [
-        'addon/components/ui/form/information/template.hbs',
-        'addon/components/ui/form/information.hbs',
-      ],
-      [
-        'addon/components/ui/form/input/component.ts',
-        'addon/components/ui/form/input.ts',
-      ],
-      [
-        'addon/components/ui/form/input/styles.css',
-        'addon/components/ui/form/input.css',
-      ],
-      [
-        'addon/components/ui/form/input/template.hbs',
-        'addon/components/ui/form/input.hbs',
-      ],
-      [
-        'addon/components/ui/form/number/component.ts',
-        'addon/components/ui/form/number.ts',
-      ],
-      [
-        'addon/components/ui/form/number/styles.css',
-        'addon/components/ui/form/number.css',
-      ],
-      [
-        'addon/components/ui/form/number/template.hbs',
-        'addon/components/ui/form/number.hbs',
-      ],
-      [
-        'addon/components/ui/form/select/component.ts',
-        'addon/components/ui/form/select.ts',
-      ],
-      [
-        'addon/components/ui/form/select/styles.css',
-        'addon/components/ui/form/select.css',
-      ],
-      [
-        'addon/components/ui/form/select/template.hbs',
-        'addon/components/ui/form/select.hbs',
-      ],
-      ['addon/components/ui/form/styles.css', 'addon/components/ui/form.css'],
-      ['addon/components/ui/form/template.hbs', 'addon/components/ui/form.hbs'],
-      [
-        'addon/components/ui/form/textarea/component.ts',
-        'addon/components/ui/form/textarea.ts',
-      ],
-      [
-        'addon/components/ui/form/textarea/styles.css',
-        'addon/components/ui/form/textarea.css',
-      ],
-      [
-        'addon/components/ui/form/textarea/template.hbs',
-        'addon/components/ui/form/textarea.hbs',
-      ],
-      [
-        'addon/components/ui/page/component.d.ts',
-        'addon/components/ui/page.d.ts',
-      ],
+      ['addon/components/ui/page/component.ts', 'addon/components/ui/page.ts'],
       ['addon/components/ui/page/styles.css', 'addon/components/ui/page.css'],
       ['addon/components/ui/page/template.hbs', 'addon/components/ui/page.hbs'],
+      ['addon/experiments/service.ts', 'addon/services/experiments.ts'],
+      ['addon/products/controller.ts', 'addon/controllers/products.ts'],
+      [
+        'addon/products/product/controller.ts',
+        'addon/controllers/products/product.ts',
+      ],
+      ['addon/products/product/route.ts', 'addon/routes/products/product.ts'],
+      [
+        'addon/products/product/styles.css',
+        'addon/styles/products/product.css',
+      ],
+      [
+        'addon/products/product/template.hbs',
+        'addon/templates/products/product.hbs',
+      ],
+      ['addon/products/route.ts', 'addon/routes/products.ts'],
+      ['addon/products/styles.css', 'addon/styles/products.css'],
+      ['addon/products/template.hbs', 'addon/templates/products.hbs'],
     ]),
   );
 
@@ -115,56 +55,25 @@ test('migration | v1-addon | steps | create-file-path-maps > typescript', functi
     filePathMaps.app,
     new Map([
       [
-        'app/components/ui/form/checkbox/component.js',
-        'app/components/ui/form/checkbox.js',
+        'app/components/navigation-menu/component.js',
+        'app/components/navigation-menu.js',
       ],
       [
-        'app/components/ui/form/checkbox/template.js',
-        'app/components/ui/form/checkbox.js',
+        'app/components/navigation-menu/template.js',
+        'app/components/navigation-menu.js',
       ],
-      ['app/components/ui/form/component.js', 'app/components/ui/form.js'],
-      [
-        'app/components/ui/form/field/template.js',
-        'app/components/ui/form/field.js',
-      ],
-      [
-        'app/components/ui/form/information/template.js',
-        'app/components/ui/form/information.js',
-      ],
-      [
-        'app/components/ui/form/input/component.js',
-        'app/components/ui/form/input.js',
-      ],
-      [
-        'app/components/ui/form/input/template.js',
-        'app/components/ui/form/input.js',
-      ],
-      [
-        'app/components/ui/form/number/component.js',
-        'app/components/ui/form/number.js',
-      ],
-      [
-        'app/components/ui/form/number/template.js',
-        'app/components/ui/form/number.js',
-      ],
-      [
-        'app/components/ui/form/select/component.js',
-        'app/components/ui/form/select.js',
-      ],
-      [
-        'app/components/ui/form/select/template.js',
-        'app/components/ui/form/select.js',
-      ],
-      ['app/components/ui/form/template.js', 'app/components/ui/form.js'],
-      [
-        'app/components/ui/form/textarea/component.js',
-        'app/components/ui/form/textarea.js',
-      ],
-      [
-        'app/components/ui/form/textarea/template.js',
-        'app/components/ui/form/textarea.js',
-      ],
+      ['app/components/ui/page/component.js', 'app/components/ui/page.js'],
       ['app/components/ui/page/template.js', 'app/components/ui/page.js'],
+      ['app/experiments/service.js', 'app/services/experiments.js'],
+      ['app/products/controller.js', 'app/controllers/products.js'],
+      [
+        'app/products/product/controller.js',
+        'app/controllers/products/product.js',
+      ],
+      ['app/products/product/route.js', 'app/routes/products/product.js'],
+      ['app/products/product/template.js', 'app/templates/products/product.js'],
+      ['app/products/route.js', 'app/routes/products.js'],
+      ['app/products/template.js', 'app/templates/products.js'],
     ]),
   );
 
@@ -172,40 +81,32 @@ test('migration | v1-addon | steps | create-file-path-maps > typescript', functi
     filePathMaps.tests,
     new Map([
       [
-        'tests/integration/components/ui/form/checkbox/component-test.ts',
-        'tests/integration/components/ui/form/checkbox-test.ts',
-      ],
-      [
-        'tests/integration/components/ui/form/component-test.ts',
-        'tests/integration/components/ui/form-test.ts',
-      ],
-      [
-        'tests/integration/components/ui/form/field/component-test.ts',
-        'tests/integration/components/ui/form/field-test.ts',
-      ],
-      [
-        'tests/integration/components/ui/form/information/component-test.ts',
-        'tests/integration/components/ui/form/information-test.ts',
-      ],
-      [
-        'tests/integration/components/ui/form/input/component-test.ts',
-        'tests/integration/components/ui/form/input-test.ts',
-      ],
-      [
-        'tests/integration/components/ui/form/number/component-test.ts',
-        'tests/integration/components/ui/form/number-test.ts',
-      ],
-      [
-        'tests/integration/components/ui/form/select/component-test.ts',
-        'tests/integration/components/ui/form/select-test.ts',
-      ],
-      [
-        'tests/integration/components/ui/form/textarea/component-test.ts',
-        'tests/integration/components/ui/form/textarea-test.ts',
+        'tests/integration/components/navigation-menu/component-test.ts',
+        'tests/integration/components/navigation-menu-test.ts',
       ],
       [
         'tests/integration/components/ui/page/component-test.ts',
         'tests/integration/components/ui/page-test.ts',
+      ],
+      [
+        'tests/unit/experiments/service-test.ts',
+        'tests/unit/services/experiments-test.ts',
+      ],
+      [
+        'tests/unit/products/controller-test.ts',
+        'tests/unit/controllers/products-test.ts',
+      ],
+      [
+        'tests/unit/products/product/controller-test.ts',
+        'tests/unit/controllers/products/product-test.ts',
+      ],
+      [
+        'tests/unit/products/product/route-test.ts',
+        'tests/unit/routes/products/product-test.ts',
+      ],
+      [
+        'tests/unit/products/route-test.ts',
+        'tests/unit/routes/products-test.ts',
       ],
     ]),
   );

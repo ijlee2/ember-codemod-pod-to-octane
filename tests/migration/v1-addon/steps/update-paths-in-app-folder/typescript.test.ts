@@ -5,9 +5,9 @@ import { updatePathsInAppFolder } from '../../../../../src/migration/v1-addon/st
 import {
   codemodOptions,
   options,
-} from '../../../../helpers/shared-test-setups/v1-addon/javascript.js';
+} from '../../../../helpers/shared-test-setups/v1-addon/typescript.js';
 
-test('migration | v1-addon | steps | update-paths-in-app-folder > javascript', function () {
+test('migration | v1-addon | steps | update-paths-in-app-folder > typescript', function () {
   const inputProject = {
     app: {
       components: {
