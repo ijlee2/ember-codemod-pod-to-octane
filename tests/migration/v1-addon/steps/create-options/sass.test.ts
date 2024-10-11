@@ -1,13 +1,13 @@
 import { assert, loadFixture, test } from '@codemod-utils/tests';
 
-import { createOptions } from '../../../../../src/migration/ember-addon/steps/index.js';
+import { createOptions } from '../../../../../src/migration/v1-addon/steps/index.js';
 import { inputProject } from '../../../../fixtures/ember-addon/sass/index.js';
 import {
   codemodOptions,
   options,
-} from '../../../../helpers/shared-test-setups/ember-addon/sass.js';
+} from '../../../../helpers/shared-test-setups/ember-v1-addon/sass.js';
 
-test('migration | ember-addon | steps | create-options > sass', function () {
+test('migration | v1-addon | steps | create-options > sass', function () {
   loadFixture(inputProject, codemodOptions);
 
   assert.deepStrictEqual(createOptions(codemodOptions), options);

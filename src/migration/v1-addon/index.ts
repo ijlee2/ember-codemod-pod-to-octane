@@ -7,7 +7,7 @@ import {
   updatePathsInAppFolder,
 } from './steps/index.js';
 
-export function migrateEmberAddon(codemodOptions: CodemodOptions): void {
+export function migrateV1Addon(codemodOptions: CodemodOptions): void {
   const options = createOptions(codemodOptions);
 
   const filePathMaps = createFilePathMaps(options);

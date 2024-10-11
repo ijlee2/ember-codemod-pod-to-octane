@@ -1,21 +1,21 @@
 import { assertFixture, loadFixture, test } from '@codemod-utils/tests';
 
-import { migrateEmberAddon } from '../../../../src/migration/ember-addon/index.js';
+import { migrateV1Addon } from '../../../../src/migration/v1-addon/index.js';
 import {
   inputProject,
   outputProject,
 } from '../../../fixtures/ember-addon/javascript/index.js';
-import { codemodOptions } from '../../../helpers/shared-test-setups/ember-addon/javascript.js';
+import { codemodOptions } from '../../../helpers/shared-test-setups/ember-v1-addon/javascript.js';
 
-test('migration | ember-addon | index > javascript', function () {
+test('migration | v1-addon | index > javascript', function () {
   loadFixture(inputProject, codemodOptions);
 
-  migrateEmberAddon(codemodOptions);
+  migrateV1Addon(codemodOptions);
 
   assertFixture(outputProject, codemodOptions);
 
   // Check idempotence
-  migrateEmberAddon(codemodOptions);
+  migrateV1Addon(codemodOptions);
 
   assertFixture(outputProject, codemodOptions);
 });

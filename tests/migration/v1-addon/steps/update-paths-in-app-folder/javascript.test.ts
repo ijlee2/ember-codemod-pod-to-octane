@@ -1,13 +1,13 @@
 import { moveFiles } from '@codemod-utils/files';
 import { assertFixture, loadFixture, test } from '@codemod-utils/tests';
 
-import { updatePathsInAppFolder } from '../../../../../src/migration/ember-addon/steps/index.js';
+import { updatePathsInAppFolder } from '../../../../../src/migration/v1-addon/steps/index.js';
 import {
   codemodOptions,
   options,
-} from '../../../../helpers/shared-test-setups/ember-addon/javascript.js';
+} from '../../../../helpers/shared-test-setups/ember-v1-addon/javascript.js';
 
-test('migration | ember-addon | steps | update-paths-in-app-folder > javascript', function () {
+test('migration | v1-addon | steps | update-paths-in-app-folder > javascript', function () {
   const inputProject = {
     app: {
       components: {

@@ -1,13 +1,13 @@
 import { assert, loadFixture, test } from '@codemod-utils/tests';
 
-import { createFilePathMaps } from '../../../../../src/migration/ember-addon/steps/index.js';
-import { inputProject } from '../../../../fixtures/ember-addon/javascript/index.js';
+import { createFilePathMaps } from '../../../../../src/migration/v1-addon/steps/index.js';
+import { inputProject } from '../../../../fixtures/ember-addon/sass/index.js';
 import {
   codemodOptions,
   options,
-} from '../../../../helpers/shared-test-setups/ember-addon/javascript.js';
+} from '../../../../helpers/shared-test-setups/ember-v1-addon/sass.js';
 
-test('migration | ember-addon | steps | create-file-path-maps > javascript', function () {
+test('migration | v1-addon | steps | create-file-path-maps > sass', function () {
   loadFixture(inputProject, codemodOptions);
 
   const filePathMaps = createFilePathMaps(options);
@@ -20,8 +20,8 @@ test('migration | ember-addon | steps | create-file-path-maps > javascript', fun
         'addon/components/ui/form/checkbox.js',
       ],
       [
-        'addon/components/ui/form/checkbox/styles.css',
-        'addon/components/ui/form/checkbox.css',
+        'addon/components/ui/form/checkbox/styles.scss',
+        'addon/components/ui/form/checkbox.scss',
       ],
       [
         'addon/components/ui/form/checkbox/template.hbs',
@@ -29,16 +29,16 @@ test('migration | ember-addon | steps | create-file-path-maps > javascript', fun
       ],
       ['addon/components/ui/form/component.js', 'addon/components/ui/form.js'],
       [
-        'addon/components/ui/form/field/styles.css',
-        'addon/components/ui/form/field.css',
+        'addon/components/ui/form/field/styles.scss',
+        'addon/components/ui/form/field.scss',
       ],
       [
         'addon/components/ui/form/field/template.hbs',
         'addon/components/ui/form/field.hbs',
       ],
       [
-        'addon/components/ui/form/information/styles.css',
-        'addon/components/ui/form/information.css',
+        'addon/components/ui/form/information/styles.scss',
+        'addon/components/ui/form/information.scss',
       ],
       [
         'addon/components/ui/form/information/template.hbs',
@@ -49,8 +49,8 @@ test('migration | ember-addon | steps | create-file-path-maps > javascript', fun
         'addon/components/ui/form/input.js',
       ],
       [
-        'addon/components/ui/form/input/styles.css',
-        'addon/components/ui/form/input.css',
+        'addon/components/ui/form/input/styles.scss',
+        'addon/components/ui/form/input.scss',
       ],
       [
         'addon/components/ui/form/input/template.hbs',
@@ -61,8 +61,8 @@ test('migration | ember-addon | steps | create-file-path-maps > javascript', fun
         'addon/components/ui/form/number.js',
       ],
       [
-        'addon/components/ui/form/number/styles.css',
-        'addon/components/ui/form/number.css',
+        'addon/components/ui/form/number/styles.scss',
+        'addon/components/ui/form/number.scss',
       ],
       [
         'addon/components/ui/form/number/template.hbs',
@@ -73,28 +73,28 @@ test('migration | ember-addon | steps | create-file-path-maps > javascript', fun
         'addon/components/ui/form/select.js',
       ],
       [
-        'addon/components/ui/form/select/styles.css',
-        'addon/components/ui/form/select.css',
+        'addon/components/ui/form/select/styles.scss',
+        'addon/components/ui/form/select.scss',
       ],
       [
         'addon/components/ui/form/select/template.hbs',
         'addon/components/ui/form/select.hbs',
       ],
-      ['addon/components/ui/form/styles.css', 'addon/components/ui/form.css'],
+      ['addon/components/ui/form/styles.scss', 'addon/components/ui/form.scss'],
       ['addon/components/ui/form/template.hbs', 'addon/components/ui/form.hbs'],
       [
         'addon/components/ui/form/textarea/component.js',
         'addon/components/ui/form/textarea.js',
       ],
       [
-        'addon/components/ui/form/textarea/styles.css',
-        'addon/components/ui/form/textarea.css',
+        'addon/components/ui/form/textarea/styles.scss',
+        'addon/components/ui/form/textarea.scss',
       ],
       [
         'addon/components/ui/form/textarea/template.hbs',
         'addon/components/ui/form/textarea.hbs',
       ],
-      ['addon/components/ui/page/styles.css', 'addon/components/ui/page.css'],
+      ['addon/components/ui/page/styles.scss', 'addon/components/ui/page.scss'],
       ['addon/components/ui/page/template.hbs', 'addon/components/ui/page.hbs'],
     ]),
   );
