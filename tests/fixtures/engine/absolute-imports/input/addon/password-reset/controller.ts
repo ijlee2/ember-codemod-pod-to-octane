@@ -1,3 +1,3 @@
-import AuthenticatedController from '@namespace/package-name/authenticated/controller';
+import AuthenticatedController from 'my-engine/authenticated/controller';
 
 export default class PasswordResetController extends AuthenticatedController {}

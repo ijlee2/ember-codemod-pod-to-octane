@@ -1,1 +1,1 @@
-import type ApiService from '@namespace/package-name/services/api';
+import type ApiService from 'my-engine/services/api';

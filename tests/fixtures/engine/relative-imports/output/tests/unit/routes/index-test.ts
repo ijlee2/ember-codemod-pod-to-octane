@@ -1,1 +1,1 @@
-import type IndexRoute from '@namespace/package-name/index/route';
+import type IndexRoute from 'my-engine/index/route';

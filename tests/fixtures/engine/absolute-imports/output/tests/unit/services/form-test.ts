@@ -1,1 +1,1 @@
-import type FormService from '@namespace/package-name/services/form';
+import type FormService from 'my-engine/services/form';

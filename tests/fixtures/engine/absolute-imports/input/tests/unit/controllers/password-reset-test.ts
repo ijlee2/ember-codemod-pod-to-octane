@@ -1,1 +1,1 @@
-import type PasswordResetController from '@namespace/package-name/password-reset/controller';
+import type PasswordResetController from 'my-engine/password-reset/controller';
