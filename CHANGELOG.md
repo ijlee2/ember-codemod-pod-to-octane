@@ -1,5 +1,23 @@
 # Changelog
 
+## 3.0.0 (2024-10-11)
+
+### Breaking Change
+* [#65](https://github.com/ijlee2/ember-codemod-pod-to-octane/pull/65) Merged v1-addon and engine ([@ijlee2](https://github.com/ijlee2))
+* [#63](https://github.com/ijlee2/ember-codemod-pod-to-octane/pull/63) Changed possible values for --type ([@ijlee2](https://github.com/ijlee2))
+
+### Enhancement
+* [#67](https://github.com/ijlee2/ember-codemod-pod-to-octane/pull/67) Removed unnecessary joins ([@ijlee2](https://github.com/ijlee2))
+* [#65](https://github.com/ijlee2/ember-codemod-pod-to-octane/pull/65) Merged v1-addon and engine ([@ijlee2](https://github.com/ijlee2))
+
+### Documentation
+* [#66](https://github.com/ijlee2/ember-codemod-pod-to-octane/pull/66) Simplified test fixtures ([@ijlee2](https://github.com/ijlee2))
+* [#64](https://github.com/ijlee2/ember-codemod-pod-to-octane/pull/64) Renamed packages in test fixtures ([@ijlee2](https://github.com/ijlee2))
+
+### Committers: 1
+- Isaac Lee ([@ijlee2](https://github.com/ijlee2))
+
+
 ## 2.0.8 (2024-08-28)
 
 ### Internal
