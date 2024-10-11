@@ -8,7 +8,6 @@ export function runCodemod(codemodOptions: CodemodOptions): void {
       break;
     }
 
-    case 'engine':
     case 'v1-addon': {
       migrateV1Addon(codemodOptions);
       break;

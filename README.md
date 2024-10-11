@@ -32,9 +32,11 @@ Step 3. Update references originating from, as well as pointing to, the moved fi
 You must pass `--type` to indicate what type of project you have.
 
 ```sh
+# For classic apps
 npx ember-codemod-pod-to-octane --type app
+
+# For v1 addons (including engines)
 npx ember-codemod-pod-to-octane --type v1-addon
-npx ember-codemod-pod-to-octane --type engine
 ```
 
 
@@ -103,16 +105,7 @@ To account for a bug (found when Ember CLI is combined with Ember Data), the cod
 
 <summary>Addons</summary>
 
-The codemod assumes that an addon is used to define components (not models or routes).
-
-</details>
-
-
-<details>
-
-<summary>Engines</summary>
-
-The codemod assumes that an engine is used to define routes and route-specific components.
+The codemod doesn't consider things related to Ember Data (i.e. adapters, models, and serializers).
 
 </details>
 
