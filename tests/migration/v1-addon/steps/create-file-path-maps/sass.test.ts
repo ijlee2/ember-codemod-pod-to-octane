@@ -112,16 +112,8 @@ test('migration | v1-addon | steps | create-file-path-maps > sass', function () 
       ],
       ['app/components/ui/form/component.js', 'app/components/ui/form.js'],
       [
-        'app/components/ui/form/field/styles.js',
-        'app/components/ui/form/field.js',
-      ],
-      [
         'app/components/ui/form/field/template.js',
         'app/components/ui/form/field.js',
-      ],
-      [
-        'app/components/ui/form/information/styles.js',
-        'app/components/ui/form/information.js',
       ],
       [
         'app/components/ui/form/information/template.js',
@@ -151,7 +143,6 @@ test('migration | v1-addon | steps | create-file-path-maps > sass', function () 
         'app/components/ui/form/select/template.js',
         'app/components/ui/form/select.js',
       ],
-      ['app/components/ui/form/styles.js', 'app/components/ui/form.js'],
       ['app/components/ui/form/template.js', 'app/components/ui/form.js'],
       [
         'app/components/ui/form/textarea/component.js',
