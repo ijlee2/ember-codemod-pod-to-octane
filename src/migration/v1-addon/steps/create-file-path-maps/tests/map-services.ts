@@ -1,5 +1,3 @@
-import { join } from 'node:path';
-
 import { findFiles } from '@codemod-utils/files';
 
 import type {
@@ -12,7 +10,7 @@ export function mapServices(options: Options): FilePathMapEntries {
   const { projectRoot } = options;
 
   const filePaths = findFiles(
-    join('tests/unit/!(services)/**/service-test.{js,ts}'),
+    'tests/unit/!(services)/**/service-test.{js,ts}',
     {
       projectRoot,
     },
