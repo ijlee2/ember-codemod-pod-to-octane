@@ -4,8 +4,8 @@ import { migrateEngine } from '../../../../src/migration/engine/index.js';
 import {
   inputProject,
   outputProject,
-} from '../../../fixtures/ember-engine/sass/index.js';
-import { codemodOptions } from '../../../helpers/shared-test-setups/ember-engine/sass.js';
+} from '../../../fixtures/engine/sass/index.js';
+import { codemodOptions } from '../../../helpers/shared-test-setups/engine/sass.js';
 
 test('migration | engine | index > sass', function () {
   loadFixture(inputProject, codemodOptions);

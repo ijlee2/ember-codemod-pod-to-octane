@@ -4,8 +4,8 @@ import { migrateEngine } from '../../../../src/migration/engine/index.js';
 import {
   inputProject,
   outputProject,
-} from '../../../fixtures/ember-engine/absolute-imports/index.js';
-import { codemodOptions } from '../../../helpers/shared-test-setups/ember-engine/absolute-imports.js';
+} from '../../../fixtures/engine/absolute-imports/index.js';
+import { codemodOptions } from '../../../helpers/shared-test-setups/engine/absolute-imports.js';
 
 test('migration | engine | index > absolute-imports', function () {
   loadFixture(inputProject, codemodOptions);

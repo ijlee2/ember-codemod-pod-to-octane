@@ -4,8 +4,8 @@ import { migrateApp } from '../../../../src/migration/app/index.js';
 import {
   inputProject,
   outputProject,
-} from '../../../fixtures/ember-app/pod-path/index.js';
-import { codemodOptions } from '../../../helpers/shared-test-setups/ember-app/pod-path.js';
+} from '../../../fixtures/app/pod-path/index.js';
+import { codemodOptions } from '../../../helpers/shared-test-setups/app/pod-path.js';
 
 test('migration | app | index > pod path', function () {
   loadFixture(inputProject, codemodOptions);

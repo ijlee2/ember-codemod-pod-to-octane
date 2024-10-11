@@ -4,8 +4,8 @@ import { migrateApp } from '../../../../src/migration/app/index.js';
 import {
   inputProject,
   outputProject,
-} from '../../../fixtures/ember-app/javascript/index.js';
-import { codemodOptions } from '../../../helpers/shared-test-setups/ember-app/javascript.js';
+} from '../../../fixtures/app/javascript/index.js';
+import { codemodOptions } from '../../../helpers/shared-test-setups/app/javascript.js';
 
 test('migration | app | index > javascript', function () {
   loadFixture(inputProject, codemodOptions);

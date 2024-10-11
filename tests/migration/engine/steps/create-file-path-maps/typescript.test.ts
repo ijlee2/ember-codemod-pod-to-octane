@@ -1,11 +1,11 @@
 import { assert, loadFixture, test } from '@codemod-utils/tests';
 
 import { createFilePathMaps } from '../../../../../src/migration/engine/steps/index.js';
-import { inputProject } from '../../../../fixtures/ember-engine/typescript/index.js';
+import { inputProject } from '../../../../fixtures/engine/typescript/index.js';
 import {
   codemodOptions,
   options,
-} from '../../../../helpers/shared-test-setups/ember-engine/typescript.js';
+} from '../../../../helpers/shared-test-setups/engine/typescript.js';
 
 test('migration | engine | steps | create-file-path-maps > typescript', function () {
   loadFixture(inputProject, codemodOptions);

@@ -4,8 +4,8 @@ import { migrateApp } from '../../../../src/migration/app/index.js';
 import {
   inputProject,
   outputProject,
-} from '../../../fixtures/ember-app/sass/index.js';
-import { codemodOptions } from '../../../helpers/shared-test-setups/ember-app/sass.js';
+} from '../../../fixtures/app/sass/index.js';
+import { codemodOptions } from '../../../helpers/shared-test-setups/app/sass.js';
 
 test('migration | app | index > sass', function () {
   loadFixture(inputProject, codemodOptions);

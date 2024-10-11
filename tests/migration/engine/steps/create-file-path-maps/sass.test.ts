@@ -1,11 +1,11 @@
 import { assert, loadFixture, test } from '@codemod-utils/tests';
 
 import { createFilePathMaps } from '../../../../../src/migration/engine/steps/index.js';
-import { inputProject } from '../../../../fixtures/ember-engine/sass/index.js';
+import { inputProject } from '../../../../fixtures/engine/sass/index.js';
 import {
   codemodOptions,
   options,
-} from '../../../../helpers/shared-test-setups/ember-engine/sass.js';
+} from '../../../../helpers/shared-test-setups/engine/sass.js';
 
 test('migration | engine | steps | create-file-path-maps > sass', function () {
   loadFixture(inputProject, codemodOptions);

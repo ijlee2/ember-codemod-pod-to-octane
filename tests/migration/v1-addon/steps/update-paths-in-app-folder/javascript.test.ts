@@ -5,7 +5,7 @@ import { updatePathsInAppFolder } from '../../../../../src/migration/v1-addon/st
 import {
   codemodOptions,
   options,
-} from '../../../../helpers/shared-test-setups/ember-v1-addon/javascript.js';
+} from '../../../../helpers/shared-test-setups/v1-addon/javascript.js';
 
 test('migration | v1-addon | steps | update-paths-in-app-folder > javascript', function () {
   const inputProject = {

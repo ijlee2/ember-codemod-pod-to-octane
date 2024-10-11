@@ -4,8 +4,8 @@ import { migrateEngine } from '../../../../src/migration/engine/index.js';
 import {
   inputProject,
   outputProject,
-} from '../../../fixtures/ember-engine/typescript/index.js';
-import { codemodOptions } from '../../../helpers/shared-test-setups/ember-engine/typescript.js';
+} from '../../../fixtures/engine/typescript/index.js';
+import { codemodOptions } from '../../../helpers/shared-test-setups/engine/typescript.js';
 
 test('migration | engine | index > typescript', function () {
   loadFixture(inputProject, codemodOptions);

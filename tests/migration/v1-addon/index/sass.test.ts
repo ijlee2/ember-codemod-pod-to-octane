@@ -4,8 +4,8 @@ import { migrateV1Addon } from '../../../../src/migration/v1-addon/index.js';
 import {
   inputProject,
   outputProject,
-} from '../../../fixtures/ember-addon/sass/index.js';
-import { codemodOptions } from '../../../helpers/shared-test-setups/ember-v1-addon/sass.js';
+} from '../../../fixtures/v1-addon/sass/index.js';
+import { codemodOptions } from '../../../helpers/shared-test-setups/v1-addon/sass.js';
 
 test('migration | v1-addon | index > sass', function () {
   loadFixture(inputProject, codemodOptions);
