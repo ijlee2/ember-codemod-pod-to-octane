@@ -1,24 +1,24 @@
 import {
-  migrateEmberAddon,
-  migrateEmberApp,
-  migrateEmberEngine,
+  migrateApp,
+  migrateEngine,
+  migrateV1Addon,
 } from './migration/index.js';
 import type { CodemodOptions } from './types/index.js';
 
 export function runCodemod(codemodOptions: CodemodOptions): void {
   switch (codemodOptions.projectType) {
-    case 'addon': {
-      migrateEmberAddon(codemodOptions);
-      break;
-    }
-
     case 'app': {
-      migrateEmberApp(codemodOptions);
+      migrateApp(codemodOptions);
       break;
     }
 
     case 'engine': {
-      migrateEmberEngine(codemodOptions);
+      migrateEngine(codemodOptions);
+      break;
+    }
+
+    case 'v1-addon': {
+      migrateV1Addon(codemodOptions);
       break;
     }
   }
