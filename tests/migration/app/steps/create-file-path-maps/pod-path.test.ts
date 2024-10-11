@@ -1,13 +1,13 @@
 import { assert, loadFixture, test } from '@codemod-utils/tests';
 
-import { createFilePathMaps } from '../../../../../src/migration/ember-app/steps/index.js';
+import { createFilePathMaps } from '../../../../../src/migration/app/steps/index.js';
 import { inputProject } from '../../../../fixtures/ember-app/pod-path/index.js';
 import {
   codemodOptions,
   options,
 } from '../../../../helpers/shared-test-setups/ember-app/pod-path.js';
 
-test('migration | ember-app | steps | create-file-path-maps > pod-path', function () {
+test('migration | app | steps | create-file-path-maps > pod-path', function () {
   loadFixture(inputProject, codemodOptions);
 
   const filePathMaps = createFilePathMaps(options);

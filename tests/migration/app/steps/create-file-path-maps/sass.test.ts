@@ -1,13 +1,13 @@
 import { assert, loadFixture, test } from '@codemod-utils/tests';
 
-import { createFilePathMaps } from '../../../../../src/migration/ember-app/steps/index.js';
-import { inputProject } from '../../../../fixtures/ember-app/javascript/index.js';
+import { createFilePathMaps } from '../../../../../src/migration/app/steps/index.js';
+import { inputProject } from '../../../../fixtures/ember-app/sass/index.js';
 import {
   codemodOptions,
   options,
-} from '../../../../helpers/shared-test-setups/ember-app/javascript.js';
+} from '../../../../helpers/shared-test-setups/ember-app/sass.js';
 
-test('migration | ember-app | steps | create-file-path-maps > javascript', function () {
+test('migration | app | steps | create-file-path-maps > sass', function () {
   loadFixture(inputProject, codemodOptions);
 
   const filePathMaps = createFilePathMaps(options);
@@ -18,19 +18,19 @@ test('migration | ember-app | steps | create-file-path-maps > javascript', funct
       ['app/application/adapter.js', 'app/adapters/application.js'],
       ['app/application/route.js', 'app/routes/application.js'],
       ['app/application/serializer.js', 'app/serializers/application.js'],
-      ['app/application/styles.css', 'app/styles/application.css'],
+      ['app/application/styles.scss', 'app/styles/application.scss'],
       ['app/application/template.hbs', 'app/templates/application.hbs'],
       [
-        'app/components/navigation-menu/styles.css',
-        'app/components/navigation-menu.css',
+        'app/components/navigation-menu/styles.scss',
+        'app/components/navigation-menu.scss',
       ],
       [
         'app/components/navigation-menu/template.hbs',
         'app/components/navigation-menu.hbs',
       ],
       [
-        'app/components/product/card/styles.css',
-        'app/components/product/card.css',
+        'app/components/product/card/styles.scss',
+        'app/components/product/card.scss',
       ],
       [
         'app/components/product/card/template.hbs',
@@ -41,8 +41,8 @@ test('migration | ember-app | steps | create-file-path-maps > javascript', funct
         'app/components/product/details.js',
       ],
       [
-        'app/components/product/details/styles.css',
-        'app/components/product/details.css',
+        'app/components/product/details/styles.scss',
+        'app/components/product/details.scss',
       ],
       [
         'app/components/product/details/template.hbs',
@@ -53,8 +53,8 @@ test('migration | ember-app | steps | create-file-path-maps > javascript', funct
         'app/components/product/image.js',
       ],
       [
-        'app/components/product/image/styles.css',
-        'app/components/product/image.css',
+        'app/components/product/image/styles.scss',
+        'app/components/product/image.scss',
       ],
       [
         'app/components/product/image/template.hbs',
@@ -65,8 +65,8 @@ test('migration | ember-app | steps | create-file-path-maps > javascript', funct
         'app/components/ui/form/checkbox.js',
       ],
       [
-        'app/components/ui/form/checkbox/styles.css',
-        'app/components/ui/form/checkbox.css',
+        'app/components/ui/form/checkbox/styles.scss',
+        'app/components/ui/form/checkbox.scss',
       ],
       [
         'app/components/ui/form/checkbox/template.hbs',
@@ -74,16 +74,16 @@ test('migration | ember-app | steps | create-file-path-maps > javascript', funct
       ],
       ['app/components/ui/form/component.js', 'app/components/ui/form.js'],
       [
-        'app/components/ui/form/field/styles.css',
-        'app/components/ui/form/field.css',
+        'app/components/ui/form/field/styles.scss',
+        'app/components/ui/form/field.scss',
       ],
       [
         'app/components/ui/form/field/template.hbs',
         'app/components/ui/form/field.hbs',
       ],
       [
-        'app/components/ui/form/information/styles.css',
-        'app/components/ui/form/information.css',
+        'app/components/ui/form/information/styles.scss',
+        'app/components/ui/form/information.scss',
       ],
       [
         'app/components/ui/form/information/template.hbs',
@@ -94,8 +94,8 @@ test('migration | ember-app | steps | create-file-path-maps > javascript', funct
         'app/components/ui/form/input.js',
       ],
       [
-        'app/components/ui/form/input/styles.css',
-        'app/components/ui/form/input.css',
+        'app/components/ui/form/input/styles.scss',
+        'app/components/ui/form/input.scss',
       ],
       [
         'app/components/ui/form/input/template.hbs',
@@ -106,8 +106,8 @@ test('migration | ember-app | steps | create-file-path-maps > javascript', funct
         'app/components/ui/form/number.js',
       ],
       [
-        'app/components/ui/form/number/styles.css',
-        'app/components/ui/form/number.css',
+        'app/components/ui/form/number/styles.scss',
+        'app/components/ui/form/number.scss',
       ],
       [
         'app/components/ui/form/number/template.hbs',
@@ -118,51 +118,51 @@ test('migration | ember-app | steps | create-file-path-maps > javascript', funct
         'app/components/ui/form/select.js',
       ],
       [
-        'app/components/ui/form/select/styles.css',
-        'app/components/ui/form/select.css',
+        'app/components/ui/form/select/styles.scss',
+        'app/components/ui/form/select.scss',
       ],
       [
         'app/components/ui/form/select/template.hbs',
         'app/components/ui/form/select.hbs',
       ],
-      ['app/components/ui/form/styles.css', 'app/components/ui/form.css'],
+      ['app/components/ui/form/styles.scss', 'app/components/ui/form.scss'],
       ['app/components/ui/form/template.hbs', 'app/components/ui/form.hbs'],
       [
         'app/components/ui/form/textarea/component.js',
         'app/components/ui/form/textarea.js',
       ],
       [
-        'app/components/ui/form/textarea/styles.css',
-        'app/components/ui/form/textarea.css',
+        'app/components/ui/form/textarea/styles.scss',
+        'app/components/ui/form/textarea.scss',
       ],
       [
         'app/components/ui/form/textarea/template.hbs',
         'app/components/ui/form/textarea.hbs',
       ],
-      ['app/components/ui/page/styles.css', 'app/components/ui/page.css'],
+      ['app/components/ui/page/styles.scss', 'app/components/ui/page.scss'],
       ['app/components/ui/page/template.hbs', 'app/components/ui/page.hbs'],
       ['app/config/service.js', 'app/services/config.js'],
       ['app/experiments/service.js', 'app/services/experiments.js'],
       ['app/form/controller.js', 'app/controllers/form.js'],
       ['app/form/route.js', 'app/routes/form.js'],
-      ['app/form/styles.css', 'app/styles/form.css'],
+      ['app/form/styles.scss', 'app/styles/form.scss'],
       ['app/form/template.hbs', 'app/templates/form.hbs'],
       ['app/index/route.js', 'app/routes/index.js'],
-      ['app/index/styles.css', 'app/styles/index.css'],
+      ['app/index/styles.scss', 'app/styles/index.scss'],
       ['app/index/template.hbs', 'app/templates/index.hbs'],
       ['app/product-details/route.js', 'app/routes/product-details.js'],
-      ['app/product-details/styles.css', 'app/styles/product-details.css'],
+      ['app/product-details/styles.scss', 'app/styles/product-details.scss'],
       ['app/product-details/template.hbs', 'app/templates/product-details.hbs'],
       ['app/product/model.js', 'app/models/product.js'],
       ['app/products/controller.js', 'app/controllers/products.js'],
       ['app/products/product/route.js', 'app/routes/products/product.js'],
-      ['app/products/product/styles.css', 'app/styles/products/product.css'],
+      ['app/products/product/styles.scss', 'app/styles/products/product.scss'],
       [
         'app/products/product/template.hbs',
         'app/templates/products/product.hbs',
       ],
       ['app/products/route.js', 'app/routes/products.js'],
-      ['app/products/styles.css', 'app/styles/products.css'],
+      ['app/products/styles.scss', 'app/styles/products.scss'],
       ['app/products/template.hbs', 'app/templates/products.hbs'],
     ]),
   );
