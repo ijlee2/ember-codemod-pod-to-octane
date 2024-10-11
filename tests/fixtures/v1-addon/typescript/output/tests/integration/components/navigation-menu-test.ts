@@ -3,16 +3,17 @@ import { setupRenderingTest } from 'dummy/tests/helpers';
 import { hbs } from 'ember-cli-htmlbars';
 import { module, test } from 'qunit';
 
-module('Integration | Component | ui/page', function (hooks) {
+module('Integration | Component | navigation-menu', function (hooks) {
   setupRenderingTest(hooks);
 
   test('it renders', async function (assert) {
     await render(hbs`
-      <Ui::Page @title="Form">
-        <div data-test-content>
-          Content goes here.
-        </div>
-      </Ui::Page>
+      <NavigationMenu
+        @menuItems={{array
+          (hash label="Home" route="index")
+        }}
+        @name="Main Navigation"
+      />
     `);
 
     assert.ok(true);

@@ -16,22 +16,6 @@
 pnpm build
 
 # Update fixtures
-rm -r "tests/fixtures/v1-addon/javascript/output"
-cp -r "tests/fixtures/v1-addon/javascript/input" "tests/fixtures/v1-addon/javascript/output"
-
-./dist/bin/ember-codemod-pod-to-octane.js \
-  --root "tests/fixtures/v1-addon/javascript/output" \
-  --type v1-addon
-
-# Update fixtures
-rm -r "tests/fixtures/v1-addon/sass/output"
-cp -r "tests/fixtures/v1-addon/sass/input" "tests/fixtures/v1-addon/sass/output"
-
-./dist/bin/ember-codemod-pod-to-octane.js \
-  --root "tests/fixtures/v1-addon/sass/output" \
-  --type v1-addon
-
-# Update fixtures
 rm -r "tests/fixtures/v1-addon/typescript/output"
 cp -r "tests/fixtures/v1-addon/typescript/input" "tests/fixtures/v1-addon/typescript/output"
 
