@@ -12,7 +12,7 @@ export function mapRouteTemplates(options: Options): FilePathMapEntries {
   const { pod, podPath, projectRoot } = options;
 
   const filePaths = findFiles(join('app', podPath, pod, '**', 'template.hbs'), {
-    ignoreList: [join('app', podPath, pod, 'components', '**')],
+    ignoreList: [join('app', podPath, 'components', pod, '**')],
     projectRoot,
   });
 
