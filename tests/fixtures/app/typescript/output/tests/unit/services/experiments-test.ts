@@ -1,4 +1,4 @@
-import { setupConfigService } from '@ijlee2/ember-workshop-app/tests/helpers';
+import { setupConfigService } from 'my-app/tests/helpers';
 import { setupTest } from 'ember-qunit';
 import { module, test } from 'qunit';
 import sinon from 'sinon';
