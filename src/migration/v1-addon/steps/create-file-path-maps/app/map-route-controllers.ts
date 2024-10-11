@@ -6,18 +6,18 @@ import type {
 } from '../../../../../types/index.js';
 import { renamePodPath } from '../../../../../utils/files/index.js';
 
-export function mapComponentClasses(options: Options): FilePathMapEntries {
+export function mapRouteControllers(options: Options): FilePathMapEntries {
   const { projectRoot } = options;
 
-  const filePaths = findFiles('addon/components/**/component.{d.ts,js,ts}', {
+  const filePaths = findFiles('app/**/controller.js', {
     projectRoot,
   });
 
   return filePaths.map((oldFilePath) => {
     const newFilePath = renamePodPath(oldFilePath, {
-      entityDir: 'addon/components',
+      entityDir: 'app',
       replace: (key: string) => {
-        return `addon/components/${key}`;
+        return `app/controllers/${key}`;
       },
     });
 

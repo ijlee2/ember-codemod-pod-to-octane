@@ -78,7 +78,7 @@ cp -r "tests/fixtures/engine/javascript/input" "tests/fixtures/engine/javascript
 
 ./dist/bin/ember-codemod-pod-to-octane.js \
   --root "tests/fixtures/engine/javascript/output" \
-  --type engine
+  --type v1-addon
 
 # Update fixtures
 rm -r "tests/fixtures/engine/sass/output"
@@ -86,7 +86,7 @@ cp -r "tests/fixtures/engine/sass/input" "tests/fixtures/engine/sass/output"
 
 ./dist/bin/ember-codemod-pod-to-octane.js \
   --root "tests/fixtures/engine/sass/output" \
-  --type engine
+  --type v1-addon
 
 # Update fixtures
 rm -r "tests/fixtures/engine/typescript/output"
@@ -94,4 +94,4 @@ cp -r "tests/fixtures/engine/typescript/input" "tests/fixtures/engine/typescript
 
 ./dist/bin/ember-codemod-pod-to-octane.js \
   --root "tests/fixtures/engine/typescript/output" \
-  --type engine
+  --type v1-addon

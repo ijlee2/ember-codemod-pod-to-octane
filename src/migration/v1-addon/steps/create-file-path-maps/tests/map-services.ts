@@ -1,3 +1,5 @@
+import { join } from 'node:path';
+
 import { findFiles } from '@codemod-utils/files';
 
 import type {
@@ -6,18 +8,21 @@ import type {
 } from '../../../../../types/index.js';
 import { renamePodPath } from '../../../../../utils/files/index.js';
 
-export function mapComponentTemplates(options: Options): FilePathMapEntries {
+export function mapServices(options: Options): FilePathMapEntries {
   const { projectRoot } = options;
 
-  const filePaths = findFiles('addon/components/**/template.hbs', {
-    projectRoot,
-  });
+  const filePaths = findFiles(
+    join('tests/unit/!(services)/**/service-test.{js,ts}'),
+    {
+      projectRoot,
+    },
+  );
 
   return filePaths.map((oldFilePath) => {
     const newFilePath = renamePodPath(oldFilePath, {
-      entityDir: 'addon/components',
+      entityDir: 'tests/unit',
       replace: (key: string) => {
-        return `addon/components/${key}`;
+        return `tests/unit/services/${key}-test`;
       },
     });
 

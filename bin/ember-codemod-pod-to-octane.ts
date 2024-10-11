@@ -27,7 +27,7 @@ const argv = yargs(hideBin(process.argv))
     type: 'boolean',
   })
   .option('type', {
-    choices: ['app', 'engine', 'v1-addon'] as const,
+    choices: ['app', 'v1-addon'] as const,
     demandOption: true,
     describe: 'Type of your Ember project',
     type: 'string',

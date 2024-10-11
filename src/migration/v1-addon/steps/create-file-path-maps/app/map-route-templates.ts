@@ -6,21 +6,18 @@ import type {
 } from '../../../../../types/index.js';
 import { renamePodPath } from '../../../../../utils/files/index.js';
 
-export function mapComponents(options: Options): FilePathMapEntries {
+export function mapRouteTemplates(options: Options): FilePathMapEntries {
   const { projectRoot } = options;
 
-  const filePaths = findFiles(
-    'tests/integration/components/**/component-test.{js,ts}',
-    {
-      projectRoot,
-    },
-  );
+  const filePaths = findFiles('app/!(components)/**/template.js', {
+    projectRoot,
+  });
 
   return filePaths.map((oldFilePath) => {
     const newFilePath = renamePodPath(oldFilePath, {
-      entityDir: 'tests/integration/components',
+      entityDir: 'app',
       replace: (key: string) => {
-        return `tests/integration/components/${key}-test`;
+        return `app/templates/${key}`;
       },
     });
 

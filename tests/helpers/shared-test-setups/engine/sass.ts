@@ -3,14 +3,14 @@ import type { CodemodOptions, Options } from '../../../../src/types/index.js';
 const codemodOptions: CodemodOptions = {
   podPath: '',
   projectRoot: 'tmp/engine/sass',
-  projectType: 'engine',
+  projectType: 'v1-addon',
   testRun: false,
 };
 
 const options: Options = {
   podPath: '',
   projectRoot: 'tmp/engine/sass',
-  projectType: 'engine',
+  projectType: 'v1-addon',
   testRun: false,
 };
 
