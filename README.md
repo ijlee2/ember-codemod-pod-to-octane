@@ -33,7 +33,7 @@ You must pass `--type` to indicate what type of project you have.
 
 ```sh
 npx ember-codemod-pod-to-octane --type app
-npx ember-codemod-pod-to-octane --type addon
+npx ember-codemod-pod-to-octane --type v1-addon
 npx ember-codemod-pod-to-octane --type engine
 ```
 

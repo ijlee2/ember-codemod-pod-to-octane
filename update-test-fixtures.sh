@@ -21,7 +21,7 @@ cp -r "tests/fixtures/ember-addon/javascript/input" "tests/fixtures/ember-addon/
 
 ./dist/bin/ember-codemod-pod-to-octane.js \
   --root "tests/fixtures/ember-addon/javascript/output" \
-  --type addon
+  --type v1-addon
 
 # Update fixtures
 rm -r "tests/fixtures/ember-addon/sass/output"
@@ -29,7 +29,7 @@ cp -r "tests/fixtures/ember-addon/sass/input" "tests/fixtures/ember-addon/sass/o
 
 ./dist/bin/ember-codemod-pod-to-octane.js \
   --root "tests/fixtures/ember-addon/sass/output" \
-  --type addon
+  --type v1-addon
 
 # Update fixtures
 rm -r "tests/fixtures/ember-addon/typescript/output"
@@ -37,7 +37,7 @@ cp -r "tests/fixtures/ember-addon/typescript/input" "tests/fixtures/ember-addon/
 
 ./dist/bin/ember-codemod-pod-to-octane.js \
   --root "tests/fixtures/ember-addon/typescript/output" \
-  --type addon
+  --type v1-addon
 
 # Update fixtures
 rm -r "tests/fixtures/ember-app/javascript/output"
