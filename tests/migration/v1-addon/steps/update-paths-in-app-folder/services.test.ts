@@ -7,31 +7,21 @@ import {
   options,
 } from '../../../../helpers/shared-test-setups/v1-addon/typescript.js';
 
-test('migration | v1-addon | steps | update-paths-in-app-folder > typescript', function () {
+test('migration | v1-addon | steps | update-paths-in-app-folder > services', function () {
   const inputProject = {
     app: {
-      components: {
-        ui: {
-          form: {
-            checkbox: {
-              'component.js':
-                "export { default } from 'addon-javascript/components/ui/form/checkbox/component';\n",
-            },
-          },
-        },
+      experiments: {
+        'service.js':
+          "export { default } from 'my-v1-addon/experiments/service';\n",
       },
     },
   };
 
   const outputProject = {
     app: {
-      components: {
-        ui: {
-          form: {
-            'checkbox.js':
-              "export { default } from 'addon-javascript/components/ui/form/checkbox';\n",
-          },
-        },
+      services: {
+        'experiments.js':
+          "export { default } from 'my-v1-addon/services/experiments';\n",
       },
     },
   };
@@ -39,10 +29,7 @@ test('migration | v1-addon | steps | update-paths-in-app-folder > typescript', f
   loadFixture(inputProject, codemodOptions);
 
   const filePathMap = new Map([
-    [
-      'app/components/ui/form/checkbox/component.js',
-      'app/components/ui/form/checkbox.js',
-    ],
+    ['app/experiments/service.js', 'app/services/experiments.js'],
   ]);
 
   moveFiles(filePathMap, options);
