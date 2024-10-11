@@ -1,6 +1,6 @@
 import { action, get } from '@ember/object';
 import Component from '@glimmer/component';
-import { generateErrorMessage } from '@ijlee2/ember-workshop-app/utils/components/form';
+import { generateErrorMessage } from 'my-app/utils/components/form';
 
 export default class UiFormNumberComponent extends Component {
   get errorMessage() {

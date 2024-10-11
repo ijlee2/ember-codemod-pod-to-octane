@@ -1,6 +1,6 @@
 import { get } from '@ember/object';
 import Service from '@ember/service';
-import config from '@ijlee2/ember-workshop-app/config/environment';
+import config from 'my-app/config/environment';
 
 export default class ConfigService extends Service {
   customization = {

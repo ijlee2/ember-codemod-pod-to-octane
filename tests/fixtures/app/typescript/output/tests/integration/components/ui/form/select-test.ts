@@ -1,6 +1,6 @@
 import { set } from '@ember/object';
 import { click, render } from '@ember/test-helpers';
-import { selectByLabel } from '@ijlee2/ember-workshop-app/tests/helpers';
+import { selectByLabel } from 'my-app/tests/helpers';
 import { hbs } from 'ember-cli-htmlbars';
 import { setupIntl } from 'ember-intl/test-support';
 import { setupRenderingTest } from 'ember-qunit';

@@ -1,6 +1,6 @@
-import { assignVariants } from '@ijlee2/ember-workshop-app/tests/helpers';
 import { setupMirage } from 'ember-cli-mirage/test-support';
 import { setupTest } from 'ember-qunit';
+import { assignVariants } from 'my-app/tests/helpers';
 import { module, test } from 'qunit';
 
 module('Unit | Controller | form', function (hooks) {
