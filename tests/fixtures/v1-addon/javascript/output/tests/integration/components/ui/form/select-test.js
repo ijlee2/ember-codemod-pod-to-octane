@@ -1,9 +1,9 @@
 import { set } from '@ember/object';
 import { click, render } from '@ember/test-helpers';
-import { selectByLabel } from '@ijlee2/ember-workshop-addon/tests/helpers';
 import { hbs } from 'ember-cli-htmlbars';
 import { setupIntl } from 'ember-intl/test-support';
 import { setupRenderingTest } from 'ember-qunit';
+import { selectByLabel } from 'my-v1-addon/tests/helpers';
 import { module, test } from 'qunit';
 
 module('Integration | Component | ui/form/select', function (hooks) {

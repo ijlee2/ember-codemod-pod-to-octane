@@ -1,1 +1,1 @@
-export { default } from '@ijlee2/ember-workshop-addon/components/ui/form/textarea/component';
+export { default } from 'my-v1-addon/components/ui/form/textarea/component';
