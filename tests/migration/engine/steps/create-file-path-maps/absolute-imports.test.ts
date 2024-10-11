@@ -1,13 +1,13 @@
 import { assert, loadFixture, test } from '@codemod-utils/tests';
 
-import { createFilePathMaps } from '../../../../../src/migration/ember-engine/steps/index.js';
-import { inputProject } from '../../../../fixtures/ember-engine/relative-imports/index.js';
+import { createFilePathMaps } from '../../../../../src/migration/engine/steps/index.js';
+import { inputProject } from '../../../../fixtures/ember-engine/absolute-imports/index.js';
 import {
   codemodOptions,
   options,
-} from '../../../../helpers/shared-test-setups/ember-engine/relative-imports.js';
+} from '../../../../helpers/shared-test-setups/ember-engine/absolute-imports.js';
 
-test('migration | ember-engine | steps | create-file-path-maps > relative-imports', function () {
+test('migration | engine | steps | create-file-path-maps > absolute-imports', function () {
   loadFixture(inputProject, codemodOptions);
 
   const filePathMaps = createFilePathMaps(options);

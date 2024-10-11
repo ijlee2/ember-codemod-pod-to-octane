@@ -1,13 +1,13 @@
 import { assert, loadFixture, test } from '@codemod-utils/tests';
 
-import { createFilePathMaps } from '../../../../../src/migration/ember-engine/steps/index.js';
-import { inputProject } from '../../../../fixtures/ember-engine/javascript/index.js';
+import { createFilePathMaps } from '../../../../../src/migration/engine/steps/index.js';
+import { inputProject } from '../../../../fixtures/ember-engine/sass/index.js';
 import {
   codemodOptions,
   options,
-} from '../../../../helpers/shared-test-setups/ember-engine/javascript.js';
+} from '../../../../helpers/shared-test-setups/ember-engine/sass.js';
 
-test('migration | ember-engine | steps | create-file-path-maps > javascript', function () {
+test('migration | engine | steps | create-file-path-maps > sass', function () {
   loadFixture(inputProject, codemodOptions);
 
   const filePathMaps = createFilePathMaps(options);
@@ -16,8 +16,8 @@ test('migration | ember-engine | steps | create-file-path-maps > javascript', fu
     filePathMaps.addon,
     new Map([
       [
-        'addon/components/product/card/styles.css',
-        'addon/components/product/card.css',
+        'addon/components/product/card/styles.scss',
+        'addon/components/product/card.scss',
       ],
       [
         'addon/components/product/card/template.hbs',
@@ -28,8 +28,8 @@ test('migration | ember-engine | steps | create-file-path-maps > javascript', fu
         'addon/components/product/details.js',
       ],
       [
-        'addon/components/product/details/styles.css',
-        'addon/components/product/details.css',
+        'addon/components/product/details/styles.scss',
+        'addon/components/product/details.scss',
       ],
       [
         'addon/components/product/details/template.hbs',
@@ -40,15 +40,18 @@ test('migration | ember-engine | steps | create-file-path-maps > javascript', fu
         'addon/components/product/image.js',
       ],
       [
-        'addon/components/product/image/styles.css',
-        'addon/components/product/image.css',
+        'addon/components/product/image/styles.scss',
+        'addon/components/product/image.scss',
       ],
       [
         'addon/components/product/image/template.hbs',
         'addon/components/product/image.hbs',
       ],
       ['addon/product-details/route.js', 'addon/routes/product-details.js'],
-      ['addon/product-details/styles.css', 'addon/styles/product-details.css'],
+      [
+        'addon/product-details/styles.scss',
+        'addon/styles/product-details.scss',
+      ],
       [
         'addon/product-details/template.hbs',
         'addon/templates/product-details.hbs',
@@ -56,15 +59,15 @@ test('migration | ember-engine | steps | create-file-path-maps > javascript', fu
       ['addon/products/controller.js', 'addon/controllers/products.js'],
       ['addon/products/product/route.js', 'addon/routes/products/product.js'],
       [
-        'addon/products/product/styles.css',
-        'addon/styles/products/product.css',
+        'addon/products/product/styles.scss',
+        'addon/styles/products/product.scss',
       ],
       [
         'addon/products/product/template.hbs',
         'addon/templates/products/product.hbs',
       ],
       ['addon/products/route.js', 'addon/routes/products.js'],
-      ['addon/products/styles.css', 'addon/styles/products.css'],
+      ['addon/products/styles.scss', 'addon/styles/products.scss'],
       ['addon/products/template.hbs', 'addon/templates/products.hbs'],
     ]),
   );

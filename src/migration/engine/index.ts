@@ -3,7 +3,7 @@ import { moveFiles } from '@codemod-utils/files';
 import type { CodemodOptions } from '../../types/index.js';
 import { createFilePathMaps, createOptions } from './steps/index.js';
 
-export function migrateEmberEngine(codemodOptions: CodemodOptions): void {
+export function migrateEngine(codemodOptions: CodemodOptions): void {
   const options = createOptions(codemodOptions);
 
   const filePathMaps = createFilePathMaps(options);

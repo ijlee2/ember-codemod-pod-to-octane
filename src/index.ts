@@ -1,7 +1,7 @@
 import {
   migrateApp,
   migrateEmberAddon,
-  migrateEmberEngine,
+  migrateEngine,
 } from './migration/index.js';
 import type { CodemodOptions } from './types/index.js';
 
@@ -13,7 +13,7 @@ export function runCodemod(codemodOptions: CodemodOptions): void {
     }
 
     case 'engine': {
-      migrateEmberEngine(codemodOptions);
+      migrateEngine(codemodOptions);
       break;
     }
 
