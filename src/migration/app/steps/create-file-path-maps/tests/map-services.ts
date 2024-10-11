@@ -12,7 +12,7 @@ export function mapServices(options: Options): FilePathMapEntries {
   const { podPath, projectRoot } = options;
 
   const filePaths = findFiles(
-    join('tests/unit', podPath, '!(services)', '**', 'service-test.{js,ts}'),
+    join('tests/unit', podPath, '!(services)/**/service-test.{js,ts}'),
     {
       projectRoot,
     },

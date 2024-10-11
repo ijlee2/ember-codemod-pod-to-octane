@@ -12,13 +12,7 @@ export function mapComponents(options: Options): FilePathMapEntries {
   const { podPath, projectRoot } = options;
 
   const filePaths = findFiles(
-    join(
-      'tests/integration',
-      podPath,
-      'components',
-      '**',
-      'component-test.{js,ts}',
-    ),
+    join('tests/integration', podPath, 'components/**/component-test.{js,ts}'),
     {
       projectRoot,
     },
