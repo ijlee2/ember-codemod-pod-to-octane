@@ -73,27 +73,11 @@ cp -r "tests/fixtures/app/typescript/input" "tests/fixtures/app/typescript/outpu
   --type app
 
 # Update fixtures
-rm -r "tests/fixtures/engine/absolute-imports/output"
-cp -r "tests/fixtures/engine/absolute-imports/input" "tests/fixtures/engine/absolute-imports/output"
-
-./dist/bin/ember-codemod-pod-to-octane.js \
-  --root "tests/fixtures/engine/absolute-imports/output" \
-  --type engine
-
-# Update fixtures
 rm -r "tests/fixtures/engine/javascript/output"
 cp -r "tests/fixtures/engine/javascript/input" "tests/fixtures/engine/javascript/output"
 
 ./dist/bin/ember-codemod-pod-to-octane.js \
   --root "tests/fixtures/engine/javascript/output" \
-  --type engine
-
-# Update fixtures
-rm -r "tests/fixtures/engine/relative-imports/output"
-cp -r "tests/fixtures/engine/relative-imports/input" "tests/fixtures/engine/relative-imports/output"
-
-./dist/bin/ember-codemod-pod-to-octane.js \
-  --root "tests/fixtures/engine/relative-imports/output" \
   --type engine
 
 # Update fixtures
