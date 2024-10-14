@@ -9,12 +9,10 @@ import { renamePodPath } from '../../../../../utils/files/index.js';
 export function mapServices(options: Options): FilePathMapEntries {
   const { projectRoot } = options;
 
-  const filePaths = findFiles(
-    'tests/unit/!(services)/**/service-test.{js,ts}',
-    {
-      projectRoot,
-    },
-  );
+  const filePaths = findFiles('tests/unit/**/service-test.{js,ts}', {
+    ignoreList: ['tests/unit/services/**'],
+    projectRoot,
+  });
 
   return filePaths.map((oldFilePath) => {
     const newFilePath = renamePodPath(oldFilePath, {

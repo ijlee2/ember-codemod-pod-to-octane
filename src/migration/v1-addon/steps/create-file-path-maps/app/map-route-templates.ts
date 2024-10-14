@@ -9,7 +9,8 @@ import { renamePodPath } from '../../../../../utils/files/index.js';
 export function mapRouteTemplates(options: Options): FilePathMapEntries {
   const { projectRoot } = options;
 
-  const filePaths = findFiles('app/!(components)/**/template.js', {
+  const filePaths = findFiles('app/**/template.js', {
+    ignoreList: ['app/components/**'],
     projectRoot,
   });
 

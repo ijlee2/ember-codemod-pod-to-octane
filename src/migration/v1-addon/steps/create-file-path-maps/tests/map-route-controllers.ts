@@ -12,12 +12,10 @@ export function mapRouteControllers(options: Options): FilePathMapEntries {
   /*
     Case 1: Didn't pass the --pod flag, but configured { usePods: true } in .ember-cli
   */
-  const filePaths1 = findFiles(
-    'tests/unit/!(controllers)/**/controller-test.{js,ts}',
-    {
-      projectRoot,
-    },
-  );
+  const filePaths1 = findFiles('tests/unit/**/controller-test.{js,ts}', {
+    ignoreList: ['tests/unit/controllers/**'],
+    projectRoot,
+  });
 
   const filePathMap1 = filePaths1.map((oldFilePath) => {
     const newFilePath = renamePodPath(oldFilePath, {
