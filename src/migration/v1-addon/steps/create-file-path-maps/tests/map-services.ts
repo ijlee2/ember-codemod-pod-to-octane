@@ -18,7 +18,7 @@ export function mapServices(options: Options): FilePathMapEntries {
 
   return filePaths.map((oldFilePath) => {
     const newFilePath = renamePodPath(oldFilePath, {
-      entityDir: podDir,
+      podDir,
       replace: (key: string) => {
         return `tests/unit/services/${key}-test`;
       },

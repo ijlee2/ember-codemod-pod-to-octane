@@ -8,7 +8,7 @@ test('utils | files | rename-pod-path > error handling (directory does not match
   assert.throws(
     () => {
       renamePodPath(oldFilePath, {
-        entityDir: 'addon/components',
+        podDir: 'addon/components',
         replace: (key) => {
           return `addon/components/${key}`;
         },

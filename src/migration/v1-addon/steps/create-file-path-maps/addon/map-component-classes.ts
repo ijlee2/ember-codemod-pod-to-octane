@@ -17,7 +17,7 @@ export function mapComponentClasses(options: Options): FilePathMapEntries {
 
   return filePaths.map((oldFilePath) => {
     const newFilePath = renamePodPath(oldFilePath, {
-      entityDir: podDir,
+      podDir,
       replace: (key: string) => {
         return `addon/components/${key}`;
       },

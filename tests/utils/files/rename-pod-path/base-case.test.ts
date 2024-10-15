@@ -6,7 +6,7 @@ test('utils | files | rename-pod-path > base case', function () {
   const oldFilePath = 'app/pods/components/navigation-menu/component.d.ts';
 
   const newFilePath = renamePodPath(oldFilePath, {
-    entityDir: 'app/pods/components',
+    podDir: 'app/pods/components',
     replace: (key) => {
       return `app/components/${key}`;
     },
