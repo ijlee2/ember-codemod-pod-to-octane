@@ -11,17 +11,16 @@ import { renamePodPath } from '../../../../../utils/files/index.js';
 export function mapServices(options: Options): FilePathMapEntries {
   const { podPath, projectRoot } = options;
 
-  const filePaths = findFiles(
-    join('tests/unit', podPath, '**/service-test.{js,ts}'),
-    {
-      ignoreList: [join('tests/unit', podPath, 'services', '**')],
-      projectRoot,
-    },
-  );
+  const podDir = join('tests/unit', podPath);
+
+  const filePaths = findFiles(`${podDir}/**/service-test.{js,ts}`, {
+    ignoreList: [join('tests/unit', podPath, 'services/**')],
+    projectRoot,
+  });
 
   return filePaths.map((oldFilePath) => {
     const newFilePath = renamePodPath(oldFilePath, {
-      entityDir: join('tests/unit', podPath),
+      podDir,
       replace: (key: string) => {
         return `tests/unit/services/${key}-test`;
       },

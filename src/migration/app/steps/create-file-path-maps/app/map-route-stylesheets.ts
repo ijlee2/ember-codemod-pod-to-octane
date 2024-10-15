@@ -11,14 +11,16 @@ import { renamePodPath } from '../../../../../utils/files/index.js';
 export function mapRouteStylesheets(options: Options): FilePathMapEntries {
   const { podPath, projectRoot } = options;
 
-  const filePaths = findFiles(join('app', podPath, '**/styles.{css,scss}'), {
-    ignoreList: [join('app', podPath, 'components', '**')],
+  const podDir = join('app', podPath);
+
+  const filePaths = findFiles(`${podDir}/**/styles.{css,scss}`, {
+    ignoreList: [join('app', podPath, 'components/**')],
     projectRoot,
   });
 
   return filePaths.map((oldFilePath) => {
     const newFilePath = renamePodPath(oldFilePath, {
-      entityDir: join('app', podPath),
+      podDir,
       replace: (key: string) => {
         return `app/styles/${key}`;
       },

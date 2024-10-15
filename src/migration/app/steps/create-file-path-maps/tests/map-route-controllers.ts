@@ -14,17 +14,16 @@ export function mapRouteControllers(options: Options): FilePathMapEntries {
   /*
     Case 1: Didn't pass the --pod flag, but configured { usePods: true } in .ember-cli
   */
-  const filePaths1 = findFiles(
-    join('tests/unit', podPath, '**/controller-test.{js,ts}'),
-    {
-      ignoreList: [join('tests/unit', podPath, 'controllers', '**')],
-      projectRoot,
-    },
-  );
+  const podDir1 = join('tests/unit', podPath);
+
+  const filePaths1 = findFiles(`${podDir1}/**/controller-test.{js,ts}`, {
+    ignoreList: [join('tests/unit', podPath, 'controllers/**')],
+    projectRoot,
+  });
 
   const filePathMap1 = filePaths1.map((oldFilePath) => {
     const newFilePath = renamePodPath(oldFilePath, {
-      entityDir: join('tests/unit', podPath),
+      podDir: podDir1,
       replace: (key: string) => {
         return `tests/unit/controllers/${key}-test`;
       },
@@ -36,16 +35,15 @@ export function mapRouteControllers(options: Options): FilePathMapEntries {
   /*
     Case 2: Passed the --pod flag to Ember CLI
   */
-  const filePaths2 = findFiles(
-    join('tests/unit', podPath, 'controllers/**/controller-test.{js,ts}'),
-    {
-      projectRoot,
-    },
-  );
+  const podDir2 = join('tests/unit', podPath, 'controllers');
+
+  const filePaths2 = findFiles(`${podDir2}/**/controller-test.{js,ts}`, {
+    projectRoot,
+  });
 
   const filePathMap2 = filePaths2.map((oldFilePath) => {
     const newFilePath = renamePodPath(oldFilePath, {
-      entityDir: join('tests/unit', podPath, 'controllers'),
+      podDir: podDir2,
       replace: (key: string) => {
         return `tests/unit/controllers/${key}-test`;
       },

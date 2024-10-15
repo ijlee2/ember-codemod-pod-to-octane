@@ -9,13 +9,15 @@ import { renamePodPath } from '../../../../../utils/files/index.js';
 export function mapRouteControllers(options: Options): FilePathMapEntries {
   const { projectRoot } = options;
 
-  const filePaths = findFiles('app/**/controller.js', {
+  const podDir = 'app';
+
+  const filePaths = findFiles(`${podDir}/**/controller.js`, {
     projectRoot,
   });
 
   return filePaths.map((oldFilePath) => {
     const newFilePath = renamePodPath(oldFilePath, {
-      entityDir: 'app',
+      podDir,
       replace: (key: string) => {
         return `app/controllers/${key}`;
       },

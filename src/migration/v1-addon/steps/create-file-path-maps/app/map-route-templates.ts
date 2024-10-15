@@ -9,14 +9,16 @@ import { renamePodPath } from '../../../../../utils/files/index.js';
 export function mapRouteTemplates(options: Options): FilePathMapEntries {
   const { projectRoot } = options;
 
-  const filePaths = findFiles('app/**/template.js', {
+  const podDir = 'app';
+
+  const filePaths = findFiles(`${podDir}/**/template.js`, {
     ignoreList: ['app/components/**'],
     projectRoot,
   });
 
   return filePaths.map((oldFilePath) => {
     const newFilePath = renamePodPath(oldFilePath, {
-      entityDir: 'app',
+      podDir,
       replace: (key: string) => {
         return `app/templates/${key}`;
       },

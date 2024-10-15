@@ -6,7 +6,7 @@ test('utils | files | rename-pod-path > edge case (replace suffixes file name)',
   const oldFilePath = 'tests/unit/pods/index/controller-test.ts';
 
   const newFilePath = renamePodPath(oldFilePath, {
-    entityDir: 'tests/unit/pods',
+    podDir: 'tests/unit/pods',
     replace: (key) => {
       return `tests/unit/controllers/${key}-test`;
     },
