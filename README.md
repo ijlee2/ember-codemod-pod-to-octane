@@ -139,6 +139,25 @@ pnpm build
 ./dist/bin/ember-codemod-pod-to-octane.js --root <path/to/your/project>
 ```
 
+> [!TIP]
+>
+> You might clone the repo to migrate the project one component or one route at a time. For example, to migrate only the `<NavigationMenu>` component (and its subcomponents, if they exist), update the related file(s) in the `src` folder like this:
+>
+> ```diff
+> export function mapComponentClasses(options: Options): FilePathMapEntries {
+>   const { podPath, projectRoot } = options;
+> 
+>   const podDir = join('app', podPath, 'components');
+> 
+> -   const filePaths = findFiles(`${podDir}/**/component.{d.ts,js,ts}`, {
+> +   const filePaths = findFiles(`${podDir}/navigation-menu/**/component.{d.ts,js,ts}`, {
+> 
+>   // ...
+> }
+> ```
+>
+> That is, look for `findFiles(`, then insert the component or route name between `podDir` and `**`.
+
 
 ## Compatibility
 
