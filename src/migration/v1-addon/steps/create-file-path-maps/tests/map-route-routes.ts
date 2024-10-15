@@ -12,7 +12,8 @@ export function mapRouteRoutes(options: Options): FilePathMapEntries {
   /*
     Case 1: Didn't pass the --pod flag, but configured { usePods: true } in .ember-cli
   */
-  const filePaths1 = findFiles('tests/unit/!(routes)/**/route-test.{js,ts}', {
+  const filePaths1 = findFiles('tests/unit/**/route-test.{js,ts}', {
+    ignoreList: ['tests/unit/routes/**'],
     projectRoot,
   });
 
