@@ -1,5 +1,19 @@
 # Changelog
 
+## 3.1.0 (2024-10-15)
+
+### Enhancement
+* [#70](https://github.com/ijlee2/ember-codemod-pod-to-octane/pull/70) Documented how to use linters and incrementally migrate code ([@ijlee2](https://github.com/ijlee2))
+* [#69](https://github.com/ijlee2/ember-codemod-pod-to-octane/pull/69) move glob exclude patterns to ignoreList ([@apellerano-pw](https://github.com/apellerano-pw))
+
+### Documentation
+* [#70](https://github.com/ijlee2/ember-codemod-pod-to-octane/pull/70) Documented how to use linters and incrementally migrate code ([@ijlee2](https://github.com/ijlee2))
+
+### Committers: 2
+- Andrew Pellerano ([@apellerano-pw](https://github.com/apellerano-pw))
+- Isaac Lee ([@ijlee2](https://github.com/ijlee2))
+
+
 ## 3.0.0 (2024-10-11)
 
 ### Breaking Change
