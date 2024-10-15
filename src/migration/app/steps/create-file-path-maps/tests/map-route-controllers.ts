@@ -17,7 +17,7 @@ export function mapRouteControllers(options: Options): FilePathMapEntries {
   const filePaths1 = findFiles(
     join('tests/unit', podPath, '**/controller-test.{js,ts}'),
     {
-      ignoreList: [join('tests/unit', podPath, 'controllers', '**')],
+      ignoreList: [join('tests/unit', podPath, 'controllers/**')],
       projectRoot,
     },
   );

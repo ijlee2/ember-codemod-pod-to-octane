@@ -17,7 +17,7 @@ export function mapRouteRoutes(options: Options): FilePathMapEntries {
   const filePaths1 = findFiles(
     join('tests/unit', podPath, '**/route-test.{js,ts}'),
     {
-      ignoreList: [join('tests/unit', podPath, 'routes', '**')],
+      ignoreList: [join('tests/unit', podPath, 'routes/**')],
       projectRoot,
     },
   );
