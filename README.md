@@ -20,11 +20,28 @@ cd <path/to/your/project>
 npx ember-codemod-pod-to-octane <arguments>
 ```
 
+> [!NOTE]
+>
+> By default, Octane assumes the **flat component structure**. So does this codemod to help different Ember projects converge to one layout. If you want the **nested component structure** (also supported by Octane), you can run [`ember-flat-to-nested`](https://github.com/bertdeblock/ember-flat-to-nested) afterwards.
+
 Step 2. Remove `podModulePrefix` from `config/environment.js` and `usePods` from `.ember-cli`.
 
 Step 3. Update references originating from, as well as pointing to, the moved files. These can include `import` statement, `composes` property from `ember-css-modules`, etc.
 
-<sup>1. By default, Octane assumes the **flat component structure**. So does this codemod to help different Ember projects converge to one layout. If you want the **nested component structure** (also supported by Octane), you can run [`ember-flat-to-nested`](https://github.com/bertdeblock/ember-flat-to-nested) afterwards.</sup>
+> [!TIP]
+>
+> Linters can help you find the files that need to be updated.
+>
+> ```sh
+> # With eslint-plugin-import
+> [lint:js] /my-v1-addon/addon/index.ts
+> [lint:js]   1:49  error  Unable to resolve path to module './components/navigation-menu/component'  import/no-unresolved
+> 
+> # With typescript
+> [lint:types] addon/index.ts:1:49 - error TS2307: Cannot find module './components/navigation-menu/component' or its corresponding type declarations.
+> [lint:types] 
+> [lint:types] 1 export { default as NavigationMenu } from './components/navigation-menu/component';
+> ```
 
 
 ### Arguments
