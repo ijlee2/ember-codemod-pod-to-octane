@@ -9,13 +9,15 @@ import { renamePodPath } from '../../../../../utils/files/index.js';
 export function mapComponentTemplates(options: Options): FilePathMapEntries {
   const { projectRoot } = options;
 
-  const filePaths = findFiles('app/components/**/template.js', {
+  const podDir = 'app/components';
+
+  const filePaths = findFiles(`${podDir}/**/template.js`, {
     projectRoot,
   });
 
   return filePaths.map((oldFilePath) => {
     const newFilePath = renamePodPath(oldFilePath, {
-      entityDir: 'app/components',
+      entityDir: podDir,
       replace: (key: string) => {
         return `app/components/${key}`;
       },

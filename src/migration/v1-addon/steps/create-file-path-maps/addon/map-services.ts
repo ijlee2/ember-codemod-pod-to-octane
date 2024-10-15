@@ -9,13 +9,15 @@ import { renamePodPath } from '../../../../../utils/files/index.js';
 export function mapServices(options: Options): FilePathMapEntries {
   const { projectRoot } = options;
 
-  const filePaths = findFiles('addon/**/service.{js,ts}', {
+  const podDir = 'addon';
+
+  const filePaths = findFiles(`${podDir}/**/service.{js,ts}`, {
     projectRoot,
   });
 
   return filePaths.map((oldFilePath) => {
     const newFilePath = renamePodPath(oldFilePath, {
-      entityDir: 'addon',
+      entityDir: podDir,
       replace: (key: string) => {
         return `addon/services/${key}`;
       },
