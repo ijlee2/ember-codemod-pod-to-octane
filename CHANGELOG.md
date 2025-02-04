@@ -1,5 +1,14 @@
 # Changelog
 
+## 3.1.2 (2025-02-04)
+
+### Internal
+* [#72](https://github.com/ijlee2/ember-codemod-pod-to-octane/pull/72) Updated eslint to v9 ([@ijlee2](https://github.com/ijlee2))
+
+### Committers: 1
+- Isaac Lee ([@ijlee2](https://github.com/ijlee2))
+
+
 ## 3.1.1 (2024-12-27)
 
 ### Internal

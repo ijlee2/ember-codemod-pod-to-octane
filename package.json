@@ -1,6 +1,6 @@
 {
   "name": "ember-codemod-pod-to-octane",
-  "version": "3.1.1",
+  "version": "3.1.2",
   "description": "Codemod to un-pod Ember apps, addons, and engines",
   "keywords": [
     "codemod",
@@ -25,13 +25,13 @@
   ],
   "scripts": {
     "build": "./build.sh --production",
-    "lint": "concurrently 'pnpm:lint:*(!fix)' --names 'lint:'",
-    "lint:fix": "concurrently 'pnpm:lint:*:fix' --names 'fix:'",
+    "lint": "concurrently \"pnpm:lint:*(!fix)\" --names \"lint:\"",
+    "lint:fix": "concurrently \"pnpm:lint:*:fix\" --names \"fix:\"",
     "lint:js": "eslint . --cache",
     "lint:js:fix": "eslint . --fix",
     "lint:types": "tsc --noEmit",
     "prepare": "pnpm build",
-    "release:changelog": "lerna-changelog",
+    "release:prepare": "lerna-changelog",
     "release:publish": "pnpm publish",
     "test": "./build.sh --test && mt dist-for-testing --quiet"
   },
