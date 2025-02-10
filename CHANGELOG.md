@@ -1,5 +1,14 @@
 # Changelog
 
+## 3.1.3 (2025-02-10)
+
+### Internal
+* [#73](https://github.com/ijlee2/ember-codemod-pod-to-octane/pull/73) Simplified lint configurations ([@ijlee2](https://github.com/ijlee2))
+
+### Committers: 1
+- Isaac Lee ([@ijlee2](https://github.com/ijlee2))
+
+
 ## 3.1.2 (2025-02-04)
 
 ### Internal
