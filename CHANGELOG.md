@@ -1,5 +1,15 @@
 # Changelog
 
+## 4.0.0
+
+### Major Changes
+
+- [#75](https://github.com/ijlee2/ember-codemod-pod-to-octane/pull/75) Dropped Node 18 support ([@ijlee2](https://github.com/ijlee2))
+
+### Patch Changes
+
+- [#75](https://github.com/ijlee2/ember-codemod-pod-to-octane/pull/75) Updated dependencies ([@ijlee2](https://github.com/ijlee2))
+
 ## 3.1.4
 
 ### Patch Changes
