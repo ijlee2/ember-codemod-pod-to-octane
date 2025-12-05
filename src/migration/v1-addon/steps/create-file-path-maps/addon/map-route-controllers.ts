@@ -18,8 +18,8 @@ export function mapRouteControllers(options: Options): FilePathMapEntries {
   return filePaths.map((oldFilePath) => {
     const newFilePath = renamePodPath(oldFilePath, {
       podDir,
-      replace: (key: string) => {
-        return `addon/controllers/${key}`;
+      replace: (dir: string) => {
+        return `addon/controllers/${dir}`;
       },
     });
 

@@ -1,6 +1,7 @@
 import { assert, loadFixture, test } from '@codemod-utils/tests';
 
 import { createFilePathMaps } from '../../../../../src/migration/v1-addon/steps/index.js';
+import { normalizeFilePathMap } from '../../../../helpers/index.js';
 import {
   codemodOptions,
   options,
@@ -28,20 +29,24 @@ test('migration | v1-addon | steps | create-file-path-maps > services (file exte
 
   assert.deepStrictEqual(
     filePathMaps.addon,
-    new Map([
-      ['addon/experiments/service.js', 'addon/services/experiments.js'],
-    ]),
+    normalizeFilePathMap(
+      new Map([
+        ['addon/experiments/service.js', 'addon/services/experiments.js'],
+      ]),
+    ),
   );
 
-  assert.deepStrictEqual(filePathMaps.app, new Map());
+  assert.deepStrictEqual(filePathMaps.app, normalizeFilePathMap(new Map()));
 
   assert.deepStrictEqual(
     filePathMaps.tests,
-    new Map([
-      [
-        'tests/unit/experiments/service-test.js',
-        'tests/unit/services/experiments-test.js',
-      ],
-    ]),
+    normalizeFilePathMap(
+      new Map([
+        [
+          'tests/unit/experiments/service-test.js',
+          'tests/unit/services/experiments-test.js',
+        ],
+      ]),
+    ),
   );
 });

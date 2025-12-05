@@ -19,8 +19,8 @@ export function mapRouteTemplates(options: Options): FilePathMapEntries {
   return filePaths.map((oldFilePath) => {
     const newFilePath = renamePodPath(oldFilePath, {
       podDir,
-      replace: (key: string) => {
-        return `app/templates/${key}`;
+      replace: (dir: string) => {
+        return `app/templates/${dir}`;
       },
     });
 

@@ -2,6 +2,7 @@ import { moveFiles } from '@codemod-utils/files';
 import { assertFixture, loadFixture, test } from '@codemod-utils/tests';
 
 import { updatePathsInAppFolder } from '../../../../../src/migration/v1-addon/steps/index.js';
+import { normalizeFilePathMap } from '../../../../helpers/index.js';
 import {
   codemodOptions,
   options,
@@ -11,8 +12,7 @@ test('migration | v1-addon | steps | update-paths-in-app-folder > services', fun
   const inputProject = {
     app: {
       experiments: {
-        'service.js':
-          "export { default } from 'my-v1-addon/experiments/service';\n",
+        'service.js': `export { default } from 'my-v1-addon/experiments/service';`,
       },
     },
   };
@@ -20,17 +20,16 @@ test('migration | v1-addon | steps | update-paths-in-app-folder > services', fun
   const outputProject = {
     app: {
       services: {
-        'experiments.js':
-          "export { default } from 'my-v1-addon/services/experiments';\n",
+        'experiments.js': `export { default } from 'my-v1-addon/services/experiments';`,
       },
     },
   };
 
   loadFixture(inputProject, codemodOptions);
 
-  const filePathMap = new Map([
-    ['app/experiments/service.js', 'app/services/experiments.js'],
-  ]);
+  const filePathMap = normalizeFilePathMap(
+    new Map([['app/experiments/service.js', 'app/services/experiments.js']]),
+  );
 
   moveFiles(filePathMap, options);
 

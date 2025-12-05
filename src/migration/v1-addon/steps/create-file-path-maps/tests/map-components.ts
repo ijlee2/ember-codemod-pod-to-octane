@@ -18,8 +18,8 @@ export function mapComponents(options: Options): FilePathMapEntries {
   return filePaths.map((oldFilePath) => {
     const newFilePath = renamePodPath(oldFilePath, {
       podDir,
-      replace: (key: string) => {
-        return `tests/integration/components/${key}-test`;
+      replace: (dir: string) => {
+        return `tests/integration/components/${dir}-test`;
       },
     });
 
