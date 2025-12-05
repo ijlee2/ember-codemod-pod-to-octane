@@ -2,6 +2,7 @@ import { moveFiles } from '@codemod-utils/files';
 import { assertFixture, loadFixture, test } from '@codemod-utils/tests';
 
 import { updatePathsInAppFolder } from '../../../../../src/migration/v1-addon/steps/index.js';
+import { normalizeFilePathMap } from '../../../../helpers/index.js';
 import {
   codemodOptions,
   options,
@@ -12,17 +13,13 @@ test('migration | v1-addon | steps | update-paths-in-app-folder > components', f
     app: {
       components: {
         'navigation-menu': {
-          'component.js':
-            "export { default } from 'my-v1-addon/components/navigation-menu/component';\n",
-          'template.js':
-            "export { default } from 'my-v1-addon/components/navigation-menu/template';\n",
+          'component.js': `export { default } from 'my-v1-addon/components/navigation-menu/component';`,
+          'template.js': `export { default } from 'my-v1-addon/components/navigation-menu/template';`,
         },
         ui: {
           page: {
-            'component.js':
-              "export { default } from 'my-v1-addon/components/ui/page/component';\n",
-            'template.js':
-              "export { default } from 'my-v1-addon/components/ui/page/template';\n",
+            'component.js': `export { default } from 'my-v1-addon/components/ui/page/component';`,
+            'template.js': `export { default } from 'my-v1-addon/components/ui/page/template';`,
           },
         },
       },
@@ -32,11 +29,9 @@ test('migration | v1-addon | steps | update-paths-in-app-folder > components', f
   const outputProject = {
     app: {
       components: {
-        'navigation-menu.js':
-          "export { default } from 'my-v1-addon/components/navigation-menu';\n",
+        'navigation-menu.js': `export { default } from 'my-v1-addon/components/navigation-menu';`,
         ui: {
-          'page.js':
-            "export { default } from 'my-v1-addon/components/ui/page';\n",
+          'page.js': `export { default } from 'my-v1-addon/components/ui/page';`,
         },
       },
     },
@@ -44,18 +39,20 @@ test('migration | v1-addon | steps | update-paths-in-app-folder > components', f
 
   loadFixture(inputProject, codemodOptions);
 
-  const filePathMap = new Map([
-    [
-      'app/components/navigation-menu/component.js',
-      'app/components/navigation-menu.js',
-    ],
-    [
-      'app/components/navigation-menu/template.js',
-      'app/components/navigation-menu.js',
-    ],
-    ['app/components/ui/page/component.js', 'app/components/ui/page.js'],
-    ['app/components/ui/page/template.js', 'app/components/ui/page.js'],
-  ]);
+  const filePathMap = normalizeFilePathMap(
+    new Map([
+      [
+        'app/components/navigation-menu/component.js',
+        'app/components/navigation-menu.js',
+      ],
+      [
+        'app/components/navigation-menu/template.js',
+        'app/components/navigation-menu.js',
+      ],
+      ['app/components/ui/page/component.js', 'app/components/ui/page.js'],
+      ['app/components/ui/page/template.js', 'app/components/ui/page.js'],
+    ]),
+  );
 
   moveFiles(filePathMap, options);
 

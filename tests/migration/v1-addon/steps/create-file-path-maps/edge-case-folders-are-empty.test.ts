@@ -1,6 +1,7 @@
 import { assert, loadFixture, test } from '@codemod-utils/tests';
 
 import { createFilePathMaps } from '../../../../../src/migration/v1-addon/steps/index.js';
+import { normalizeFilePathMap } from '../../../../helpers/index.js';
 import {
   codemodOptions,
   options,
@@ -13,9 +14,9 @@ test('migration | v1-addon | steps | create-file-path-maps > edge case (folders 
 
   const filePathMaps = createFilePathMaps(options);
 
-  assert.deepStrictEqual(filePathMaps.addon, new Map());
+  assert.deepStrictEqual(filePathMaps.addon, normalizeFilePathMap(new Map()));
 
-  assert.deepStrictEqual(filePathMaps.app, new Map());
+  assert.deepStrictEqual(filePathMaps.app, normalizeFilePathMap(new Map()));
 
-  assert.deepStrictEqual(filePathMaps.tests, new Map());
+  assert.deepStrictEqual(filePathMaps.tests, normalizeFilePathMap(new Map()));
 });

@@ -1,6 +1,7 @@
 import { assert, loadFixture, test } from '@codemod-utils/tests';
 
 import { createFilePathMaps } from '../../../../../src/migration/v1-addon/steps/index.js';
+import { normalizeFilePathMap } from '../../../../helpers/index.js';
 import {
   codemodOptions,
   options,
@@ -46,41 +47,51 @@ test('migration | v1-addon | steps | create-file-path-maps > components (file ex
 
   assert.deepStrictEqual(
     filePathMaps.addon,
-    new Map([
-      [
-        'addon/components/navigation-menu/component.js',
-        'addon/components/navigation-menu.js',
-      ],
-      [
-        'addon/components/navigation-menu/styles.scss',
-        'addon/components/navigation-menu.scss',
-      ],
-      [
-        'addon/components/navigation-menu/template.hbs',
-        'addon/components/navigation-menu.hbs',
-      ],
-      [
-        'addon/components/ui/page/component.d.ts',
-        'addon/components/ui/page.d.ts',
-      ],
-      ['addon/components/ui/page/styles.scss', 'addon/components/ui/page.scss'],
-      ['addon/components/ui/page/template.hbs', 'addon/components/ui/page.hbs'],
-    ]),
+    normalizeFilePathMap(
+      new Map([
+        [
+          'addon/components/navigation-menu/component.js',
+          'addon/components/navigation-menu.js',
+        ],
+        [
+          'addon/components/navigation-menu/styles.scss',
+          'addon/components/navigation-menu.scss',
+        ],
+        [
+          'addon/components/navigation-menu/template.hbs',
+          'addon/components/navigation-menu.hbs',
+        ],
+        [
+          'addon/components/ui/page/component.d.ts',
+          'addon/components/ui/page.d.ts',
+        ],
+        [
+          'addon/components/ui/page/styles.scss',
+          'addon/components/ui/page.scss',
+        ],
+        [
+          'addon/components/ui/page/template.hbs',
+          'addon/components/ui/page.hbs',
+        ],
+      ]),
+    ),
   );
 
-  assert.deepStrictEqual(filePathMaps.app, new Map());
+  assert.deepStrictEqual(filePathMaps.app, normalizeFilePathMap(new Map()));
 
   assert.deepStrictEqual(
     filePathMaps.tests,
-    new Map([
-      [
-        'tests/integration/components/navigation-menu/component-test.js',
-        'tests/integration/components/navigation-menu-test.js',
-      ],
-      [
-        'tests/integration/components/ui/page/component-test.js',
-        'tests/integration/components/ui/page-test.js',
-      ],
-    ]),
+    normalizeFilePathMap(
+      new Map([
+        [
+          'tests/integration/components/navigation-menu/component-test.js',
+          'tests/integration/components/navigation-menu-test.js',
+        ],
+        [
+          'tests/integration/components/ui/page/component-test.js',
+          'tests/integration/components/ui/page-test.js',
+        ],
+      ]),
+    ),
   );
 });
