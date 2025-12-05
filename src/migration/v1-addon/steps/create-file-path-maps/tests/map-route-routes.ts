@@ -22,8 +22,8 @@ export function mapRouteRoutes(options: Options): FilePathMapEntries {
   const filePathMap1 = filePaths1.map((oldFilePath) => {
     const newFilePath = renamePodPath(oldFilePath, {
       podDir: podDir1,
-      replace: (key: string) => {
-        return `tests/unit/routes/${key}-test`;
+      replace: (dir: string) => {
+        return `tests/unit/routes/${dir}-test`;
       },
     });
 
@@ -42,8 +42,8 @@ export function mapRouteRoutes(options: Options): FilePathMapEntries {
   const filePathMap2 = filePaths2.map((oldFilePath) => {
     const newFilePath = renamePodPath(oldFilePath, {
       podDir: podDir2,
-      replace: (key: string) => {
-        return `tests/unit/routes/${key}-test`;
+      replace: (dir: string) => {
+        return `tests/unit/routes/${dir}-test`;
       },
     });
 

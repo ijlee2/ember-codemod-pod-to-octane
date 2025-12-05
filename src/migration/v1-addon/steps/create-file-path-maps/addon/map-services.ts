@@ -18,8 +18,8 @@ export function mapServices(options: Options): FilePathMapEntries {
   return filePaths.map((oldFilePath) => {
     const newFilePath = renamePodPath(oldFilePath, {
       podDir,
-      replace: (key: string) => {
-        return `addon/services/${key}`;
+      replace: (dir: string) => {
+        return `addon/services/${dir}`;
       },
     });
 

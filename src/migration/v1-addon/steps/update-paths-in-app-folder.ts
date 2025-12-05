@@ -1,7 +1,11 @@
 import { readFileSync, writeFileSync } from 'node:fs';
-import { join } from 'node:path';
+import { join, relative, sep } from 'node:path';
 
 import type { FilePathMap, Options } from '../../../types/index.js';
+
+function getReexportPath(filePath: string): string {
+  return relative('app', filePath).replace(/\.js$/, '').replaceAll(sep, '/');
+}
 
 export function updatePathsInAppFolder(
   filePathMap: FilePathMap,
@@ -10,13 +14,13 @@ export function updatePathsInAppFolder(
   const { projectRoot } = options;
 
   filePathMap.forEach((newFilePath, oldFilePath) => {
-    const newAbsolutePath = join(projectRoot, newFilePath);
-    const file = readFileSync(newAbsolutePath, 'utf8');
+    const oldFile = readFileSync(join(projectRoot, newFilePath), 'utf8');
 
-    const text = oldFilePath.replace(/^app\//, '').replace(/\.js$/, '');
-    const newText = newFilePath.replace(/^app\//, '').replace(/\.js$/, '');
-    const newFile = file.replace(new RegExp(text), newText);
+    const newFile = oldFile.replace(
+      getReexportPath(oldFilePath),
+      getReexportPath(newFilePath),
+    );
 
-    writeFileSync(newAbsolutePath, newFile, 'utf8');
+    writeFileSync(join(projectRoot, newFilePath), newFile, 'utf8');
   });
 }

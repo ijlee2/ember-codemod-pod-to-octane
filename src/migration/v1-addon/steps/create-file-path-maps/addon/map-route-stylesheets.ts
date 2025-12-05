@@ -19,8 +19,8 @@ export function mapRouteStylesheets(options: Options): FilePathMapEntries {
   return filePaths.map((oldFilePath) => {
     const newFilePath = renamePodPath(oldFilePath, {
       podDir,
-      replace: (key: string) => {
-        return `addon/styles/${key}`;
+      replace: (dir: string) => {
+        return `addon/styles/${dir}`;
       },
     });
 
