@@ -147,7 +147,7 @@ pnpm build
 > export function mapComponentClasses(options: Options): FilePathMapEntries {
 >   const { podPath, projectRoot } = options;
 > 
->   const podDir = join('app', podPath, 'components');
+>   const podDir = normalizedJoin('app', podPath, 'components');
 > 
 > -   const filePaths = findFiles(`${podDir}/**/component.{d.ts,js,ts}`, {
 > +   const filePaths = findFiles(`${podDir}/navigation-menu/**/component.{d.ts,js,ts}`, {

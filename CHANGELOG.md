@@ -1,5 +1,11 @@
 # Changelog
 
+## 4.1.0
+
+### Minor Changes
+
+- [#87](https://github.com/ijlee2/ember-codemod-pod-to-octane/pull/87) Supported Windows ([@ijlee2](https://github.com/ijlee2))
+
 ## 4.0.6
 
 ### Patch Changes
