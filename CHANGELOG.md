@@ -1,5 +1,11 @@
 # Changelog
 
+## 4.1.1
+
+### Patch Changes
+
+- [#88](https://github.com/ijlee2/ember-codemod-pod-to-octane/pull/88) Downstreamed changes from @codemod-utils/cli@3.9.1 ([@ijlee2](https://github.com/ijlee2))
+
 ## 4.1.0
 
 ### Minor Changes
