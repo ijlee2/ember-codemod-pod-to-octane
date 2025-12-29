@@ -1,5 +1,11 @@
 # Changelog
 
+## 4.1.2
+
+### Patch Changes
+
+- [#89](https://github.com/ijlee2/ember-codemod-pod-to-octane/pull/89) Updated dependencies ([@ijlee2](https://github.com/ijlee2))
+
 ## 4.1.1
 
 ### Patch Changes
