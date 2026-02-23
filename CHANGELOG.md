@@ -1,5 +1,11 @@
 # Changelog
 
+## 5.0.0
+
+### Major Changes
+
+- [#92](https://github.com/ijlee2/ember-codemod-pod-to-octane/pull/92) Dropped support for Node 2 ([@ijlee2](https://github.com/ijlee2))
+
 ## 4.1.4
 
 ### Patch Changes
