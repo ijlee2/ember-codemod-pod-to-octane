@@ -17,7 +17,7 @@ Step 1. Quickly return to [default Octane](https://cli.emberjs.com/release/advan
 
 ```sh
 cd <path/to/your/project>
-npx ember-codemod-pod-to-octane <arguments>
+pnpx ember-codemod-pod-to-octane <arguments>
 ```
 
 > [!NOTE]
@@ -50,10 +50,10 @@ You must pass `--type` to indicate what type of project you have.
 
 ```sh
 # For classic apps
-npx ember-codemod-pod-to-octane --type app
+pnpx ember-codemod-pod-to-octane --type app
 
 # For v1 addons (including engines)
-npx ember-codemod-pod-to-octane --type v1-addon
+pnpx ember-codemod-pod-to-octane --type v1-addon
 ```
 
 
@@ -64,7 +64,7 @@ npx ember-codemod-pod-to-octane --type v1-addon
 Pass `--test` to preview how the codemod will move files.
 
 ```sh
-npx ember-codemod-pod-to-octane --test
+pnpx ember-codemod-pod-to-octane --test
 ```
 
 </details>
@@ -77,14 +77,14 @@ npx ember-codemod-pod-to-octane --test
 Pass `--root` to run the codemod on a project somewhere else (i.e. not in the current directory).
 
 ```sh
-npx ember-codemod-pod-to-octane --root <path/to/your/project>
+pnpx ember-codemod-pod-to-octane --root <path/to/your/project>
 ```
 
 Note, you can use `--root` to un-pod the demo app of an Ember addon.
 
 ```sh
 # If the current directory is the addon root
-npx ember-codemod-pod-to-octane --type app --root tests/dummy
+pnpx ember-codemod-pod-to-octane --type app --root tests/dummy
 ```
 
 </details>
@@ -98,7 +98,7 @@ Pass `--pod-path` if `podModulePrefix` has been set in `config/environment.js`. 
 
 ```sh
 # If modulePrefix is 'my-app' and podModulePrefix is 'my-app/pods'
-npx ember-codemod-pod-to-octane --pod-path pods
+pnpx ember-codemod-pod-to-octane --pod-path pods
 ```
 
 </details>
@@ -167,8 +167,6 @@ pnpm build
 ## Contributing
 
 See the [Contributing](CONTRIBUTING.md) guide for details.
-
-If you have an open-sourced app or addon that I can use as a reference, reach out to me on [Discord](https://discord.gg/emberjs) at `ijlee2`. Please star this project so that I can gauge its importance to you and the Ember community. ⭐
 
 
 ## License
