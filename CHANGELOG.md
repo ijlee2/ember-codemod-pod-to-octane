@@ -1,5 +1,11 @@
 # Changelog
 
+## 5.0.1
+
+### Patch Changes
+
+- [#94](https://github.com/ijlee2/ember-codemod-pod-to-octane/pull/94) Recommended the use of pnpx ([@ijlee2](https://github.com/ijlee2))
+
 ## 5.0.0
 
 ### Major Changes
