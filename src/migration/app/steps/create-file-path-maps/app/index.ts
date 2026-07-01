@@ -1,7 +1,5 @@
 import type { FilePathMap, Options } from '../../../../../types/index.js';
-import { mapComponentClasses } from './map-component-classes.js';
-import { mapComponentStylesheets } from './map-component-stylesheets.js';
-import { mapComponentTemplates } from './map-component-templates.js';
+import { mapComponents } from './map-components.js';
 import { mapRouteAdapters } from './map-route-adapters.js';
 import { mapRouteControllers } from './map-route-controllers.js';
 import { mapRouteModels } from './map-route-models.js';
@@ -13,9 +11,7 @@ import { mapServices } from './map-services.js';
 
 export function mapAppFolder(options: Options): FilePathMap {
   return new Map([
-    ...mapComponentClasses(options),
-    ...mapComponentStylesheets(options),
-    ...mapComponentTemplates(options),
+    ...mapComponents(options),
     ...mapRouteAdapters(options),
     ...mapRouteControllers(options),
     ...mapRouteModels(options),
