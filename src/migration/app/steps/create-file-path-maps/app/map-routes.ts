@@ -24,7 +24,10 @@ function getFileName(filePath: string): FileName {
   return name as FileName;
 }
 
-export function mapRoutes(options: Options): FilePathMapEntries {
+export function mapRoutes(
+  filePathsForComponents: string[],
+  options: Options,
+): FilePathMapEntries {
   const { podPath, projectRoot } = options;
 
   const podDir = normalizedJoin('app', podPath);
@@ -50,12 +53,12 @@ export function mapRoutes(options: Options): FilePathMapEntries {
   });
 
   const filePathsForStylesheet = findFiles(`${podDir}/**/styles.{css,scss}`, {
-    ignoreList: [normalizedJoin('app', podPath, 'components/**')],
+    ignoreList: filePathsForComponents,
     projectRoot,
   });
 
   const filePathsForTemplate = findFiles(`${podDir}/**/template.hbs`, {
-    ignoreList: [normalizedJoin('app', podPath, 'components/**')],
+    ignoreList: filePathsForComponents,
     projectRoot,
   });
 
