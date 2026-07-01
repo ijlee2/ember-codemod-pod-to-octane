@@ -16,6 +16,13 @@
 pnpm build
 
 # Update fixtures
+rm -r "tests/fixtures/app/edge-case-components/output"
+cp -r "tests/fixtures/app/edge-case-components/input" "tests/fixtures/app/edge-case-components/output"
+
+./dist/bin/ember-codemod-pod-to-octane.js \
+  --root "tests/fixtures/app/edge-case-components/output" \
+  --type app
+
 rm -r "tests/fixtures/app/pod-path/output"
 cp -r "tests/fixtures/app/pod-path/input" "tests/fixtures/app/pod-path/output"
 
