@@ -1,4 +1,5 @@
-import { migrateApp, migrateV1Addon } from './migration/index.js';
+import { migrateApp } from './migration/app/index.js';
+import { migrateV1Addon } from './migration/v1-addon/index.js';
 import type { CodemodOptions } from './types/index.js';
 
 export function runCodemod(codemodOptions: CodemodOptions): void {
