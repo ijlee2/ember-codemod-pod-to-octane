@@ -1,0 +1,47 @@
+{{page-title (t "routes.application.app-name")}}
+
+<div local-class="application">
+  <header local-class="header">
+    <NavigationNarrator
+      @navigationText={{t "routes.application.navigation-text"}}
+      @skipText={{t "routes.application.skip-text"}}
+      @skipTo="#main-content"
+    />
+
+    <NavigationMenu
+      @menuItems={{array
+        (hash
+          label=(t
+            "routes.application.navigation-menu.routes.index"
+          )
+          route="index"
+        )
+        (hash
+          label=(t
+            "routes.application.navigation-menu.routes.form"
+          )
+          route="form"
+        )
+        (hash
+          label=(t
+            "routes.application.navigation-menu.routes.products"
+          )
+          route="products"
+        )
+      }}
+      @name={{t "routes.application.navigation-menu.name"}}
+    />
+  </header>
+
+  <main local-class="main">
+    <div local-class="center">
+      {{outlet}}
+    </div>
+  </main>
+
+  <footer local-class="footer">
+    <span local-class="copyright">
+      {{t "routes.application.copyright" htmlSafe=true}}
+    </span>
+  </footer>
+</div>

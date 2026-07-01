@@ -144,13 +144,13 @@ pnpm build
 > You might clone the repo to migrate the project one component or one route at a time. For example, to migrate only the `<NavigationMenu>` component (and its subcomponents, if they exist), update the related file(s) in the `src` folder like this:
 >
 > ```diff
-> export function mapComponentClasses(options: Options): FilePathMapEntries {
+> export function mapComponents1(options: Options): FilePathMapEntries {
 >   const { podPath, projectRoot } = options;
 > 
 >   const podDir = normalizedJoin('app', podPath, 'components');
 > 
-> -   const filePaths = findFiles(`${podDir}/**/component.{d.ts,js,ts}`, {
-> +   const filePaths = findFiles(`${podDir}/navigation-menu/**/component.{d.ts,js,ts}`, {
+> -   const filePathsForClass = findFiles(`${podDir}/**/component.{d.ts,js,ts}`, {
+> +   const filePathsForClass = findFiles(`${podDir}/navigation-menu/**/component.{d.ts,js,ts}`, {
 > 
 >   // ...
 > }
