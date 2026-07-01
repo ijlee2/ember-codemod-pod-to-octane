@@ -1,5 +1,11 @@
 # Changelog
 
+## 5.1.0
+
+### Minor Changes
+
+- [#101](https://github.com/ijlee2/ember-codemod-pod-to-octane/pull/101) Generalized file paths for components (app) ([@ijlee2](https://github.com/ijlee2))
+
 ## 5.0.5
 
 ### Patch Changes
