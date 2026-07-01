@@ -9,7 +9,10 @@ import {
   renamePodPath,
 } from '../../../../../utils/files/index.js';
 
-export function mapComponents(options: Options): FilePathMapEntries {
+/*
+  Case 1: Placed component files in /components
+*/
+export function mapComponents1(options: Options): FilePathMapEntries {
   const { podPath, projectRoot } = options;
 
   const podDir = normalizedJoin('app', podPath, 'components');
