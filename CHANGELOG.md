@@ -1,5 +1,11 @@
 # Changelog
 
+## 5.0.5
+
+### Patch Changes
+
+- [#100](https://github.com/ijlee2/ember-codemod-pod-to-octane/pull/100) Simplified methods ([@ijlee2](https://github.com/ijlee2))
+
 ## 5.0.4
 
 ### Patch Changes
