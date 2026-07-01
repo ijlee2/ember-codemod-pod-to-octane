@@ -6,16 +6,28 @@ import type {
 } from '../../../../../types/index.js';
 import { renamePodPath } from '../../../../../utils/files/index.js';
 
-export function mapComponentStylesheets(options: Options): FilePathMapEntries {
+export function mapComponents(options: Options): FilePathMapEntries {
   const { projectRoot } = options;
 
   const podDir = 'addon/components';
 
-  const filePaths = findFiles(`${podDir}/**/styles.{css,scss}`, {
+  const filePathsForClass = findFiles(`${podDir}/**/component.{d.ts,js,ts}`, {
     projectRoot,
   });
 
-  return filePaths.map((oldFilePath) => {
+  const filePathsForStylesheet = findFiles(`${podDir}/**/styles.{css,scss}`, {
+    projectRoot,
+  });
+
+  const filePathsForTemplate = findFiles(`${podDir}/**/template.hbs`, {
+    projectRoot,
+  });
+
+  return [
+    ...filePathsForClass,
+    ...filePathsForStylesheet,
+    ...filePathsForTemplate,
+  ].map((oldFilePath) => {
     const newFilePath = renamePodPath(oldFilePath, {
       podDir,
       replace: (dir: string) => {

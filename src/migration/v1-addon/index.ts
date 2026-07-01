@@ -9,12 +9,10 @@ import {
 
 export function migrateV1Addon(codemodOptions: CodemodOptions): void {
   const options = createOptions(codemodOptions);
-
   const filePathMaps = createFilePathMaps(options);
 
   if (options.testRun) {
     console.log(filePathMaps);
-
     return;
   }
 

@@ -5,12 +5,10 @@ import { createFilePathMaps, createOptions } from './steps/index.js';
 
 export function migrateApp(codemodOptions: CodemodOptions): void {
   const options = createOptions(codemodOptions);
-
   const filePathMaps = createFilePathMaps(options);
 
   if (options.testRun) {
     console.log(filePathMaps);
-
     return;
   }
 
