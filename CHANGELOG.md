@@ -1,5 +1,11 @@
 # Changelog
 
+## 5.1.1
+
+### Patch Changes
+
+- [#102](https://github.com/ijlee2/ember-codemod-pod-to-octane/pull/102) Updated dependencies (eslint@v10, typescript@v6) ([@ijlee2](https://github.com/ijlee2))
+
 ## 5.1.0
 
 ### Minor Changes
