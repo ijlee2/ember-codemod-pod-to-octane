@@ -19,8 +19,8 @@ importers:
         specifier: ^3.0.0
         version: 3.0.0
       '@codemod-utils/tests':
-        specifier: ^3.1.0
-        version: 3.1.0(@sondr3/minitest@0.1.2)
+        specifier: ^3.2.0
+        version: 3.2.0
       '@ijlee2-frontend-configs/changesets':
         specifier: ^3.0.1
         version: 3.0.1(@changesets/cli@3.0.0)
@@ -30,9 +30,6 @@ importers:
       '@ijlee2-frontend-configs/prettier':
         specifier: ^3.3.3
         version: 3.3.3(prettier@3.9.6)(supports-color@10.2.2)
-      '@sondr3/minitest':
-        specifier: ^0.1.2
-        version: 0.1.2
       '@tsconfig/node22':
         specifier: ^22.0.5
         version: 22.0.5
@@ -238,11 +235,10 @@ packages:
     resolution: {integrity: sha512-/zZQj6o3/fA9V+cDUFNi0nqDw/oxaLktNB38izWm0Msr7EqhBnzWYJ7zkW4Gw5W6oHhYLYQykJfbUqMrYeS6xQ==}
     engines: {node: 22.* || >= 24}
 
-  '@codemod-utils/tests@3.1.0':
-    resolution: {integrity: sha512-uTBt28YJR4kFmtYWrIcVHHAc22UwrAbXQ4Svg1peJWWP+gQNIVmwONEvVtWdWBQl9oEyEiI54J3YN3VvnhuhqA==}
+  '@codemod-utils/tests@3.2.0':
+    resolution: {integrity: sha512-MOZLh/tnUSCxrrvWP3088IGr+vtoXBucIGslxdyglcHvPX+G5zvS6pL71VFK/V/N1FD2NbRW+yM7qL9JTQP79A==}
     engines: {node: 22.* || >= 24}
-    peerDependencies:
-      '@sondr3/minitest': ^0.1.2
+    hasBin: true
 
   '@emnapi/core@1.10.0':
     resolution: {integrity: sha512-yq6OkJ4p82CAfPl0u9mQebQHKPJkY7WrIuk205cTYnYe+k2Z8YBh11FrbRG/H6ihirqcacOgl2BIO8oyMQLeXw==}
@@ -1524,7 +1520,7 @@ snapshots:
     dependencies:
       glob: 13.0.6
 
-  '@codemod-utils/tests@3.1.0(@sondr3/minitest@0.1.2)':
+  '@codemod-utils/tests@3.2.0':
     dependencies:
       '@sondr3/minitest': 0.1.2
       fixturify: 3.0.0
