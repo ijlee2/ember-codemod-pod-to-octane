@@ -1,5 +1,11 @@
 # Changelog
 
+## 5.1.5
+
+### Patch Changes
+
+- [#110](https://github.com/ijlee2/ember-codemod-pod-to-octane/pull/110) Updated dependencies (replaced eslint with oxlint) ([@ijlee2](https://github.com/ijlee2))
+
 ## 5.1.4
 
 ### Patch Changes
