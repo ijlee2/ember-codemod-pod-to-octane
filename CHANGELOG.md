@@ -1,5 +1,12 @@
 # Changelog
 
+## 5.1.6
+
+### Patch Changes
+
+- [#112](https://github.com/ijlee2/ember-codemod-pod-to-octane/pull/112) Updated dependencies ([@ijlee2](https://github.com/ijlee2))
+- [#111](https://github.com/ijlee2/ember-codemod-pod-to-octane/pull/111) Introduced trusted publishing ([@ijlee2](https://github.com/ijlee2))
+
 ## 5.1.5
 
 ### Patch Changes
